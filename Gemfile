@@ -12,4 +12,5 @@ gem 'turbolinks'
 group :development do
   gem 'spring'
   gem 'mysql2', require: false
+  gem 'annotate'
 end
