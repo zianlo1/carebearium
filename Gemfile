@@ -11,5 +11,5 @@ gem 'turbolinks'
 
 group :development do
   gem 'spring'
-  gem 'mysql2'
+  gem 'mysql2', require: false
 end
