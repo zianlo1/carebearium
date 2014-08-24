@@ -15,14 +15,18 @@ namespace :sde2seed do
       from agtAgents a
       join crpNPCDivisions d on d.divisionID = a.divisionID
       join staStations st on a.locationID = st.stationID
+      join mapSolarSystems s on s.solarSystemID = st.solarSystemID
+      where s.security > 0.4
       order by a.agentID
     SQL
   end
 
   task :stations do
     dump_query 'stations.json', <<-SQL
-      select stationID, solarSystemID, stationName, reprocessingEfficiency, reprocessingStationsTake
-      from staStations
+      select st.stationID, st.solarSystemID, st.stationName
+      from staStations st
+      join mapSolarSystems s on s.solarSystemID = st.solarSystemID
+      where s.security > 0.4
       order by stationID
     SQL
   end
@@ -33,6 +37,7 @@ namespace :sde2seed do
       from mapSolarSystems s
       join mapRegions r on s.regionID = r.regionID
       left join (select solarSystemID, count(*) as beltCount from mapDenormalize where typeID = 15 group by solarSystemID) belts on s.solarSystemID = belts.solarSystemID
+      where s.security > 0.4
       order by s.solarSystemID
     SQL
   end
