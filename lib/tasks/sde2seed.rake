@@ -41,7 +41,19 @@ namespace :sde2seed do
       order by s.solarSystemID
     SQL
   end
+
+  task :jumps do
+    dump_query 'jumps.json', <<-SQL
+      select src.solarSystemId as 'from', dst.solarSystemId as 'to'
+      from mapJumps j
+      join mapDenormalize src on src.itemId = j.stargateId
+      join mapDenormalize dst on dst.itemId = j.destinationId
+      join mapSolarSystems srcSys on srcSys.solarSystemId = src.solarSystemId
+      join mapSolarSystems dstSys on dstSys.solarSystemId = dst.solarSystemId
+      where srcSys.security > 0.4 and dstSys.security > 0.4
+    SQL
+  end
 end
 
 desc "Convert SDE data to db seeds"
-task sde2seed: %w(agents stations solar_systems).map{ |t| "sde2seed:#{t}" }
+task sde2seed: %w(agents stations solar_systems jumps).map{ |t| "sde2seed:#{t}" }
