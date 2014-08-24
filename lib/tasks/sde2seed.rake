@@ -53,7 +53,15 @@ namespace :sde2seed do
       where srcSys.security > 0.4 and dstSys.security > 0.4
     SQL
   end
+
+  task :corporations do
+    dump_query 'corporations.json', <<-SQL
+      select c.corporationID as id, n.itemName as name
+      from crpNPCCorporations c
+      join invNames n on n.itemID = c.corporationID
+    SQL
+  end
 end
 
 desc "Convert SDE data to db seeds"
-task sde2seed: %w(agents stations solar_systems jumps).map{ |t| "sde2seed:#{t}" }
+task sde2seed: %w(agents stations solar_systems jumps corporations).map{ |t| "sde2seed:#{t}" }
