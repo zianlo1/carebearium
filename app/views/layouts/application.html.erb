@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Carebearium</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+<html ng-app='CB'>
+  <head>
+    <title>Carebearium</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            Carebearium
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class='container'>
+      <div ng-view>
+      </div>
+    </div>
+  </body>
 </html>

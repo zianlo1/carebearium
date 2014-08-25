@@ -17,6 +17,8 @@ module Carebearium
   class Application < Rails::Application
     config.time_zone = 'Riga'
 
+    config.hamlcoffee.uglify = true
+
     config.generators do |g|
       g.assets              false
       g.helper              false
