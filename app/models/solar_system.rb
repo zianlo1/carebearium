@@ -1,5 +1,5 @@
 class SolarSystem < ActiveRecord::Base
-  include SolarSystemFinders
+  extend SolarSystemFinders
 
   has_many :agents, inverse_of: :solar_system
   has_many :stations, inverse_of: :solar_system

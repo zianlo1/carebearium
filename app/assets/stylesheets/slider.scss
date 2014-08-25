@@ -18,7 +18,7 @@ slider span.bar.selection, slider span.bar.unselected {
 }
 
 slider span.bar.selection {
-	background: mix($table-bg-hover, $text-color);
+	background: mix($table-bg-hover, $brand-primary);
 	opacity:    0.5;
 }
 
@@ -33,7 +33,7 @@ slider span.pointer {
 	width:            15px;
 	top:              0;
 	bottom:           0;
-	background-color: $text-color;
+	background-color: $brand-primary;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;

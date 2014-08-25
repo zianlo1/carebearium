@@ -5,7 +5,7 @@ class SolarSystemsController < ApplicationController
     solar_systems = SolarSystem.all
 
     params.fetch(:filter, {}).each do |kind, options|
-      if SolarSystemFinders::ClassMethods.public_instance_methods.map(&:to_s).include?(kind)
+      if SolarSystemFinders.public_instance_methods.map(&:to_s).include?(kind)
         solar_systems = solar_systems.send kind, JSON.parse(options, symbolize_names: true)
       end
     end
