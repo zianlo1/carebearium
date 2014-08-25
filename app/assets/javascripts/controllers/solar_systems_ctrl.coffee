@@ -1,23 +1,13 @@
-CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams) ->
+CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams, constraints) ->
   $scope.solarSystems = []
+
+  $scope.constraints = constraints.plain()
 
   $scope.securityTranslate = (val) -> parseFloat(val) / 100
 
   $scope.loading = true
 
-  $scope.filter =
-    security:
-      min: 40
-      max: 100
-    belts:
-      min: 0
-      max: 50
-    stations:
-      min: 0
-      max: 22
-    agents:
-      min: 0
-      max: 38
+  $scope.filter = angular.copy $scope.constraints
 
   $scope.tableParams = new ngTableParams {
     count: 25

@@ -3,19 +3,19 @@
     .col-sm-2
       %label Security
     .col-sm-4
-      %slider{ floor: '40', ceiling: '100', ng-model: 'filter.security.min', ng-model-range:'filter.security.max', translate-fn: 'securityTranslate' }
+      %slider{ floor: '{{constraints.security.min}}', ceiling: '{{constraints.security.max}}', ng-model: 'filter.security.min', ng-model-range:'filter.security.max', translate-fn: 'securityTranslate' }
     .col-sm-2
       %label Asteroid belts
     .col-sm-4
-      %slider{ floor: '0', ceiling: '50', ng-model: 'filter.belts.min', ng-model-range:'filter.belts.max' }
+      %slider{ floor: '{{constraints.belts.min}}', ceiling: '{{constraints.belts.max}}', ng-model: 'filter.belts.min', ng-model-range:'filter.belts.max' }
     .col-sm-2
       %label Stations
     .col-sm-4
-      %slider{ floor: '0', ceiling: '22', ng-model: 'filter.stations.min', ng-model-range:'filter.stations.max' }
+      %slider{ floor: '{{constraints.stations.min}}', ceiling: '{{constraints.stations.max}}', ng-model: 'filter.stations.min', ng-model-range:'filter.stations.max' }
     .col-sm-2
       %label Agents
     .col-sm-4
-      %slider{ floor: '0', ceiling: '38', ng-model: 'filter.agents.min', ng-model-range:'filter.agents.max' }
+      %slider{ floor: '{{constraints.agents.min}}', ceiling: '{{constraints.agents.max}}', ng-model: 'filter.agents.min', ng-model-range:'filter.agents.max' }
 
 %table#solar-systems.table.table-condensed.table-hover{ 'ng-table': 'tableParams', ng-class: "{ 'text-muted': loading}" }
   %tbody
