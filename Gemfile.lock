@@ -56,6 +56,9 @@ GEM
     erubis (2.7.0)
     execjs (2.2.1)
     hike (1.2.3)
+    httparty (0.13.1)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.11)
     json (1.8.1)
     kaminari (0.16.1)
@@ -67,6 +70,7 @@ GEM
     mime-types (1.25.1)
     minitest (5.4.0)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     mysql2 (0.3.16)
     oj (2.10.2)
     pg (0.17.1)
@@ -141,6 +145,7 @@ DEPENDENCIES
   bootstrap-sass
   coffee-rails
   haml_coffee_assets!
+  httparty
   kaminari
   mysql2
   oj

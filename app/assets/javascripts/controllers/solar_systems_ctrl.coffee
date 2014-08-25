@@ -4,6 +4,7 @@ CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams
   $scope.constraints = constraints.plain()
 
   $scope.securityTranslate = (val) -> parseFloat(val) / 100
+  $scope.industryIndexTranslate = (val) -> parseFloat(val) / 1000
 
   $scope.loading = true
 

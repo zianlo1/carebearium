@@ -16,6 +16,30 @@
       %label Agents
     .col-sm-4
       %slider{ floor: '{{constraints.agents.min}}', ceiling: '{{constraints.agents.max}}', ng-model: 'filter.agents.min', ng-model-range:'filter.agents.max' }
+    .col-sm-2
+      %label Manufacturing index
+    .col-sm-4
+      %slider{ floor: '{{constraints.manufacturing_index.min}}', ceiling: '{{constraints.manufacturing_index.max}}', ng-model: 'filter.manufacturing_index.min', ng-model-range:'filter.manufacturing_index.max', translate-fn: 'industryIndexTranslate' }
+    .col-sm-2
+      %label ME research index
+    .col-sm-4
+      %slider{ floor: '{{constraints.research_me_index.min}}', ceiling: '{{constraints.research_me_index.max}}', ng-model: 'filter.research_me_index.min', ng-model-range:'filter.research_me_index.max', translate-fn: 'industryIndexTranslate' }
+    .col-sm-2
+      %label TE research index
+    .col-sm-4
+      %slider{ floor: '{{constraints.research_te_index.min}}', ceiling: '{{constraints.research_te_index.max}}', ng-model: 'filter.research_te_index.min', ng-model-range:'filter.research_te_index.max', translate-fn: 'industryIndexTranslate' }
+    .col-sm-2
+      %label Copying index
+    .col-sm-4
+      %slider{ floor: '{{constraints.copying_index.min}}', ceiling: '{{constraints.copying_index.max}}', ng-model: 'filter.copying_index.min', ng-model-range:'filter.copying_index.max', translate-fn: 'industryIndexTranslate' }
+    .col-sm-2
+      %label Reverse engineering index
+    .col-sm-4
+      %slider{ floor: '{{constraints.reverse_engineering_index.min}}', ceiling: '{{constraints.reverse_engineering_index.max}}', ng-model: 'filter.manufacturing_index.min', ng-model-range:'filter.reverse_engineering_index.max', translate-fn: 'industryIndexTranslate' }
+    .col-sm-2
+      %label Invention index
+    .col-sm-4
+      %slider{ floor: '{{constraints.invention_index.min}}', ceiling: '{{constraints.invention_index.max}}', ng-model: 'filter.invention_index.min', ng-model-range:'filter.invention_index.max', translate-fn: 'industryIndexTranslate' }
 
 %table#solar-systems.table.table-condensed.table-hover{ 'ng-table': 'tableParams', ng-class: "{ 'text-muted': loading}" }
   %tbody
@@ -32,3 +56,15 @@
         {{ solarSystem.stations_count }}
       %td{ data-title: "'Agents'", sortable: "'agents_count'" }
         {{ solarSystem.agents_count }}
+      %td{ data-title: "'Manufacturing index'", sortable: "'manufacturing_index'" }
+        {{ solarSystem.manufacturing_index | number : 4 }}
+      %td{ data-title: "'ME research index'", sortable: "'research_me_index'" }
+        {{ solarSystem.research_me_index | number : 4 }}
+      %td{ data-title: "'TE research index'", sortable: "'research_te_index'" }
+        {{ solarSystem.research_te_index | number : 4 }}
+      %td{ data-title: "'Copying index'", sortable: "'copying_index'" }
+        {{ solarSystem.copying_index | number : 4 }}
+      %td{ data-title: "'Reverse engineering index'", sortable: "'reverse_engineering_index'" }
+        {{ solarSystem.reverse_engineering_index | number : 4 }}
+      %td{ data-title: "'Invention index'", sortable: "'invention_index'" }
+        {{ solarSystem.invention_index | number : 4 }}
