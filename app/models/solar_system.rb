@@ -4,7 +4,7 @@ class SolarSystem < ActiveRecord::Base
   has_many :agents, inverse_of: :solar_system
   has_many :stations, inverse_of: :solar_system
 
-  def self.update_crest_indices
+  def self.update_industry_indices
     SolarSystem.transaction do
       CREST.industry_indices.each do |row|
         begin

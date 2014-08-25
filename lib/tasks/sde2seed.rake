@@ -17,7 +17,7 @@ if Rails.env.development?
         join crpNPCDivisions d on d.divisionID = a.divisionID
         join staStations st on a.locationID = st.stationID
         join mapSolarSystems s on s.solarSystemID = st.solarSystemID
-        where s.security > 0.4
+        where round(s.security,1) >= 0.5
         order by a.agentID
       SQL
     end
@@ -27,7 +27,7 @@ if Rails.env.development?
         select st.stationID, st.solarSystemID, st.stationName
         from staStations st
         join mapSolarSystems s on s.solarSystemID = st.solarSystemID
-        where s.security > 0.4
+        where round(s.security,1) >= 0.5
         order by stationID
       SQL
     end
@@ -38,7 +38,7 @@ if Rails.env.development?
         from mapSolarSystems s
         join mapRegions r on s.regionID = r.regionID
         left join (select solarSystemID, count(*) as beltCount from mapDenormalize where typeID = 15 group by solarSystemID) belts on s.solarSystemID = belts.solarSystemID
-        where s.security > 0.4
+        where round(s.security,1) >= 0.5
         order by s.solarSystemID
       SQL
     end
@@ -51,7 +51,8 @@ if Rails.env.development?
         join mapDenormalize dst on dst.itemId = j.destinationId
         join mapSolarSystems srcSys on srcSys.solarSystemId = src.solarSystemId
         join mapSolarSystems dstSys on dstSys.solarSystemId = dst.solarSystemId
-        where srcSys.security > 0.4 and dstSys.security > 0.4
+        where round(srcSys.security,1) >= 0.5 and round(dstSys.security,1) >= 0.5
+        order by src.solarSystemId, dst.solarSystemId
       SQL
     end
 
@@ -60,6 +61,12 @@ if Rails.env.development?
         select c.corporationID as id, n.itemName as name
         from crpNPCCorporations c
         join invNames n on n.itemID = c.corporationID
+        where exists (select 1 from agtAgents a
+                      join staStations st on a.locationID = st.stationID
+                      join mapSolarSystems s on s.solarSystemID = st.solarSystemID
+                      where a.corporationID = c.corporationID
+                      and round(s.security,1) >= 0.5)
+        order by c.corporationID
       SQL
     end
   end
