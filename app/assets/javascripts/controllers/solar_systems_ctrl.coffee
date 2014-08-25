@@ -18,8 +18,20 @@ CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams
 
   $scope.loading = true
 
-  $scope.filter = angular.copy $scope.constraints
-  $scope.filter.region = {}
+  $scope.resetFilters = ->
+    $scope.filter = angular.copy $scope.constraints
+    $scope.filter.region = {}
+    $scope.filter.specific_agents = {}
+    delete $scope.filter.agent_kind
+    delete $scope.filter.agent_level
+    delete $scope.filter.agent_corporation
+
+  $scope.resetFilters()
+
+  $scope.addAgentFilter = ->
+    $scope.filter.specific_agents[Date.now()] = { kind: null, level: null, corporation: null }
+  $scope.removeAgentFilter = (id) ->
+    delete $scope.filter.specific_agents[id]
 
   $scope.columns = [
     { key: 'name',                      name: 'Name',                 visible: true }

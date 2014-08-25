@@ -46,6 +46,21 @@ module SolarSystemFinders
       end
     end
 
+    def specific_agents(options)
+      base = all
+
+      options.each do |id, params|
+        agent_lookup = Agent.where(solar_system_id: SolarSystem.arel_table[:id])
+        agent_lookup = agent_lookup.where(level: params[:level]) if params[:level]
+        agent_lookup = agent_lookup.where(kind: params[:kind]) if params[:kind]
+        agent_lookup = agent_lookup.joins(:corporation).where(corporations: { name: params[:corporation]}) if params[:corporation]
+
+        base = base.where agent_lookup.exists
+      end
+
+      base
+    end
+
     INDUSTRIAL_INDEX_COLUMNS.each do |industry_index|
       define_method industry_index do |options|
         if options[:min] && options[:max]
