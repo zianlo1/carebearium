@@ -3,6 +3,8 @@ source 'https://rails-assets.org'
 
 gem 'rails', '4.1.5'
 gem 'pg'
+gem 'active_model_serializers'
+gem 'oj'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'

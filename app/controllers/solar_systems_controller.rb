@@ -18,6 +18,6 @@ class SolarSystemsController < ApplicationController
 
     solar_systems = solar_systems.page(params[:page]).per(params[:count])
 
-    respond_with solar_systems
+    render json: solar_systems
   end
 end

@@ -17,7 +17,7 @@
     .col-sm-4
       %slider{ floor: '0', ceiling: '38', ng-model: 'filter.agents.min', ng-model-range:'filter.agents.max' }
 
-%table#solar-systems.table.table-condensed.table-hover{ 'ng-table': 'tableParams' }
+%table#solar-systems.table.table-condensed.table-hover{ 'ng-table': 'tableParams', ng-class: "{ 'text-muted': loading}" }
   %tbody
     %tr{ ng-repeat: "solarSystem in $data" }
       %td{ data-title: "'Name'", sortable: "'name'" }

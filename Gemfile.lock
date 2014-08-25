@@ -24,6 +24,8 @@ GEM
       activesupport (= 4.1.5)
       builder (~> 3.1)
       erubis (~> 2.7.0)
+    active_model_serializers (0.9.0)
+      activemodel (>= 3.2)
     activemodel (4.1.5)
       activesupport (= 4.1.5)
       builder (~> 3.1)
@@ -66,6 +68,7 @@ GEM
     minitest (5.4.0)
     multi_json (1.10.1)
     mysql2 (0.3.16)
+    oj (2.10.2)
     pg (0.17.1)
     polyglot (0.3.5)
     quiet_assets (1.0.3)
@@ -133,12 +136,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   annotate
   bootstrap-sass
   coffee-rails
   haml_coffee_assets!
   kaminari
   mysql2
+  oj
   pg
   quiet_assets
   rails (= 4.1.5)
