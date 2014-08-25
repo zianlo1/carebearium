@@ -8,6 +8,14 @@
       %label Asteroid belts
     .col-sm-4
       %slider{ floor: '0', ceiling: '50', ng-model: 'filter.belts.min', ng-model-range:'filter.belts.max' }
+    .col-sm-2
+      %label Stations
+    .col-sm-4
+      %slider{ floor: '0', ceiling: '22', ng-model: 'filter.stations.min', ng-model-range:'filter.stations.max' }
+    .col-sm-2
+      %label Agents
+    .col-sm-4
+      %slider{ floor: '0', ceiling: '38', ng-model: 'filter.agents.min', ng-model-range:'filter.agents.max' }
 
 %table#solar-systems.table.table-condensed.table-hover{ 'ng-table': 'tableParams' }
   %tbody
@@ -20,3 +28,7 @@
         {{ solarSystem.security | number : 2 }}
       %td{ data-title: "'Asteroid belts'", sortable: "'belt_count'" }
         {{ solarSystem.belt_count }}
+      %td{ data-title: "'Stations'", sortable: "'stations_count'" }
+        {{ solarSystem.stations_count }}
+      %td{ data-title: "'Agents'", sortable: "'agents_count'" }
+        {{ solarSystem.agents_count }}

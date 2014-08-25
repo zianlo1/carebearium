@@ -10,6 +10,12 @@ CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams
     belts:
       min: 0
       max: 50
+    stations:
+      min: 0
+      max: 22
+    agents:
+      min: 0
+      max: 38
 
   $scope.tableParams = new ngTableParams {
     count: 100

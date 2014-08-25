@@ -5,7 +5,7 @@ class SolarSystemsController < ApplicationController
     solar_systems = SolarSystem.all
 
     params.fetch(:filter, {}).each do |kind, options|
-      if %w(security belts).include?(kind)
+      if %w(security belts stations agents).include?(kind)
         solar_systems = solar_systems.send kind, JSON.parse(options, symbolize_names: true)
       end
     end

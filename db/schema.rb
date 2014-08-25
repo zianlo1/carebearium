@@ -26,7 +26,8 @@ ActiveRecord::Schema.define(version: 20140824150302) do
   end
 
   create_table "corporations", force: true do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "agents_count", default: 0
   end
 
   create_table "solar_systems", force: true do |t|
@@ -34,6 +35,8 @@ ActiveRecord::Schema.define(version: 20140824150302) do
     t.string   "region_name"
     t.float    "security"
     t.integer  "belt_count"
+    t.integer  "agents_count",   default: 0
+    t.integer  "stations_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,6 +44,7 @@ ActiveRecord::Schema.define(version: 20140824150302) do
   create_table "stations", force: true do |t|
     t.string  "name"
     t.integer "solar_system_id"
+    t.integer "agents_count",    default: 0
   end
 
 end

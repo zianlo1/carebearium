@@ -1,7 +1,7 @@
 class Agent < ActiveRecord::Base
-  belongs_to :corporation
-  belongs_to :station
-  belongs_to :solar_system
+  belongs_to :corporation,  counter_cache: true
+  belongs_to :station,      counter_cache: true
+  belongs_to :solar_system, counter_cache: true
 end
 
 # == Schema Information

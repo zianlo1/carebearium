@@ -6,6 +6,7 @@ end
 #
 # Table name: corporations
 #
-#  id   :integer          not null, primary key
-#  name :string(255)
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  agents_count :integer          default(0)
 #

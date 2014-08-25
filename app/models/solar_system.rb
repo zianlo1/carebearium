@@ -19,17 +19,35 @@ class SolarSystem < ActiveRecord::Base
       self
     end
   end
+
+  def self.stations(options)
+    if options[:min] && options[:max]
+      where stations_count: options[:min]..options[:max]
+    else
+      self
+    end
+  end
+
+  def self.agents(options)
+    if options[:min] && options[:max]
+      where agents_count: options[:min]..options[:max]
+    else
+      self
+    end
+  end
 end
 
 # == Schema Information
 #
 # Table name: solar_systems
 #
-#  id          :integer          not null, primary key
-#  name        :string(255)
-#  region_name :string(255)
-#  security    :float
-#  belt_count  :integer
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id             :integer          not null, primary key
+#  name           :string(255)
+#  region_name    :string(255)
+#  security       :float
+#  belt_count     :integer
+#  agents_count   :integer          default(0)
+#  stations_count :integer          default(0)
+#  created_at     :datetime
+#  updated_at     :datetime
 #
