@@ -3,8 +3,8 @@ module SolarSystemFinders
 
   def security(options)
     if options[:min] && options[:max]
-      min = options[:min].to_f / 100
-      max = options[:max].to_f / 100
+      min = options[:min].to_f / 10
+      max = options[:max].to_f / 10
       where security: min..max
     else
       self

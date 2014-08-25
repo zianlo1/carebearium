@@ -1,7 +1,7 @@
 CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams, constraints, $timeout) ->
   $scope.constraints = constraints.plain()
 
-  $scope.securityTranslate = (val) -> parseFloat(val) / 100
+  $scope.securityTranslate = (val) -> parseFloat(val) / 10
   $scope.industryIndexTranslate = (val) -> parseFloat(val) / 1000
 
   $scope.fixSliders = ->

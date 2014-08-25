@@ -34,7 +34,7 @@ if Rails.env.development?
 
     task :solar_systems do
       dump_query 'solar_systems.json', <<-SQL
-        select s.solarSystemID as id, s.solarSystemName as name, r.regionName, round(s.security, 4) as security, IFNULL(belts.beltCount, 0) as beltCount
+        select s.solarSystemID as id, s.solarSystemName as name, r.regionName, round(s.security, 1) as security, IFNULL(belts.beltCount, 0) as beltCount
         from mapSolarSystems s
         join mapRegions r on s.regionID = r.regionID
         left join (select solarSystemID, count(*) as beltCount from mapDenormalize where typeID = 15 group by solarSystemID) belts on s.solarSystemID = belts.solarSystemID
