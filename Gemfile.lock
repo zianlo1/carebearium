@@ -95,6 +95,8 @@ GEM
       rails-assets-angular (= 1.2.23)
     rails-assets-angular-touch (1.2.23)
       rails-assets-angular (= 1.2.23)
+    rails-assets-angular-ui-bootstrap-bower (0.11.0)
+      rails-assets-angular (>= 1)
     rails-assets-lodash (2.4.1)
     rails-assets-restangular (1.4.0)
       rails-assets-angular
@@ -154,6 +156,7 @@ DEPENDENCIES
   rails (= 4.1.5)
   rails-assets-angular
   rails-assets-angular-route
+  rails-assets-angular-ui-bootstrap-bower
   rails-assets-restangular
   rails-assets-venturocket-angular-slider
   sass-rails

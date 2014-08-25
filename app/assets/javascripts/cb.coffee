@@ -3,6 +3,7 @@ window.CB = angular.module 'CB', [
   'ngRoute'
   'ngTable'
   'vr.directives.slider'
+  'ui.bootstrap'
 ]
 
 CB.config ['$routeProvider', ($routeProvider) ->

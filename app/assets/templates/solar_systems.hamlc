@@ -1,52 +1,55 @@
 #filters
-  %h4 Basics
-  .row.well
-    .col-sm-2.text-right
-      %label Security
-    .col-sm-4
-      %slider{ floor: '{{constraints.security.min}}', ceiling: '{{constraints.security.max}}', ng-model: 'filter.security.min', ng-model-range:'filter.security.max', translate-fn: 'securityTranslate' }
-  %h4 Orbitals
-  .row.well
-    .col-sm-2.text-right
-      %label Asteroid belts
-    .col-sm-4
-      %slider{ floor: '{{constraints.belts.min}}', ceiling: '{{constraints.belts.max}}', ng-model: 'filter.belts.min', ng-model-range:'filter.belts.max' }
-    .col-sm-2.text-right
-      %label Stations
-    .col-sm-4
-      %slider{ floor: '{{constraints.stations.min}}', ceiling: '{{constraints.stations.max}}', ng-model: 'filter.stations.min', ng-model-range:'filter.stations.max' }
-  %h4 Agents
-  .row.well
-    .col-sm-2.text-right
-      %label Total agents
-    .col-sm-4
-      %slider{ floor: '{{constraints.agents.min}}', ceiling: '{{constraints.agents.max}}', ng-model: 'filter.agents.min', ng-model-range:'filter.agents.max' }
-  %h4 Industry indices
-  .row.well
-    .col-sm-2.text-right
-      %label Manufacturing
-    .col-sm-4
-      %slider{ floor: '{{constraints.manufacturing_index.min}}', ceiling: '{{constraints.manufacturing_index.max}}', ng-model: 'filter.manufacturing_index.min', ng-model-range:'filter.manufacturing_index.max', translate-fn: 'industryIndexTranslate' }
-    .col-sm-2.text-right
-      %label ME research
-    .col-sm-4
-      %slider{ floor: '{{constraints.research_me_index.min}}', ceiling: '{{constraints.research_me_index.max}}', ng-model: 'filter.research_me_index.min', ng-model-range:'filter.research_me_index.max', translate-fn: 'industryIndexTranslate' }
-    .col-sm-2.text-right
-      %label TE research
-    .col-sm-4
-      %slider{ floor: '{{constraints.research_te_index.min}}', ceiling: '{{constraints.research_te_index.max}}', ng-model: 'filter.research_te_index.min', ng-model-range:'filter.research_te_index.max', translate-fn: 'industryIndexTranslate' }
-    .col-sm-2.text-right
-      %label Copying
-    .col-sm-4
-      %slider{ floor: '{{constraints.copying_index.min}}', ceiling: '{{constraints.copying_index.max}}', ng-model: 'filter.copying_index.min', ng-model-range:'filter.copying_index.max', translate-fn: 'industryIndexTranslate' }
-    .col-sm-2.text-right
-      %label Reverse engineering
-    .col-sm-4
-      %slider{ floor: '{{constraints.reverse_engineering_index.min}}', ceiling: '{{constraints.reverse_engineering_index.max}}', ng-model: 'filter.reverse_engineering_index.min', ng-model-range:'filter.reverse_engineering_index.max', translate-fn: 'industryIndexTranslate' }
-    .col-sm-2.text-right
-      %label Invention
-    .col-sm-4
-      %slider{ floor: '{{constraints.invention_index.min}}', ceiling: '{{constraints.invention_index.max}}', ng-model: 'filter.invention_index.min', ng-model-range:'filter.invention_index.max', translate-fn: 'industryIndexTranslate' }
+  %tabset
+    %tab{ heading: 'Basics', select: 'fixSliders()' }
+      .row
+        .col-sm-2.text-right
+          %label Security
+        .col-sm-4
+          %slider{ floor: '{{constraints.security.min}}', ceiling: '{{constraints.security.max}}', ng-model: 'filter.security.min', ng-model-range:'filter.security.max', translate-fn: 'securityTranslate' }
+
+    %tab{ heading: 'Celestials', select: 'fixSliders()' }
+      .row
+        .col-sm-2.text-right
+          %label Asteroid belts
+        .col-sm-4
+          %slider{ floor: '{{constraints.belts.min}}', ceiling: '{{constraints.belts.max}}', ng-model: 'filter.belts.min', ng-model-range:'filter.belts.max' }
+        .col-sm-2.text-right
+          %label Stations
+        .col-sm-4
+          %slider{ floor: '{{constraints.stations.min}}', ceiling: '{{constraints.stations.max}}', ng-model: 'filter.stations.min', ng-model-range:'filter.stations.max' }
+
+    %tab{ heading: 'Agents', select: 'fixSliders()' }
+      .row
+        .col-sm-2.text-right
+          %label Total agents
+        .col-sm-4
+          %slider{ floor: '{{constraints.agents.min}}', ceiling: '{{constraints.agents.max}}', ng-model: 'filter.agents.min', ng-model-range:'filter.agents.max' }
+    %tab{ heading: 'Industry indices', select: 'fixSliders()' }
+      .row
+        .col-sm-2.text-right
+          %label Manufacturing
+        .col-sm-4
+          %slider{ floor: '{{constraints.manufacturing_index.min}}', ceiling: '{{constraints.manufacturing_index.max}}', ng-model: 'filter.manufacturing_index.min', ng-model-range:'filter.manufacturing_index.max', translate-fn: 'industryIndexTranslate' }
+        .col-sm-2.text-right
+          %label ME research
+        .col-sm-4
+          %slider{ floor: '{{constraints.research_me_index.min}}', ceiling: '{{constraints.research_me_index.max}}', ng-model: 'filter.research_me_index.min', ng-model-range:'filter.research_me_index.max', translate-fn: 'industryIndexTranslate' }
+        .col-sm-2.text-right
+          %label TE research
+        .col-sm-4
+          %slider{ floor: '{{constraints.research_te_index.min}}', ceiling: '{{constraints.research_te_index.max}}', ng-model: 'filter.research_te_index.min', ng-model-range:'filter.research_te_index.max', translate-fn: 'industryIndexTranslate' }
+        .col-sm-2.text-right
+          %label Copying
+        .col-sm-4
+          %slider{ floor: '{{constraints.copying_index.min}}', ceiling: '{{constraints.copying_index.max}}', ng-model: 'filter.copying_index.min', ng-model-range:'filter.copying_index.max', translate-fn: 'industryIndexTranslate' }
+        .col-sm-2.text-right
+          %label Reverse engineering
+        .col-sm-4
+          %slider{ floor: '{{constraints.reverse_engineering_index.min}}', ceiling: '{{constraints.reverse_engineering_index.max}}', ng-model: 'filter.reverse_engineering_index.min', ng-model-range:'filter.reverse_engineering_index.max', translate-fn: 'industryIndexTranslate' }
+        .col-sm-2.text-right
+          %label Invention
+        .col-sm-4
+          %slider{ floor: '{{constraints.invention_index.min}}', ceiling: '{{constraints.invention_index.max}}', ng-model: 'filter.invention_index.min', ng-model-range:'filter.invention_index.max', translate-fn: 'industryIndexTranslate' }
 
 %table#solar-systems.table.table-condensed.table-hover{ 'ng-table': 'tableParams', ng-class: "{ 'text-muted': loading}" }
   %tbody

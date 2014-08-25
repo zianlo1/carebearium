@@ -1,7 +1,7 @@
 slider {
 	display:     block;
 	position:    relative;
-	height:      30px;
+	height:      25px;
 	width:       100%;
 }
 
@@ -18,13 +18,13 @@ slider span.bar.selection, slider span.bar.unselected {
 }
 
 slider span.bar.selection {
-	background: #0a0;
+	background: mix($table-bg-hover, $text-color);
 	opacity:    0.5;
 }
 
 slider span.bar.unselected {
 	width:      auto;
-	background: #a00;
+	background: $table-bg-hover;
 	opacity:    0.5;
 }
 
@@ -33,7 +33,10 @@ slider span.pointer {
 	width:            15px;
 	top:              0;
 	bottom:           0;
-	background-color: #00a;
+	background-color: $text-color;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
 }
 
 slider span.pointer:hover {

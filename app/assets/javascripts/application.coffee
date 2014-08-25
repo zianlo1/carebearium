@@ -6,6 +6,7 @@
 #= require ng-table
 #= require angular-touch
 #= require venturocket-angular-slider
+#= require angular-ui-bootstrap-bower
 #= require_tree ../templates
 #= require cb
 #= require_tree .

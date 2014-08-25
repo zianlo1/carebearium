@@ -16,6 +16,7 @@ gem 'rails-assets-angular'
 gem 'rails-assets-restangular'
 gem 'rails-assets-angular-route'
 gem 'rails-assets-venturocket-angular-slider'
+gem 'rails-assets-angular-ui-bootstrap-bower'
 
 group :development do
   gem 'spring'
