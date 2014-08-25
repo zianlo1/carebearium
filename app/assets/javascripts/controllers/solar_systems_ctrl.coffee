@@ -19,6 +19,22 @@ CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams
   $scope.loading = true
 
   $scope.filter = angular.copy $scope.constraints
+  $scope.filter.region = {}
+
+  $scope.columns = [
+    { key: 'name',                      name: 'Name',                 visible: true }
+    { key: 'region_name',               name: 'Region name',          visible: true }
+    { key: 'security',                  name: 'Security',             visible: true }
+    { key: 'belt_count',                name: 'Asteroid belts',       visible: true }
+    { key: 'stations_count',            name: 'Stations',             visible: false }
+    { key: 'agents_count',              name: 'Agents',               visible: false }
+    { key: 'manufacturing_index',       name: 'Manufacturing',        visible: true }
+    { key: 'research_me_index',         name: 'ME research',          visible: false }
+    { key: 'research_te_index',         name: 'TE research',          visible: false }
+    { key: 'copying_index',             name: 'Copying',              visible: false }
+    { key: 'reverse_engineering_index', name: 'Reverse engineering',  visible: false }
+    { key: 'invention_index',           name: 'Invention',            visible: false }
+  ]
 
   urlWas = null
 

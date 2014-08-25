@@ -14,7 +14,8 @@ class LandingController < ApplicationController
       research_me_index:          { min: (SolarSystem.minimum(:research_me_index) * 1000).to_i, max: (SolarSystem.maximum(:research_me_index) * 1000).to_i },
       copying_index:              { min: (SolarSystem.minimum(:copying_index) * 1000).to_i, max: (SolarSystem.maximum(:copying_index) * 1000).to_i },
       reverse_engineering_index:  { min: (SolarSystem.minimum(:reverse_engineering_index) * 1000).to_i, max: (SolarSystem.maximum(:reverse_engineering_index) * 1000).to_i },
-      invention_index:            { min: (SolarSystem.minimum(:invention_index) * 1000).to_i, max: (SolarSystem.maximum(:invention_index) * 1000).to_i }
+      invention_index:            { min: (SolarSystem.minimum(:invention_index) * 1000).to_i, max: (SolarSystem.maximum(:invention_index) * 1000).to_i },
+      region:                     SolarSystem.order(:region_name).uniq.pluck(:region_name)
     }
   end
 end

@@ -1,4 +1,6 @@
 module SolarSystemFinders
+  INDUSTRIAL_INDEX_COLUMNS = %w(manufacturing_index research_te_index research_me_index copying_index reverse_engineering_index invention_index)
+
   extend ActiveSupport::Concern
 
   module ClassMethods
@@ -36,7 +38,15 @@ module SolarSystemFinders
       end
     end
 
-    %w(manufacturing_index research_te_index research_me_index copying_index reverse_engineering_index invention_index).each do |industry_index|
+    def region(options)
+      if options[:name]
+        where region_name: options[:name]
+      else
+        self
+      end
+    end
+
+    INDUSTRIAL_INDEX_COLUMNS.each do |industry_index|
       define_method industry_index do |options|
         if options[:min] && options[:max]
           min = options[:min].to_f / 1000

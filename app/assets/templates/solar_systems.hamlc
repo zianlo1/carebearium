@@ -1,11 +1,23 @@
 #filters
   %tabset
-    %tab{ heading: 'Basics', select: 'fixSliders()' }
+    %tab{ heading: 'Visible data' }
+      .row
+        .col-md-2.col-sm-4.col-xs-6{ ng-repeat: 'column in columns'}
+          %input{ type: 'checkbox', ng-model: 'column.visible', id: '{{column.key}}' }
+            %label{ for: '{{column.key}}' }
+              {{ column.name }}
+
+    %tab{ heading: 'Location', select: 'fixSliders()' }
       .row
         .col-sm-2.text-right
           %label Security
         .col-sm-4
           %slider{ floor: '{{constraints.security.min}}', ceiling: '{{constraints.security.max}}', ng-model: 'filter.security.min', ng-model-range:'filter.security.max', translate-fn: 'securityTranslate' }
+        .col-sm-2.text-right
+          %label Region
+        .col-sm-4
+          %select.form-control{ ng-model: 'filter.region.name', ng-options: 'region for region in constraints.region' }
+            %option{value: ''}
 
     %tab{ heading: 'Celestials', select: 'fixSliders()' }
       .row
@@ -51,30 +63,16 @@
         .col-sm-4
           %slider{ floor: '{{constraints.invention_index.min}}', ceiling: '{{constraints.invention_index.max}}', ng-model: 'filter.invention_index.min', ng-model-range:'filter.invention_index.max', translate-fn: 'industryIndexTranslate' }
 
+%hr
+
 %table#solar-systems.table.table-condensed.table-hover{ 'ng-table': 'tableParams', ng-class: "{ 'text-muted': loading}" }
+  %thead
+    %tr
+      %th.sortable{ ng-repeat: "column in columns", ng-show: "column.visible",
+        ng-class: "{ 'sort-asc': tableParams.isSortBy(column.key, 'asc'), 'sort-desc': tableParams.isSortBy(column.key, 'desc') }",
+        ng-click: "tableParams.sorting(column.key, tableParams.isSortBy(column.key, 'asc') ? 'desc' : 'asc')" }
+        {{ column.name }}
   %tbody
     %tr{ ng-repeat: "solarSystem in $data" }
-      %td{ data-title: "'Name'", sortable: "'name'" }
-        {{ solarSystem.name }}
-      %td{ data-title: "'Region name'", sortable: "'region_name'" }
-        {{ solarSystem.region_name }}
-      %td{ data-title: "'Security'", sortable: "'security'" }
-        {{ solarSystem.security | number : 2 }}
-      %td{ data-title: "'Asteroid belts'", sortable: "'belt_count'" }
-        {{ solarSystem.belt_count }}
-      %td{ data-title: "'Stations'", sortable: "'stations_count'" }
-        {{ solarSystem.stations_count }}
-      %td{ data-title: "'Agents'", sortable: "'agents_count'" }
-        {{ solarSystem.agents_count }}
-      %td{ data-title: "'Manufacturing index'", sortable: "'manufacturing_index'" }
-        {{ solarSystem.manufacturing_index | number : 4 }}
-      %td{ data-title: "'ME research index'", sortable: "'research_me_index'" }
-        {{ solarSystem.research_me_index | number : 4 }}
-      %td{ data-title: "'TE research index'", sortable: "'research_te_index'" }
-        {{ solarSystem.research_te_index | number : 4 }}
-      %td{ data-title: "'Copying index'", sortable: "'copying_index'" }
-        {{ solarSystem.copying_index | number : 4 }}
-      %td{ data-title: "'Reverse engineering index'", sortable: "'reverse_engineering_index'" }
-        {{ solarSystem.reverse_engineering_index | number : 4 }}
-      %td{ data-title: "'Invention index'", sortable: "'invention_index'" }
-        {{ solarSystem.invention_index | number : 4 }}
+      %td{ ng-repeat: "column in columns", sortable: "column.key", ng-show: "column.visible" }
+        {{ solarSystem[column.key] }}
