@@ -42,7 +42,7 @@
     .col-sm-2.text-right
       %label Reverse engineering
     .col-sm-4
-      %slider{ floor: '{{constraints.reverse_engineering_index.min}}', ceiling: '{{constraints.reverse_engineering_index.max}}', ng-model: 'filter.manufacturing_index.min', ng-model-range:'filter.reverse_engineering_index.max', translate-fn: 'industryIndexTranslate' }
+      %slider{ floor: '{{constraints.reverse_engineering_index.min}}', ceiling: '{{constraints.reverse_engineering_index.max}}', ng-model: 'filter.reverse_engineering_index.min', ng-model-range:'filter.reverse_engineering_index.max', translate-fn: 'industryIndexTranslate' }
     .col-sm-2.text-right
       %label Invention
     .col-sm-4
