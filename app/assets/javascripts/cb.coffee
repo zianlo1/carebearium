@@ -5,9 +5,11 @@ window.CB = angular.module 'CB', [
   'vr.directives.slider'
   'ui.bootstrap'
   'ngCookies'
+  'angulartics'
+  'angulartics.google.analytics'
 ]
 
-CB.config(['$routeProvider', ($routeProvider) ->
+CB.config ($routeProvider) ->
   $routeProvider.
     when('/solar_systems/',
       template: JST['solar_systems']
@@ -22,9 +24,12 @@ CB.config(['$routeProvider', ($routeProvider) ->
     otherwise({
       redirectTo: '/solar_systems'
     })
-]).run ($rootScope, $location, $cookieStore, $window) ->
+
+CB.config ($analyticsProvider) ->
+  $analyticsProvider.firstPageview(true)
+  $analyticsProvider.withAutoBase(true)
+
+CB.run ($rootScope, $location, $cookieStore, $window) ->
   $rootScope.$on "$routeChangeStart", (event, next, current) ->
     unless $cookieStore.get('seenAbout') or next.$$route.controller is 'AboutCtrl'
       $location.path "/about/"
-  $rootScope.$on '$routeChangeSuccess', ->
-    $window._gaq.push ['_trackPageview', $location.path()]

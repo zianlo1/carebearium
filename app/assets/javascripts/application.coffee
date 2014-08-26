@@ -8,6 +8,7 @@
 #= require venturocket-angular-slider
 #= require angular-ui-bootstrap-bower
 #= require angular-cookies
+#= require angulartics
 #= require_tree ../templates
 #= require cb
 #= require_tree .

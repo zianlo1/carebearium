@@ -20,6 +20,7 @@ gem 'rails-assets-angular-route'
 gem 'rails-assets-venturocket-angular-slider'
 gem 'rails-assets-angular-ui-bootstrap-bower'
 gem 'rails-assets-angular-cookies'
+gem 'rails-assets-angulartics'
 
 group :development do
   gem 'spring'
