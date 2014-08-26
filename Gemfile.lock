@@ -53,6 +53,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.1)
+    dalli (2.7.2)
     erubis (2.7.0)
     execjs (2.2.1)
     hike (1.2.3)
@@ -67,6 +68,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memcachier (0.0.2)
     mime-types (1.25.1)
     minitest (5.4.0)
     multi_json (1.10.1)
@@ -148,9 +150,11 @@ DEPENDENCIES
   annotate
   bootstrap-sass
   coffee-rails
+  dalli
   haml_coffee_assets!
   httparty
   kaminari
+  memcachier
   mysql2
   oj
   pg

@@ -23,5 +23,7 @@ module Carebearium
       g.assets              false
       g.helper              false
     end
+
+    config.cache_store = :dalli_store
   end
 end
