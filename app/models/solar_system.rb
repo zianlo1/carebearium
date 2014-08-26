@@ -49,6 +49,7 @@ end
 #  copying_index             :float            default(0.0)
 #  reverse_engineering_index :float            default(0.0)
 #  invention_index           :float            default(0.0)
+#  jumps                     :integer          default([]), is an Array
 #  created_at                :datetime
 #  updated_at                :datetime
 #

@@ -3,13 +3,19 @@ def read_file(filename)
 end
 
 SolarSystem.transaction do
+  p 'Generating jump map'
+  jump_map = read_file('jumps.json').each_with_object(Hash.new { |hash, key| hash[key] = Set.new }) do |jump, map|
+    map[jump[:from]] << jump[:to]
+  end
+
   p 'Loading solar systems'
   read_file('solar_systems.json').each do |row|
     SolarSystem.where(id: row[:id]).first_or_initialize.update_attributes(
       name:         row[:name],
       region_name:  row[:regionName],
       security:     row[:security],
-      belt_count:   row[:beltCount]
+      belt_count:   row[:beltCount],
+      jumps:        jump_map[row[:id]].to_a
     )
   end
 end

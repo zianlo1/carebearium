@@ -13,6 +13,7 @@ class CreateSolarSystems < ActiveRecord::Migration
       t.float   :copying_index,             default: 0
       t.float   :reverse_engineering_index, default: 0
       t.float   :invention_index,           default: 0
+      t.integer :jumps,                     default: [], array: true
       t.timestamps
     end
   end
