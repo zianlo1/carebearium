@@ -1,13 +1,13 @@
 %form.form-horizontal#filters
   %tabset
-    %tab{ heading: 'Visible data' }
-      .row
-        .col-md-2.col-sm-4.col-xs-6{ ng-repeat: 'column in columns'}
-          %input{ type: 'checkbox', ng-model: 'column.visible', id: '{{column.key}}' }
-            %label{ for: '{{column.key}}' }
-              {{ column.name }}
-
     %tab{ heading: 'Location', select: 'fixSliders()' }
+      .row
+        %label.col-sm-2.control-label Show columns
+        .col-sm-10.row
+          .col-md-3.col-sm-4.col-xs-6{ ng-repeat: 'column in columns | filter : { tab: "Location"} : strict'}
+            %input{ type: 'checkbox', ng-model: 'column.visible', id: '{{column.key}}' }
+              %label{ for: '{{column.key}}' }
+                {{ column.name }}
       .row
         %label.col-sm-2.control-label Security
         .col-sm-4
@@ -19,6 +19,13 @@
 
     %tab{ heading: 'Celestials', select: 'fixSliders()' }
       .row
+        %label.col-sm-2.control-label Show columns
+        .col-sm-10.row
+          .col-md-3.col-sm-4.col-xs-6{ ng-repeat: 'column in columns | filter : { tab: "Celestials"} : strict'}
+            %input{ type: 'checkbox', ng-model: 'column.visible', id: '{{column.key}}' }
+              %label{ for: '{{column.key}}' }
+                {{ column.name }}
+      .row
         %label.col-sm-2.control-label Asteroid belts
         .col-sm-4
           %slider{ floor: '{{constraints.belts.min}}', ceiling: '{{constraints.belts.max}}', ng-model: 'filter.belts.min', ng-model-range:'filter.belts.max' }
@@ -27,6 +34,13 @@
           %slider{ floor: '{{constraints.stations.min}}', ceiling: '{{constraints.stations.max}}', ng-model: 'filter.stations.min', ng-model-range:'filter.stations.max' }
 
     %tab{ heading: 'Agents', select: 'fixSliders()' }
+      .row
+        %label.col-sm-2.control-label Show columns
+        .col-sm-10.row
+          .col-md-3.col-sm-4.col-xs-6{ ng-repeat: 'column in columns | filter : { tab: "Agents"} : strict'}
+            %input{ type: 'checkbox', ng-model: 'column.visible', id: '{{column.key}}' }
+              %label{ for: '{{column.key}}' }
+                {{ column.name }}
       .row
         %label.col-sm-2.control-label Total agents
         .col-sm-4
@@ -51,6 +65,13 @@
           %span.glyphicon.glyphicon-plus
 
     %tab{ heading: 'Industry indices', select: 'fixSliders()' }
+      .row
+        %label.col-sm-2.control-label Show columns
+        .col-sm-10.row
+          .col-md-3.col-sm-4.col-xs-6{ ng-repeat: 'column in columns | filter : { tab: "Industry indices"} : strict'}
+            %input{ type: 'checkbox', ng-model: 'column.visible', id: '{{column.key}}' }
+              %label{ for: '{{column.key}}' }
+                {{ column.name }}
       .row
         %label.col-sm-2.control-label Manufacturing
         .col-sm-4

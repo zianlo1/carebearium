@@ -34,18 +34,18 @@ CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams
     delete $scope.filter.specific_agents[id]
 
   $scope.columns = [
-    { key: 'name',                      name: 'System name',          visible: true }
-    { key: 'region_name',               name: 'Region name',          visible: true }
-    { key: 'security',                  name: 'Security',             visible: true }
-    { key: 'belt_count',                name: 'Asteroid belts',       visible: true }
-    { key: 'stations_count',            name: 'Stations',             visible: false }
-    { key: 'agents_count',              name: 'Agents',               visible: false }
-    { key: 'manufacturing_index',       name: 'Manufacturing',        visible: true }
-    { key: 'research_me_index',         name: 'ME research',          visible: false }
-    { key: 'research_te_index',         name: 'TE research',          visible: false }
-    { key: 'copying_index',             name: 'Copying',              visible: false }
-    { key: 'reverse_engineering_index', name: 'Reverse engineering',  visible: false }
-    { key: 'invention_index',           name: 'Invention',            visible: false }
+    { key: 'name',                      name: 'System name',          visible: true,  tab: 'Location' }
+    { key: 'region_name',               name: 'Region name',          visible: true,  tab: 'Location' }
+    { key: 'security',                  name: 'Security',             visible: true,  tab: 'Location' }
+    { key: 'belt_count',                name: 'Asteroid belts',       visible: true,  tab: 'Celestials' }
+    { key: 'stations_count',            name: 'Stations',             visible: false, tab: 'Celestials' }
+    { key: 'agents_count',              name: 'Total agents',         visible: false, tab: 'Agents' }
+    { key: 'manufacturing_index',       name: 'Manufacturing',        visible: true,  tab: 'Industry indices' }
+    { key: 'research_me_index',         name: 'ME research',          visible: false, tab: 'Industry indices' }
+    { key: 'research_te_index',         name: 'TE research',          visible: false, tab: 'Industry indices' }
+    { key: 'copying_index',             name: 'Copying',              visible: false, tab: 'Industry indices' }
+    { key: 'reverse_engineering_index', name: 'Reverse engineering',  visible: false, tab: 'Industry indices' }
+    { key: 'invention_index',           name: 'Invention',            visible: false, tab: 'Industry indices' }
   ]
 
   urlWas = null
