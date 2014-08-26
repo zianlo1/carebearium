@@ -22,7 +22,9 @@ CB.config(['$routeProvider', ($routeProvider) ->
     otherwise({
       redirectTo: '/solar_systems'
     })
-]).run ($rootScope, $location, $cookieStore) ->
+]).run ($rootScope, $location, $cookieStore, $window) ->
   $rootScope.$on "$routeChangeStart", (event, next, current) ->
     unless $cookieStore.get('seenAbout') or next.$$route.controller is 'AboutCtrl'
       $location.path "/about/"
+  $rootScope.$on '$routeChangeSuccess', ->
+    $window._gaq.push ['_trackPageview', $location.path()]
