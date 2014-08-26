@@ -91,6 +91,8 @@ GEM
       railties (= 4.1.5)
       sprockets-rails (~> 2.0)
     rails-assets-angular (1.2.23)
+    rails-assets-angular-cookies (1.2.23)
+      rails-assets-angular (= 1.2.23)
     rails-assets-angular-route (1.2.23)
       rails-assets-angular (= 1.2.23)
     rails-assets-angular-touch (1.2.23)
@@ -155,6 +157,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.1.5)
   rails-assets-angular
+  rails-assets-angular-cookies
   rails-assets-angular-route
   rails-assets-angular-ui-bootstrap-bower
   rails-assets-restangular

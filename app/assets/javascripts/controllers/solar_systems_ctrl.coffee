@@ -34,7 +34,7 @@ CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams
     delete $scope.filter.specific_agents[id]
 
   $scope.columns = [
-    { key: 'name',                      name: 'Name',                 visible: true }
+    { key: 'name',                      name: 'System name',          visible: true }
     { key: 'region_name',               name: 'Region name',          visible: true }
     { key: 'security',                  name: 'Security',             visible: true }
     { key: 'belt_count',                name: 'Asteroid belts',       visible: true }

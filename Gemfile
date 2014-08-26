@@ -17,6 +17,7 @@ gem 'rails-assets-restangular'
 gem 'rails-assets-angular-route'
 gem 'rails-assets-venturocket-angular-slider'
 gem 'rails-assets-angular-ui-bootstrap-bower'
+gem 'rails-assets-angular-cookies'
 
 group :development do
   gem 'spring'

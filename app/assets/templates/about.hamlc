@@ -1,0 +1,28 @@
+.jumbotron
+  %h1
+    Welcome, carebear!
+  %p
+    Are you looking for a warm, cozy corner of EvE Online to conduct your bearing activites? We can help!
+  %p
+    Carebearium will enable you to search EvE solar systems by:
+  .row#features
+    %a.col-xs-4{ href: '#/solar_systems/'}
+      %span.glyphicon.glyphicon-cog
+      %h3 Industry indices!
+
+    %a.col-xs-4{ href: '#/solar_systems/'}
+      %span.glyphicon.glyphicon-user
+      %h3 Mission agents!
+
+    %a.col-xs-4{ href: '#/solar_systems/'}
+      %span.glyphicon.glyphicon-film
+      %h3 Mining options!
+
+  %p
+    More features added
+    %strike daily
+    regularly!
+
+  .text-center
+    %a.btn.btn-primary.btn-lg{ href: '#/solar_systems/'}
+      Find your new home!

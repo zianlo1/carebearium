@@ -47,7 +47,7 @@
             %span.glyphicon.glyphicon-trash
       .text-right
         %button.btn.btn-primary{ ng-click: 'addAgentFilter()' }
-          Find specific agent
+          Filter by specific agent
           %span.glyphicon.glyphicon-plus
 
     %tab{ heading: 'Industry indices', select: 'fixSliders()' }
