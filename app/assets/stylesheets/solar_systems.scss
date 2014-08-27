@@ -1,5 +1,9 @@
 #solar-systems {
   table-layout: fixed;
+
+  th.sortable {
+    cursor: pointer;
+  }
 }
 
 #filters {
