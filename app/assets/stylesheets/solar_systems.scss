@@ -3,6 +3,10 @@
 
   th.sortable {
     cursor: pointer;
+
+    .glyphicon-sort {
+      color: darken($table-bg-hover, 10%);
+    }
   }
 }
 

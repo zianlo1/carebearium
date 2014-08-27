@@ -100,8 +100,7 @@
       %th.sortable{ ng-repeat: "column in columns", ng-show: "column.visible",
         ng-click: "tableParams.sorting(column.key, tableParams.isSortBy(column.key, 'asc') ? 'desc' : 'asc')" }
         {{ column.name }}
-        %span.glyphicon.glyphicon-sort-by-attributes{ ng-if: "tableParams.isSortBy(column.key, 'asc')" }
-        %span.glyphicon.glyphicon-sort-by-attributes-alt{ ng-if: "tableParams.isSortBy(column.key, 'desc')" }
+        %span.glyphicon{ ng-class: "{ 'glyphicon-sort-by-attributes': tableParams.isSortBy(column.key, 'asc'), 'glyphicon-sort-by-attributes-alt': tableParams.isSortBy(column.key, 'desc'), 'glyphicon-sort': !(tableParams.isSortBy(column.key, 'asc') || tableParams.isSortBy(column.key, 'desc')) }" }
   %tbody
     %tr{ ng-repeat: "solarSystem in $data" }
       %td{ ng-repeat: "column in columns", sortable: "column.key", ng-show: "column.visible" }
