@@ -15,7 +15,20 @@
         %label.col-sm-2.control-label Region
         .col-sm-4
           %select.form-control{ ng-model: 'filter.region.name', ng-options: 'region for region in constraints.region' }
-            %option{value: ''}
+            %option{value: '30000142'}
+      .row.jump-filter{ ng-repeat: '(id, jump) in filter.jumps' }
+        %label.col-sm-2.control-label Distance to
+        .col-xs-4
+          %slider{ floor: '0', ceiling: '50', ng-model: 'jump.min', ng-model-range:'jump.max' }
+        .col-xs-2
+          %input.form-control{ ng-model: 'jump.system' }
+        .col-xs-4.text-right
+          %button.btn.btn-default{ ng-click: 'removeJumpFilter(id)'}
+            %span.glyphicon.glyphicon-trash
+      .text-right
+        %button.btn.btn-primary{ ng-click: 'addJumpFilter()' }
+          Filter by distance
+          %span.glyphicon.glyphicon-plus
 
     %tab{ heading: 'Celestials', select: 'fixSliders()' }
       .row

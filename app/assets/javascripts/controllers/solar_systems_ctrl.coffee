@@ -22,6 +22,7 @@ CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams
     $scope.filter = angular.copy $scope.constraints
     $scope.filter.region = {}
     $scope.filter.specific_agents = {}
+    $scope.filter.jumps = {}
     delete $scope.filter.agent_kind
     delete $scope.filter.agent_level
     delete $scope.filter.agent_corporation
@@ -32,6 +33,11 @@ CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams
     $scope.filter.specific_agents[Date.now()] = { kind: null, level: null, corporation: null }
   $scope.removeAgentFilter = (id) ->
     delete $scope.filter.specific_agents[id]
+
+  $scope.addJumpFilter = ->
+    $scope.filter.jumps[Date.now()] = { system: null, min: 0, max: 50 }
+  $scope.removeJumpFilter = (id) ->
+    delete $scope.filter.jumps[id]
 
   $scope.columns = [
     { key: 'name',                      name: 'System name',          visible: true,  tab: 'Location' }

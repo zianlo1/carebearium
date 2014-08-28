@@ -61,6 +61,18 @@ module SolarSystemFinders
     end
   end
 
+  def jumps(options)
+    base = all_scope
+
+    options.map do |id, params|
+      next unless params[:system] && params[:min] && params[:max]
+
+      base = base.where "(jumps->>:system)::int BETWEEN :min AND :max", system: params[:system].to_s, min: params[:min].to_i, max: params[:max].to_i
+    end
+
+    base
+  end
+
   INDUSTRIAL_INDEX_COLUMNS.each do |industry_index|
     define_method industry_index do |options|
       if options[:min] && options[:max]
