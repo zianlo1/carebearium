@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20140824150302) do
     t.float    "copying_index",             default: 0.0
     t.float    "reverse_engineering_index", default: 0.0
     t.float    "invention_index",           default: 0.0
-    t.integer  "jumps",                     default: [],  array: true
+    t.json     "jumps",                     default: {}
     t.datetime "created_at"
     t.datetime "updated_at"
   end

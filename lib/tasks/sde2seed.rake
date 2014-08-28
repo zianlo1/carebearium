@@ -1,11 +1,14 @@
 if Rails.env.development?
   require 'mysql2'
+  require 'pp'
+
+  def exec(query)
+    Mysql2::Client.new(host: 'localhost', username: 'root', database: 'eve').query(query).to_a
+  end
 
   def dump_query(filename, query)
-    client = Mysql2::Client.new(host: 'localhost', username: 'root', database: 'eve')
-
     File.open(Rails.root.join('db', 'seeds', filename), 'w') do |f|
-      f.write(client.query(query).to_a.to_json)
+      f.write(JSON.pretty_generate exec query)
     end
   end
 
@@ -43,19 +46,6 @@ if Rails.env.development?
       SQL
     end
 
-    task :jumps do
-      dump_query 'jumps.json', <<-SQL
-        select src.solarSystemId as 'from', dst.solarSystemId as 'to'
-        from mapJumps j
-        join mapDenormalize src on src.itemId = j.stargateId
-        join mapDenormalize dst on dst.itemId = j.destinationId
-        join mapSolarSystems srcSys on srcSys.solarSystemId = src.solarSystemId
-        join mapSolarSystems dstSys on dstSys.solarSystemId = dst.solarSystemId
-        where round(srcSys.security,1) >= 0.5 and round(dstSys.security,1) >= 0.5
-        order by src.solarSystemId, dst.solarSystemId
-      SQL
-    end
-
     task :corporations do
       dump_query 'corporations.json', <<-SQL
         select c.corporationID as id, n.itemName as name
@@ -68,6 +58,50 @@ if Rails.env.development?
                       and round(s.security,1) >= 0.5)
         order by c.corporationID
       SQL
+    end
+
+    task :jumps do
+      jumps = exec <<-SQL
+        select src.solarSystemId as 'from', dst.solarSystemId as 'to'
+        from mapJumps j
+        join mapDenormalize src on src.itemId = j.stargateId
+        join mapDenormalize dst on dst.itemId = j.destinationId
+        join mapSolarSystems srcSys on srcSys.solarSystemId = src.solarSystemId
+        join mapSolarSystems dstSys on dstSys.solarSystemId = dst.solarSystemId
+        where round(srcSys.security,1) >= 0.5 and round(dstSys.security,1) >= 0.5
+        order by src.solarSystemId, dst.solarSystemId
+      SQL
+
+      jump_map = jumps.each_with_object(Hash.new { |hash, key| hash[key] = [] }) do |jump, map|
+        map[jump['from'].to_i] << jump['to'].to_i
+      end
+
+      distance_map = Hash.new { |hash, key| hash[key] = {} }
+
+      jump_map.keys.each do |start|
+        visit_next_round = Set.new jump_map[start]
+        seen = Set.new jump_map[start]
+        seen.add start
+        depth = 1
+        while visit_next_round.any?
+          visit_now = visit_next_round.to_a
+          visit_next_round = visit_next_round.clear
+          visit_now.each do |current|
+            distance_map[start][current] = depth
+            jump_map[current].each do |nxt|
+              unless seen.include?(nxt)
+                visit_next_round.add(nxt)
+                seen.add nxt
+              end
+            end
+          end
+          depth += 1
+        end
+      end
+
+      File.open(Rails.root.join('db', 'seeds', 'jumps.json'), 'w') do |f|
+        f.write(JSON.pretty_generate distance_map)
+      end
     end
   end
 
