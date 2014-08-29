@@ -101,6 +101,8 @@ GEM
       rails-assets-angular (= 1.2.23)
     rails-assets-angular-ui-bootstrap-bower (0.11.0)
       rails-assets-angular (>= 1)
+    rails-assets-angular-ui-select (0.6.0)
+      rails-assets-angular (~> 1.2)
     rails-assets-angulartics (0.16.1)
       rails-assets-angular (>= 1.0.7)
       rails-assets-jquery-waypoints (~> 2.0.3)
@@ -170,6 +172,7 @@ DEPENDENCIES
   rails-assets-angular-cookies
   rails-assets-angular-route
   rails-assets-angular-ui-bootstrap-bower
+  rails-assets-angular-ui-select
   rails-assets-angulartics
   rails-assets-restangular
   rails-assets-venturocket-angular-slider

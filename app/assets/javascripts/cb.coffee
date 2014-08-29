@@ -4,6 +4,7 @@ window.CB = angular.module 'CB', [
   'ngTable'
   'vr.directives.slider'
   'ui.bootstrap'
+  'ui.select'
   'ngCookies'
   'angulartics'
   'angulartics.google.analytics'

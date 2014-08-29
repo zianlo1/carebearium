@@ -19,7 +19,7 @@ class LandingController < ApplicationController
           copying_index:              { min: (SolarSystem.minimum(:copying_index) * 1000).to_i, max: (SolarSystem.maximum(:copying_index) * 1000).to_i },
           reverse_engineering_index:  { min: (SolarSystem.minimum(:reverse_engineering_index) * 1000).to_i, max: (SolarSystem.maximum(:reverse_engineering_index) * 1000).to_i },
           invention_index:            { min: (SolarSystem.minimum(:invention_index) * 1000).to_i, max: (SolarSystem.maximum(:invention_index) * 1000).to_i },
-          region:                     SolarSystem.order(:region_name).uniq.pluck(:region_name),
+          region:                     SolarSystem.order(:region_name).uniq.pluck(:region_name).map{ |n| { name: n }},
           agent_kind:                 Agent.order(:kind).uniq.pluck(:kind),
           agent_level:                Agent.order(:level).uniq.pluck(:level),
           agent_corporation:          Corporation.where.not(agents_count: 0).order(:name).uniq.pluck(:name)

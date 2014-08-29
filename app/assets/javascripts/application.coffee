@@ -7,6 +7,7 @@
 #= require angular-touch
 #= require venturocket-angular-slider
 #= require angular-ui-bootstrap-bower
+#= require angular-ui-select
 #= require angular-cookies
 #= require angulartics
 #= require_tree ../templates

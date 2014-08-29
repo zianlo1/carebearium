@@ -27,4 +27,14 @@ class SolarSystemsController < ApplicationController
       render json: results
     end
   end
+
+  def names
+    last_update = SolarSystem.maximum(:updated_at)
+    cache_key   = "solar_systems#names/#{params[:q]}/#{last_update.to_i}"
+
+    if stale?(last_modified: last_update, etag: cache_key, public: true)
+      results = SolarSystem.where("name ILIKE ?", "%#{params[:q]}%").limit(25).order(:name)
+      render json: results.pluck(:id, :name).map { |a| { id: a[0], name: a[1] } }
+    end
+  end
 end

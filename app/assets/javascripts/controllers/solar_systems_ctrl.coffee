@@ -1,5 +1,6 @@
-CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams, constraints, $timeout) ->
+CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams, constraints, $timeout, CBAutocomplete) ->
   $scope.constraints = constraints.plain()
+  $scope.systemNames = []
 
   $scope.securityTranslate = (val) -> parseFloat(val) / 10
   $scope.industryIndexTranslate = (val) -> parseFloat(val) / 1000
@@ -11,8 +12,7 @@ CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams
       for own key, value of options
         if key in ['max', 'min']
           fn = (g, k, v) ->
-            $timeout ->
-              $scope.filter[g][k] = v
+            $timeout -> $scope.filter[g][k] = v
           options[key] = options[key] * 1.0001
           fn group, key, value
 
@@ -38,6 +38,8 @@ CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams
     $scope.filter.jumps[Date.now()] = { system: null, min: 0, max: 50 }
   $scope.removeJumpFilter = (id) ->
     delete $scope.filter.jumps[id]
+
+  $scope.autocompleteSolarSystems = CBAutocomplete 'solar_systems/names', (results) -> $scope.systemNames = results
 
   $scope.columns = [
     { key: 'name',                      name: 'System name',          visible: true,  tab: 'Location' }
