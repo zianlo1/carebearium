@@ -1,5 +1,6 @@
 class SolarSystem
   include Mongoid::Document
+  include Mongoid::Timestamps::Updated
 
   embeds_many :stations
 
@@ -14,8 +15,6 @@ class SolarSystem
   field :reverse_engineering_index, type: Float, default: 0.0
   field :invention_index,           type: Float, default: 0.0
   field :distances,                 type: Hash,  default: {}
-
-  # extend SolarSystemFinders
 
   def self.update_industry_indices
     CREST.industry_indices.each do |row|
