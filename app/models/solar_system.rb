@@ -42,25 +42,3 @@ class SolarSystem
     end
   end
 end
-
-# == Schema Information
-#
-# Table name: solar_systems
-#
-#  id                        :integer          not null, primary key
-#  name                      :string(255)
-#  region_name               :string(255)
-#  security                  :float
-#  belt_count                :integer
-#  agents_count              :integer          default(0)
-#  stations_count            :integer          default(0)
-#  manufacturing_index       :float            default(0.0)
-#  research_te_index         :float            default(0.0)
-#  research_me_index         :float            default(0.0)
-#  copying_index             :float            default(0.0)
-#  reverse_engineering_index :float            default(0.0)
-#  invention_index           :float            default(0.0)
-#  jumps                     :json             default({})
-#  created_at                :datetime
-#  updated_at                :datetime
-#
