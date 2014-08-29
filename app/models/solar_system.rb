@@ -17,32 +17,30 @@ class SolarSystem
 
   # extend SolarSystemFinders
 
-  # def self.update_industry_indices
-  #   SolarSystem.transaction do
-  #     CREST.industry_indices.each do |row|
-  #       begin
-  #         system = find row['solarSystem']['id']
-  #         attrs = {}
-  #         row['systemCostIndices'].each do |indexHash|
-  #           case indexHash['activityID']
-  #           when 1 then attrs[:manufacturing_index]       = indexHash['costIndex']
-  #           when 3 then attrs[:research_te_index]         = indexHash['costIndex']
-  #           when 4 then attrs[:research_me_index]         = indexHash['costIndex']
-  #           when 5 then attrs[:copying_index]             = indexHash['costIndex']
-  #           when 7 then attrs[:reverse_engineering_index] = indexHash['costIndex']
-  #           when 8 then attrs[:invention_index]           = indexHash['costIndex']
-  #           else nil
-  #           end
-  #         end
-  #         system.update_attributes attrs
-  #       rescue ActiveRecord::RecordNotFound
-  #         nil
-  #       rescue => e
-  #         Rails.logger.warn "#{e} updating indices: #{row}"
-  #       end
-  #     end
-  #   end
-  # end
+  def self.update_industry_indices
+    CREST.industry_indices.each do |row|
+      begin
+        system = find row['solarSystem']['id']
+        attrs = {}
+        row['systemCostIndices'].each do |indexHash|
+          case indexHash['activityID']
+          when 1 then attrs[:manufacturing_index]       = indexHash['costIndex']
+          when 3 then attrs[:research_te_index]         = indexHash['costIndex']
+          when 4 then attrs[:research_me_index]         = indexHash['costIndex']
+          when 5 then attrs[:copying_index]             = indexHash['costIndex']
+          when 7 then attrs[:reverse_engineering_index] = indexHash['costIndex']
+          when 8 then attrs[:invention_index]           = indexHash['costIndex']
+          else nil
+          end
+        end
+        system.update_attributes attrs
+      rescue Mongoid::Errors::DocumentNotFound
+        nil
+      rescue => e
+        Rails.logger.warn "#{e} updating indices: #{row}"
+      end
+    end
+  end
 end
 
 # == Schema Information
