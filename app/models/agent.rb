@@ -1,7 +1,12 @@
-class Agent < ActiveRecord::Base
-  belongs_to :corporation,  counter_cache: true
-  belongs_to :station,      counter_cache: true
-  belongs_to :solar_system, counter_cache: true
+class Agent
+  include Mongoid::Document
+
+  embedded_in :station
+
+  field :level,             type: Integer
+  field :kind,              type: String
+  field :corporation_name,  type: String
+  field :locator,           type: Boolean
 end
 
 # == Schema Information

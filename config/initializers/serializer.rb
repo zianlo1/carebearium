@@ -3,3 +3,6 @@ ActiveModel::Serializer.root = false
 
 # Disable for ArraySerializer
 ActiveModel::ArraySerializer.root = false
+
+Mongoid::Document.send(:include, ActiveModel::SerializerSupport)
+Mongoid::Criteria.delegate(:active_model_serializer, :to => :to_a)

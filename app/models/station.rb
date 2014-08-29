@@ -1,6 +1,10 @@
-class Station < ActiveRecord::Base
-  belongs_to :solar_system, counter_cache: true
-  has_many :agents, inverse_of: :station
+class Station
+  include Mongoid::Document
+
+  embedded_in :solar_system
+  embeds_many :agents
+
+  field :name, type: String
 end
 
 # == Schema Information

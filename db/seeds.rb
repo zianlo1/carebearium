@@ -2,51 +2,33 @@ def read_file(filename)
   MultiJson.load File.read(Rails.root.join 'db', 'seeds', filename), symbolize_keys: true
 end
 
-SolarSystem.transaction do
-  p 'Loading jump map'
-  jump_map = read_file('jumps.json')
+p 'Loading distance map'
+distance_map = read_file('distances.json')
 
-  p 'Loading solar systems'
-  read_file('solar_systems.json').each do |row|
-    SolarSystem.where(id: row[:id]).first_or_initialize.update_attributes(
-      name:         row[:name],
-      region_name:  row[:regionName],
-      security:     row[:security],
-      belt_count:   row[:beltCount],
-      jumps:        jump_map[row[:id].to_s.to_sym]
-    )
-  end
+p 'Loading solar systems'
+read_file('solar_systems.json').each do |row|
+  SolarSystem.find_or_initialize_by(id: row[:id]).update_attributes(
+    name:         row[:name],
+    region_name:  row[:regionName],
+    security:     row[:security],
+    belt_count:   row[:beltCount],
+    distances:    distance_map[row[:id].to_s.to_sym]
+  )
 end
 
-Station.transaction do
-  p 'Loading stations'
-  read_file('stations.json').each do |row|
-    Station.where(id: row[:id]).first_or_initialize.update_attributes(
-      solar_system_id:  row[:solarSystemID],
-      name:             row[:name]
-    )
-  end
+p 'Loading stations'
+read_file('stations.json').each do |row|
+  SolarSystem.find(row[:solarSystemID]).stations.find_or_initialize_by(id: row[:id]).update_attributes(
+    name: row[:name]
+  )
 end
 
-Corporation.transaction do
-  p 'Loading corporations'
-  read_file('corporations.json').each do |row|
-    Corporation.where(id: row[:id]).first_or_initialize.update_attributes(
-      name: row[:name]
-    )
-  end
-end
-
-Agent.transaction do
-  p 'Loading agents'
-  read_file('agents.json').each do |row|
-    Agent.where(id: row[:id]).first_or_initialize.update_attributes(
-      corporation_id:   row[:corporationID],
-      station_id:       row[:stationID],
-      level:            row[:level],
-      kind:             row[:kind],
-      solar_system_id:  row[:solarSystemID],
-      locator:          row[:isLocator] == 1
-    )
-  end
+p 'Loading agents'
+read_file('agents.json').each do |row|
+  SolarSystem.find(row[:solarSystemID]).stations.find_by(id: row[:stationID]).agents.find_or_initialize_by(id: row[:id]).update_attributes(
+    corporation_name: row[:corporationName],
+    level:            row[:level],
+    kind:             row[:kind],
+    locator:          row[:isLocator] == 1
+  )
 end

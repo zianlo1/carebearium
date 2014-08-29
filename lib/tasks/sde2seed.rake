@@ -1,6 +1,5 @@
 if Rails.env.development?
   require 'mysql2'
-  require 'pp'
 
   def exec(query)
     Mysql2::Client.new(host: 'localhost', username: 'root', database: 'eve').query(query).to_a
@@ -15,11 +14,13 @@ if Rails.env.development?
   namespace :sde2seed do
     task :agents do
       dump_query 'agents.json', <<-SQL
-        select a.agentID as id, a.level, a.corporationID, d.divisionName as kind, st.stationID, st.solarSystemID, a.isLocator
+        select a.agentID as id, a.level, n.itemName as corporationName, d.divisionName as kind, st.stationID, st.solarSystemID, a.isLocator
         from agtAgents a
         join crpNPCDivisions d on d.divisionID = a.divisionID
         join staStations st on a.locationID = st.stationID
         join mapSolarSystems s on s.solarSystemID = st.solarSystemID
+        join crpNPCCorporations c on c.corporationID = a.corporationID
+        join invNames n on n.itemID = c.corporationID
         where round(s.security,1) >= 0.5
         order by a.agentID
       SQL
@@ -27,7 +28,7 @@ if Rails.env.development?
 
     task :stations do
       dump_query 'stations.json', <<-SQL
-        select st.stationID, st.solarSystemID, st.stationName
+        select st.stationID as id, st.solarSystemID, st.stationName as name
         from staStations st
         join mapSolarSystems s on s.solarSystemID = st.solarSystemID
         where round(s.security,1) >= 0.5
@@ -43,20 +44,6 @@ if Rails.env.development?
         left join (select solarSystemID, count(*) as beltCount from mapDenormalize where typeID = 15 group by solarSystemID) belts on s.solarSystemID = belts.solarSystemID
         where round(s.security,1) >= 0.5
         order by s.solarSystemID
-      SQL
-    end
-
-    task :corporations do
-      dump_query 'corporations.json', <<-SQL
-        select c.corporationID as id, n.itemName as name
-        from crpNPCCorporations c
-        join invNames n on n.itemID = c.corporationID
-        where exists (select 1 from agtAgents a
-                      join staStations st on a.locationID = st.stationID
-                      join mapSolarSystems s on s.solarSystemID = st.solarSystemID
-                      where a.corporationID = c.corporationID
-                      and round(s.security,1) >= 0.5)
-        order by c.corporationID
       SQL
     end
 
@@ -99,12 +86,12 @@ if Rails.env.development?
         end
       end
 
-      File.open(Rails.root.join('db', 'seeds', 'jumps.json'), 'w') do |f|
+      File.open(Rails.root.join('db', 'seeds', 'distances.json'), 'w') do |f|
         f.write(JSON.pretty_generate distance_map)
       end
     end
   end
 
   desc "Convert SDE data to db seeds"
-  task sde2seed: %w(agents stations solar_systems jumps corporations).map{ |t| "sde2seed:#{t}" }
+  task sde2seed: %w(agents stations solar_systems jumps).map{ |t| "sde2seed:#{t}" }
 end
