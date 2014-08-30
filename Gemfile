@@ -2,14 +2,13 @@ source 'https://rubygems.org'
 source 'https://rails-assets.org'
 
 gem 'rails', '4.1.5'
-gem 'pg'
-gem 'active_model_serializers'
+gem 'mongoid'
+gem 'bson_ext'
 gem 'oj'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'httparty'
-gem 'kaminari'
 gem 'dalli'
 gem 'memcachier'
 gem 'bootstrap-sass'
@@ -26,6 +25,5 @@ gem 'rails-assets-angular-ui-select'
 group :development do
   gem 'spring'
   gem 'mysql2', require: false
-  gem 'annotate'
   gem 'quiet_assets'
 end

@@ -24,8 +24,6 @@ GEM
       activesupport (= 4.1.5)
       builder (~> 3.1)
       erubis (~> 2.7.0)
-    active_model_serializers (0.9.0)
-      activemodel (>= 3.2)
     activemodel (4.1.5)
       activesupport (= 4.1.5)
       builder (~> 3.1)
@@ -39,12 +37,11 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
-    annotate (2.6.5)
-      activerecord (>= 2.3.0)
-      rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
     bootstrap-sass (3.2.0.1)
       sass (~> 3.2)
+    bson (2.3.0)
+    bson_ext (1.5.1)
     builder (3.2.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -53,6 +50,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.1)
+    connection_pool (2.0.0)
     dalli (2.7.2)
     erubis (2.7.0)
     execjs (2.2.1)
@@ -62,20 +60,27 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (0.6.11)
     json (1.8.1)
-    kaminari (0.16.1)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     memcachier (0.0.2)
     mime-types (1.25.1)
     minitest (5.4.0)
+    mongoid (4.0.0)
+      activemodel (~> 4.0)
+      moped (~> 2.0.0)
+      origin (~> 2.1)
+      tzinfo (>= 0.3.37)
+    moped (2.0.0)
+      bson (~> 2.2)
+      connection_pool (~> 2.0)
+      optionable (~> 0.2.0)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     mysql2 (0.3.16)
     oj (2.10.2)
-    pg (0.17.1)
+    optionable (0.2.0)
+    origin (2.1.1)
     polyglot (0.3.5)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
@@ -154,18 +159,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers
-  annotate
   bootstrap-sass
+  bson_ext
   coffee-rails
   dalli
   haml_coffee_assets!
   httparty
-  kaminari
   memcachier
+  mongoid
   mysql2
   oj
-  pg
   quiet_assets
   rails (= 4.1.5)
   rails-assets-angular
