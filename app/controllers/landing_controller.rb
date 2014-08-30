@@ -20,9 +20,9 @@ class LandingController < ApplicationController
           reverse_engineering_index:  { min: (SolarSystem.min(:reverse_engineering_index) * 1000).to_i, max: (SolarSystem.max(:reverse_engineering_index) * 1000).to_i },
           invention_index:            { min: (SolarSystem.min(:invention_index) * 1000).to_i, max: (SolarSystem.max(:invention_index) * 1000).to_i },
           region:                     SolarSystem.distinct(:region_name).sort.map{ |n| { name: n }},
-          agent_kind:                 SolarSystem.distinct('stations.agents.kind').sort,
-          agent_level:                SolarSystem.distinct('stations.agents.level').sort,
-          agent_corporation:          SolarSystem.distinct('stations.agents.corporation_name').sort
+          agent_kind:                 SolarSystem.distinct('agents.kind').sort,
+          agent_level:                SolarSystem.distinct('agents.level').sort,
+          agent_corporation:          SolarSystem.distinct('agents.corporation_name').sort
         }
       end
       render json: constraints

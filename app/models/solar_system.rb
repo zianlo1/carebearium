@@ -3,6 +3,7 @@ class SolarSystem
   include Mongoid::Timestamps::Updated
 
   embeds_many :stations
+  embeds_many :agents
 
   field :name,                      type: String
   field :region_name,               type: String

@@ -25,7 +25,8 @@ end
 
 p 'Loading agents'
 read_file('agents.json').each do |row|
-  SolarSystem.find(row[:solarSystemID]).stations.find_by(id: row[:stationID]).agents.find_or_initialize_by(id: row[:id]).update_attributes(
+  SolarSystem.find(row[:solarSystemID]).agents.find_or_initialize_by(id: row[:id]).update_attributes(
+    station_id:       row[:stationID],
     corporation_name: row[:corporationName],
     level:            row[:level],
     kind:             row[:kind],
@@ -37,6 +38,6 @@ p 'Updating counters'
 SolarSystem.all.each do |solar_system|
   solar_system.update_attributes(
     stations_count: solar_system.stations.size,
-    agents_count: solar_system.stations.pluck('agents').flatten.size
+    agents_count:   solar_system.agents.size
   )
 end

@@ -73,8 +73,8 @@ class SolarSystemFinder
     params.each do |id, options|
       queryable = { kind: options[:kind], level: options[:level], corporation_name: options[:corporation] }
       queryable.reject!{ |k,v| v.blank? }
-      @colllection = @colllection.where 'stations.agents'.to_sym.elem_match => queryable
-      @fields.add "stations.agents._id"
+      @colllection = @colllection.where :agents.to_sym.elem_match => queryable
+      @fields.add "agents._id"
     end
   end
 
