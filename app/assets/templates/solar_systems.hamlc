@@ -49,10 +49,10 @@
       .row
         %label.col-sm-2.control-label Asteroid belts
         .col-sm-4
-          %slider{ floor: '{{constraints.belts.min}}', ceiling: '{{constraints.belts.max}}', ng-model: 'filter.belts.min', ng-model-range:'filter.belts.max' }
+          %slider{ floor: '{{constraints.belts_count.min}}', ceiling: '{{constraints.belts_count.max}}', ng-model: 'filter.belts_count.min', ng-model-range:'filter.belts_count.max' }
         %label.col-sm-2.control-label Stations
         .col-sm-4
-          %slider{ floor: '{{constraints.stations.min}}', ceiling: '{{constraints.stations.max}}', ng-model: 'filter.stations.min', ng-model-range:'filter.stations.max' }
+          %slider{ floor: '{{constraints.stations_count.min}}', ceiling: '{{constraints.stations_count.max}}', ng-model: 'filter.stations_count.min', ng-model-range:'filter.stations_count.max' }
 
     %tab{ heading: 'Agents', select: 'fixSliders()' }
       .row
@@ -65,7 +65,7 @@
       .row
         %label.col-sm-2.control-label Total agents
         .col-sm-4
-          %slider{ floor: '{{constraints.agents.min}}', ceiling: '{{constraints.agents.max}}', ng-model: 'filter.agents.min', ng-model-range:'filter.agents.max' }
+          %slider{ floor: '{{constraints.agents_count.min}}', ceiling: '{{constraints.agents_count.max}}', ng-model: 'filter.agents_count.min', ng-model-range:'filter.agents_count.max' }
       .row.agent-filter{ ng-repeat: '(id, agent) in filter.specific_agents' }
         %label.col-xs-2.control-label Specific agent
         .col-xs-2

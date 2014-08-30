@@ -11,7 +11,7 @@ read_file('solar_systems.json').each do |row|
     name:         row[:name],
     region_name:  row[:regionName],
     security:     row[:security],
-    belt_count:   row[:beltCount],
+    belts_count:  row[:beltCount],
     distances:    distance_map[row[:id].to_s.to_sym]
   )
 end
@@ -30,5 +30,13 @@ read_file('agents.json').each do |row|
     level:            row[:level],
     kind:             row[:kind],
     locator:          row[:isLocator] == 1
+  )
+end
+
+p 'Updating counters'
+SolarSystem.all.each do |solar_system|
+  solar_system.update_attributes(
+    stations_count: solar_system.stations.size,
+    agents_count: solar_system.stations.pluck('agents').flatten.size
   )
 end

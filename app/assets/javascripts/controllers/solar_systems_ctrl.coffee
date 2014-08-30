@@ -45,7 +45,7 @@ CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams
     { key: 'name',                      name: 'System name',          visible: true,  tab: 'Location' }
     { key: 'region_name',               name: 'Region name',          visible: true,  tab: 'Location' }
     { key: 'security',                  name: 'Security',             visible: true,  tab: 'Location' }
-    { key: 'belt_count',                name: 'Asteroid belts',       visible: true,  tab: 'Celestials' }
+    { key: 'belts_count',               name: 'Asteroid belts',       visible: true,  tab: 'Celestials' }
     { key: 'stations_count',            name: 'Stations',             visible: false, tab: 'Celestials' }
     { key: 'agents_count',              name: 'Total agents',         visible: false, tab: 'Agents' }
     { key: 'manufacturing_index',       name: 'Manufacturing',        visible: true,  tab: 'Industry indices' }

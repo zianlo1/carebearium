@@ -60,9 +60,6 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (0.6.11)
     json (1.8.1)
-    kaminari (0.16.1)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -168,7 +165,6 @@ DEPENDENCIES
   dalli
   haml_coffee_assets!
   httparty
-  kaminari
   memcachier
   mongoid
   mysql2
