@@ -19,10 +19,10 @@ class LandingController < ApplicationController
           copying_index:              { min: (SolarSystem.min(:copying_index) * 1000).to_i, max: (SolarSystem.max(:copying_index) * 1000).to_i },
           reverse_engineering_index:  { min: (SolarSystem.min(:reverse_engineering_index) * 1000).to_i, max: (SolarSystem.max(:reverse_engineering_index) * 1000).to_i },
           invention_index:            { min: (SolarSystem.min(:invention_index) * 1000).to_i, max: (SolarSystem.max(:invention_index) * 1000).to_i },
-          region:                     SolarSystem.order(:region_name.asc).distinct(:region_name).map{ |n| { name: n }},
-          agent_kind:                 SolarSystem.order('stations.agents.kind'.to_sym.asc).distinct('stations.agents.kind'),
-          agent_level:                SolarSystem.order('stations.agents.level'.to_sym.asc).distinct('stations.agents.level'),
-          agent_corporation:          SolarSystem.order('stations.agents.corporation_name'.to_sym.asc).distinct('stations.agents.corporation_name')
+          region:                     SolarSystem.distinct(:region_name).sort.map{ |n| { name: n }},
+          agent_kind:                 SolarSystem.distinct('stations.agents.kind').sort,
+          agent_level:                SolarSystem.distinct('stations.agents.level').sort,
+          agent_corporation:          SolarSystem.distinct('stations.agents.corporation_name').sort
         }
       end
       render json: constraints
