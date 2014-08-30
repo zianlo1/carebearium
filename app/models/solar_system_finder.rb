@@ -29,6 +29,15 @@ class SolarSystemFinder
     self
   end
 
+  def sort_by(params)
+    (params || {}).each do |field, direction|
+      direction = direction.downcase
+      next unless %w(asc desc).include? direction
+      @colllection = @colllection.order field.to_sym.send(direction)
+    end
+    self
+  end
+
   def limit(amount)
     @colllection = @colllection.limit amount
     self
@@ -65,6 +74,7 @@ class SolarSystemFinder
       queryable = { kind: options[:kind], level: options[:level], corporation_name: options[:corporation] }
       queryable.reject!{ |k,v| v.blank? }
       @colllection = @colllection.where 'stations.agents'.to_sym.elem_match => queryable
+      @fields.add "stations.agents._id"
     end
   end
 

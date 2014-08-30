@@ -8,8 +8,8 @@ class SolarSystemsController < ApplicationController
     # if stale?(last_modified: last_update, etag: cache_key, public: true)
       finder = SolarSystemFinder.new
       finder.find_by params[:filter]
-
-      render json: finder.limit(10).to_a
+      finder.sort_by params[:sorting]
+      render json: finder.limit(100).to_a
     # end
   end
 
