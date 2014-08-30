@@ -19,6 +19,19 @@ class SolarSystem
   field :invention_index,           type: Float,   default: 0.0
   field :distances,                 type: Hash,    default: {}
 
+  SCALED_FIELDS = {
+    manufacturing_index:        1000,
+    research_te_index:          1000,
+    research_me_index:          1000,
+    copying_index:              1000,
+    reverse_engineering_index:  1000,
+    invention_index:            1000,
+    security:                   10,
+    agents_count:               1,
+    stations_count:             1,
+    belts_count:                1
+  }
+
   def self.update_industry_indices
     CREST.industry_indices.each do |row|
       begin
