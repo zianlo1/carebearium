@@ -1,0 +1,9 @@
+.row
+  %label.col-sm-3.control-label
+    {{ constraints.title }}
+  .col-sm-9
+    %ui-select{ ng-model: 'filter.name' }
+      %ui-select-match{ placeholder: "Select a region" }
+        {{ $select.selected }}
+      %ui-select-choices{ repeat: "region in constraints.region_names | filter : $select.search" }
+        {{ region }}

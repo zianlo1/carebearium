@@ -44,26 +44,25 @@ class SolarSystemFinder
     end
   end
 
-  def find_by_jumps(params)
-    params.each do |id, options|
-      next unless options[:system] && options[:system][:id] && options[:min] && options[:max]
+  def find_by_jumps(options)
+    return unless options[:system] && options[:system][:id] && options[:min] && options[:max]
 
-      min = options[:min].to_i
-      max = options[:max].to_i
+    min = options[:min].to_i
+    max = options[:max].to_i
 
-      field = "distances.#{options[:system][:id].to_i}"
-      @colllection = @colllection.between "distances.#{options[:system][:id].to_i}" => min..max
-      @fields.add "distances.#{options[:system][:id].to_i}"
-    end
+    field = "distances.#{options[:system][:id].to_i}"
+    @colllection = @colllection.between "distances.#{options[:system][:id].to_i}" => min..max
+    @fields.add "distances.#{options[:system][:id].to_i}"
   end
 
-  def find_by_agents(params)
-    params.each do |id, options|
-      queryable = { kind: options[:kind], level: options[:level], corporation_name: options[:corporation] }
-      queryable.reject!{ |k,v| v.blank? }
-      @colllection = @colllection.where :agents.to_sym.elem_match => queryable
-      @fields.add "agents._id"
-    end
+  def find_by_agent(options)
+    queryable = { kind: options[:division], level: options[:level], corporation_name: options[:corporation] }
+    queryable.reject!{ |k,v| v.blank? }
+
+    return unless queryable.any?
+
+    @colllection = @colllection.where :agents.to_sym.elem_match => queryable
+    @fields.add "agents._id"
   end
 
   SolarSystem::SCALED_FIELDS.each do |field, scale|

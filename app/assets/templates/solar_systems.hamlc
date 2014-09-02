@@ -2,7 +2,8 @@
   %filter{ ng-repeat: '(id, filter) in filters track by $index', filter: 'filter' }
 
 .text-center
-  %select.form-control{ ng-model: 'filterToAdd', ng-options: 'kind as constraints.title for (kind , constraints) in filterConstraints', placeholder: 'Select a filter!' }
+  %select.form-control{ ng-model: 'filterToAdd', ng-options: 'kind as constraints.title for (kind , constraints) in filterConstraints' }
+    %option{value: '', selected: 'selected', disabled: 'disabled' } Select a filter to add
 
 %hr
 

@@ -1,0 +1,12 @@
+.row
+  %label.col-sm-3.control-label
+    {{ constraints.title }}
+  .col-sm-2
+    %select.form-control{ ng-model: 'filter.level', ng-options: 'level for level in constraints.levels', placeholder: 'Level' }
+      %option{value: '', selected: 'selected', disabled: 'disabled' } Level
+  .col-sm-2
+    %select.form-control{ ng-model: 'filter.division', ng-options: 'division for division in constraints.divisions', placeholder: 'Level' }
+      %option{value: '', selected: 'selected', disabled: 'disabled' } Division
+  .col-sm-5
+    %select.form-control{ ng-model: 'filter.corporation', ng-options: 'corporation for corporation in constraints.corporations', placeholder: 'Level' }
+      %option{value: '', selected: 'selected', disabled: 'disabled' } Corporation

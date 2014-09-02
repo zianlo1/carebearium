@@ -61,7 +61,7 @@ class SolarSystem
   end
 
   def self.constraints
-    Rails.cache.fetch "SolarSystem#constraints/#{max(:updated_at).to_i}" do
+    # Rails.cache.fetch "SolarSystem#constraints/#{max(:updated_at).to_i}" do
       constraints = {}
 
       SolarSystem::SCALED_FIELDS.map do |field, scale|
@@ -80,12 +80,18 @@ class SolarSystem
 
       constraints[:agent] = {
         title:        I18n.t("filters.agent"),
-        kinds:        SolarSystem.distinct('agents.kind').sort,
+        divisions:    SolarSystem.distinct('agents.kind').sort,
         levels:       SolarSystem.distinct('agents.level').sort,
         corporations: SolarSystem.distinct('agents.corporation_name').sort
       }
 
+      constraints[:jumps] = {
+        title: I18n.t("filters.jumps"),
+        min:   0,
+        max:   50
+      }
+
       constraints
-    end
+    # end
   end
 end
