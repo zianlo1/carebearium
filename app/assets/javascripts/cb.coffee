@@ -15,8 +15,6 @@ CB.config ($routeProvider) ->
     when('/solar_systems/',
       template: JST['solar_systems']
       controller: 'SolarSystemsCtrl'
-      resolve:
-        constraints: (Restangular) -> Restangular.one('constraints').get()
     ).
     when('/about/',
       template: JST['about']

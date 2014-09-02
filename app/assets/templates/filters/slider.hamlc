@@ -1,0 +1,5 @@
+.row
+  %label.col-sm-3.control-label
+    {{ constraints.title }}
+  .col-sm-9
+    %slider{ floor: '{{constraints.min}}', ceiling: '{{constraints.max}}', ng-model: 'filter.min', ng-model-range:'filter.max', translate-fn: 'translate' }

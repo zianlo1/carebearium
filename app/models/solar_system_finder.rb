@@ -1,21 +1,24 @@
 class SolarSystemFinder
   def initialize
     @colllection = SolarSystem.all
-    @fields      = Set.new ['_id', 'name', 'region_name']
+    @fields      = Set.new ['_id', 'name', 'region_name', 'security']
   end
 
   def find_by(params)
-    (params || {}).each do |kind, options|
-      method_name = "find_by_#{kind}"
+    return unless params.present?
+    (JSON.parse(params) || {}).each do |idx, options|
+      options = options.with_indifferent_access
+      method_name = "find_by_#{options[:kind]}"
       if respond_to?(method_name, true)
-        send method_name, JSON.parse(options).with_indifferent_access
+        send method_name, options
       end
     end
     self
   end
 
   def sort_by(params)
-    (params || {}).each do |field, direction|
+    return unless params.present?
+    (JSON.parse(params) || {}).each do |field, direction|
       direction = direction.downcase
       next unless %w(asc desc).include? direction
       @colllection = @colllection.order field.to_sym.send(direction)
@@ -54,7 +57,7 @@ class SolarSystemFinder
     end
   end
 
-  def find_by_specific_agents(params)
+  def find_by_agents(params)
     params.each do |id, options|
       queryable = { kind: options[:kind], level: options[:level], corporation_name: options[:corporation] }
       queryable.reject!{ |k,v| v.blank? }
