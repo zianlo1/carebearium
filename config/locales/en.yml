@@ -12,7 +12,7 @@ en:
     belts_count: Total asteroid belts
     region: Region
     agent: Specific agent
-    jumps: Distance to
+    jumps: Distance to a system
     station_service: Has station service
   model:
     station:
