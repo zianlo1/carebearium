@@ -1,2 +1,2 @@
-CB.controller 'AboutCtrl', ($scope, $cookieStore) ->
-  $cookieStore.put 'seenAbout', true
+CB.controller 'AboutCtrl', ($scope, storage) ->
+  storage.set 'seenAbout', true

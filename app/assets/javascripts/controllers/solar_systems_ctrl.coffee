@@ -1,13 +1,11 @@
-CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints) ->
+CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints, storage) ->
   $scope.solarSystems = []
-  $scope.filters      = {}
   $scope.loading      = true
   $scope.fields       = []
+  $scope.filters      = storage.get 'filters', {}
+  order               = storage.get 'order', { name: 'asc' }
 
   fetchSolarSystems = ->
-    order = {}
-    order[orderByFiled] = orderByDirection
-
     $scope.loading = true
     $http(
       url: '/solar_systems.json',
@@ -16,6 +14,9 @@ CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints) -
         filters: $scope.filters
         order: order
     ).success (solarSystems) ->
+      storage.set 'filters', $scope.filters
+      storage.set 'order', order
+
       $scope.fields       = solarSystems.fields
       $scope.solarSystems = solarSystems.data
       $scope.loading      = false
@@ -51,16 +52,14 @@ CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints) -
 
   $scope.$watch 'filters', fetchSolarSystemsWithTimeout, true
 
-  orderByFiled     = 'name'
-  orderByDirection = 'asc'
   $scope.orderableBy = (field) ->
-    field.orderable and not (field.field is orderByFiled)
+    field.orderable and not _.has(order, field.field)
   $scope.orderedBy = (field, direction) ->
-    field.field is orderByFiled and direction is orderByDirection
+    _.has(order, field.field) and order[field.field] is direction
   $scope.orderBy = (field) ->
-    if field.field is orderByFiled
-      orderByDirection = if orderByDirection is 'asc' then 'desc' else 'asc'
+    if _.has(order, field.field)
+      order[field.field] = if order[field.field] is 'asc' then 'desc' else 'asc'
     else
-      orderByFiled = field.field
-      orderByDirection = 'asc'
+      order = {}
+      order[field.field] = 'asc'
     fetchSolarSystems()

@@ -28,7 +28,7 @@ CB.config ($analyticsProvider) ->
   $analyticsProvider.firstPageview(true)
   $analyticsProvider.withAutoBase(true)
 
-CB.run ($rootScope, $location, $cookieStore, $window) ->
+CB.run ($rootScope, $location, storage, $window) ->
   $rootScope.$on "$routeChangeStart", (event, next, current) ->
-    unless $cookieStore.get('seenAbout') or next.$$route.controller is 'AboutCtrl'
+    unless storage.get('seenAbout') or next.$$route.controller is 'AboutCtrl'
       $location.path "/about/"
