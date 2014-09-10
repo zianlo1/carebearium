@@ -10,8 +10,9 @@
 %table#solar-systems.table.table-condensed.table-hover{ ng-class: "{ 'text-muted': loading}" }
   %thead
     %tr
-      %th{ ng-repeat: "field in fields" }
+      %th{ ng-repeat: "field in fields", ng-class: "{orderable: field.orderable}", ng-click: 'orderBy(field)' }
         {{ field.title }}
+        %span.glyphicon{ ng-class: "{'glyphicon-sort': orderableBy(field), 'glyphicon-sort-by-attributes': orderedBy(field, 'asc'), 'glyphicon-sort-by-attributes-alt': orderedBy(field, 'desc')}"}
     %tr{ ng-repeat: "solarSystem in solarSystems" }
       %td{ ng-repeat: "value in solarSystem" }
         {{ value }}

@@ -19,7 +19,7 @@ class SolarSystemFinder
     self
   end
 
-  def sort_by(params)
+  def order_by(params)
     return unless params.present?
     (JSON.parse(params) || {}).each do |field, direction|
       direction = direction.downcase
@@ -38,7 +38,11 @@ class SolarSystemFinder
     results = { fields: [], data: [] }
 
     @fields.each do |_, options|
-      results[:fields] << { field: options[:field], title: options[:title] ? options[:title] : I18n.t("fields.#{options[:field]}") }
+      results[:fields] << {
+        field:     options[:field],
+        title:     options[:title] ? options[:title] : I18n.t("fields.#{options[:field]}"),
+        orderable: options.has_key?(:orderable) ? options[:orderable] : true
+      }
     end
 
     @colllection.each do |record|
@@ -77,7 +81,7 @@ class SolarSystemFinder
 
     @colllection = @colllection.where :agents.to_sym.elem_match => queryable
     title = "Agents: #{queryable.values.join(' / ')}"
-    @fields[title] = { field: title, finder: -> ss { ss.agents.where(queryable).count }, title: title }
+    @fields[title] = { field: title, finder: -> ss { ss.agents.where(queryable).count }, title: title, orderable: false }
   end
 
   SolarSystem::SCALED_FIELDS.each do |field, scale|

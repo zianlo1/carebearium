@@ -7,8 +7,8 @@ class SolarSystemsController < ApplicationController
 
     # if stale?(last_modified: last_update, etag: cache_key, public: true)
       finder = SolarSystemFinder.new
-      finder.find_by params[:filters]
-      finder.sort_by params[:order]
+      finder.find_by  params[:filters]
+      finder.order_by params[:order]
       render json: finder.limit(100).to_json
     # end
   end
