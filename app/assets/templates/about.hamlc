@@ -6,15 +6,15 @@
   %p
     Carebearium will enable you to search EvE solar systems by:
   .row#features
-    %a.col-xs-4{ href: '#/solar_systems/'}
+    %a.col-xs-4{ ng-click: "filterWithPreset({ 1: { kind: 'manufacturing_index' } }, { manufacturing_index: 'asc'})" }
       %span.glyphicon.glyphicon-cog
       %h3 Industry indices!
 
-    %a.col-xs-4{ href: '#/solar_systems/'}
+    %a.col-xs-4{ ng-click: "filterWithPreset({ 1: { kind: 'agents_count', min: 1 }, 2: { kind: 'agent' } }, { agents_count: 'desc'})" }
       %span.glyphicon.glyphicon-user
       %h3 Mission agents!
 
-    %a.col-xs-4{ href: '#/solar_systems/'}
+    %a.col-xs-4{ ng-click: "filterWithPreset({ 1: { kind: 'security', max: 7 }, 2: { kind: 'belts_count', min: 10 } }, { belts_count: 'desc'})" }
       %span.glyphicon.glyphicon-film
       %h3 Mining options!
 
