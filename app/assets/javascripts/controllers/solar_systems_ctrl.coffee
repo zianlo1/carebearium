@@ -33,5 +33,3 @@ CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints) -
     fetchSolarSystemsTimeout = $timeout fetchSolarSystems, 1000
 
   $scope.$watch 'filters', fetchSolarSystemsWithTimeout, true
-
-  fetchSolarSystems()

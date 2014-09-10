@@ -61,7 +61,7 @@ class SolarSystem
   end
 
   def self.constraints
-    # Rails.cache.fetch "SolarSystem#constraints/#{max(:updated_at).to_i}" do
+    Rails.cache.fetch "SolarSystem#constraints/#{max(:updated_at).to_i}" do
       constraints = {}
 
       SolarSystem::SCALED_FIELDS.map do |field, scale|
@@ -92,6 +92,6 @@ class SolarSystem
       }
 
       constraints
-    # end
+    end
   end
 end
