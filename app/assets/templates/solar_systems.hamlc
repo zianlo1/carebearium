@@ -1,5 +1,5 @@
 #filters
-  %filter{ ng-repeat: '(id, filter) in filters track by $index', filter: 'filter' }
+  %filter{ ng-repeat: '(id, filter) in filters track by id', filter: 'filter' }
 
 .row
   .col-sm-11.col-xs-10
