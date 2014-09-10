@@ -28,11 +28,24 @@ if Rails.env.development?
 
     task :stations do
       dump_query 'stations.json', <<-SQL
-        select st.stationID as id, st.solarSystemID, st.stationName as name
+        select st.stationID as id,
+        	   st.solarSystemID,
+        	   st.stationName as name,
+        	   count(refine.operationID) as refinery,
+        	   count(rep.operationID) as 'repair',
+        	   count(factory.operationID) as factory,
+        	   count(lab.operationID) as lab,
+        	   count(insure.operationID) as insurance
         from staStations st
         join mapSolarSystems s on s.solarSystemID = st.solarSystemID
+        left join staOperationServices refine on refine.operationID = st.operationID and refine.serviceID = 32
+        left join staOperationServices rep on rep.operationID = st.operationID and rep.serviceID = 4096
+        left join staOperationServices factory on factory.operationID = st.operationID and factory.serviceID = 8192
+        left join staOperationServices lab on lab.operationID = st.operationID and lab.serviceID = 16384
+        left join staOperationServices insure on insure.operationID = st.operationID and insure.serviceID = 1048576
         where round(s.security,1) >= 0.5
-        order by stationID
+        group by st.stationID
+        order by st.stationID
       SQL
     end
 

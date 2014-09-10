@@ -19,7 +19,12 @@ end
 p 'Loading stations'
 read_file('stations.json').each do |row|
   SolarSystem.find(row[:solarSystemID]).stations.find_or_initialize_by(id: row[:id]).update_attributes(
-    name: row[:name]
+    name:       row[:name],
+    refinery:   row[:refinery] == 1,
+    repair:     row[:repair] == 1,
+    factory:    row[:factory] == 1,
+    lab:        row[:lab] == 1,
+    insurance:  row[:insurance] == 1
   )
 end
 
