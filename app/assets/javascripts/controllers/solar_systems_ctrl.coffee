@@ -47,6 +47,7 @@ CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints, s
     $scope.filterToAdd = null
   $scope.removeAllFilters = ->
     $scope.filters = {}
+    order          = { name: 'asc' }
   $scope.removeFilter = (filter) ->
     delete $scope.filters[_.findKey $scope.filters, filter]
 
