@@ -5,12 +5,12 @@ class SolarSystemsController < ApplicationController
     last_update = SolarSystem.max(:updated_at)
     cache_key   = "solar_systems#index/#{Digest::MD5.hexdigest params.to_s}/#{last_update.to_i}"
 
-    # if stale?(last_modified: last_update, etag: cache_key, public: true)
+    if stale?(last_modified: last_update, etag: cache_key, public: true)
       finder = SolarSystemFinder.new
-      finder.find_by params[:filter]
-      finder.sort_by params[:sorting]
-      render json: finder.limit(100).to_a
-    # end
+      finder.find_by  params[:filters]
+      finder.order_by params[:order]
+      render json: finder.limit(100).to_json
+    end
   end
 
   def names

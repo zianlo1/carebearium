@@ -1,80 +1,62 @@
-CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemsCollection, ngTableParams, constraints, $timeout, CBAutocomplete) ->
-  $scope.constraints = constraints.plain()
-  $scope.systemNames = []
+CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints) ->
+  $scope.solarSystems = []
+  $scope.filters      = {}
+  $scope.loading      = true
+  $scope.fields       = []
 
-  $scope.securityTranslate = (val) -> parseFloat(val) / 10
-  $scope.industryIndexTranslate = (val) -> parseFloat(val) / 1000
+  fetchSolarSystems = ->
+    order = {}
+    order[orderByFiled] = orderByDirection
 
-  $scope.fixSliders = ->
-    # adjust every slider by a tiny margin then reset to old value to trigger re-draw on tab activation
-    # in timeout, because angular is too smart to treat zero-sum change as change
-    for own group, options of $scope.filter
-      for own key, value of options
-        if key in ['max', 'min']
-          fn = (g, k, v) ->
-            $timeout -> $scope.filter[g][k] = v
-          options[key] = options[key] * 1.0001
-          fn group, key, value
+    $scope.loading = true
+    $http(
+      url: '/solar_systems.json',
+      method: "GET",
+      params:
+        filters: $scope.filters
+        order: order
+    ).success (solarSystems) ->
+      $scope.fields       = solarSystems.fields
+      $scope.solarSystems = solarSystems.data
+      $scope.loading      = false
 
-  $scope.loading = true
+  fetchSolarSystemsTimeout = null
+  fetchSolarSystemsWithTimeout = ->
+    $timeout.cancel fetchSolarSystemsTimeout
+    fetchSolarSystemsTimeout = $timeout fetchSolarSystems, 1000
 
-  $scope.resetFilters = ->
-    $scope.filter = angular.copy $scope.constraints
-    $scope.filter.region = {}
-    $scope.filter.specific_agents = {}
-    $scope.filter.jumps = {}
-    delete $scope.filter.agent_kind
-    delete $scope.filter.agent_level
-    delete $scope.filter.agent_corporation
+  $scope.filterConstraints = {}
+  setAvailableFilters = ->
+    availableConstraints = {}
 
-  $scope.resetFilters()
+    for kind, constraint of filterConstraints
+      if constraint.multi or not _.any($scope.filters, (filter) -> filter.kind is kind)
+        availableConstraints[kind] = constraint
 
-  $scope.addAgentFilter = ->
-    $scope.filter.specific_agents[Date.now()] = { kind: null, level: null, corporation: null }
-  $scope.removeAgentFilter = (id) ->
-    delete $scope.filter.specific_agents[id]
+    $scope.filterConstraints = availableConstraints
 
-  $scope.addJumpFilter = ->
-    $scope.filter.jumps[Date.now()] = { system: null, min: 0, max: 50 }
-  $scope.removeJumpFilter = (id) ->
-    delete $scope.filter.jumps[id]
+  $scope.$watch 'filters', setAvailableFilters, true
 
-  $scope.autocompleteSolarSystems = CBAutocomplete 'solar_systems/names', (results) -> $scope.systemNames = results
+  $scope.filterToAdd = null
+  $scope.$watch 'filterToAdd', ->
+    if $scope.filterToAdd
+      existingKeys   = _.keys($scope.filters)
+      maxExistingKey = if _.any(existingKeys) then parseInt(_.max(existingKeys)) else 0
+      $scope.filters[maxExistingKey + 1] = { kind: $scope.filterToAdd }
+    $scope.filterToAdd = null
 
-  $scope.columns = [
-    { key: 'name',                      name: 'System name',          visible: true,  tab: 'Location' }
-    { key: 'region_name',               name: 'Region name',          visible: true,  tab: 'Location' }
-    { key: 'security',                  name: 'Security',             visible: true,  tab: 'Location' }
-    { key: 'belts_count',               name: 'Asteroid belts',       visible: true,  tab: 'Celestials' }
-    { key: 'stations_count',            name: 'Stations',             visible: false, tab: 'Celestials' }
-    { key: 'agents_count',              name: 'Total agents',         visible: false, tab: 'Agents' }
-    { key: 'manufacturing_index',       name: 'Manufacturing',        visible: true,  tab: 'Industry indices' }
-    { key: 'research_me_index',         name: 'ME research',          visible: false, tab: 'Industry indices' }
-    { key: 'research_te_index',         name: 'TE research',          visible: false, tab: 'Industry indices' }
-    { key: 'copying_index',             name: 'Copying',              visible: false, tab: 'Industry indices' }
-    { key: 'reverse_engineering_index', name: 'Reverse engineering',  visible: false, tab: 'Industry indices' }
-    { key: 'invention_index',           name: 'Invention',            visible: false, tab: 'Industry indices' }
-  ]
+  $scope.$watch 'filters', fetchSolarSystemsWithTimeout, true
 
-  urlWas = null
-
-  $scope.tableParams = new ngTableParams {
-    count: 25
-    filter: $scope.filter
-    sorting:
-      name: 'asc'
-  }, {
-    total: 0
-    getData: ($defer, params) ->
-      resolve = (data) ->
-        $scope.loading = false
-        $defer.resolve data
-
-      # prevent calls to server due to $scope.fixSliders shenanigains
-      if angular.equals urlWas, params.url()
-        resolve params.data
-      else
-        urlWas = angular.copy params.url()
-        $scope.loading = true
-        SolarSystemsCollection.getList(params.url()).then resolve
-  }
+  orderByFiled     = 'name'
+  orderByDirection = 'asc'
+  $scope.orderableBy = (field) ->
+    field.orderable and not (field.field is orderByFiled)
+  $scope.orderedBy = (field, direction) ->
+    field.field is orderByFiled and direction is orderByDirection
+  $scope.orderBy = (field) ->
+    if field.field is orderByFiled
+      orderByDirection = if orderByDirection is 'asc' then 'desc' else 'asc'
+    else
+      orderByFiled = field.field
+      orderByDirection = 'asc'
+    fetchSolarSystems()

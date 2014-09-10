@@ -1,7 +1,7 @@
 #solar-systems {
   table-layout: fixed;
 
-  th.sortable {
+  th.orderable {
     cursor: pointer;
 
     .glyphicon-sort {
@@ -10,9 +10,9 @@
   }
 }
 
-#filters {
-  .col-sm-2, .col-sm-4, .col-xs-2, .col-xs-4 {
-    padding-top: 15px;
-    padding-bottom: 5px;
+filter {
+  .row {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }

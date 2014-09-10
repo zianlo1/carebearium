@@ -1,21 +1,27 @@
 class SolarSystemFinder
   def initialize
     @colllection = SolarSystem.all
-    @fields      = Set.new ['_id', 'name', 'region_name']
+    @fields      = {
+      name:        { field: :name },
+      region_name: { field: :region_name },
+    }
   end
 
   def find_by(params)
-    (params || {}).each do |kind, options|
-      method_name = "find_by_#{kind}"
+    return unless params.present?
+    (JSON.parse(params) || {}).each do |idx, options|
+      options = options.with_indifferent_access
+      method_name = "find_by_#{options[:kind]}"
       if respond_to?(method_name, true)
-        send method_name, JSON.parse(options).with_indifferent_access
+        send method_name, options
       end
     end
     self
   end
 
-  def sort_by(params)
-    (params || {}).each do |field, direction|
+  def order_by(params)
+    return unless params.present?
+    (JSON.parse(params) || {}).each do |field, direction|
       direction = direction.downcase
       next unless %w(asc desc).include? direction
       @colllection = @colllection.order field.to_sym.send(direction)
@@ -28,8 +34,61 @@ class SolarSystemFinder
     self
   end
 
-  def to_a
-    @colllection.only(*@fields).to_a
+  def to_json
+    results = { fields: [], data: [] }
+
+    @fields.each do |_, options|
+      results[:fields] << {
+        field:     options[:field],
+        title:     options[:title] ? options[:title] : I18n.t("fields.#{options[:field]}"),
+        orderable: options.has_key?(:orderable) ? options[:orderable] : true
+      }
+    end
+
+    @colllection.each do |record|
+      results[:data] << @fields.map do |_, options|
+        options[:finder] ? options[:finder].call(record) : record.send(options[:field])
+      end
+    end
+
+    results
+  end
+
+  def self.constraints
+    Rails.cache.fetch "SolarSystemFinder#constraints/#{SolarSystem.max(:updated_at).to_i}" do
+      constraints = {}
+
+      SolarSystem::SCALED_FIELDS.map do |field, scale|
+        constraints[field] = {
+          title: I18n.t("filters.#{field}"),
+          min:   (SolarSystem.min(field) * scale).to_i,
+          max:   (SolarSystem.max(field) * scale).to_i,
+          scale: scale
+        }
+      end
+
+      constraints[:region] = {
+        title:        I18n.t("filters.region"),
+        region_names: SolarSystem.distinct(:region_name).sort
+      }
+
+      constraints[:agent] = {
+        title:        I18n.t("filters.agent"),
+        divisions:    SolarSystem.distinct('agents.kind').sort,
+        levels:       SolarSystem.distinct('agents.level').sort,
+        corporations: SolarSystem.distinct('agents.corporation_name').sort,
+        multi:        true
+      }
+
+      constraints[:jumps] = {
+        title: I18n.t("filters.jumps"),
+        min:   0,
+        max:   50,
+        multi: true
+      }
+
+      constraints
+    end
   end
 
   private
@@ -37,30 +96,29 @@ class SolarSystemFinder
   def find_by_region(options)
     if options[:name]
       @colllection = @colllection.where region_name: options['name']
-      @fields.add 'region_name'
     end
   end
 
-  def find_by_jumps(params)
-    params.each do |id, options|
-      next unless options[:system] && options[:system][:id] && options[:min] && options[:max]
+  def find_by_jumps(options)
+    return unless options[:system] && options[:system][:id] && options[:min] && options[:max]
 
-      min = options[:min].to_i
-      max = options[:max].to_i
+    min = options[:min].to_i
+    max = options[:max].to_i
 
-      field = "distances.#{options[:system][:id].to_i}"
-      @colllection = @colllection.between "distances.#{options[:system][:id].to_i}" => min..max
-      @fields.add "distances.#{options[:system][:id].to_i}"
-    end
+    field = "distances.#{options[:system][:id].to_i}"
+    @colllection = @colllection.between field => min..max
+    @fields[field] = { field: field, finder: -> ss { ss[field] }, title: "Distance to #{options[:system][:name]}" }
   end
 
-  def find_by_specific_agents(params)
-    params.each do |id, options|
-      queryable = { kind: options[:kind], level: options[:level], corporation_name: options[:corporation] }
-      queryable.reject!{ |k,v| v.blank? }
-      @colllection = @colllection.where :agents.to_sym.elem_match => queryable
-      @fields.add "agents._id"
-    end
+  def find_by_agent(options)
+    queryable = { level: options[:level], kind: options[:division], corporation_name: options[:corporation] }
+    queryable.reject!{ |k,v| v.blank? }
+
+    return unless queryable.any?
+
+    @colllection = @colllection.where :agents.to_sym.elem_match => queryable
+    title = "Agents: #{queryable.values.join(' / ')}"
+    @fields[title] = { field: title, finder: -> ss { ss.agents.where(queryable).count }, title: title, orderable: false }
   end
 
   SolarSystem::SCALED_FIELDS.each do |field, scale|
@@ -69,7 +127,7 @@ class SolarSystemFinder
         min = options[:min].to_f / scale
         max = options[:max].to_f / scale
         @colllection = @colllection.between field => min..max
-        @fields.add field
+        @fields[field] = { field: field, finder: -> ss { "%.#{Math.log10(scale).to_i}f" % ss[field] } }
       end
     end
   end
