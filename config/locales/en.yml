@@ -7,9 +7,22 @@ en:
     reverse_engineering_index: Reverse engineering index
     invention_index: Invention index
     security: Security status
-    agents_count: Total agents count
-    stations_count: Stations
-    belts_count: Asteroid belts
+    agents_count: Total agents
+    stations_count: Total stations
+    belts_count: Total asteroid belts
     region: Region
     agent: Specific agent
     jumps: Distance to
+  fields:
+    manufacturing_index: Manufacturing
+    research_te_index: TE research
+    research_me_index: ME research
+    copying_index: Copying
+    reverse_engineering_index: Reverse engineering
+    invention_index: Invention
+    security: Security
+    agents_count: Agents
+    stations_count: Stations
+    belts_count: Asteroid belts
+    name: Name
+    region_name: Region

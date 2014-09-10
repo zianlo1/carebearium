@@ -13,5 +13,5 @@
       %th{ ng-repeat: "field in fields" }
         {{ field.title }}
     %tr{ ng-repeat: "solarSystem in solarSystems" }
-      %td{ ng-repeat: "field in fields" }
-        {{ field.transform && field.transform(solarSystem[field.field]) || solarSystem[field.field] }}
+      %td{ ng-repeat: "value in solarSystem" }
+        {{ value }}

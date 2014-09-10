@@ -9,7 +9,7 @@ class SolarSystemsController < ApplicationController
       finder = SolarSystemFinder.new
       finder.find_by params[:filters]
       finder.sort_by params[:order]
-      render json: finder.limit(100).to_a
+      render json: finder.limit(100).to_json
     # end
   end
 

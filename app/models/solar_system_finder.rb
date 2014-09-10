@@ -1,7 +1,10 @@
 class SolarSystemFinder
   def initialize
     @colllection = SolarSystem.all
-    @fields      = Set.new ['_id', 'name', 'region_name', 'security']
+    @fields      = {
+      name:        { field: :name },
+      region_name: { field: :region_name },
+    }
   end
 
   def find_by(params)
@@ -31,8 +34,20 @@ class SolarSystemFinder
     self
   end
 
-  def to_a
-    @colllection.only(*@fields).to_a
+  def to_json
+    results = { fields: [], data: [] }
+
+    @fields.each do |_, options|
+      results[:fields] << { field: options[:field], title: options[:title] ? options[:title] : I18n.t("fields.#{options[:field]}") }
+    end
+
+    @colllection.each do |record|
+      results[:data] << @fields.map do |_, options|
+        options[:finder] ? options[:finder].call(record) : record.send(options[:field])
+      end
+    end
+
+    results
   end
 
   private
@@ -40,7 +55,6 @@ class SolarSystemFinder
   def find_by_region(options)
     if options[:name]
       @colllection = @colllection.where region_name: options['name']
-      @fields.add 'region_name'
     end
   end
 
@@ -51,18 +65,19 @@ class SolarSystemFinder
     max = options[:max].to_i
 
     field = "distances.#{options[:system][:id].to_i}"
-    @colllection = @colllection.between "distances.#{options[:system][:id].to_i}" => min..max
-    @fields.add "distances.#{options[:system][:id].to_i}"
+    @colllection = @colllection.between field => min..max
+    @fields[field] = { field: field, finder: -> ss { ss[field] }, title: "Distance to #{options[:system][:name]}" }
   end
 
   def find_by_agent(options)
-    queryable = { kind: options[:division], level: options[:level], corporation_name: options[:corporation] }
+    queryable = { level: options[:level], kind: options[:division], corporation_name: options[:corporation] }
     queryable.reject!{ |k,v| v.blank? }
 
     return unless queryable.any?
 
     @colllection = @colllection.where :agents.to_sym.elem_match => queryable
-    @fields.add "agents._id"
+    title = "Agents: #{queryable.values.join(' / ')}"
+    @fields[title] = { field: title, finder: -> ss { ss.agents.where(queryable).count }, title: title }
   end
 
   SolarSystem::SCALED_FIELDS.each do |field, scale|
@@ -71,7 +86,7 @@ class SolarSystemFinder
         min = options[:min].to_f / scale
         max = options[:max].to_f / scale
         @colllection = @colllection.between field => min..max
-        @fields.add field
+        @fields[field] = { field: field, finder: -> ss { "%.#{Math.log10(scale).to_i}f" % ss[field] } }
       end
     end
   end
