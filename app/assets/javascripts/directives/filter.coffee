@@ -12,6 +12,8 @@ CB.directive 'filter', ($compile, filterConstraints, CBAutocomplete) ->
         scope.filter.max ||= scope.constraints.max
       when 'agent'
         templateName = 'agent'
+      when 'station_service'
+        templateName = 'station_service'
       else
         templateName = 'slider'
         scope.translate = (val) -> parseFloat(val) / scope.constraints.scale

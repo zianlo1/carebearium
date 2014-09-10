@@ -68,12 +68,12 @@ class SolarSystemFinder
       end
 
       constraints[:region] = {
-        title:        I18n.t("filters.region"),
+        title:        I18n.t('filters.region'),
         region_names: SolarSystem.distinct(:region_name).sort
       }
 
       constraints[:agent] = {
-        title:        I18n.t("filters.agent"),
+        title:        I18n.t('filters.agent'),
         divisions:    SolarSystem.distinct('agents.kind').sort,
         levels:       SolarSystem.distinct('agents.level').sort,
         corporations: SolarSystem.distinct('agents.corporation_name').sort,
@@ -81,10 +81,16 @@ class SolarSystemFinder
       }
 
       constraints[:jumps] = {
-        title: I18n.t("filters.jumps"),
+        title: I18n.t('filters.jumps'),
         min:   0,
         max:   50,
         multi: true
+      }
+
+      constraints[:station_service] = {
+        title:    I18n.t('filters.station_service'),
+        services: Station::SERVICE_FIELDS.each_with_object({}){ |field,map| map[field] = I18n.t("model.station.#{field}")},
+        multi:    true
       }
 
       constraints
@@ -119,6 +125,12 @@ class SolarSystemFinder
     @colllection = @colllection.where :agents.to_sym.elem_match => queryable
     title = "Agents: #{queryable.values.join(' / ')}"
     @fields[title] = { field: title, finder: -> ss { ss.agents.where(queryable).count }, title: title, orderable: false }
+  end
+
+  def find_by_station_service(options)
+    return unless Station::SERVICE_FIELDS.include?(options[:key])
+
+    @colllection = @colllection.where "stations.#{options[:key]}" => true
   end
 
   SolarSystem::SCALED_FIELDS.each do |field, scale|

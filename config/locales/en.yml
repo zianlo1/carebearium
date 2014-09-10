@@ -13,6 +13,14 @@ en:
     region: Region
     agent: Specific agent
     jumps: Distance to
+    station_service: Has station service
+  model:
+    station:
+      refinery: Refinery
+      repair: Repair
+      factory: Manufacturing
+      lab: Research
+      insurance: Insurance
   fields:
     manufacturing_index: Manufacturing
     research_te_index: TE research
