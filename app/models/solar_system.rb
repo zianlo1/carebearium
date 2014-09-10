@@ -4,6 +4,7 @@ class SolarSystem
 
   embeds_many :stations
   embeds_many :agents
+  has_many :kill_stats
 
   field :name,                      type: String
   field :region_name,               type: String
@@ -18,6 +19,9 @@ class SolarSystem
   field :reverse_engineering_index, type: Float,   default: 0.0
   field :invention_index,           type: Float,   default: 0.0
   field :distances,                 type: Hash,    default: {}
+  field :daily_ship_kills,          type: Integer, default: 0
+  field :daily_pod_kills,           type: Integer, default: 0
+  field :daily_npc_kills,           type: Integer, default: 0
 
   SCALED_FIELDS = {
     manufacturing_index:        1000,
@@ -29,7 +33,10 @@ class SolarSystem
     security:                   10,
     agents_count:               1,
     stations_count:             1,
-    belts_count:                1
+    belts_count:                1,
+    daily_ship_kills:           1,
+    daily_pod_kills:            1,
+    daily_npc_kills:            1
   }
 
   def self.update_industry_indices
@@ -57,6 +64,16 @@ class SolarSystem
       rescue => e
         Rails.logger.warn "#{e} updating indices: #{row}"
       end
+    end
+  end
+
+  def self.update_kill_stats
+    each do |solar_sytem|
+      solar_sytem.update_attributes(
+        daily_ship_kills: solar_sytem.kill_stats.sum(:ship_kills),
+        daily_pod_kills:  solar_sytem.kill_stats.sum(:pod_kills),
+        daily_npc_kills:  solar_sytem.kill_stats.sum(:npc_kills)
+      )
     end
   end
 end

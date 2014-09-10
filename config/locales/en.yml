@@ -14,6 +14,9 @@ en:
     agent: Specific agent
     jumps: Distance to a system
     station_service: Has station service
+    daily_ship_kills: Ship kills (24h)
+    daily_pod_kills: Pod kills (24h)
+    daily_npc_kills: NPC kills (24h)
   model:
     station:
       refinery: Refinery
@@ -34,3 +37,6 @@ en:
     belts_count: Asteroid belts
     name: Name
     region_name: Region
+    daily_ship_kills: Ship kills
+    daily_pod_kills: Pod kills
+    daily_npc_kills: NPC kills

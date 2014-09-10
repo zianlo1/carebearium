@@ -2,12 +2,15 @@ class KillStat
   include Mongoid::Document
   include Mongoid::Timestamps::Created
 
+  belongs_to :solar_system
+
   field :solar_system_id, type: Integer
   field :ship_kills,      type: Integer
   field :pod_kills,       type: Integer
   field :npc_kills,       type: Integer
 
   index({ created_at: 1 }, { expire_after_seconds: 1.day })
+  index({ solar_system_id: 1 })
 
   def self.update
     EveApi.kills.each do |row|
