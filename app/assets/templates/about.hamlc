@@ -6,18 +6,21 @@
   %p
     Carebearium will enable you to search EvE solar systems by:
   .row#features
-    %a.col-xs-4{ ng-click: "filterWithPreset({ 1: { kind: 'manufacturing_index' } }, { manufacturing_index: 'asc'})" }
+    %a.col-xs-6.col-md-3{ ng-click: "filterWithPreset({ 1: { kind: 'manufacturing_index' }, 2: { kind: 'copying_index' }, 3: { kind: 'station_service', key: 'lab' }, 4: { kind: 'station_service', key: 'factory' } }, { manufacturing_index: 'asc' })" }
       %span.glyphicon.glyphicon-cog
       %h3 Industry indices!
 
-    %a.col-xs-4{ ng-click: "filterWithPreset({ 1: { kind: 'agents_count', min: 1 }, 2: { kind: 'agent' } }, { agents_count: 'desc'})" }
+    %a.col-xs-6.col-md-3{ ng-click: "filterWithPreset({ 1: { kind: 'agents_count', min: 1 }, 2: { kind: 'agent' } }, { agents_count: 'desc' })" }
       %span.glyphicon.glyphicon-user
       %h3 Mission agents!
 
-    %a.col-xs-4{ ng-click: "filterWithPreset({ 1: { kind: 'security', max: 7 }, 2: { kind: 'belts_count', min: 10 } }, { belts_count: 'desc'})" }
+    %a.col-xs-6.col-md-3{ ng-click: "filterWithPreset({ 1: { kind: 'security', max: 7 }, 2: { kind: 'belts_count', min: 10 }, 3: { kind: 'station_service', key: 'refinery' } }, { belts_count: 'desc' })" }
       %span.glyphicon.glyphicon-film
       %h3 Mining options!
 
+    %a.col-xs-6.col-md-3{ ng-click: "filterWithPreset({ 1: { kind: 'daily_ship_kills' }, 2: { kind: 'daily_pod_kills' } }, { daily_ship_kills: 'asc' })" }
+      %span.glyphicon.glyphicon-fire
+      %h3 Lack of PvP!
   %p
     More features added
     %strike daily
