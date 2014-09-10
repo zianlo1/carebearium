@@ -1,10 +1,13 @@
 #filters
   %filter{ ng-repeat: '(id, filter) in filters track by $index', filter: 'filter' }
 
-.text-center
-  %select.form-control{ ng-model: 'filterToAdd', ng-options: 'kind as constraints.title for (kind , constraints) in filterConstraints' }
-    %option{value: '', selected: 'selected', disabled: 'disabled' } Filter by...
-
+.row
+  .col-sm-11.col-xs-10
+    %select.form-control{ ng-model: 'filterToAdd', ng-options: 'kind as constraints.title for (kind , constraints) in filterConstraints' }
+      %option{value: '', selected: 'selected', disabled: 'disabled' } Filter by...
+  .col-sm-1.col-xs-2.text-right
+    %button.btn.btn-default{ ng-click: 'removeAllFilters()' }
+      %span.glyphicon.glyphicon-remove
 %hr
 
 %table#solar-systems.table.table-condensed.table-hover{ ng-class: "{ 'text-muted': loading}" }

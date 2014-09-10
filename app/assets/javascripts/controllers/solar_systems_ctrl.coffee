@@ -44,6 +44,10 @@ CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints) -
       maxExistingKey = if _.any(existingKeys) then parseInt(_.max(existingKeys)) else 0
       $scope.filters[maxExistingKey + 1] = { kind: $scope.filterToAdd }
     $scope.filterToAdd = null
+  $scope.removeAllFilters = ->
+    $scope.filters = {}
+  $scope.removeFilter = (filter) ->
+    delete $scope.filters[_.findKey $scope.filters, filter]
 
   $scope.$watch 'filters', fetchSolarSystemsWithTimeout, true
 
