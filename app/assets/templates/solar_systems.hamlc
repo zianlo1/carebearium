@@ -3,7 +3,7 @@
 
 .text-center
   %select.form-control{ ng-model: 'filterToAdd', ng-options: 'kind as constraints.title for (kind , constraints) in filterConstraints' }
-    %option{value: '', selected: 'selected', disabled: 'disabled' } Select a filter to add
+    %option{value: '', selected: 'selected', disabled: 'disabled' } Filter by...
 
 %hr
 
@@ -13,6 +13,6 @@
       %th{ ng-repeat: "field in fields", ng-class: "{orderable: field.orderable}", ng-click: 'orderBy(field)' }
         {{ field.title }}
         %span.glyphicon{ ng-class: "{'glyphicon-sort': orderableBy(field), 'glyphicon-sort-by-attributes': orderedBy(field, 'asc'), 'glyphicon-sort-by-attributes-alt': orderedBy(field, 'desc')}"}
-    %tr{ ng-repeat: "solarSystem in solarSystems" }
-      %td{ ng-repeat: "value in solarSystem" }
+    %tr{ ng-repeat: "solarSystem in solarSystems track by $index" }
+      %td{ ng-repeat: "value in solarSystem track by $index" }
         {{ value }}

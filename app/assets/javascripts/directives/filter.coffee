@@ -1,8 +1,6 @@
 CB.directive 'filter', ($compile, filterConstraints, CBAutocomplete) ->
   link = (scope, element, attrs) ->
     scope.constraints = filterConstraints[scope.filter.kind]
-    console.log scope.filter.kind
-    console.log scope.constraints
     switch scope.filter.kind
       when 'region'
         templateName = 'region'

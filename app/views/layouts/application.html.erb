@@ -6,7 +6,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <script>
-      CB.value("filterConstraints", <%= raw SolarSystem.constraints.to_json %>)
+      CB.value("filterConstraints", <%= raw SolarSystemFinder.constraints.to_json %>)
     </script>
     <%= csrf_meta_tags %>
   </head>

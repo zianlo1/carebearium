@@ -25,7 +25,18 @@ CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints) -
     $timeout.cancel fetchSolarSystemsTimeout
     fetchSolarSystemsTimeout = $timeout fetchSolarSystems, 1000
 
-  $scope.filterConstraints = filterConstraints
+  $scope.filterConstraints = {}
+  setAvailableFilters = ->
+    availableConstraints = {}
+
+    for kind, constraint of filterConstraints
+      if constraint.multi or not _.any($scope.filters, (filter) -> filter.kind is kind)
+        availableConstraints[kind] = constraint
+
+    $scope.filterConstraints = availableConstraints
+
+  $scope.$watch 'filters', setAvailableFilters, true
+
   $scope.filterToAdd = null
   $scope.$watch 'filterToAdd', ->
     if $scope.filterToAdd
