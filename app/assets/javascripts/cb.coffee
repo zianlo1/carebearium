@@ -21,6 +21,10 @@ CB.config ($routeProvider) ->
       template: JST['about']
       controller: 'AboutCtrl'
     ).
+    when('/news/:date?',
+      template: JST['news']
+      controller: 'NewsCtrl'
+    ).
     otherwise({
       redirectTo: '/solar_systems'
     })
@@ -29,7 +33,7 @@ CB.config ($analyticsProvider) ->
   $analyticsProvider.firstPageview(true)
   $analyticsProvider.withAutoBase(true)
 
-CB.run ($rootScope, $location, storage, $window) ->
+CB.run ($rootScope, $location, Storage, $window) ->
   $rootScope.$on "$routeChangeStart", (event, next, current) ->
-    unless storage.get('seenAbout') or next.$$route.controller is 'AboutCtrl'
+    unless Storage.get('seenAbout') or next.$$route.controller is 'AboutCtrl'
       $location.path "/about/"

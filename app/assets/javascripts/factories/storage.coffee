@@ -1,4 +1,4 @@
-CB.factory 'storage', ($cookieStore) ->
+CB.factory 'Storage', ($cookieStore) ->
   get = (key, value) ->
     $cookieStore.get(key) || value
 
