@@ -2,8 +2,7 @@ class SolarSystemFinder
   def initialize
     @colllection = SolarSystem.all
     @fields      = {
-      name:        { field: :name },
-      region_name: { field: :region_name },
+      name: { field: :name }
     }
   end
 
@@ -102,6 +101,7 @@ class SolarSystemFinder
   def find_by_region(options)
     if options[:name]
       @colllection = @colllection.where region_name: options['name']
+       @fields[:region_name] = { field: :region_name }
     end
   end
 
