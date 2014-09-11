@@ -7,12 +7,15 @@ distance_map = read_file('distances.json')
 
 p 'Loading solar systems'
 read_file('solar_systems.json').each do |row|
+  distances = distance_map.fetch(row[:id].to_s.to_sym, {})
+  distances[row[:id]] = 0
+
   SolarSystem.find_or_initialize_by(id: row[:id]).update_attributes(
     name:         row[:name],
     region_name:  row[:regionName],
     security:     row[:security],
     belts_count:  row[:beltCount],
-    distances:    distance_map[row[:id].to_s.to_sym]
+    distances:    distances
   )
 end
 
