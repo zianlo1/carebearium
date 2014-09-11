@@ -1,5 +1,10 @@
 #solar-systems {
   table-layout: fixed;
+  transition: 200ms ease-in-out all;
+
+  &.loading {
+    opacity: 0.3;
+  }
 
   th.orderable {
     cursor: pointer;
@@ -8,11 +13,32 @@
       color: darken($table-bg-hover, 10%);
     }
   }
+
+  tr {
+    transition: 200ms ease-in-out all;
+    opacity: 1;
+
+    &.ng-enter.ng-enter-active, &.ng-leave {
+      opacity: 1;
+    }
+
+    &.ng-leave.ng-leave-active, &.ng-enter {
+      opacity: 0;
+    }
+  }
 }
 
 filter {
-  .row {
-    padding-top: 10px;
-    padding-bottom: 10px;
+  display: block;
+  transition: 200ms ease-in-out all;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &.ng-enter.ng-enter-active, &.ng-leave {
+    opacity: 1;
+  }
+
+  &.ng-leave.ng-leave-active, &.ng-enter {
+    opacity: 0;
   }
 }

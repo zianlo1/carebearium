@@ -10,6 +10,7 @@
 #= require angular-ui-select
 #= require angular-cookies
 #= require angulartics
+#= require angular-animate
 #= require_tree ../templates
 #= require cb
 #= require_tree .

@@ -21,6 +21,7 @@ gem 'rails-assets-angular-ui-bootstrap-bower'
 gem 'rails-assets-angular-cookies'
 gem 'rails-assets-angulartics'
 gem 'rails-assets-angular-ui-select'
+gem 'rails-assets-angular-animate'
 
 group :development do
   gem 'spring'

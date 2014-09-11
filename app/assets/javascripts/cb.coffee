@@ -8,6 +8,7 @@ window.CB = angular.module 'CB', [
   'ngCookies'
   'angulartics'
   'angulartics.google.analytics'
+  'ngAnimate'
 ]
 
 CB.config ($routeProvider) ->

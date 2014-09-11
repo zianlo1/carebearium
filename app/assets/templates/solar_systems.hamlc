@@ -10,7 +10,7 @@
       %span.glyphicon.glyphicon-remove
 %hr
 
-%table#solar-systems.table.table-condensed.table-hover{ ng-class: "{ 'text-muted': loading}" }
+%table#solar-systems.table.table-condensed.table-hover{ ng-class: "{ 'loading': loading}" }
   %thead
     %tr
       %th{ ng-repeat: "field in fields", ng-class: "{orderable: field.orderable}", ng-click: 'orderBy(field)' }
