@@ -11,18 +11,26 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" ng-init="navCollapsed = true">
       <div class="container">
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" ng-click="navCollapsed = !navCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <a class="navbar-brand" href="/">
             Carebearium
             <span class='glyphicon glyphicon-heart-empty'></span>
           </a>
         </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#/about">About</a></li>
-          <li><a href="#/news">News</a></li>
-        <ul>
+        <div collapse="navCollapsed" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#/news">News</a></li>
+            <li><a href="#/about">About</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
     <div class='container'>
