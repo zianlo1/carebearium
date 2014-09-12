@@ -45,8 +45,8 @@ class SolarSystemFinder
     end
 
     @colllection.each do |record|
-      results[:data] << @fields.map do |_, options|
-        options[:finder] ? options[:finder].call(record) : record.send(options[:field])
+      results[:data] << @fields.each_with_object({}) do |(_, options), solarSystem|
+        solarSystem[options[:field]] = options[:finder] ? options[:finder].call(record) : record.send(options[:field])
       end
     end
 
