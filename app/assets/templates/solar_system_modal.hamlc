@@ -35,9 +35,9 @@
         %dt Invention
         %dd {{ solarSystem.invention_index | number: 4 }}
 
-  .panel.panel-default
+  .panel.panel-default{ ng-if: 'solarSystem.stations.length > 0'}
     .panel-heading{ ng-click: "stationsCollapsed = !stationsCollapsed" }
-      Stations
+      Stations ({{ solarSystem.stations.length }})
       %span.glyphicon.pull-right{ ng-class: "{ 'glyphicon-chevron-up': stationsCollapsed, 'glyphicon-chevron-down': !stationsCollapsed }" }
     .panel-body{ collapse: 'stationsCollapsed' }
       %table.table
@@ -63,9 +63,9 @@
             %td.text-center
               %span.glyphicon{ ng-class: "{'glyphicon-ok': station.insurance}" }
 
-  .panel.panel-default
+  .panel.panel-default{ ng-if: 'solarSystem.agents.length > 0'}
     .panel-heading{ ng-click: "agentsCollapsed = !agentsCollapsed" }
-      Agents
+      Agents ({{ solarSystem.agents.length }})
       %span.glyphicon.pull-right{ ng-class: "{ 'glyphicon-chevron-up': agentsCollapsed, 'glyphicon-chevron-down': !agentsCollapsed }" }
     .panel-body{ collapse: 'agentsCollapsed' }
       %table.table
