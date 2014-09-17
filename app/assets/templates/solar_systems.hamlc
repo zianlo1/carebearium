@@ -17,6 +17,6 @@
         {{ field.title }}
         %span.glyphicon{ ng-class: "{'glyphicon-sort': orderableBy(field), 'glyphicon-sort-by-attributes': orderedBy(field, 'asc'), 'glyphicon-sort-by-attributes-alt': orderedBy(field, 'desc')}"}
   %tbody
-    %tr{ ng-repeat: "solarSystem in solarSystems track by $index" }
+    %tr{ ng-repeat: "solarSystem in solarSystems track by $index", ng-click: 'showInModal(solarSystem)' }
       %td{ ng-repeat: "field in fields track by field.field" }
         {{ solarSystem[field.field] }}

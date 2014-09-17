@@ -13,6 +13,14 @@ class SolarSystemsController < ApplicationController
     end
   end
 
+  def show
+    solar_system = SolarSystem.find params[:id].to_i
+
+    if stale? solar_system
+      render json: solar_system.as_document.as_json
+    end
+  end
+
   def names
     last_update = SolarSystem.max(:updated_at)
     cache_key   = "solar_systems#names/#{params[:q]}/#{last_update.to_i}"

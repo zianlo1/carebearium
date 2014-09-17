@@ -1,4 +1,4 @@
-CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints, Storage) ->
+CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints, Storage, $modal) ->
   $scope.solarSystems = []
   $scope.loading      = true
   $scope.fields       = []
@@ -64,3 +64,11 @@ CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints, S
       order = {}
       order[field.field] = 'asc'
     fetchSolarSystems()
+
+  $scope.showInModal = (solarSystem) ->
+    modalInstance = $modal.open
+      template: JST['solar_system_modal']()
+      controller: 'SolarSystemModalCtrl'
+      size: 'lg'
+      resolve:
+        solarSystem: -> solarSystem

@@ -1,0 +1,81 @@
+.modal-body
+  %h3
+    {{ solarSystem.name }}
+    %small
+      {{ solarSystem.region_name }}
+    %span.glyphicon.pull-right.glyphicon-remove-circle{ ng-click: '$close()'}
+  .row
+    .col-md-6
+      %dl.dl-horizontal
+        %dt Secuirty status
+        %dd {{ solarSystem.security | number: 1 }}
+        %dt Asteroid belts
+        %dd {{ solarSystem.belts_count }}
+
+      %dl.dl-horizontal
+        %dt Ship kills (24h)
+        %dd {{ solarSystem.daily_ship_kills }}
+        %dt Pod kills (24h)
+        %dd {{ solarSystem.daily_pod_kills }}
+        %dt NPC kills (24h)
+        %dd {{ solarSystem.daily_npc_kills }}
+
+    .col-md-6
+      %dl.dl-horizontal
+        %dt Manufacturing
+        %dd {{ solarSystem.manufacturing_index | number: 4 }}
+        %dt TE research
+        %dd {{ solarSystem.research_te_index | number: 4 }}
+        %dt ME research
+        %dd {{ solarSystem.research_me_index | number: 4 }}
+        %dt Copying
+        %dd {{ solarSystem.copying_index | number: 4 }}
+        %dt Reverse engineering
+        %dd {{ solarSystem.reverse_engineering_index | number: 4 }}
+        %dt Invention
+        %dd {{ solarSystem.invention_index | number: 4 }}
+
+  .panel.panel-default
+    .panel-heading{ ng-click: "stationsCollapsed = !stationsCollapsed" }
+      Stations
+      %span.glyphicon.pull-right{ ng-class: "{ 'glyphicon-chevron-up': stationsCollapsed, 'glyphicon-chevron-down': !stationsCollapsed }" }
+    .panel-body{ collapse: 'stationsCollapsed' }
+      %table.table
+        %thead
+          %tr
+            %th Name
+            %th Refinery
+            %th Repair
+            %th Manufacturing
+            %th Research
+            %th Insurance
+        %tbody
+          %tr{ ng-repeat: 'station in solarSystem.stations track by station._id' }
+            %td {{ station.name }}
+            %td.text-center
+              %span.glyphicon{ ng-class: "{'glyphicon-ok': station.refinery}" }
+            %td.text-center
+              %span.glyphicon{ ng-class: "{'glyphicon-ok': station.repair}" }
+            %td.text-center
+              %span.glyphicon{ ng-class: "{'glyphicon-ok': station.factory}" }
+            %td.text-center
+              %span.glyphicon{ ng-class: "{'glyphicon-ok': station.lab}" }
+            %td.text-center
+              %span.glyphicon{ ng-class: "{'glyphicon-ok': station.insurance}" }
+
+  .panel.panel-default
+    .panel-heading{ ng-click: "agentsCollapsed = !agentsCollapsed" }
+      Agents
+      %span.glyphicon.pull-right{ ng-class: "{ 'glyphicon-chevron-up': agentsCollapsed, 'glyphicon-chevron-down': !agentsCollapsed }" }
+    .panel-body{ collapse: 'agentsCollapsed' }
+      %table.table
+        %thead
+          %tr
+            %th Level
+            %th Division
+            %th Corporation
+        %tbody
+          %tr{ ng-repeat: "agent in solarSystem.agents track by agent._id" }
+            %td {{ agent.level }}
+            %td {{ agent.kind }}
+            %td {{ agent.corporation_name }}

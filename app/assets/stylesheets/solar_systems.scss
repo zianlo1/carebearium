@@ -26,6 +26,12 @@
       opacity: 0;
     }
   }
+
+  tbody {
+    tr {
+      cursor: pointer;
+    }
+  }
 }
 
 filter {
@@ -40,5 +46,16 @@ filter {
 
   &.ng-leave.ng-leave-active, &.ng-enter {
     opacity: 0;
+  }
+}
+
+.modal-body {
+  h3 {
+    .glyphicon {
+      cursor: pointer;
+    }
+  }
+  .panel-heading {
+    cursor: pointer;
   }
 }
