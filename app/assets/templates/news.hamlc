@@ -2,6 +2,13 @@
   %h1
     What's new in Carebearium
 
+%h3 17.09.2014
+%ul
+  %li
+    We are open for suggestions! Click the
+    %strong Suggestions
+    button on the lower-right corner and tell us what you want to see here!
+
 %h3 11.09.2014
 %ul
   %li Carebearium now remembers what you filtered by last time
