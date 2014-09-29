@@ -3,7 +3,6 @@
 #= require lodash
 #= require restangular
 #= require angular-route
-#= require ng-table
 #= require angular-touch
 #= require venturocket-angular-slider
 #= require angular-ui-bootstrap-bower
