@@ -15,7 +15,15 @@ read_file('solar_systems.json').each do |row|
     region_name:  row[:regionName],
     security:     row[:security],
     belts_count:  row[:beltCount],
+    ice_belts:    false,
     distances:    distances
+  )
+end
+
+p 'Loading ice belt data'
+read_file('ice_belts.json').each do |row|
+  SolarSystem.find_or_initialize_by(id: row[:id]).update_attributes(
+    ice_belts: true
   )
 end
 

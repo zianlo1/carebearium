@@ -60,6 +60,16 @@ if Rails.env.development?
       SQL
     end
 
+    desc "Dump data about ice belts. Requires Retribution SDE or earlier."
+    task :ice_belts do
+      dump_query 'ice_belts.json', <<-SQL
+        select s.solarSystemID as id, belts.beltCount as iceBeltCount
+        from mapSolarSystems s
+        join (select solarSystemID, count(*) as beltCount from mapDenormalize where typeID = 17774 group by solarSystemID) belts on s.solarSystemID = belts.solarSystemID
+        order by s.solarSystemID
+      SQL
+    end
+
     task :jumps do
       jumps = exec <<-SQL
         select src.solarSystemId as 'from', dst.solarSystemId as 'to'

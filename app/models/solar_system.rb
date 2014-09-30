@@ -9,6 +9,7 @@ class SolarSystem
   field :name,                      type: String
   field :region_name,               type: String
   field :security,                  type: Float
+  field :ice_belts,                 type: Boolean
   field :belts_count,               type: Integer, default: 0
   field :stations_count,            type: Integer, default: 0
   field :agents_count,              type: Integer, default: 0
