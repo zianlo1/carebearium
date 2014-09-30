@@ -2,6 +2,17 @@
   %h1
     What's new in Carebearium
 
+%h3 30.09.2014
+%ul
+  %li
+    You can now filter for systems that can spawn ice belts
+    %a{ ng-click: "filterWithPreset({ 1: { kind: 'system_feature', key: 'ice_belts'}}, { 'name': 'asc' })" }
+      Example
+  %li
+    You can now filter for dead-end systems (only one stargate)
+    %a{ ng-click: "filterWithPreset({ 1: { kind: 'system_feature', key: 'dead_end'}}, { 'name': 'asc' })" }
+      Example
+
 %h3 17.09.2014
 %ul
   %li
