@@ -4,8 +4,9 @@
     %small
       {{ solarSystem.region_name }}
     %span.glyphicon.pull-right.glyphicon-remove-circle{ ng-click: '$close()'}
+
   .row
-    .col-md-6
+    .col-xs-6
       %dl.dl-horizontal
         %dt Secuirty status
         %dd {{ solarSystem.security | number: 1 }}
@@ -20,7 +21,7 @@
         %dt NPC kills (24h)
         %dd {{ solarSystem.daily_npc_kills }}
 
-    .col-md-6
+    .col-xs-6
       %dl.dl-horizontal
         %dt Manufacturing
         %dd {{ solarSystem.manufacturing_index | number: 4 }}
@@ -79,3 +80,13 @@
             %td {{ agent.level }}
             %td {{ agent.kind }}
             %td {{ agent.corporation_name }}
+  .row
+    .col-xs-12
+      %dl.dl-horizontal
+        %dt External resources
+        %dd
+          %a{ ng-href: 'http://evemaps.dotlan.net/system/{{solarSystem._id}}', target: '_blank' }
+            DOTLAN
+        %dd
+          %a{ ng-href: 'https://zkillboard.com/system/{{solarSystem._id}}', target: '_blank' }
+            zKillboard
