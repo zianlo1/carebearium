@@ -5,6 +5,9 @@ end
 p 'Loading distance map'
 distance_map = read_file('distances.json')
 
+p 'Loading ice belt data'
+ice_map = read_file('ice_belts.json').each_with_object({}){ |row,map| map[row[:id].to_i] = true }
+
 p 'Loading solar systems'
 read_file('solar_systems.json').each do |row|
   distances = distance_map.fetch(row[:id].to_s.to_sym, {})
@@ -15,15 +18,9 @@ read_file('solar_systems.json').each do |row|
     region_name:  row[:regionName],
     security:     row[:security],
     belts_count:  row[:beltCount],
-    ice_belts:    false,
+    ice_belts:    ice_map.fetch(row[:id], false),
+    dead_end:     distances.select{|k, v| v == 1}.size <= 1,
     distances:    distances
-  )
-end
-
-p 'Loading ice belt data'
-read_file('ice_belts.json').each do |row|
-  SolarSystem.find_or_initialize_by(id: row[:id]).update_attributes(
-    ice_belts: true
   )
 end
 

@@ -9,7 +9,6 @@ class SolarSystem
   field :name,                      type: String
   field :region_name,               type: String
   field :security,                  type: Float
-  field :ice_belts,                 type: Boolean
   field :belts_count,               type: Integer, default: 0
   field :stations_count,            type: Integer, default: 0
   field :agents_count,              type: Integer, default: 0
@@ -23,6 +22,8 @@ class SolarSystem
   field :daily_ship_kills,          type: Integer, default: 0
   field :daily_pod_kills,           type: Integer, default: 0
   field :daily_npc_kills,           type: Integer, default: 0
+  field :ice_belts,                 type: Boolean, default: false
+  field :dead_end,                  type: Boolean, default: false
 
   SCALED_FIELDS = {
     manufacturing_index:        1000,
@@ -40,7 +41,7 @@ class SolarSystem
     daily_npc_kills:            1
   }
 
-  FEATURE_FIELDS = %w(ice_belts)
+  FEATURE_FIELDS = %w(ice_belts dead_end)
 
   def self.update_industry_indices
     CREST.industry_indices.each do |row|

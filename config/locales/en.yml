@@ -17,7 +17,7 @@ en:
     daily_ship_kills: Ship kills (24h)
     daily_pod_kills: Pod kills (24h)
     daily_npc_kills: NPC kills (24h)
-    system_feature: Has system feature
+    system_feature: System feature
   model:
     station:
       refinery: Refinery
@@ -26,7 +26,8 @@ en:
       lab: Research
       insurance: Insurance
     solar_system:
-      ice_belts: Ice belts
+      ice_belts: Can spawn ice belts
+      dead_end: Dead-end system (only one stargate)
   fields:
     manufacturing_index: Manufacturing
     research_te_index: TE research
