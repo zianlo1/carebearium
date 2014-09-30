@@ -1,0 +1,9 @@
+.row
+  %label.col-sm-3.col-xs-10.control-label
+    {{ constraints.title }}
+  .col-sm-1.col-xs-2.col-sm-push-8.text-right
+    %button.btn.btn-default{ ng-click: 'removeFilter(filter)' }
+      %span.glyphicon.glyphicon-remove
+  .col-sm-8.col-xs-12.col-sm-pull-1
+    %select.form-control{ ng-model: 'filter.key', ng-options: 'key as name for (key , name) in constraints.features' }
+      %option{value: '', disabled: 'disabled' } Select a feature...

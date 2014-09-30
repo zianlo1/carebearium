@@ -40,6 +40,8 @@ class SolarSystem
     daily_npc_kills:            1
   }
 
+  FEATURE_FIELDS = %w(ice_belts)
+
   def self.update_industry_indices
     CREST.industry_indices.each do |row|
       begin

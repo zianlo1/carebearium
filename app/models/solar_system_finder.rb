@@ -92,6 +92,12 @@ class SolarSystemFinder
         multi:    true
       }
 
+      constraints[:system_feature] = {
+        title:    I18n.t('filters.system_feature'),
+        features: SolarSystem::FEATURE_FIELDS.each_with_object({}){ |field,map| map[field] = I18n.t("model.solar_system.#{field}")},
+        multi:    true
+      }
+
       constraints
     end
   end
@@ -131,6 +137,12 @@ class SolarSystemFinder
     return unless Station::SERVICE_FIELDS.include?(options[:key])
 
     @colllection = @colllection.where "stations.#{options[:key]}" => true
+  end
+
+  def find_by_system_feature(options)
+    return unless SolarSystem::FEATURE_FIELDS.include?(options[:key])
+
+    @colllection = @colllection.where options[:key] => true
   end
 
   SolarSystem::SCALED_FIELDS.each do |field, scale|

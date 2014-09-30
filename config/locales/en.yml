@@ -17,6 +17,7 @@ en:
     daily_ship_kills: Ship kills (24h)
     daily_pod_kills: Pod kills (24h)
     daily_npc_kills: NPC kills (24h)
+    system_feature: Has system feature
   model:
     station:
       refinery: Refinery
@@ -24,6 +25,8 @@ en:
       factory: Manufacturing
       lab: Research
       insurance: Insurance
+    solar_system:
+      ice_belts: Ice belts
   fields:
     manufacturing_index: Manufacturing
     research_te_index: TE research
