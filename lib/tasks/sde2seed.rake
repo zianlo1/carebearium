@@ -12,17 +12,24 @@ if Rails.env.development?
   end
 
   namespace :sde2seed do
-    task :agents do
-      dump_query 'agents.json', <<-SQL
-        select a.agentID as id, a.level, n.itemName as corporationName, d.divisionName as kind, st.stationID, st.solarSystemID, a.isLocator
-        from agtAgents a
-        join crpNPCDivisions d on d.divisionID = a.divisionID
-        join staStations st on a.locationID = st.stationID
-        join mapSolarSystems s on s.solarSystemID = st.solarSystemID
-        join crpNPCCorporations c on c.corporationID = a.corporationID
-        join invNames n on n.itemID = c.corporationID
+    task :solar_systems do
+      dump_query 'solar_systems.json', <<-SQL
+        select s.solarSystemID as id, s.solarSystemName as name, s.regionID, round(s.security, 1) as security, IFNULL(belts.beltCount, 0) as beltCount
+        from mapSolarSystems s
+        left join (select solarSystemID, count(*) as beltCount from mapDenormalize where typeID = 15 group by solarSystemID) belts on s.solarSystemID = belts.solarSystemID
         where round(s.security,1) >= 0.5
-        order by a.agentID
+        order by s.solarSystemID
+      SQL
+    end
+
+    task :regions do
+      dump_query 'regions.json', <<-SQL
+        select r.regionID, r.regionName
+        from mapRegions r
+        join mapSolarSystems s on r.regionID = s.regionID
+        where round(s.security,1) >= 0.5
+        group by r.regionID
+        order by r.regionID
       SQL
     end
 
@@ -49,14 +56,32 @@ if Rails.env.development?
       SQL
     end
 
-    task :solar_systems do
-      dump_query 'solar_systems.json', <<-SQL
-        select s.solarSystemID as id, s.solarSystemName as name, r.regionName, round(s.security, 1) as security, IFNULL(belts.beltCount, 0) as beltCount
-        from mapSolarSystems s
-        join mapRegions r on s.regionID = r.regionID
-        left join (select solarSystemID, count(*) as beltCount from mapDenormalize where typeID = 15 group by solarSystemID) belts on s.solarSystemID = belts.solarSystemID
+    task :agents do
+      dump_query 'agents.json', <<-SQL
+        select a.agentID as id, a.level, a.corporationID, d.divisionName as kind, st.stationID, st.solarSystemID
+        from agtAgents a
+        join crpNPCDivisions d on d.divisionID = a.divisionID
+        join staStations st on a.locationID = st.stationID
+        join mapSolarSystems s on s.solarSystemID = st.solarSystemID
+        join crpNPCCorporations c on c.corporationID = a.corporationID
+        join invNames n on n.itemID = c.corporationID
         where round(s.security,1) >= 0.5
-        order by s.solarSystemID
+        order by a.agentID
+      SQL
+    end
+
+    task :corporations do
+      dump_query 'corporations.json', <<-SQL
+        select c.corporationID, n.itemName as corporationName
+        from agtAgents a
+        join crpNPCDivisions d on d.divisionID = a.divisionID
+        join staStations st on a.locationID = st.stationID
+        join mapSolarSystems s on s.solarSystemID = st.solarSystemID
+        join crpNPCCorporations c on c.corporationID = a.corporationID
+        join invNames n on n.itemID = c.corporationID
+        where round(s.security,1) >= 0.5
+        group by c.corporationID
+        order by c.corporationID
       SQL
     end
 
@@ -71,50 +96,20 @@ if Rails.env.development?
     end
 
     task :jumps do
-      jumps = exec <<-SQL
-        select src.solarSystemId as 'from', dst.solarSystemId as 'to'
+      dump_query 'jumps.json', <<-SQL
+        select src.solarSystemId as 'from', group_concat(dst.solarSystemId) as 'to'
         from mapJumps j
         join mapDenormalize src on src.itemId = j.stargateId
         join mapDenormalize dst on dst.itemId = j.destinationId
         join mapSolarSystems srcSys on srcSys.solarSystemId = src.solarSystemId
         join mapSolarSystems dstSys on dstSys.solarSystemId = dst.solarSystemId
         where round(srcSys.security,1) >= 0.5 and round(dstSys.security,1) >= 0.5
+        group by src.solarSystemId
         order by src.solarSystemId, dst.solarSystemId
       SQL
-
-      jump_map = jumps.each_with_object(Hash.new { |hash, key| hash[key] = [] }) do |jump, map|
-        map[jump['from'].to_i] << jump['to'].to_i
-      end
-
-      distance_map = Hash.new { |hash, key| hash[key] = {} }
-
-      jump_map.keys.each do |start|
-        visit_next_round = Set.new jump_map[start]
-        seen = Set.new jump_map[start]
-        seen.add start
-        depth = 1
-        while visit_next_round.any?
-          visit_now = visit_next_round.to_a
-          visit_next_round = visit_next_round.clear
-          visit_now.each do |current|
-            distance_map[start][current] = depth
-            jump_map[current].each do |nxt|
-              unless seen.include?(nxt)
-                visit_next_round.add(nxt)
-                seen.add nxt
-              end
-            end
-          end
-          depth += 1
-        end
-      end
-
-      File.open(Rails.root.join('db', 'seeds', 'distances.json'), 'w') do |f|
-        f.write(JSON.pretty_generate distance_map)
-      end
     end
   end
 
   desc "Convert SDE data to db seeds"
-  task sde2seed: %w(agents stations solar_systems jumps).map{ |t| "sde2seed:#{t}" }
+  task sde2seed: %w(solar_systems regions stations agents corporations jumps).map{ |t| "sde2seed:#{t}" }
 end
