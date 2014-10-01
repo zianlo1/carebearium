@@ -1,22 +1,13 @@
-CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints, Storage, $modal) ->
+CB.controller 'SolarSystemsCtrl', ($scope, SolarSystemFinder, $timeout, filterConstraints, $modal) ->
   $scope.solarSystems = []
   $scope.loading      = true
   $scope.fields       = []
-  $scope.filters      = Storage.get 'filters', {}
-  order               = Storage.get 'order', { name: 'asc' }
+  $scope.filters      = SolarSystemFinder.filter()
+  order               = SolarSystemFinder.order()
 
   fetchSolarSystems = ->
     $scope.loading = true
-    $http(
-      url: '/solar_systems.json',
-      method: "GET",
-      params:
-        filters: $scope.filters
-        order: order
-    ).success (solarSystems) ->
-      Storage.set 'filters', $scope.filters
-      Storage.set 'order', order
-
+    SolarSystemFinder.fetch $scope.filters, order, (solarSystems) ->
       $scope.fields       = solarSystems.fields
       $scope.solarSystems = solarSystems.data
       $scope.loading      = false
