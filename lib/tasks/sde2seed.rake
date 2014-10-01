@@ -1,5 +1,7 @@
 if Rails.env.development?
   require 'mysql2'
+  require 'multi_json'
+  require 'oj'
 
   def exec(query)
     Mysql2::Client.new(host: 'localhost', username: 'root', database: 'eve').query(query).to_a
@@ -7,7 +9,7 @@ if Rails.env.development?
 
   def dump_query(filename, query)
     File.open(Rails.root.join('db', 'seeds', filename), 'w') do |f|
-      f.write(JSON.pretty_generate exec query)
+      f.write(MultiJson.dump exec(query), pretty: true)
     end
   end
 

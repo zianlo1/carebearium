@@ -1,94 +1,94 @@
 [
   {
-    "regionID": 10000001,
-    "regionName": "Derelik"
+    "regionID":10000001,
+    "regionName":"Derelik"
   },
   {
-    "regionID": 10000002,
-    "regionName": "The Forge"
+    "regionID":10000002,
+    "regionName":"The Forge"
   },
   {
-    "regionID": 10000016,
-    "regionName": "Lonetrek"
+    "regionID":10000016,
+    "regionName":"Lonetrek"
   },
   {
-    "regionID": 10000020,
-    "regionName": "Tash-Murkon"
+    "regionID":10000020,
+    "regionName":"Tash-Murkon"
   },
   {
-    "regionID": 10000028,
-    "regionName": "Molden Heath"
+    "regionID":10000028,
+    "regionName":"Molden Heath"
   },
   {
-    "regionID": 10000030,
-    "regionName": "Heimatar"
+    "regionID":10000030,
+    "regionName":"Heimatar"
   },
   {
-    "regionID": 10000032,
-    "regionName": "Sinq Laison"
+    "regionID":10000032,
+    "regionName":"Sinq Laison"
   },
   {
-    "regionID": 10000033,
-    "regionName": "The Citadel"
+    "regionID":10000033,
+    "regionName":"The Citadel"
   },
   {
-    "regionID": 10000036,
-    "regionName": "Devoid"
+    "regionID":10000036,
+    "regionName":"Devoid"
   },
   {
-    "regionID": 10000037,
-    "regionName": "Everyshore"
+    "regionID":10000037,
+    "regionName":"Everyshore"
   },
   {
-    "regionID": 10000038,
-    "regionName": "The Bleak Lands"
+    "regionID":10000038,
+    "regionName":"The Bleak Lands"
   },
   {
-    "regionID": 10000042,
-    "regionName": "Metropolis"
+    "regionID":10000042,
+    "regionName":"Metropolis"
   },
   {
-    "regionID": 10000043,
-    "regionName": "Domain"
+    "regionID":10000043,
+    "regionName":"Domain"
   },
   {
-    "regionID": 10000044,
-    "regionName": "Solitude"
+    "regionID":10000044,
+    "regionName":"Solitude"
   },
   {
-    "regionID": 10000048,
-    "regionName": "Placid"
+    "regionID":10000048,
+    "regionName":"Placid"
   },
   {
-    "regionID": 10000049,
-    "regionName": "Khanid"
+    "regionID":10000049,
+    "regionName":"Khanid"
   },
   {
-    "regionID": 10000052,
-    "regionName": "Kador"
+    "regionID":10000052,
+    "regionName":"Kador"
   },
   {
-    "regionID": 10000054,
-    "regionName": "Aridia"
+    "regionID":10000054,
+    "regionName":"Aridia"
   },
   {
-    "regionID": 10000064,
-    "regionName": "Essence"
+    "regionID":10000064,
+    "regionName":"Essence"
   },
   {
-    "regionID": 10000065,
-    "regionName": "Kor-Azor"
+    "regionID":10000065,
+    "regionName":"Kor-Azor"
   },
   {
-    "regionID": 10000067,
-    "regionName": "Genesis"
+    "regionID":10000067,
+    "regionName":"Genesis"
   },
   {
-    "regionID": 10000068,
-    "regionName": "Verge Vendor"
+    "regionID":10000068,
+    "regionName":"Verge Vendor"
   },
   {
-    "regionID": 10000069,
-    "regionName": "Black Rise"
+    "regionID":10000069,
+    "regionName":"Black Rise"
   }
 ]
