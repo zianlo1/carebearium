@@ -17,7 +17,13 @@ if Rails.env.development?
       data = {}
 
       read_file('solar_systems.json').each do |row|
-        data[row[:id]] = row.slice(:name, :regionID, :security, :beltCount)
+        system = row.slice(:name, :regionID, :security, :beltCount)
+
+        system[:stations] = []
+        system[:agents] = []
+        system[:jumps] = []
+
+        data[row[:id]] = system
       end
 
       read_file('ice_belts.json').each do |row|
@@ -28,24 +34,13 @@ if Rails.env.development?
       read_file('stations.json').each do |row|
         next unless data[row[:solarSystemID]]
         data[row[:solarSystemID]][:stations] ||= []
-        data[row[:solarSystemID]][:stations] << [
-          row[:name],
-          row[:refinery],
-          row[:repair],
-          row[:factory],
-          row[:lab],
-          row[:insurance]
-        ]
+        data[row[:solarSystemID]][:stations] << row.slice(:name, :refinery, :repair, :factory, :lab, :insurance)
       end
 
       read_file('agents.json').each do |row|
         next unless data[row[:solarSystemID]]
         data[row[:solarSystemID]][:agents] ||= []
-        data[row[:solarSystemID]][:agents] << [
-          row[:corporationID],
-          row[:kind],
-          row[:level]
-        ]
+        data[row[:solarSystemID]][:agents] << row.slice(:corporationID, :kind, :level)
       end
 
       read_file('jumps.json').each do |row|
@@ -53,20 +48,25 @@ if Rails.env.development?
         data[row[:from]][:jumps] = row[:to].split(',').map(&:to_i)
       end
 
-      output = data.each_with_object({}) do |(id, r), map|
-        map[id] = [
-          r[:name],
-          r[:regionID],
-          r[:security],
-          r[:beltCount],
-          r[:ice] ? 1 : 0,
-          r[:stations] || [],
-          r[:agents] || [],
-          r[:jumps] || []
-        ]
-      end
+      limits = {}
 
-      write_file 'solar_systems_static.json', output
+      securities = data.values.map{ |v| v[:security] }.compact
+      limits[:security] = { min: securities.min, max: securities.max }
+
+      belt_counts = data.values.map{ |v| v[:beltCount] }.compact
+      limits[:belt_count] = { min: belt_counts.min, max: belt_counts.max }
+
+      station_counts = data.values.map{ |v| v[:stations].size }.compact
+      limits[:station_count] = { min: station_counts.max, max: station_counts.max }
+
+      agent_counts = data.values.map{ |v| v[:agents].size }.compact
+      limits[:agent_count] = { min: agent_counts.min, max: agent_counts.max }
+
+      jump_counts = data.values.map{ |v| v[:jumps].size }.compact
+      limits[:jump_count] = { min: jump_counts.min, max: jump_counts.max }
+
+      write_file 'solar_systems_static.json', data
+      write_file 'limits.json', limits
     end
 
     task :regions do
