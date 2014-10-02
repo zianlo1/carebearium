@@ -1,5 +1,4 @@
 window.CB = angular.module 'CB', [
-  'restangular'
   'ngRoute'
   'vr.directives.slider'
   'ui.bootstrap'
