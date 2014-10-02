@@ -28,7 +28,7 @@ class SolarSystem
 
   def self.dynamic_limits
     DATA_FIELDS.each_with_object({}) do |field, map|
-      map[field] = { min: min(field), max: max(field) }
+      map[field] = { min: 0, max: max(field) }
     end
   end
 

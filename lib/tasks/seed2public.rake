@@ -57,7 +57,7 @@ if Rails.env.development?
       limits[:belt_count] = { min: belt_counts.min, max: belt_counts.max }
 
       station_counts = data.values.map{ |v| v[:stations].size }.compact
-      limits[:station_count] = { min: station_counts.max, max: station_counts.max }
+      limits[:station_count] = { min: station_counts.min, max: station_counts.max }
 
       agent_counts = data.values.map{ |v| v[:agents].size }.compact
       limits[:agent_count] = { min: agent_counts.min, max: agent_counts.max }
@@ -66,7 +66,7 @@ if Rails.env.development?
       limits[:jump_count] = { min: jump_counts.min, max: jump_counts.max }
 
       write_file 'solar_systems_static.json', data
-      write_file 'limits.json', limits
+      write_file 'limits_static.json', limits
     end
 
     task :regions do
