@@ -1,9 +1,9 @@
-CB.factory 'Limits', ($q, $http) ->
+CB.factory 'SolarSystems', ($q, $http) ->
   defer = $q.defer()
 
   $q.all([
-    $http(url: '/api/limits.json')
-    $http(url: '/api/limits_static.json')
+    $http(url: '/api/solar_systems.json')
+    $http(url: '/api/solar_systems_static.json')
   ]).then (results) ->
     defer.resolve Lazy(results[0].data).merge results[1].data
 
