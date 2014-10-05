@@ -21,6 +21,7 @@ gem 'rails-assets-angular-cookies'
 gem 'rails-assets-angulartics'
 gem 'rails-assets-angular-ui-select'
 gem 'rails-assets-angular-animate'
+gem 'rails-assets-lazy.js'
 
 group :development do
   gem 'spring'
