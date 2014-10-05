@@ -7,4 +7,4 @@
   %tbody
     %tr{ ng-repeat: "solarSystem in solarSystems track by $index" }
       %td{ ng-repeat: "(field, details) in fields track by field" }
-        {{ solarSystem[field] }}
+        {{ details.display(solarSystem)  }}

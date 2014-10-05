@@ -1,4 +1,4 @@
-CB.factory 'SolarSystems', ($q, $http) ->
+CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
   rawData = {}
   rawDataLoaded = $q.defer()
 
@@ -6,29 +6,30 @@ CB.factory 'SolarSystems', ($q, $http) ->
     $http(url: '/api/solar_systems.json')
     $http(url: '/api/solar_systems_static.json')
   ]).then (results) ->
-    rawData = Lazy(results[0].data).merge results[1].data
+    rawData = Lazy(results[0].data).merge(results[1].data)
     rawDataLoaded.resolve()
 
   find = (options) ->
     sortField     = options.sort[0] || 'name'
     sortDirection = options.sort[1] || 'asc'
     rawDataLoaded.promise.then ->
-      data = rawData
+      data = rawData.filter -> true
 
       visibleFields =
-        name: { text: 'Name', sorted: false }
+        name: { text: 'Name', sorted: false, display: (item) -> item.name }
 
-      data = data.sortBy (parts) -> parts[1][sortField]
+      for filterOptions in options.filters
+        filter = new FilterManager[filterOptions.kind](filterOptions)
+        data = data.filter filter.filterFunction
+        data = data.map filter.mapFunction
+        visibleFields[key] = value for key, value of filter.visibleFields()
+
+      data = data.sortBy (item) -> item[sortField]
       data = data.reverse() unless sortDirection is 'asc'
-
       if visibleFields[sortField]
         visibleFields[sortField].sorted = sortDirection
 
       data = data.first(50)
-
-      data = data.map (parts) ->
-        parts[1].id = parts[0]
-        parts[1]
 
       options.callback
         fields: visibleFields
