@@ -1,0 +1,8 @@
+%table#solar-systems.table.table-condensed.table-hover{ ng-class: "{ 'loading': loading}" }
+  %thead
+    %tr
+      %th
+  %tbody
+    %tr{ ng-repeat: "solarSystem in solarSystems track by $index" }
+      %td
+        {{ solarSystem.name }}
