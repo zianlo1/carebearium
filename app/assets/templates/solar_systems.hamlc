@@ -1,8 +1,10 @@
 %table#solar-systems.table.table-condensed.table-hover{ ng-class: "{ 'loading': loading}" }
   %thead
     %tr
-      %th
+      %th.orderable{ ng-repeat: "(field, details) in fields track by field", ng-click: 'orderBy(field, details.sorted)' }
+        {{ details.text }}
+        %span.glyphicon{ ng-class: "{'glyphicon-sort': !details.sorted, 'glyphicon-sort-by-attributes': details.sorted == 'asc', 'glyphicon-sort-by-attributes-alt': details.sorted == 'desc'}"}
   %tbody
     %tr{ ng-repeat: "solarSystem in solarSystems track by $index" }
-      %td
-        {{ solarSystem.name }}
+      %td{ ng-repeat: "(field, details) in fields track by field" }
+        {{ solarSystem[field] }}
