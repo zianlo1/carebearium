@@ -6,8 +6,8 @@ class CB.Filters.Security extends CB.Filters.Base
   constructor: (@options) ->
     super(@options)
 
-    @options.min ||= @constraints.min * @scale
-    @options.max ||= @constraints.max * @scale
+    @options.min ||= @limits.min * @scale
+    @options.max ||= @limits.max * @scale
 
   filterFunction: (item) =>
     val = item.security * @scale
@@ -20,14 +20,10 @@ class CB.Filters.Security extends CB.Filters.Base
 
   filterName: 'Security'
 
-  constraints:
-    min: 0.5
-    max: 1.0
-
   translateFunction: (i) => i / @scale
 
   settings: =>
-    min: @constraints.min * @scale
-    max: @constraints.max * @scale
+    min: @limits.min * @scale
+    max: @limits.max * @scale
     name: @filterName
     translateFunction: @translateFunction

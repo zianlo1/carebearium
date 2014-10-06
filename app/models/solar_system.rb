@@ -26,9 +26,13 @@ class SolarSystem
     end
   end
 
-  def self.dynamic_limits
-    DATA_FIELDS.each_with_object({}) do |field, map|
-      map[field] = { min: 0, max: max(field) }
+  def self.limits_json
+    Rails.cache.fetch "SolarSystem#limits/#{max(:updated_at).to_i}" do
+      static_limits = MultiJson.load File.read(Rails.root.join 'public', 'api', 'limits_static.json')
+
+      DATA_FIELDS.each_with_object(static_limits) do |field, map|
+        map[field] = { min: 0, max: max(field) }
+      end.to_json
     end
   end
 

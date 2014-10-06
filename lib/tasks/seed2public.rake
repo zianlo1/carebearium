@@ -69,31 +69,23 @@ if Rails.env.development?
       write_file 'limits_static.json', limits
     end
 
-    task :regions do
+    task :dictionary do
       output = {}
 
       read_file('regions.json').each do |row|
         output[row[:regionID]] = row[:regionName]
       end
 
-      File.open(Rails.root.join('app', 'assets', 'javascripts', 'factories', 'regions.coffee'), 'w') do |f|
-        f.write("CB.factory 'Regions', -> #{MultiJson.dump output}")
-      end
-    end
-
-    task :corporations do
-      output = {}
-
       read_file('corporations.json').each do |row|
         output[row[:corporationID]] = row[:corporationName]
       end
 
-      File.open(Rails.root.join('app', 'assets', 'javascripts', 'factories', 'corporations.coffee'), 'w') do |f|
-        f.write("CB.factory 'Corporations', -> #{MultiJson.dump output}")
+      File.open(Rails.root.join('app', 'assets', 'javascripts', 'dictionary.coffee'), 'w') do |f|
+        f.write("CB.Dictionary = #{MultiJson.dump output}")
       end
     end
   end
 
   desc "Convert seed files to public"
-  task seed2public: %w(solar_systems regions corporations).map{ |t| "seed2public:#{t}" }
+  task seed2public: %w(solar_systems dictionary).map{ |t| "seed2public:#{t}" }
 end
