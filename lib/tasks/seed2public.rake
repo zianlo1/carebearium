@@ -76,7 +76,9 @@ if Rails.env.development?
         output[row[:regionID]] = row[:regionName]
       end
 
-      write_file 'regions.json', output
+      File.open(Rails.root.join('app', 'assets', 'javascripts', 'factories', 'regions.coffee'), 'w') do |f|
+        f.write("CB.factory 'Regions', -> #{MultiJson.dump output}")
+      end
     end
 
     task :corporations do
@@ -86,7 +88,9 @@ if Rails.env.development?
         output[row[:corporationID]] = row[:corporationName]
       end
 
-      write_file 'corporations.json', output
+      File.open(Rails.root.join('app', 'assets', 'javascripts', 'factories', 'corporations.coffee'), 'w') do |f|
+        f.write("CB.factory 'Corporations', -> #{MultiJson.dump output}")
+      end
     end
   end
 
