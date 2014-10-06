@@ -8,7 +8,7 @@ class CB.Filters.ResearchTE extends CB.Filters.Slider
     val >= @options.min and val <= @options.max
 
   visibleFields: ->
-    manufacturing:
+    research_te:
       text: 'Research TE'
       display: (item) -> item.research_te.toFixed(5)
 

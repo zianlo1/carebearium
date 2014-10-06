@@ -12,6 +12,7 @@ CB.factory 'FilterManager', ->
     research_me: CB.Filters.ResearchME
     research_te: CB.Filters.ResearchTE
     reverse_engineering: CB.Filters.ReverseEngineering
+    jump_count: CB.Filters.JumpCount
 
   for key, value of CB.Limits
     filters[key]?.prototype.limits = value
@@ -21,4 +22,3 @@ CB.factory 'FilterManager', ->
 # hourly_npcs: Object
 # hourly_pods: Object
 # hourly_ships: Object
-# jump_count: Object

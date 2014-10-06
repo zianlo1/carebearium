@@ -8,7 +8,7 @@ class CB.Filters.ReverseEngineering extends CB.Filters.Slider
     val >= @options.min and val <= @options.max
 
   visibleFields: ->
-    manufacturing:
+    reverse_engineering:
       text: 'Reverse eng.'
       display: (item) -> item.reverse_engineering.toFixed(5)
 
