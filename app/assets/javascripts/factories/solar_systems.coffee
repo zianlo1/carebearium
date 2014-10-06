@@ -16,12 +16,13 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
       data = rawData.filter -> true
 
       visibleFields =
-        name: { text: 'Name', sorted: false, display: (item) -> item.name }
+        name: { text: 'Name', display: (item) -> item.name }
 
       for filterOptions in options.filters
         filter = new FilterManager[filterOptions.kind](filterOptions)
-        data = data.filter filter.filterFunction
-        data = data.map filter.mapFunction
+
+        data = data.filter(filter.filterFunction).map(filter.mapFunction)
+
         visibleFields[key] = value for key, value of filter.visibleFields()
 
       data = data.sortBy (item) -> item[sortField]

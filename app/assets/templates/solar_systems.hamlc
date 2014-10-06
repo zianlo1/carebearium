@@ -1,3 +1,15 @@
+#filters
+  %filter{ ng-repeat: 'filter in filters', filter: 'filter' }
+
+.row
+  .col-sm-11.col-xs-10
+    %select.form-control{ ng-model: 'filterToAdd', ng-options: 'kind as instance.filterName for (kind , instance) in availableFilters' }
+      %option{value: '', selected: 'selected', disabled: 'disabled' } Filter by...
+  .col-sm-1.col-xs-2.text-right
+    %button.btn.btn-default{ ng-click: 'removeAllFilters()' }
+      %span.glyphicon.glyphicon-remove
+%hr
+
 %table#solar-systems.table.table-condensed.table-hover{ ng-class: "{ 'loading': loading}" }
   %thead
     %tr
