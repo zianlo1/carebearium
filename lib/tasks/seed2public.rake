@@ -20,16 +20,18 @@ if Rails.env.development?
 
   namespace :seed2public do
     task :solar_systems do
-      data = {}
+      data  = {}
+      names = {}
 
       read_file('solar_systems.json').each do |row|
-        system = row.slice(:name, :regionID, :security, :beltCount)
+        system = row.slice(:regionID, :security, :beltCount)
 
         system[:stations] = []
         system[:agents] = []
         system[:jumps] = []
 
         data[row[:id]] = system
+        names[row[:id]] = row[:name]
       end
 
       read_file('ice_belts.json').each do |row|
@@ -51,14 +53,10 @@ if Rails.env.development?
         divisions.add row[:division]
       end
 
-      write_static_data 'AgentLevels', levels.to_a.sort
-
       divisionMap = {}
       divisions.to_a.sort.each_with_index do |divisions, index|
         divisionMap[index] = divisions
       end
-
-      write_static_data 'AgentDivisions', divisionMap
 
       read_file('agents.json').each do |row|
         next unless data[row[:solarSystemID]]
@@ -92,6 +90,10 @@ if Rails.env.development?
 
       write_file 'solar_systems_static.json', data
       write_file 'limits_static.json', limits
+
+      write_static_data 'AgentLevels', levels.to_a.sort
+      write_static_data 'AgentDivisions', divisionMap
+      write_static_data 'SolarSystemNames', names
     end
 
     task :corporations do

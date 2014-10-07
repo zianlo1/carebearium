@@ -1,4 +1,3 @@
-CB.Filters ||= {}
 class CB.Filters.Base
   constructor: (@options) ->
     @options ||= {}

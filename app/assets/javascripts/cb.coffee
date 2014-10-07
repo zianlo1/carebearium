@@ -9,7 +9,9 @@ window.CB = angular.module 'CB', [
   'ngAnimate'
 ]
 
-CB.StaticData = {}
+CB.StaticData =
+  SolarSystems: {}
+CB.Filters = {}
 
 CB.config ($routeProvider) ->
   $routeProvider.

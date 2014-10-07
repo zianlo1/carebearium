@@ -1,0 +1,12 @@
+.row
+  %label.col-sm-3.col-xs-10.control-label
+    {{ settings.name }}
+  .col-sm-1.col-xs-2.col-sm-push-8.text-right
+    %button.btn.btn-default{ ng-click: 'removeFilter(filter)' }
+      %span.glyphicon.glyphicon-remove
+  .col-sm-3.col-xs-4.col-sm-pull-1
+    %select.form-control{ ng-model: 'filter.system', ng-options: 'key as value for (key , value) in settings.systems' }
+      %option{value: '', disabled: 'disabled' }
+        {{ settings.prompt }}
+  .col-sm-5.col-xs-8.col-sm-pull-1
+    %slider{ floor: '{{ settings.min }}', ceiling: '{{ settings.max }}', ng-model: 'filter.distance' }

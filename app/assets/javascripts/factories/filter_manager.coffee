@@ -20,6 +20,7 @@ CB.factory 'FilterManager', ->
     system_feature: CB.Filters.SystemFeature
     region: CB.Filters.Region
     agent: CB.Filters.Agent
+    distance_jumps: CB.Filters.DistanceJumps
 
   for key, value of CB.StaticData.Limits
     filters[key]?.prototype.limits = value

@@ -1,19 +1,24 @@
 CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
-  rawData = {}
-  rawDataLoaded = $q.defer()
+  dataLoaded = $q.defer()
 
   $q.all([
     $http(url: '/api/solar_systems.json')
     $http(url: '/api/solar_systems_static.json')
   ]).then (results) ->
-    rawData = Lazy(results[0].data).merge(results[1].data)
-    rawDataLoaded.resolve()
+    Lazy(results[0].data).merge(results[1].data).each (system, id) ->
+      system.id   = id
+      system.name = CB.StaticData.SolarSystemNames[id]
+
+      CB.StaticData.SolarSystems[id] = system
+
+    dataLoaded.resolve()
 
   find = (options) ->
     sortField     = options.sort[0] || 'name'
     sortDirection = options.sort[1] || 'asc'
-    rawDataLoaded.promise.then ->
-      data = rawData.filter -> true
+
+    dataLoaded.promise.then ->
+      data = Lazy(CB.StaticData.SolarSystems).filter -> true
 
       visibleFields =
         name: { text: 'Name', display: (item) -> item.name }
