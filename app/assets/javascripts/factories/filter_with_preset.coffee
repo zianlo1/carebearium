@@ -1,5 +1,5 @@
 CB.factory 'FilterWithPreset', (Storage, $location) ->
-  (filter, order) ->
-    Storage.set 'filters', filter
-    Storage.set 'order', order
+  (filters, sort) ->
+    Storage.set 'filters', filters
+    Storage.set 'sort', sort
     $location.path '/solar_systems'

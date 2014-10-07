@@ -1,0 +1,594 @@
+[
+  {
+    "corporationID":1000002,
+    "corporationName":"CBD Corporation"
+  },
+  {
+    "corporationID":1000003,
+    "corporationName":"Prompt Delivery"
+  },
+  {
+    "corporationID":1000004,
+    "corporationName":"Ytiri"
+  },
+  {
+    "corporationID":1000005,
+    "corporationName":"Hyasyoda Corporation"
+  },
+  {
+    "corporationID":1000006,
+    "corporationName":"Deep Core Mining Inc."
+  },
+  {
+    "corporationID":1000007,
+    "corporationName":"Poksu Mineral Group"
+  },
+  {
+    "corporationID":1000008,
+    "corporationName":"Minedrill"
+  },
+  {
+    "corporationID":1000009,
+    "corporationName":"Caldari Provisions"
+  },
+  {
+    "corporationID":1000010,
+    "corporationName":"Kaalakiota Corporation"
+  },
+  {
+    "corporationID":1000011,
+    "corporationName":"Wiyrkomi Corporation"
+  },
+  {
+    "corporationID":1000012,
+    "corporationName":"Top Down"
+  },
+  {
+    "corporationID":1000013,
+    "corporationName":"Rapid Assembly"
+  },
+  {
+    "corporationID":1000014,
+    "corporationName":"Perkone"
+  },
+  {
+    "corporationID":1000015,
+    "corporationName":"Caldari Steel"
+  },
+  {
+    "corporationID":1000016,
+    "corporationName":"Zainou"
+  },
+  {
+    "corporationID":1000017,
+    "corporationName":"Nugoeihuvi Corporation"
+  },
+  {
+    "corporationID":1000018,
+    "corporationName":"Echelon Entertainment"
+  },
+  {
+    "corporationID":1000019,
+    "corporationName":"Ishukone Corporation"
+  },
+  {
+    "corporationID":1000020,
+    "corporationName":"Lai Dai Corporation"
+  },
+  {
+    "corporationID":1000022,
+    "corporationName":"Propel Dynamics"
+  },
+  {
+    "corporationID":1000023,
+    "corporationName":"Expert Distribution"
+  },
+  {
+    "corporationID":1000024,
+    "corporationName":"CBD Sell Division"
+  },
+  {
+    "corporationID":1000025,
+    "corporationName":"Sukuuvestaa Corporation"
+  },
+  {
+    "corporationID":1000026,
+    "corporationName":"Caldari Constructions"
+  },
+  {
+    "corporationID":1000027,
+    "corporationName":"Expert Housing"
+  },
+  {
+    "corporationID":1000028,
+    "corporationName":"Caldari Funds Unlimited"
+  },
+  {
+    "corporationID":1000029,
+    "corporationName":"State and Region Bank"
+  },
+  {
+    "corporationID":1000030,
+    "corporationName":"Modern Finances"
+  },
+  {
+    "corporationID":1000031,
+    "corporationName":"Chief Executive Panel"
+  },
+  {
+    "corporationID":1000032,
+    "corporationName":"Mercantile Club"
+  },
+  {
+    "corporationID":1000033,
+    "corporationName":"Caldari Business Tribunal"
+  },
+  {
+    "corporationID":1000034,
+    "corporationName":"House of Records"
+  },
+  {
+    "corporationID":1000035,
+    "corporationName":"Caldari Navy"
+  },
+  {
+    "corporationID":1000036,
+    "corporationName":"Internal Security"
+  },
+  {
+    "corporationID":1000037,
+    "corporationName":"Lai Dai Protection Service"
+  },
+  {
+    "corporationID":1000038,
+    "corporationName":"Ishukone Watch"
+  },
+  {
+    "corporationID":1000039,
+    "corporationName":"Home Guard"
+  },
+  {
+    "corporationID":1000040,
+    "corporationName":"Peace and Order Unit"
+  },
+  {
+    "corporationID":1000041,
+    "corporationName":"Spacelane Patrol"
+  },
+  {
+    "corporationID":1000042,
+    "corporationName":"Wiyrkomi Peace Corps"
+  },
+  {
+    "corporationID":1000043,
+    "corporationName":"Corporate Police Force"
+  },
+  {
+    "corporationID":1000044,
+    "corporationName":"School of Applied Knowledge"
+  },
+  {
+    "corporationID":1000045,
+    "corporationName":"Science and Trade Institute"
+  },
+  {
+    "corporationID":1000046,
+    "corporationName":"Sebiestor Tribe"
+  },
+  {
+    "corporationID":1000047,
+    "corporationName":"Krusual Tribe"
+  },
+  {
+    "corporationID":1000048,
+    "corporationName":"Vherokior Tribe"
+  },
+  {
+    "corporationID":1000049,
+    "corporationName":"Brutor Tribe"
+  },
+  {
+    "corporationID":1000050,
+    "corporationName":"Republic Parliament"
+  },
+  {
+    "corporationID":1000051,
+    "corporationName":"Republic Fleet"
+  },
+  {
+    "corporationID":1000052,
+    "corporationName":"Republic Justice Department"
+  },
+  {
+    "corporationID":1000053,
+    "corporationName":"Urban Management"
+  },
+  {
+    "corporationID":1000054,
+    "corporationName":"Republic Security Services"
+  },
+  {
+    "corporationID":1000055,
+    "corporationName":"Minmatar Mining Corporation"
+  },
+  {
+    "corporationID":1000056,
+    "corporationName":"Core Complexion Inc."
+  },
+  {
+    "corporationID":1000057,
+    "corporationName":"Boundless Creation"
+  },
+  {
+    "corporationID":1000058,
+    "corporationName":"Eifyr and Co."
+  },
+  {
+    "corporationID":1000059,
+    "corporationName":"Six Kin Development"
+  },
+  {
+    "corporationID":1000060,
+    "corporationName":"Native Freshfood"
+  },
+  {
+    "corporationID":1000061,
+    "corporationName":"Freedom Extension"
+  },
+  {
+    "corporationID":1000062,
+    "corporationName":"The Leisure Group"
+  },
+  {
+    "corporationID":1000063,
+    "corporationName":"Amarr Constructions"
+  },
+  {
+    "corporationID":1000064,
+    "corporationName":"Carthum Conglomerate"
+  },
+  {
+    "corporationID":1000065,
+    "corporationName":"Imperial Armaments"
+  },
+  {
+    "corporationID":1000066,
+    "corporationName":"Viziam"
+  },
+  {
+    "corporationID":1000067,
+    "corporationName":"Zoar and Sons"
+  },
+  {
+    "corporationID":1000068,
+    "corporationName":"Noble Appliances"
+  },
+  {
+    "corporationID":1000069,
+    "corporationName":"Ducia Foundry"
+  },
+  {
+    "corporationID":1000070,
+    "corporationName":"HZO Refinery"
+  },
+  {
+    "corporationID":1000071,
+    "corporationName":"Inherent Implants"
+  },
+  {
+    "corporationID":1000072,
+    "corporationName":"Imperial Shipment"
+  },
+  {
+    "corporationID":1000073,
+    "corporationName":"Amarr Certified News"
+  },
+  {
+    "corporationID":1000074,
+    "corporationName":"Joint Harvesting"
+  },
+  {
+    "corporationID":1000075,
+    "corporationName":"Nurtura"
+  },
+  {
+    "corporationID":1000076,
+    "corporationName":"Further Foodstuffs"
+  },
+  {
+    "corporationID":1000077,
+    "corporationName":"Royal Amarr Institute"
+  },
+  {
+    "corporationID":1000078,
+    "corporationName":"Imperial Chancellor"
+  },
+  {
+    "corporationID":1000079,
+    "corporationName":"Amarr Civil Service"
+  },
+  {
+    "corporationID":1000080,
+    "corporationName":"Ministry of War"
+  },
+  {
+    "corporationID":1000081,
+    "corporationName":"Ministry of Assessment"
+  },
+  {
+    "corporationID":1000082,
+    "corporationName":"Ministry of Internal Order"
+  },
+  {
+    "corporationID":1000083,
+    "corporationName":"Amarr Trade Registry"
+  },
+  {
+    "corporationID":1000084,
+    "corporationName":"Amarr Navy"
+  },
+  {
+    "corporationID":1000085,
+    "corporationName":"Court Chamberlain"
+  },
+  {
+    "corporationID":1000086,
+    "corporationName":"Emperor Family"
+  },
+  {
+    "corporationID":1000087,
+    "corporationName":"Kador Family"
+  },
+  {
+    "corporationID":1000088,
+    "corporationName":"Sarum Family"
+  },
+  {
+    "corporationID":1000089,
+    "corporationName":"Kor-Azor Family"
+  },
+  {
+    "corporationID":1000090,
+    "corporationName":"Ardishapur Family"
+  },
+  {
+    "corporationID":1000091,
+    "corporationName":"Tash-Murkon Family"
+  },
+  {
+    "corporationID":1000092,
+    "corporationName":"Civic Court"
+  },
+  {
+    "corporationID":1000093,
+    "corporationName":"Theology Council"
+  },
+  {
+    "corporationID":1000094,
+    "corporationName":"TransStellar Shipping"
+  },
+  {
+    "corporationID":1000095,
+    "corporationName":"Federal Freight"
+  },
+  {
+    "corporationID":1000096,
+    "corporationName":"Inner Zone Shipping"
+  },
+  {
+    "corporationID":1000097,
+    "corporationName":"Material Acquisition"
+  },
+  {
+    "corporationID":1000098,
+    "corporationName":"Astral Mining Inc."
+  },
+  {
+    "corporationID":1000099,
+    "corporationName":"Combined Harvest"
+  },
+  {
+    "corporationID":1000100,
+    "corporationName":"Quafe Company"
+  },
+  {
+    "corporationID":1000101,
+    "corporationName":"CreoDron"
+  },
+  {
+    "corporationID":1000102,
+    "corporationName":"Roden Shipyards"
+  },
+  {
+    "corporationID":1000104,
+    "corporationName":"Poteque Pharmaceuticals"
+  },
+  {
+    "corporationID":1000105,
+    "corporationName":"Impetus"
+  },
+  {
+    "corporationID":1000106,
+    "corporationName":"Egonics Inc."
+  },
+  {
+    "corporationID":1000107,
+    "corporationName":"The Scope"
+  },
+  {
+    "corporationID":1000108,
+    "corporationName":"Chemal Tech"
+  },
+  {
+    "corporationID":1000109,
+    "corporationName":"Duvolle Laboratories"
+  },
+  {
+    "corporationID":1000110,
+    "corporationName":"FedMart"
+  },
+  {
+    "corporationID":1000111,
+    "corporationName":"Aliastra"
+  },
+  {
+    "corporationID":1000112,
+    "corporationName":"Bank of Luminaire"
+  },
+  {
+    "corporationID":1000113,
+    "corporationName":"Pend Insurance"
+  },
+  {
+    "corporationID":1000114,
+    "corporationName":"Garoun Investment Bank"
+  },
+  {
+    "corporationID":1000115,
+    "corporationName":"University of Caille"
+  },
+  {
+    "corporationID":1000117,
+    "corporationName":"Senate"
+  },
+  {
+    "corporationID":1000118,
+    "corporationName":"Supreme Court"
+  },
+  {
+    "corporationID":1000119,
+    "corporationName":"Federal Administration"
+  },
+  {
+    "corporationID":1000120,
+    "corporationName":"Federation Navy"
+  },
+  {
+    "corporationID":1000121,
+    "corporationName":"Federal Intelligence Office"
+  },
+  {
+    "corporationID":1000122,
+    "corporationName":"Federation Customs"
+  },
+  {
+    "corporationID":1000123,
+    "corporationName":"Ammatar Fleet"
+  },
+  {
+    "corporationID":1000125,
+    "corporationName":"CONCORD"
+  },
+  {
+    "corporationID":1000126,
+    "corporationName":"Ammatar Consulate"
+  },
+  {
+    "corporationID":1000130,
+    "corporationName":"Sisters of EVE"
+  },
+  {
+    "corporationID":1000132,
+    "corporationName":"Secure Commerce Commission"
+  },
+  {
+    "corporationID":1000137,
+    "corporationName":"DED"
+  },
+  {
+    "corporationID":1000140,
+    "corporationName":"Genolution"
+  },
+  {
+    "corporationID":1000142,
+    "corporationName":"Impro"
+  },
+  {
+    "corporationID":1000143,
+    "corporationName":"Inner Circle"
+  },
+  {
+    "corporationID":1000148,
+    "corporationName":"InterBus"
+  },
+  {
+    "corporationID":1000151,
+    "corporationName":"Khanid Innovation"
+  },
+  {
+    "corporationID":1000152,
+    "corporationName":"Khanid Transport"
+  },
+  {
+    "corporationID":1000153,
+    "corporationName":"Khanid Works"
+  },
+  {
+    "corporationID":1000154,
+    "corporationName":"Nefantar Miner Association"
+  },
+  {
+    "corporationID":1000156,
+    "corporationName":"Royal Khanid Navy"
+  },
+  {
+    "corporationID":1000160,
+    "corporationName":"Thukker Mix"
+  },
+  {
+    "corporationID":1000163,
+    "corporationName":"Trust Partners"
+  },
+  {
+    "corporationID":1000164,
+    "corporationName":"X-Sense"
+  },
+  {
+    "corporationID":1000165,
+    "corporationName":"Hedion University"
+  },
+  {
+    "corporationID":1000166,
+    "corporationName":"Imperial Academy"
+  },
+  {
+    "corporationID":1000167,
+    "corporationName":"State War Academy"
+  },
+  {
+    "corporationID":1000168,
+    "corporationName":"Federal Navy Academy"
+  },
+  {
+    "corporationID":1000169,
+    "corporationName":"Center for Advanced Studies"
+  },
+  {
+    "corporationID":1000170,
+    "corporationName":"Republic Military School"
+  },
+  {
+    "corporationID":1000171,
+    "corporationName":"Republic University"
+  },
+  {
+    "corporationID":1000172,
+    "corporationName":"Pator Tech School"
+  },
+  {
+    "corporationID":1000179,
+    "corporationName":"24th Imperial Crusade"
+  },
+  {
+    "corporationID":1000180,
+    "corporationName":"State Protectorate"
+  },
+  {
+    "corporationID":1000181,
+    "corporationName":"Federal Defense Union"
+  },
+  {
+    "corporationID":1000182,
+    "corporationName":"Tribal Liberation Force"
+  }
+]

@@ -1,69 +1,56 @@
-CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints, Storage, $modal) ->
+CB.controller 'SolarSystemsCtrl', ($scope, $timeout, $modal, Storage, SolarSystems, FilterManager) ->
+  $scope.filters = Storage.get 'filters', []
+  $scope.sort    = Storage.get 'sort', ['name', 'asc']
+
   $scope.solarSystems = []
-  $scope.loading      = true
-  $scope.fields       = []
-  $scope.filters      = Storage.get 'filters', {}
-  order               = Storage.get 'order', { name: 'asc' }
+  $scope.fields = {}
+  $scope.loading = true
+  $scope.availableFilters = {}
 
-  fetchSolarSystems = ->
+  find = ->
     $scope.loading = true
-    $http(
-      url: '/solar_systems.json',
-      method: "GET",
-      params:
-        filters: $scope.filters
-        order: order
-    ).success (solarSystems) ->
-      Storage.set 'filters', $scope.filters
-      Storage.set 'order', order
+    SolarSystems.find
+      filters: $scope.filters
+      sort: $scope.sort
+      callback: (results) ->
+        $scope.loading = false
+        $scope.fields = results.fields
+        $scope.sort = results.sort
+        $scope.solarSystems = results.data
 
-      $scope.fields       = solarSystems.fields
-      $scope.solarSystems = solarSystems.data
-      $scope.loading      = false
+        Storage.set 'filters', $scope.filters
+        Storage.set 'sort', $scope.sort
 
-  fetchSolarSystemsTimeout = null
-  fetchSolarSystemsWithTimeout = ->
-    $timeout.cancel fetchSolarSystemsTimeout
-    fetchSolarSystemsTimeout = $timeout fetchSolarSystems, 1000
+  findTimeout = null
+  findWithTimeout = ->
+    $timeout.cancel findTimeout
+    findTimeout = $timeout find, 500
 
-  $scope.filterConstraints = {}
+  $scope.orderBy = (field, direction) ->
+    $scope.sort = [field, if direction is 'asc' then 'desc' else 'asc']
+    find()
+
   setAvailableFilters = ->
-    availableConstraints = {}
+    availableFilters = {}
 
-    for kind, constraint of filterConstraints
-      if constraint.multi or not _.any($scope.filters, (filter) -> filter.kind is kind)
-        availableConstraints[kind] = constraint
+    for kind, klass of FilterManager
+      instance = new klass
+      if instance.multiple or not Lazy($scope.filters).map( (f) -> f.kind ).contains(kind)
+        availableFilters[kind] = instance.filterName
 
-    $scope.filterConstraints = availableConstraints
-
-  $scope.$watch 'filters', setAvailableFilters, true
+    $scope.availableFilters = CB.Helpers.mapToSelectChoices availableFilters
 
   $scope.filterToAdd = null
   $scope.$watch 'filterToAdd', ->
     if $scope.filterToAdd
-      existingKeys   = _.keys($scope.filters)
-      maxExistingKey = if _.any(existingKeys) then parseInt(_.max(existingKeys)) else 0
-      $scope.filters[maxExistingKey + 1] = { kind: $scope.filterToAdd }
+      $scope.filters.push { kind: $scope.filterToAdd }
     $scope.filterToAdd = null
-  $scope.removeAllFilters = ->
-    $scope.filters = {}
-    order          = { name: 'asc' }
+
   $scope.removeFilter = (filter) ->
-    delete $scope.filters[_.findKey $scope.filters, filter]
-
-  $scope.$watch 'filters', fetchSolarSystemsWithTimeout, true
-
-  $scope.orderableBy = (field) ->
-    field.orderable and not _.has(order, field.field)
-  $scope.orderedBy = (field, direction) ->
-    _.has(order, field.field) and order[field.field] is direction
-  $scope.orderBy = (field) ->
-    if _.has(order, field.field)
-      order[field.field] = if order[field.field] is 'asc' then 'desc' else 'asc'
-    else
-      order = {}
-      order[field.field] = 'asc'
-    fetchSolarSystems()
+    $scope.filters = Lazy($scope.filters).reject(filter).toArray()
+  $scope.removeAllFilters = ->
+    $scope.filters = []
+    $scope.sort    = ['name', 'asc']
 
   $scope.showInModal = (solarSystem) ->
     modalInstance = $modal.open
@@ -72,3 +59,6 @@ CB.controller 'SolarSystemsCtrl', ($scope, $http, $timeout, filterConstraints, S
       size: 'lg'
       resolve:
         solarSystem: -> solarSystem
+
+  $scope.$watch 'filters', setAvailableFilters, true
+  $scope.$watch 'filters', findWithTimeout, true

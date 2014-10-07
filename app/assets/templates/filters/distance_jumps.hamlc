@@ -1,0 +1,15 @@
+.row
+  %label.col-sm-3.col-xs-10.control-label
+    {{ settings.name }}
+  .col-sm-1.col-xs-2.col-sm-push-8.text-right
+    %button.btn.btn-default{ ng-click: 'removeFilter(filter)' }
+      %span.glyphicon.glyphicon-remove
+  .col-sm-3.col-xs-4.col-sm-pull-1
+    %ui-select{ ng-model: 'filter.system' }
+      %ui-select-match{ placeholder: 'Select a system'  }
+        {{ $select.selected.text }}
+      %ui-select-choices{ repeat: "choice.id as choice in settings.systems | filter: { text: $select.search }" }
+        {{ choice.text }}
+
+  .col-sm-5.col-xs-8.col-sm-pull-1
+    %slider{ floor: '{{ settings.min }}', ceiling: '{{ settings.max }}', ng-model: 'filter.distance' }

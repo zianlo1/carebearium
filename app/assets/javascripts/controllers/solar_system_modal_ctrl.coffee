@@ -4,8 +4,6 @@ CB.controller 'SolarSystemModalCtrl', ($scope, $http, solarSystem) ->
   $scope.stationsCollapsed = true
   $scope.agentsCollapsed   = true
 
-  $http(
-    url: "/solar_systems/#{solarSystem._id}.json",
-    method: "GET"
-  ).success (data) ->
-    $scope.solarSystem = data
+  for agent in $scope.solarSystem.agents
+    agent.divisionName    = CB.StaticData.AgentDivisions[agent.division]
+    agent.corporationName = CB.StaticData.Corporations[agent.corporationID]

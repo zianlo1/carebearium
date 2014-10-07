@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   root to: 'landing#show'
 
-  resources :solar_systems, only: [:index, :show] do
-    get :names, on: :collection
-  end
+  get '/api/solar_systems(.:format)', to: 'solar_systems#index'
 
   get '*path', to: 'landing#show'
 end

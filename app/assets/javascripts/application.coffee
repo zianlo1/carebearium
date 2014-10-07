@@ -1,7 +1,6 @@
 #= require hamlcoffee
 #= require angular
-#= require lodash
-#= require restangular
+#= require lazy
 #= require angular-route
 #= require angular-touch
 #= require venturocket-angular-slider
@@ -12,4 +11,6 @@
 #= require angular-animate
 #= require_tree ../templates
 #= require cb
+#= require helpers
+#= require_tree ./data
 #= require_tree .

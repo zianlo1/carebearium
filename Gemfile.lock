@@ -116,10 +116,7 @@ GEM
     rails-assets-jquery (2.1.1)
     rails-assets-jquery-waypoints (2.0.5)
       rails-assets-jquery (>= 1.8)
-    rails-assets-lodash (2.4.1)
-    rails-assets-restangular (1.4.0)
-      rails-assets-angular
-      rails-assets-lodash (>= 1.3.0, < 2.5.0)
+    rails-assets-lazy.js (0.3.2)
     rails-assets-venturocket-angular-slider (0.3.2)
       rails-assets-angular (~> 1.2.0)
       rails-assets-angular-touch (~> 1.2.0)
@@ -180,7 +177,7 @@ DEPENDENCIES
   rails-assets-angular-ui-bootstrap-bower
   rails-assets-angular-ui-select
   rails-assets-angulartics
-  rails-assets-restangular
+  rails-assets-lazy.js
   rails-assets-venturocket-angular-slider
   sass-rails
   spring

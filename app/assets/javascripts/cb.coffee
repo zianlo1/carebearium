@@ -1,5 +1,4 @@
 window.CB = angular.module 'CB', [
-  'restangular'
   'ngRoute'
   'vr.directives.slider'
   'ui.bootstrap'
@@ -9,6 +8,11 @@ window.CB = angular.module 'CB', [
   'angulartics.google.analytics'
   'ngAnimate'
 ]
+
+CB.StaticData =
+  SolarSystems: {}
+CB.Filters = {}
+CB.Helpers = {}
 
 CB.config ($routeProvider) ->
   $routeProvider.

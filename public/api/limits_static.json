@@ -1,0 +1,1 @@
+{"security":{"min":0.5,"max":1.0},"belt_count":{"min":0,"max":50},"station_count":{"min":0,"max":22},"agent_count":{"min":0,"max":37},"jump_count":{"min":0,"max":8}}
