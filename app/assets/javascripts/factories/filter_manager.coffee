@@ -18,8 +18,9 @@ CB.factory 'FilterManager', ->
     hourly_ships: CB.Filters.HourlyShips
     station_service: CB.Filters.StationService
     system_feature: CB.Filters.SystemFeature
+    region: CB.Filters.Region
 
-  for key, value of CB.Limits
+  for key, value of CB.StaticData.Limits
     filters[key]?.prototype.limits = value
 
   filters

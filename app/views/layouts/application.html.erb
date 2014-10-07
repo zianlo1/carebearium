@@ -6,7 +6,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <script>
-      CB.Limits = <%= raw SolarSystem.limits_json %>
+      CB.StaticData.Limits = <%= raw SolarSystem.limits_json %>
     </script>
     <%= csrf_meta_tags %>
   </head>

@@ -9,6 +9,8 @@ window.CB = angular.module 'CB', [
   'ngAnimate'
 ]
 
+CB.StaticData = {}
+
 CB.config ($routeProvider) ->
   $routeProvider.
     when('/solar_systems/',
