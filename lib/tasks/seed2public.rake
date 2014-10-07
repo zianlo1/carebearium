@@ -68,7 +68,7 @@ if Rails.env.development?
 
       read_file('jumps.json').each do |row|
         next unless data[row[:from]]
-        data[row[:from]][:jumps] = row[:to].split(',').map(&:to_i)
+        data[row[:from]][:jumps] = row[:to].split(',').map(&:to_i).sort
       end
 
       limits = {}
