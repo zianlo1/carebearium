@@ -15,7 +15,7 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
     @reachableSystems = {}
 
     if @options.system
-      minSecurity = parseInt(@options.security, 10)
+      minSecurity = parseFloat(@options.security)
 
       @reachableSystems[@options.system] = 0
 
@@ -31,7 +31,6 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
           for id in visitNow
             system = CB.StaticData.SolarSystems[id]
             unless system.security < minSecurity
-              console.log system.security
               @reachableSystems[id] = depth
               for next in system.jumps
                 if typeof @reachableSystems[next] == 'undefined'
