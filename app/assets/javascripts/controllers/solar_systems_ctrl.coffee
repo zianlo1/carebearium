@@ -31,12 +31,14 @@ CB.controller 'SolarSystemsCtrl', ($scope, $timeout, Storage, SolarSystems, Filt
     find()
 
   setAvailableFilters = ->
-    $scope.availableFilters = {}
+    availableFilters = {}
 
     for kind, klass of FilterManager
       instance = new klass
       if instance.multiple or not Lazy($scope.filters).map( (f) -> f.kind ).contains(kind)
-        $scope.availableFilters[kind] = instance
+        availableFilters[kind] = instance.filterName
+
+    $scope.availableFilters = CB.Helpers.mapToSelectChoices availableFilters
 
   $scope.filterToAdd = null
   $scope.$watch 'filterToAdd', ->
