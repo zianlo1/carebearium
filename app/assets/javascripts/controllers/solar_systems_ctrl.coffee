@@ -1,6 +1,6 @@
-CB.controller 'SolarSystemsCtrl', ($scope, SolarSystems, Storage, FilterManager) ->
-  $scope.filters = Storage.get 'filters', []
-  $scope.sort    = Storage.get 'sort', ['name', 'asc']
+CB.controller 'SolarSystemsCtrl', ($scope, SolarSystems, FilterManager) ->
+  $scope.filters = SolarSystems.getFilters()
+  $scope.sort    = SolarSystems.getSort()
 
   $scope.solarSystems = []
   $scope.fields = {}

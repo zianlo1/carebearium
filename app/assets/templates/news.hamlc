@@ -6,11 +6,11 @@
 %ul
   %li
     You can now filter for systems that can spawn ice belts
-    %a{ ng-click: "filterWithPreset({ 1: { kind: 'system_feature', key: 'ice_belts'}}, { 'name': 'asc' })" }
+    %a{ ng-click: "filterWithPreset([{ kind: 'system_feature', choice: 'ice'}], ['name', 'asc'])" }
       Example
   %li
     You can now filter for dead-end systems (only one stargate)
-    %a{ ng-click: "filterWithPreset({ 1: { kind: 'system_feature', key: 'dead_end'}}, { 'name': 'asc' })" }
+    %a{ ng-click: "filterWithPreset([{ kind: 'jump_count', max: 1}], ['name', 'asc'])" }
       Example
 
 %h3 17.09.2014
@@ -28,15 +28,15 @@
   %li Re-designed filtering interface
   %li
     You can now filter and sort by distance to other solar systems
-    %a{ ng-click: "filterWithPreset({ 1: { kind: 'jumps', system: { id: 30000142, name: 'Jita'}, max: 10 }}, { 'distances.30000142': 'asc' })" }
+    %a{ ng-click: "filterWithPreset([{ kind: 'distance_jumps', system: '30000142', distance: 10 }], ['distance_jumps_30000142', 'asc'])" }
       Example
   %li
     You can now filter by station services present in system
-    %a{ ng-click: "filterWithPreset({ 1: { kind: 'station_service', key: 'refinery' }}, { 'name': 'asc' })" }
+    %a{ ng-click: "filterWithPreset([{ kind: 'station_service', choice: 'refinery' }], ['name', 'asc'])" }
       Example
   %li
     You can now filter and sort by ship / pod / NPC kills in last 24 hours
-    %a{ ng-click: "filterWithPreset({ 1: { kind: 'daily_pod_kills', min: 10 }}, { 'daily_pod_kills': 'desc' })" }
+    %a{ ng-click: "filterWithPreset([{ kind: 'hourly_pods', min: 1 }], ['hourly_pods', 'desc'])" }
       Example
   %li When filtering by specific agent, count of matching agents in system is shown in results
   %li A huge backend overhaul

@@ -23,7 +23,7 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
           for id in visitNow
             @reachableSystems[id] = depth
             for next in CB.StaticData.SolarSystems[id].jumps
-              unless @reachableSystems[next]
+              if typeof @reachableSystems[next] == 'undefined'
                 visitNext.push next
 
           depth += 1
@@ -33,7 +33,7 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
 
   filterFunction: (item) =>
     if @options.system
-      @reachableSystems[item.id]?
+      typeof @reachableSystems[item.id] != 'undefined'
     else
       true
 

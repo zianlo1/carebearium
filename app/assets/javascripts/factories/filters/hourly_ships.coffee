@@ -9,7 +9,7 @@ class CB.Filters.HourlyShips extends CB.Filters.Slider
 
   visibleFields: ->
     hourly_ships:
-      text: 'Ship kills'
+      text: 'Ship kills / h'
       display: (item) -> item.hourly_ships.toFixed(5)
 
   filterName: 'Average hourly ship kills'

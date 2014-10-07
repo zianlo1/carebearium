@@ -1,4 +1,4 @@
-CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
+CB.factory 'SolarSystems', ($q, $http, Storage, FilterManager) ->
   dataLoaded = $q.defer()
 
   $q.all([
@@ -14,6 +14,9 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
     dataLoaded.resolve()
 
   find = (options) ->
+    Storage.set 'filters', options.filters
+    Storage.set 'sort', options.sort
+
     sortField     = options.sort[0] || 'name'
     sortDirection = options.sort[1] || 'asc'
 
@@ -43,4 +46,8 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
         fields: visibleFields
         data: data.toArray()
 
-  { find: find }
+  {
+    find: find
+    getFilters: -> Storage.get 'filters', []
+    getSort: -> Storage.get 'sort', ['name', 'asc']
+  }

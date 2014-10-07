@@ -9,7 +9,7 @@ class CB.Filters.HourlyPods extends CB.Filters.Slider
 
   visibleFields: ->
     hourly_pods:
-      text: 'Pod kills'
+      text: 'Pod kills / h'
       display: (item) -> item.hourly_pods.toFixed(5)
 
   filterName: 'Average hourly pod kills'
