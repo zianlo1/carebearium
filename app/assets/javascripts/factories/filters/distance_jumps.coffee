@@ -11,10 +11,24 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
     if @options.system
       @reachableSystems[@options.system] = 0
 
-    if @options.distance > 0
-      console.log 'append reachables'
+      if @options.distance > 0
+        visitNow  = []
+        visitNext = angular.copy CB.StaticData.SolarSystems[@options.system].jumps
+        depth     = 1
 
-    @fieldName = "distance_jumps_#{@options.system || '_'}_#{@options.distance || '_'}"
+        while visitNext.length > 0 and depth <= @options.distance
+          visitNow  = angular.copy visitNext
+          visitNext = []
+
+          for id in visitNow
+            @reachableSystems[id] = depth
+            for next in CB.StaticData.SolarSystems[id].jumps
+              unless @reachableSystems[next]
+                visitNext.push next
+
+          depth += 1
+
+    @fieldName = "distance_jumps_#{@options.system || '_'}"
     @columName = "Jumps to #{CB.StaticData.SolarSystemNames[@options.system]}"
 
   filterFunction: (item) =>
