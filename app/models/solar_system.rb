@@ -67,9 +67,9 @@ class SolarSystem
   def self.update_kill_stats
     each do |solar_sytem|
       solar_sytem.update_attributes(
-        hourly_ships: (solar_sytem.kill_stats.sum(:ship_kills).to_f / 24).round(5),
-        hourly_pods:  (solar_sytem.kill_stats.sum(:pod_kills).to_f  / 24).round(5),
-        hourly_npcs:  (solar_sytem.kill_stats.sum(:npc_kills).to_f  / 24).round(5)
+        hourly_ships: (solar_sytem.kill_stats.sum(:ship_kills).to_f / 24).round(1),
+        hourly_pods:  (solar_sytem.kill_stats.sum(:pod_kills).to_f  / 24).round(1),
+        hourly_npcs:  (solar_sytem.kill_stats.sum(:npc_kills).to_f  / 24).round(1)
       )
     end
   end
