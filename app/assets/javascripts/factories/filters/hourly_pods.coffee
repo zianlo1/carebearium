@@ -1,7 +1,7 @@
 #= require ./slider
 
 class CB.Filters.HourlyPods extends CB.Filters.Slider
-  scale: 100000
+  scale: 10
 
   filterFunction: (item) =>
     val = item.hourly_pods * @scale
@@ -10,6 +10,6 @@ class CB.Filters.HourlyPods extends CB.Filters.Slider
   visibleField: ->
     field: 'hourly_pods'
     text: 'Pod kills / h'
-    display: (item) -> item.hourly_pods.toFixed(5)
+    display: (item) -> item.hourly_pods.toFixed(1)
 
   filterName: 'Average hourly pod kills'

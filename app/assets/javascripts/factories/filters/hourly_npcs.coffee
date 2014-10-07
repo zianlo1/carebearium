@@ -1,7 +1,7 @@
 #= require ./slider
 
 class CB.Filters.HourlyNpcs extends CB.Filters.Slider
-  scale: 100000
+  scale: 10
 
   filterFunction: (item) =>
     val = item.hourly_npcs * @scale
@@ -10,6 +10,6 @@ class CB.Filters.HourlyNpcs extends CB.Filters.Slider
   visibleField: ->
     field: 'hourly_npcs'
     text: 'NPC kills / h'
-    display: (item) -> item.hourly_npcs.toFixed(5)
+    display: (item) -> item.hourly_npcs.toFixed(1)
 
   filterName: 'Average hourly NPC kills'
