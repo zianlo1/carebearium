@@ -13,7 +13,7 @@
 %table#solar-systems.table.table-condensed.table-hover{ ng-class: "{ 'loading': loading}" }
   %thead
     %tr
-      %th.orderable{ ng-repeat: "field in fields track by field.field", ng-click: 'orderBy(field.field, field.sorted)' }
+      %th.orderable{ ng-repeat: "field in fields track by $index", ng-click: 'orderBy(field.field, field.sorted)' }
         {{ field.text }}
         %span.glyphicon{ ng-class: "{'glyphicon-sort': !field.sorted, 'glyphicon-sort-by-attributes': field.sorted == 'asc', 'glyphicon-sort-by-attributes-alt': field.sorted == 'desc'}"}
   %tbody
