@@ -10,11 +10,11 @@
       %span.glyphicon.glyphicon-cog
       %h3 Industry indices!
 
-    %a.col-xs-6.col-md-3{ ng-click: "filterWithPreset([{ kind: 'agent_count', min: 1 }, { kind: 'agent' }], ['agent_count', 'desc'])" }
+    %a.col-xs-6.col-md-3{ ng-click: "filterWithPreset([{ kind: 'agent_count', min: 1 }, { kind: 'agent' }], ['agentCount', 'desc'])" }
       %span.glyphicon.glyphicon-user
       %h3 Mission agents!
 
-    %a.col-xs-6.col-md-3{ ng-click: "filterWithPreset([{ kind: 'security', max: 7 }, { kind: 'belt_count', min: 10 }, { kind: 'station_service', choice: 'refinery' }], ['belt_count', 'desc'])" }
+    %a.col-xs-6.col-md-3{ ng-click: "filterWithPreset([{ kind: 'security', max: 7 }, { kind: 'belt_count', min: 10 }, { kind: 'station_service', choice: 'refinery' }], ['beltCount', 'desc'])" }
       %span.glyphicon.glyphicon-film
       %h3 Mining options!
 

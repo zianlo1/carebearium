@@ -1,6 +1,6 @@
-CB.controller 'SolarSystemsCtrl', ($scope, $timeout, SolarSystems, FilterManager) ->
-  $scope.filters = SolarSystems.getFilters()
-  $scope.sort    = SolarSystems.getSort()
+CB.controller 'SolarSystemsCtrl', ($scope, $timeout, Storage, SolarSystems, FilterManager) ->
+  $scope.filters = Storage.get 'filters', []
+  $scope.sort    = Storage.get 'sort', ['name', 'asc']
 
   $scope.solarSystems = []
   $scope.fields = {}
@@ -15,7 +15,11 @@ CB.controller 'SolarSystemsCtrl', ($scope, $timeout, SolarSystems, FilterManager
       callback: (results) ->
         $scope.loading = false
         $scope.fields = results.fields
+        $scope.sort = results.sort
         $scope.solarSystems = results.data
+
+        Storage.set 'filters', $scope.filters
+        Storage.set 'sort', $scope.sort
 
   findTimeout = null
   findWithTimeout = ->

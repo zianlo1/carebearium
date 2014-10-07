@@ -1,4 +1,4 @@
-CB.factory 'SolarSystems', ($q, $http, Storage, FilterManager) ->
+CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
   dataLoaded = $q.defer()
 
   $q.all([
@@ -14,12 +14,6 @@ CB.factory 'SolarSystems', ($q, $http, Storage, FilterManager) ->
     dataLoaded.resolve()
 
   find = (options) ->
-    Storage.set 'filters', options.filters
-    Storage.set 'sort', options.sort
-
-    sortField     = options.sort[0] || 'name'
-    sortDirection = options.sort[1] || 'asc'
-
     dataLoaded.promise.then ->
       data = Lazy(CB.StaticData.SolarSystems).filter -> true
 
@@ -36,21 +30,21 @@ CB.factory 'SolarSystems', ($q, $http, Storage, FilterManager) ->
         if additionalVisibleField
           visibleFields.push additionalVisibleField
 
-      data = data.sortBy (item) -> item[sortField]
-      data = data.reverse() unless sortDirection is 'asc'
+      unless Lazy(visibleFields).findWhere { field: options.sort[0] }
+        options.sort = ['name', 'asc']
 
-      sortedField = Lazy(visibleFields).findWhere { field: sortField }
+      data = data.sortBy (item) -> item[options.sort[0]]
+      data = data.reverse() unless options.sort[1] is 'asc'
+
+      sortedField = Lazy(visibleFields).findWhere { field: options.sort[0] }
       if sortedField
-        sortedField.sorted = sortDirection
+        sortedField.sorted = options.sort[1]
 
       data = data.first(50)
 
       options.callback
         fields: visibleFields
+        sort: options.sort
         data: data.toArray()
 
-  {
-    find: find
-    getFilters: -> Storage.get 'filters', []
-    getSort: -> Storage.get 'sort', ['name', 'asc']
-  }
+  { find: find }
