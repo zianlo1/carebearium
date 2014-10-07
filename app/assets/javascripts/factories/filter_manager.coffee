@@ -16,6 +16,8 @@ CB.factory 'FilterManager', ->
     hourly_npcs: CB.Filters.HourlyNpcs
     hourly_pods: CB.Filters.HourlyPods
     hourly_ships: CB.Filters.HourlyShips
+    station_service: CB.Filters.StationService
+    system_feature: CB.Filters.SystemFeature
 
   for key, value of CB.Limits
     filters[key]?.prototype.limits = value
