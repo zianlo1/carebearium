@@ -17,7 +17,7 @@ class CB.Filters.Region extends CB.Filters.Dropdown
     display: (item) -> item.region
 
   prepare: =>
-    @options.choice = parseInt(@options.choice, 10)
+    @options.choice = parseInt(@options.choice, 10) if @options.choice
 
   filterFunction: (item) =>
     if @options.choice

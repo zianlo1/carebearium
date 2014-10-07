@@ -5,11 +5,20 @@
     %button.btn.btn-default{ ng-click: 'removeFilter(filter)' }
       %span.glyphicon.glyphicon-remove
   .col-sm-2.col-xs-3.col-sm-pull-1
-    %select.form-control{ ng-model: 'filter.level', ng-options: 'level for level in settings.levels', placeholder: 'Level' }
-      %option{value: '', selected: 'selected', disabled: 'disabled' } Level
+    %ui-select{ ng-model: 'filter.level' }
+      %ui-select-match{ placeholder: 'Level'  }
+        {{ $select.selected }}
+      %ui-select-choices{ repeat: "level in settings.levels | filter: $select.search" }
+        {{ level }}
   .col-sm-2.col-xs-3.col-sm-pull-1
-    %select.form-control{ ng-model: 'filter.division', ng-options: 'id as name for (id , name) in settings.divisions', placeholder: 'Division' }
-      %option{value: '', selected: 'selected', disabled: 'disabled' } Division
+    %ui-select{ ng-model: 'filter.division' }
+      %ui-select-match{ placeholder: 'Division'  }
+        {{ $select.selected.text }}
+      %ui-select-choices{ repeat: "choice.id as choice in settings.divisions | filter: { text: $select.search }" }
+        {{ choice.text }}
   .col-sm-4.col-xs-6.col-sm-pull-1
-    %select.form-control{ ng-model: 'filter.corporation', ng-options: 'id as name for (id , name) in settings.corporations', placeholder: 'Corporation' }
-      %option{value: '', selected: 'selected', disabled: 'disabled' } Corporation
+    %ui-select{ ng-model: 'filter.corporation' }
+      %ui-select-match{ placeholder: 'Corporation'  }
+        {{ $select.selected.text }}
+      %ui-select-choices{ repeat: "choice.id as choice in settings.corporations | filter: { text: $select.search }" }
+        {{ choice.text }}

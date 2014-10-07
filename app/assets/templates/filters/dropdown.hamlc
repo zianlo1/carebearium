@@ -5,6 +5,8 @@
     %button.btn.btn-default{ ng-click: 'removeFilter(filter)' }
       %span.glyphicon.glyphicon-remove
   .col-sm-8.col-xs-12.col-sm-pull-1
-    %select.form-control{ ng-model: 'filter.choice', ng-options: 'key as value for (key , value) in settings.choices' }
-      %option{value: '', disabled: 'disabled' }
-        {{ settings.prompt }}
+    %ui-select{ ng-model: 'filter.choice' }
+      %ui-select-match{ placeholder: '{{ settings.prompt }}'  }
+        {{ $select.selected.text }}
+      %ui-select-choices{ repeat: "choice.id as choice in settings.choices | filter: { text: $select.search }" }
+        {{ choice.text }}

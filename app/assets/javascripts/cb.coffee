@@ -12,6 +12,7 @@ window.CB = angular.module 'CB', [
 CB.StaticData =
   SolarSystems: {}
 CB.Filters = {}
+CB.Helpers = {}
 
 CB.config ($routeProvider) ->
   $routeProvider.

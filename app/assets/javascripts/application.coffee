@@ -11,5 +11,6 @@
 #= require angular-animate
 #= require_tree ../templates
 #= require cb
+#= require helpers
 #= require_tree ./data
 #= require_tree .

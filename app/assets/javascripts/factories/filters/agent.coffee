@@ -45,15 +45,14 @@ class CB.Filters.Agent extends CB.Filters.Base
       text: @columName
       display: (item) => item[@fieldName]
 
-
   multiple: true
 
   filterName: 'Has specific agent'
 
   settings: =>
     levels: CB.StaticData.AgentLevels
-    divisions: CB.StaticData.AgentDivisions
-    corporations: CB.StaticData.Corporations
+    divisions: CB.Helpers.mapToSelectChoices CB.StaticData.AgentDivisions
+    corporations: CB.Helpers.mapToSelectChoices CB.StaticData.Corporations
     name: @filterName
 
   templateName: 'agent'

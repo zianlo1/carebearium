@@ -4,7 +4,7 @@ class CB.Filters.Dropdown extends CB.Filters.Base
   multiple: true
 
   settings: =>
-    choices: @dropdownChoices
+    choices: CB.Helpers.mapToSelectChoices @dropdownChoices
     prompt: @promptText
     name: @filterName
 

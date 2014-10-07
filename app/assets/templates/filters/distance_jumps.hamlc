@@ -5,8 +5,11 @@
     %button.btn.btn-default{ ng-click: 'removeFilter(filter)' }
       %span.glyphicon.glyphicon-remove
   .col-sm-3.col-xs-4.col-sm-pull-1
-    %select.form-control{ ng-model: 'filter.system', ng-options: 'key as value for (key , value) in settings.systems' }
-      %option{value: '', disabled: 'disabled' }
-        {{ settings.prompt }}
+    %ui-select{ ng-model: 'filter.system' }
+      %ui-select-match{ placeholder: 'Select a system'  }
+        {{ $select.selected.text }}
+      %ui-select-choices{ repeat: "choice.id as choice in settings.systems | filter: { text: $select.search }" }
+        {{ choice.text }}
+
   .col-sm-5.col-xs-8.col-sm-pull-1
     %slider{ floor: '{{ settings.min }}', ceiling: '{{ settings.max }}', ng-model: 'filter.distance' }
