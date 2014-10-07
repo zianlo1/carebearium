@@ -41,7 +41,6 @@ if Rails.env.development?
 
       read_file('stations.json').each do |row|
         next unless data[row[:solarSystemID]]
-        data[row[:solarSystemID]][:stations] ||= []
         data[row[:solarSystemID]][:stations] << row.slice(:name, :refinery, :repair, :factory, :lab, :insurance)
       end
 
@@ -60,7 +59,6 @@ if Rails.env.development?
 
       read_file('agents.json').each do |row|
         next unless data[row[:solarSystemID]]
-        data[row[:solarSystemID]][:agents] ||= []
         agent = row.slice(:corporationID, :level)
         agent[:division] = divisionMap.key(row[:division])
         data[row[:solarSystemID]][:agents] << agent
@@ -88,7 +86,20 @@ if Rails.env.development?
       jump_counts = data.values.map{ |v| v[:jumps].size }.compact
       limits[:jump_count] = { min: jump_counts.min, max: jump_counts.max }
 
-      write_file 'solar_systems_static.json', data
+      compressed_data = {}
+      data.each do |id, system|
+        compressed_data[id] = [
+          system[:regionID],
+          system[:security],
+          system[:beltCount],
+          system[:ice] ? 1 : 0,
+          system[:stations].map { |st| [st[:name], st[:refinery], st[:repair], st[:factory], st[:lab], st[:insurance] ] },
+          system[:agents].map { |ag| [ag[:corporationID], ag[:level], ag[:division] ] },
+          system[:jumps]
+        ]
+      end
+
+      write_file 'solar_systems_static.json', compressed_data
       write_file 'limits_static.json', limits
 
       write_static_data 'AgentLevels', levels.to_a.sort

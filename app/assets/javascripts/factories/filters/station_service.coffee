@@ -14,6 +14,6 @@ class CB.Filters.StationService extends CB.Filters.Dropdown
 
   filterFunction: (item) =>
     if @options.choice
-      Lazy(item.stations).some (station) => station[@options.choice] is 1
+      Lazy(item.stations).some (station) => station[@options.choice]
     else
       true

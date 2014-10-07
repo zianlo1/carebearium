@@ -22,7 +22,7 @@ class SolarSystem
 
   def self.dynamic_data
     all.each_with_object({}) do |solar_sytem, map|
-      map[solar_sytem.id] = solar_sytem.attributes.slice(*DATA_FIELDS)
+      map[solar_sytem.id] = DATA_FIELDS.map { |field| solar_sytem.send(field) }
     end
   end
 
