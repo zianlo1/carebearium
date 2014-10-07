@@ -2,7 +2,7 @@
   %h3
     {{ solarSystem.name }}
     %small
-      {{ solarSystem.region_name }}
+      {{ solarSystem.region }}
     %span.glyphicon.pull-right.glyphicon-remove-circle{ ng-click: '$close()'}
 
   .row
@@ -11,30 +11,30 @@
         %dt Secuirty status
         %dd {{ solarSystem.security | number: 1 }}
         %dt Asteroid belts
-        %dd {{ solarSystem.belts_count }}
+        %dd {{ solarSystem.beltCount }}
 
       %dl.dl-horizontal
-        %dt Ship kills (24h)
-        %dd {{ solarSystem.daily_ship_kills }}
-        %dt Pod kills (24h)
-        %dd {{ solarSystem.daily_pod_kills }}
-        %dt NPC kills (24h)
-        %dd {{ solarSystem.daily_npc_kills }}
+        %dt Ship kills / h
+        %dd {{ solarSystem.hourly_ships }}
+        %dt Pod kills / h
+        %dd {{ solarSystem.hourly_pods }}
+        %dt NPC kills / h
+        %dd {{ solarSystem.hourly_npcs }}
 
     .col-xs-6
       %dl.dl-horizontal
         %dt Manufacturing
-        %dd {{ solarSystem.manufacturing_index | number: 4 }}
+        %dd {{ solarSystem.manufacturing | number: 5 }}
         %dt TE research
-        %dd {{ solarSystem.research_te_index | number: 4 }}
+        %dd {{ solarSystem.research_te | number: 5 }}
         %dt ME research
-        %dd {{ solarSystem.research_me_index | number: 4 }}
+        %dd {{ solarSystem.research_me | number: 5 }}
         %dt Copying
-        %dd {{ solarSystem.copying_index | number: 4 }}
+        %dd {{ solarSystem.copying | number: 5 }}
         %dt Reverse engineering
-        %dd {{ solarSystem.reverse_engineering_index | number: 4 }}
+        %dd {{ solarSystem.reverse_engineering | number: 5 }}
         %dt Invention
-        %dd {{ solarSystem.invention_index | number: 4 }}
+        %dd {{ solarSystem.invention | number: 5 }}
 
   .panel.panel-default{ ng-if: 'solarSystem.stations.length > 0'}
     .panel-heading{ ng-click: "stationsCollapsed = !stationsCollapsed" }
@@ -51,7 +51,7 @@
             %th Research
             %th Insurance
         %tbody
-          %tr{ ng-repeat: 'station in solarSystem.stations track by station._id' }
+          %tr{ ng-repeat: "station in solarSystem.stations | orderBy: 'name'" }
             %td {{ station.name }}
             %td.text-center
               %span.glyphicon{ ng-class: "{'glyphicon-ok': station.refinery}" }
@@ -76,17 +76,17 @@
             %th Division
             %th Corporation
         %tbody
-          %tr{ ng-repeat: "agent in solarSystem.agents track by agent._id" }
+          %tr{ ng-repeat: "agent in solarSystem.agents | orderBy: ['level', 'divisionName', 'corporationName']" }
             %td {{ agent.level }}
-            %td {{ agent.kind }}
-            %td {{ agent.corporation_name }}
+            %td {{ agent.divisionName }}
+            %td {{ agent.corporationName }}
   .row
     .col-xs-12
       %dl.dl-horizontal
         %dt External resources
         %dd
-          %a{ ng-href: 'http://evemaps.dotlan.net/system/{{solarSystem._id}}', target: '_blank' }
+          %a{ ng-href: 'http://evemaps.dotlan.net/system/{{solarSystem.id}}', target: '_blank' }
             DOTLAN
         %dd
-          %a{ ng-href: 'https://zkillboard.com/system/{{solarSystem._id}}', target: '_blank' }
+          %a{ ng-href: 'https://zkillboard.com/system/{{solarSystem.id}}', target: '_blank' }
             zKillboard

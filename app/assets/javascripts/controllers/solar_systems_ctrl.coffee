@@ -1,4 +1,4 @@
-CB.controller 'SolarSystemsCtrl', ($scope, $timeout, Storage, SolarSystems, FilterManager) ->
+CB.controller 'SolarSystemsCtrl', ($scope, $timeout, $modal, Storage, SolarSystems, FilterManager) ->
   $scope.filters = Storage.get 'filters', []
   $scope.sort    = Storage.get 'sort', ['name', 'asc']
 
@@ -51,6 +51,14 @@ CB.controller 'SolarSystemsCtrl', ($scope, $timeout, Storage, SolarSystems, Filt
   $scope.removeAllFilters = ->
     $scope.filters = []
     $scope.sort    = ['name', 'asc']
+
+  $scope.showInModal = (solarSystem) ->
+    modalInstance = $modal.open
+      template: JST['solar_system_modal']()
+      controller: 'SolarSystemModalCtrl'
+      size: 'lg'
+      resolve:
+        solarSystem: -> solarSystem
 
   $scope.$watch 'filters', setAvailableFilters, true
   $scope.$watch 'filters', findWithTimeout, true
