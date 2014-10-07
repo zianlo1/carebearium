@@ -60,7 +60,7 @@ if Rails.env.development?
 
     task :agents do
       dump_query 'agents.json', <<-SQL
-        select a.agentID as id, a.level, a.corporationID, d.divisionName as kind, st.stationID, st.solarSystemID
+        select a.agentID as id, a.level, a.corporationID, d.divisionName as division, st.stationID, st.solarSystemID
         from agtAgents a
         join crpNPCDivisions d on d.divisionID = a.divisionID
         join staStations st on a.locationID = st.stationID

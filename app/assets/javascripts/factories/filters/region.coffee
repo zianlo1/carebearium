@@ -18,6 +18,6 @@ class CB.Filters.Region extends CB.Filters.Dropdown
 
   filterFunction: (item) =>
     if @options.choice
-      item.regionID is parseInt(@options.choice)
+      item.regionID is parseInt(@options.choice, 10)
     else
       true

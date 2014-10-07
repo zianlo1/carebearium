@@ -12,6 +12,12 @@ if Rails.env.development?
     end
   end
 
+  def write_static_data(header, data)
+    File.open(Rails.root.join('app', 'assets', 'javascripts', 'data', "#{header.underscore}.coffee"), 'w') do |f|
+      f.write("CB.StaticData.#{header} = #{MultiJson.dump data}")
+    end
+  end
+
   namespace :seed2public do
     task :solar_systems do
       data = {}
@@ -37,10 +43,29 @@ if Rails.env.development?
         data[row[:solarSystemID]][:stations] << row.slice(:name, :refinery, :repair, :factory, :lab, :insurance)
       end
 
+      levels = Set.new
+      divisions = Set.new
+
+      read_file('agents.json').each do |row|
+        levels.add row[:level]
+        divisions.add row[:division]
+      end
+
+      write_static_data 'AgentLevels', levels.to_a.sort
+
+      divisionMap = {}
+      divisions.to_a.sort.each_with_index do |divisions, index|
+        divisionMap[index] = divisions
+      end
+
+      write_static_data 'AgentDivisions', divisionMap
+
       read_file('agents.json').each do |row|
         next unless data[row[:solarSystemID]]
         data[row[:solarSystemID]][:agents] ||= []
-        data[row[:solarSystemID]][:agents] << row.slice(:corporationID, :kind, :level)
+        agent = row.slice(:corporationID, :level)
+        agent[:division] = divisionMap.key(row[:division])
+        data[row[:solarSystemID]][:agents] << agent
       end
 
       read_file('jumps.json').each do |row|
@@ -76,9 +101,7 @@ if Rails.env.development?
         output[row[:corporationID]] = row[:corporationName]
       end
 
-      File.open(Rails.root.join('app', 'assets', 'javascripts', 'data', 'corporations.coffee'), 'w') do |f|
-        f.write("CB.StaticData.Corporations = #{MultiJson.dump output}")
-      end
+      write_static_data 'Corporations', output
     end
 
     task :regions do
@@ -88,9 +111,7 @@ if Rails.env.development?
         output[row[:regionID]] = row[:regionName]
       end
 
-      File.open(Rails.root.join('app', 'assets', 'javascripts', 'data', 'regions.coffee'), 'w') do |f|
-        f.write("CB.StaticData.Regions = #{MultiJson.dump output}")
-      end
+      write_static_data 'Regions', output
     end
   end
 

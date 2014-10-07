@@ -19,6 +19,7 @@ CB.factory 'FilterManager', ->
     station_service: CB.Filters.StationService
     system_feature: CB.Filters.SystemFeature
     region: CB.Filters.Region
+    agent: CB.Filters.Agent
 
   for key, value of CB.StaticData.Limits
     filters[key]?.prototype.limits = value

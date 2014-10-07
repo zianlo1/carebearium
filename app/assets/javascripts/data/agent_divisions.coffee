@@ -1,0 +1,1 @@
+CB.StaticData.AgentDivisions = {"0":"Advanced Military","1":"Business","2":"Distribution","3":"Exploration","4":"Industry","5":"Military","6":"Mining","7":"R&D","8":"Security"}
