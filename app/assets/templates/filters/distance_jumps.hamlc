@@ -7,8 +7,8 @@
   .col-sm-3.col-xs-4.col-sm-pull-1
     %ui-select{ ng-model: 'filter.system' }
       %ui-select-match{ placeholder: 'Select a system'  }
-        {{ $select.selected.text }}
-      %ui-select-choices{ repeat: "choice.id as choice in settings.systems | filter: { text: $select.search }" }
+        {{ settings.systemName($select.selected) }}
+      %ui-select-choices{ repeat: "choice.id as choice in settings.systems | filter: { text: $select.search } | limitTo: 50" }
         {{ choice.text }}
 
   .col-sm-5.col-xs-8.col-sm-pull-1

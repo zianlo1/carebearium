@@ -53,6 +53,7 @@ class CB.Filters.Agent extends CB.Filters.Base
     levels: CB.StaticData.AgentLevels
     divisions: CB.Helpers.mapToSelectChoices CB.StaticData.AgentDivisions
     corporations: CB.Helpers.mapToSelectChoices CB.StaticData.Corporations
+    corporationName: (id) -> CB.StaticData.Corporations[id]
     name: @filterName
 
   templateName: 'agent'
