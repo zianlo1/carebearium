@@ -7,9 +7,9 @@ class CB.Filters.Security extends CB.Filters.Slider
     val = item.security * @scale
     val >= @options.min and val <= @options.max
 
-  visibleFields: ->
-    security:
-      text: 'Security'
-      display: (item) -> item.security.toFixed(1)
+  visibleField: ->
+    field: 'security'
+    text: 'Security'
+    display: (item) -> item.security.toFixed(1)
 
   filterName: 'Security'

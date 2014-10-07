@@ -10,9 +10,9 @@ class CB.Filters.AgentCount extends CB.Filters.Slider
     item.agentCount = item.agents.length
     item
 
-  visibleFields: ->
-    agentCount:
-      text: 'Agents'
-      display: (item) -> item.agentCount
+  visibleField: ->
+    field: 'agentCount'
+    text: 'Agents'
+    display: (item) -> item.agentCount
 
   filterName: 'Agent count'

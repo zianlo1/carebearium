@@ -10,9 +10,9 @@ class CB.Filters.JumpCount extends CB.Filters.Slider
     item.jumpCount = item.jumps.length
     item
 
-  visibleFields: ->
-    jumpCount:
-      text: 'Neighbours'
-      display: (item) -> item.jumpCount
+  visibleField: ->
+    field: 'jumpCount'
+    text: 'Neighbours'
+    display: (item) -> item.jumpCount
 
   filterName: 'Neighbouring system count'

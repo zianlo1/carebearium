@@ -6,9 +6,9 @@ class CB.Filters.BeltCount extends CB.Filters.Slider
   filterFunction: (item) =>
     item.beltCount >= @options.min and item.beltCount <= @options.max
 
-  visibleFields: ->
-    beltCount:
-      text: 'Belts'
-      display: (item) -> item.beltCount
+  visibleField: ->
+    field: 'beltCount'
+    text: 'Belts'
+    display: (item) -> item.beltCount
 
   filterName: 'Belt count'

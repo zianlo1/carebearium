@@ -6,7 +6,7 @@ class CB.Filters.Base
 
   mapFunction: (item) -> item
 
-  visibleFields: -> {}
+  visibleField: -> false
 
   multiple: false
 

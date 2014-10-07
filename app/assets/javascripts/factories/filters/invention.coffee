@@ -7,9 +7,9 @@ class CB.Filters.Invention extends CB.Filters.Slider
     val = item.invention * @scale
     val >= @options.min and val <= @options.max
 
-  visibleFields: ->
-    invention:
-      text: 'Invention'
-      display: (item) -> item.invention.toFixed(5)
+  visibleField: ->
+    field: 'invention'
+    text: 'Invention'
+    display: (item) -> item.invention.toFixed(5)
 
   filterName: 'Invention index'

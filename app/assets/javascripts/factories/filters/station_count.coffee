@@ -10,9 +10,9 @@ class CB.Filters.StationCount extends CB.Filters.Slider
     item.stationCount = item.stations.length
     item
 
-  visibleFields: ->
-    stationCount:
-      text: 'Stations'
-      display: (item) -> item.stationCount
+  visibleField: ->
+    field: 'stationCount'
+    text: 'Stations'
+    display: (item) -> item.stationCount
 
   filterName: 'Station count'

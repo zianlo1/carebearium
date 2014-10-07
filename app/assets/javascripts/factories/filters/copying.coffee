@@ -7,9 +7,9 @@ class CB.Filters.Copying extends CB.Filters.Slider
     val = item.copying * @scale
     val >= @options.min and val <= @options.max
 
-  visibleFields: ->
-    copying:
-      text: 'Copying'
-      display: (item) -> item.copying.toFixed(5)
+  visibleField: ->
+    field: 'copying'
+    text: 'Copying'
+    display: (item) -> item.copying.toFixed(5)
 
   filterName: 'Copying index'

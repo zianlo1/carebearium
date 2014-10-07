@@ -7,9 +7,9 @@ class CB.Filters.Manufacturing extends CB.Filters.Slider
     val = item.manufacturing * @scale
     val >= @options.min and val <= @options.max
 
-  visibleFields: ->
-    manufacturing:
-      text: 'Manufacturing'
-      display: (item) -> item.manufacturing.toFixed(5)
+  visibleField: ->
+    field: 'manufacturing'
+    text: 'Manufacturing'
+    display: (item) -> item.manufacturing.toFixed(5)
 
   filterName: 'Manufacturing index'

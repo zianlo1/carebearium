@@ -39,15 +39,12 @@ class CB.Filters.Agent extends CB.Filters.Base
     item[@fieldName] = Lazy(item.agents).countBy(@matcherFunction).get 'true'
     item
 
-  visibleFields: =>
-    fields = {}
-
+  visibleField: =>
     if @options.level or @options.division or @options.corporation
-      fields[@fieldName] =
-        text: @columName
-        display: (item) => item[@fieldName]
+      field: @fieldName
+      text: @columName
+      display: (item) => item[@fieldName]
 
-    fields
 
   multiple: true
 

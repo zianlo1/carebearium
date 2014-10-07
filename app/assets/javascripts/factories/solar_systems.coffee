@@ -23,8 +23,7 @@ CB.factory 'SolarSystems', ($q, $http, Storage, FilterManager) ->
     dataLoaded.promise.then ->
       data = Lazy(CB.StaticData.SolarSystems).filter -> true
 
-      visibleFields =
-        name: { text: 'Name', display: (item) -> item.name }
+      visibleFields = [{ field: 'name', text: 'Name', display: (item) -> item.name }]
 
       for filterOptions in options.filters
         filter = new FilterManager[filterOptions.kind](filterOptions)
@@ -33,12 +32,16 @@ CB.factory 'SolarSystems', ($q, $http, Storage, FilterManager) ->
 
         data = data.filter(filter.filterFunction).map(filter.mapFunction)
 
-        visibleFields[key] = value for key, value of filter.visibleFields()
+        additionalVisibleField = filter.visibleField()
+        if additionalVisibleField
+          visibleFields.push additionalVisibleField
 
       data = data.sortBy (item) -> item[sortField]
       data = data.reverse() unless sortDirection is 'asc'
-      if visibleFields[sortField]
-        visibleFields[sortField].sorted = sortDirection
+
+      sortedField = Lazy(visibleFields).findWhere { field: sortField }
+      if sortedField
+        sortedField.sorted = sortDirection
 
       data = data.first(50)
 

@@ -7,9 +7,9 @@ class CB.Filters.HourlyNpcs extends CB.Filters.Slider
     val = item.hourly_npcs * @scale
     val >= @options.min and val <= @options.max
 
-  visibleFields: ->
-    hourly_npcs:
-      text: 'NPC kills / h'
-      display: (item) -> item.hourly_npcs.toFixed(5)
+  visibleField: ->
+    field: 'hourly_npcs'
+    text: 'NPC kills / h'
+    display: (item) -> item.hourly_npcs.toFixed(5)
 
   filterName: 'Average hourly NPC kills'

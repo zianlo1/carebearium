@@ -7,9 +7,9 @@ class CB.Filters.ResearchME extends CB.Filters.Slider
     val = item.research_me * @scale
     val >= @options.min and val <= @options.max
 
-  visibleFields: ->
-    research_me:
-      text: 'Research ME'
-      display: (item) -> item.research_me.toFixed(5)
+  visibleField: ->
+    field: 'research_me'
+    text: 'Research ME'
+    display: (item) -> item.research_me.toFixed(5)
 
   filterName: 'Research ME index'

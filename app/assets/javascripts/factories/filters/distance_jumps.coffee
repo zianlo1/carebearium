@@ -41,15 +41,11 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
     item[@fieldName] = @reachableSystems[item.id]
     item
 
-  visibleFields: =>
-    fields = {}
-
+  visibleField: =>
     if @options.system
-      fields[@fieldName] =
-        text: @columName
-        display: (item) => item[@fieldName]
-
-    fields
+      field: @fieldName
+      text: @columName
+      display: (item) => item[@fieldName]
 
   multiple: true
 

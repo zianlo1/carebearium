@@ -11,10 +11,10 @@ class CB.Filters.Region extends CB.Filters.Dropdown
     item.region = CB.StaticData.Regions[item.regionID]
     item
 
-  visibleFields: ->
-    region:
-      text: 'Region'
-      display: (item) -> item.region
+  visibleField: ->
+    field: 'region'
+    text: 'Region'
+    display: (item) -> item.region
 
   prepare: =>
     @options.choice = parseInt(@options.choice, 10)
