@@ -21,8 +21,10 @@ class SolarSystem
   end
 
   def self.dynamic_data
-    all.each_with_object({}) do |solar_sytem, map|
-      map[solar_sytem.id] = DATA_FIELDS.map { |field| solar_sytem.send(field) }
+    Rails.cache.fetch "SolarSystem#dynamic_data/#{max(:updated_at).to_i}" do
+      all.each_with_object({}) do |solar_sytem, map|
+        map[solar_sytem.id] = DATA_FIELDS.map { |field| solar_sytem.send(field) }
+      end
     end
   end
 
