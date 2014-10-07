@@ -2,6 +2,11 @@
   %h1
     What's new in Carebearium
 
+%h3 07.10.2014
+%ul
+  %li
+    Carebearium now runs all the calculations right in your browser. This should result in a more snappy experience, at least on reasonably current browsers and devices. More importantly, it sets the stage for future inclusion of lowsec / null systems.
+
 %h3 30.09.2014
 %ul
   %li
