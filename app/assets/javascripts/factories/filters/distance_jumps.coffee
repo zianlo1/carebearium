@@ -53,7 +53,7 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
 
   settings: =>
     min: 0
-    max: 20
+    max: 50
     name: @filterName
     systems: CB.Helpers.mapToSelectChoices CB.StaticData.SolarSystemNames
     systemName: (id) -> CB.StaticData.SolarSystemNames[id]
