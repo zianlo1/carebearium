@@ -18,5 +18,5 @@
         %span.glyphicon{ ng-class: "{'glyphicon-sort': !field.sorted, 'glyphicon-sort-by-attributes': field.sorted == 'asc', 'glyphicon-sort-by-attributes-alt': field.sorted == 'desc'}"}
   %tbody
     %tr{ ng-repeat: "solarSystem in solarSystems track by $index" }
-      %td{ ng-repeat: "field in fields track by field.field" }
+      %td{ ng-repeat: "field in fields track by $index" }
         {{ field.display(solarSystem)  }}
