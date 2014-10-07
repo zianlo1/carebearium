@@ -16,3 +16,5 @@ class CB.Filters.Base
   settings: -> {}
 
   templateName: 'slider'
+
+  prepare: ->

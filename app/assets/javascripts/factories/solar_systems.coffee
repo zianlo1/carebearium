@@ -21,6 +21,8 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
       for filterOptions in options.filters
         filter = new FilterManager[filterOptions.kind](filterOptions)
 
+        filter.prepare()
+
         data = data.filter(filter.filterFunction).map(filter.mapFunction)
 
         visibleFields[key] = value for key, value of filter.visibleFields()

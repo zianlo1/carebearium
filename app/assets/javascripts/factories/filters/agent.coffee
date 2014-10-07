@@ -1,40 +1,51 @@
 #= require ./base
 
 class CB.Filters.Agent extends CB.Filters.Base
+  prepare: =>
+    columnNameParts = []
+
+    if @options.level
+      @options.level = parseInt(@options.level, 10)
+      columnNameParts.push @options.level
+
+    if @options.division
+      @options.division = parseInt(@options.division, 10)
+      columnNameParts.push CB.StaticData.AgentDivisions[@options.division]
+
+    if @options.corporation
+      @options.corporation = parseInt(@options.corporation, 10)
+      columnNameParts.push CB.StaticData.Corporations[@options.corporation]
+
+    @fieldName = "agent_#{@options.level || '_'}_#{@options.division || '_'}_#{@options.corporation || '_'}"
+    @columName = "Agent: #{columnNameParts.join ' / '}"
+
   matcherFunction: (agent) =>
     matches = true
 
     if @options.level
-      matches = agent.level is parseInt(@options.level, 10)
+      matches = agent.level is @options.level
 
     if matches and @options.division
-      matches = matches and agent.division is parseInt(@options.division, 10)
+      matches = matches and agent.division is @options.division
 
     if matches and @options.corporation
-      matches = matches and agent.corporationID is parseInt(@options.corporation, 10)
+      matches = matches and agent.corporationID is @options.corporation
 
     matches
-
-  fieldName: =>
-    "agent_#{@options.level || '_'}_#{@options.division || '_'}_#{@options.corporation || '_'}"
 
   filterFunction: (item) => Lazy(item.agents).some @matcherFunction
 
   mapFunction: (item) =>
-    item[@fieldName()] = Lazy(item.agents).countBy(@matcherFunction).get 'true'
+    item[@fieldName] = Lazy(item.agents).countBy(@matcherFunction).get 'true'
     item
 
   visibleFields: =>
     fields = {}
 
     if @options.level or @options.division or @options.corporation
-      nameParts = []
-      nameParts.push @options.level if @options.level
-      nameParts.push CB.StaticData.AgentDivisions[@options.division]
-      nameParts.push CB.StaticData.Corporations[@options.corporation] if @options.corporation
-      fields[@fieldName()] =
-        text: "Agent: #{nameParts.join ' / '}"
-        display: (item) => item[@fieldName()]
+      fields[@fieldName] =
+        text: @columName
+        display: (item) => item[@fieldName]
 
     fields
 
