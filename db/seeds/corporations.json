@@ -76,6 +76,10 @@
     "corporationName":"Lai Dai Corporation"
   },
   {
+    "corporationID":1000021,
+    "corporationName":"Zero-G Research Firm"
+  },
+  {
     "corporationID":1000022,
     "corporationName":"Propel Dynamics"
   },
@@ -400,6 +404,10 @@
     "corporationName":"Roden Shipyards"
   },
   {
+    "corporationID":1000103,
+    "corporationName":"Allotek Industries"
+  },
+  {
     "corporationID":1000104,
     "corporationName":"Poteque Pharmaceuticals"
   },
@@ -446,6 +454,10 @@
   {
     "corporationID":1000115,
     "corporationName":"University of Caille"
+  },
+  {
+    "corporationID":1000116,
+    "corporationName":"President"
   },
   {
     "corporationID":1000117,

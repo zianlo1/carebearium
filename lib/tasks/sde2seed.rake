@@ -19,7 +19,7 @@ if Rails.env.development?
         select s.solarSystemID as id, s.solarSystemName as name, s.regionID, round(s.security, 1) as security, IFNULL(belts.beltCount, 0) as beltCount
         from mapSolarSystems s
         left join (select solarSystemID, count(*) as beltCount from mapDenormalize where typeID = 15 group by solarSystemID) belts on s.solarSystemID = belts.solarSystemID
-        where round(s.security,1) >= 0.5
+        where round(s.security,1) > 0
         order by s.solarSystemID
       SQL
     end
@@ -29,7 +29,7 @@ if Rails.env.development?
         select r.regionID, r.regionName
         from mapRegions r
         join mapSolarSystems s on r.regionID = s.regionID
-        where round(s.security,1) >= 0.5
+        where round(s.security,1) > 0
         group by r.regionID
         order by r.regionID
       SQL
@@ -52,7 +52,7 @@ if Rails.env.development?
         left join staOperationServices factory on factory.operationID = st.operationID and factory.serviceID = 8192
         left join staOperationServices lab on lab.operationID = st.operationID and lab.serviceID = 16384
         left join staOperationServices insure on insure.operationID = st.operationID and insure.serviceID = 1048576
-        where round(s.security,1) >= 0.5
+        where round(s.security,1) > 0
         group by st.stationID
         order by st.stationID
       SQL
@@ -67,7 +67,7 @@ if Rails.env.development?
         join mapSolarSystems s on s.solarSystemID = st.solarSystemID
         join crpNPCCorporations c on c.corporationID = a.corporationID
         join invNames n on n.itemID = c.corporationID
-        where round(s.security,1) >= 0.5
+        where round(s.security,1) > 0
         order by a.agentID
       SQL
     end
@@ -81,7 +81,7 @@ if Rails.env.development?
         join mapSolarSystems s on s.solarSystemID = st.solarSystemID
         join crpNPCCorporations c on c.corporationID = a.corporationID
         join invNames n on n.itemID = c.corporationID
-        where round(s.security,1) >= 0.5
+        where round(s.security,1) > 0
         group by c.corporationID
         order by c.corporationID
       SQL
@@ -105,7 +105,7 @@ if Rails.env.development?
         join mapDenormalize dst on dst.itemId = j.destinationId
         join mapSolarSystems srcSys on srcSys.solarSystemId = src.solarSystemId
         join mapSolarSystems dstSys on dstSys.solarSystemId = dst.solarSystemId
-        where round(srcSys.security,1) >= 0.5 and round(dstSys.security,1) >= 0.5
+        where round(srcSys.security,1) > 0 and round(dstSys.security,1) > 0
         group by src.solarSystemId
         order by src.solarSystemId, dst.solarSystemId
       SQL

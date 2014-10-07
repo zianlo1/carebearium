@@ -4,11 +4,19 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
   constructor: (@options) ->
     super(@options)
     @options.distance ||= 0
+    @options.security ||= '0.5'
+
+  securityOptions:
+    '0.5': 'by hisec'
+    '0.1': 'by hisec + lowsec'
+    # '-1':  'by any space'
 
   prepare: =>
     @reachableSystems = {}
 
     if @options.system
+      minSecurity = parseInt(@options.security, 10)
+
       @reachableSystems[@options.system] = 0
 
       if @options.distance > 0
@@ -21,15 +29,18 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
           visitNext = []
 
           for id in visitNow
-            @reachableSystems[id] = depth
-            for next in CB.StaticData.SolarSystems[id].jumps
-              if typeof @reachableSystems[next] == 'undefined'
-                visitNext.push next
+            system = CB.StaticData.SolarSystems[id]
+            unless system.security < minSecurity
+              console.log system.security
+              @reachableSystems[id] = depth
+              for next in system.jumps
+                if typeof @reachableSystems[next] == 'undefined'
+                  visitNext.push next
 
           depth += 1
 
-    @fieldName = "distance_jumps_#{@options.system || '_'}"
-    @columName = "Jumps to #{CB.StaticData.SolarSystemNames[@options.system]}"
+    @fieldName = "distance_jumps_#{@options.system || '_'}_#{@options.security || '_'}"
+    @columName = "Jumps to #{CB.StaticData.SolarSystemNames[@options.system]} #{@securityOptions[@options.security]}"
 
   filterFunction: (item) =>
     if @options.system
@@ -57,5 +68,6 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
     name: @filterName
     systems: CB.Helpers.mapToSelectChoices CB.StaticData.SolarSystemNames
     systemName: (id) -> CB.StaticData.SolarSystemNames[id]
+    securityOptions: CB.Helpers.mapToSelectChoices @securityOptions
 
   templateName: 'distance_jumps'
