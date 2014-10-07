@@ -7,10 +7,6 @@ class CB.Filters.Region extends CB.Filters.Dropdown
 
   dropdownChoices: CB.StaticData.Regions
 
-  mapFunction: (item) ->
-    item.region = CB.StaticData.Regions[item.regionID]
-    item
-
   visibleField: ->
     field: 'region'
     text: 'Region'

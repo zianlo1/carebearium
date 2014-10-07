@@ -4,8 +4,6 @@ class CB.Filters.Base
 
   filterFunction: (item) -> true
 
-  mapFunction: (item) -> item
-
   visibleField: -> false
 
   multiple: false

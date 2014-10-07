@@ -11,6 +11,7 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
     for id, fields of staticData
       system = { id: id, name: CB.StaticData.SolarSystemNames[id] }
       system.regionID  = fields[0]
+      system.region    = CB.StaticData.Regions[system.regionID]
       system.security  = fields[1]
       system.beltCount = fields[2]
       system.ice       = fields[3] is 1
@@ -65,7 +66,10 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
 
         filter.prepare()
 
-        data = data.filter(filter.filterFunction).map(filter.mapFunction)
+        data = data.filter filter.filterFunction
+
+        if filter.mapFunction
+          data = data.map filter.mapFunction
 
         additionalVisibleField = filter.visibleField()
         if additionalVisibleField
