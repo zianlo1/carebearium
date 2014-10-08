@@ -28,13 +28,14 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
           visitNow  = angular.copy visitNext
           visitNext = []
 
-          for id in visitNow
-            system = CB.StaticData.SolarSystems[id]
-            unless system.security < minSecurity
-              @reachableSystems[id] = depth
-              for next in system.jumps
-                if typeof @reachableSystems[next] == 'undefined'
-                  visitNext.push next
+          Lazy(visitNow)
+            .uniq()
+            .filter( (id) => angular.isUndefined(@reachableSystems[id]) )
+            .map( (id) -> CB.StaticData.SolarSystems[id] )
+            .filter( (system) -> system.security >= minSecurity )
+            .each (system) =>
+              @reachableSystems[system.id] = depth
+              visitNext.push next for next in system.jumps
 
           depth += 1
 
@@ -43,7 +44,7 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
 
   filterFunction: (item) =>
     if @options.system
-      typeof @reachableSystems[item.id] != 'undefined'
+      !angular.isUndefined(@reachableSystems[item.id])
     else
       true
 
