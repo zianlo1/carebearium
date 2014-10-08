@@ -67,11 +67,16 @@ class SolarSystem
   end
 
   def self.update_kill_stats
+    summary = KillStat.summary
+    hours   = KillStat.hours_of_data
+
     each do |solar_sytem|
+      system_stats = summary[solar_sytem.id.to_i]
+
       solar_sytem.update_attributes(
-        hourly_ships: (solar_sytem.kill_stats.sum(:ship_kills).to_f / 24).round(1),
-        hourly_pods:  (solar_sytem.kill_stats.sum(:pod_kills).to_f  / 24).round(1),
-        hourly_npcs:  (solar_sytem.kill_stats.sum(:npc_kills).to_f  / 24).round(1)
+        hourly_ships: (system_stats[:ship_kills].to_f / hours).round(1),
+        hourly_pods:  (system_stats[:pod_kills].to_f  / hours).round(1),
+        hourly_npcs:  (system_stats[:npc_kills].to_f  / hours).round(1)
       )
     end
   end
