@@ -32,6 +32,9 @@ CB.config ($routeProvider) ->
       redirectTo: '/solar_systems'
     })
 
+CB.config ($locationProvider) ->
+  $locationProvider.html5Mode(true)
+
 CB.config ($analyticsProvider) ->
   $analyticsProvider.firstPageview(true)
   $analyticsProvider.withAutoBase(true)

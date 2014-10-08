@@ -8,7 +8,7 @@
     <script>
       CB.StaticData.Limits = <%= raw SolarSystem.limits_json %>
     </script>
-    <%= csrf_meta_tags %>
+    <base href="/">
   </head>
   <body>
     <nav class="navbar navbar-default" ng-init="navCollapsed = true">
@@ -27,8 +27,8 @@
         </div>
         <div collapse="navCollapsed" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#/news">News</a></li>
-            <li><a href="#/about">About</a></li>
+            <li><a href="/news">News</a></li>
+            <li><a href="/about">About</a></li>
           </ul>
         </div>
       </div>

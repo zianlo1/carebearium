@@ -2,7 +2,7 @@
   %h1
     What's new in Carebearium
 
-%h3 08.10.2014
+%h3#news-08102014 08.10.2014
 %ul
   %li
     Lowsec systems are now in!
@@ -11,12 +11,12 @@
   %li
     The 'System feature - dead end' has been expanded in a more general 'Adjacent system count' filter
 
-%h3 07.10.2014
+%h3#news-07102014 07.10.2014
 %ul
   %li
     Carebearium now runs all the calculations right in your browser. This should result in a more snappy experience, at least on reasonably current browsers and devices. More importantly, it sets the stage for future inclusion of lowsec / null systems.
 
-%h3 30.09.2014
+%h3#news-30092014 30.09.2014
 %ul
   %li
     You can now filter for systems that can spawn ice belts
@@ -27,7 +27,7 @@
     %a{ ng-click: "filterWithPreset([{ kind: 'jump_count', max: 1}], ['name', 'asc'])" }
       Example
 
-%h3 17.09.2014
+%h3#news-17092014 17.09.2014
 %ul
   %li
     We are open for suggestions! Click the
@@ -36,7 +36,7 @@
   %li
     Clicking on a solar system in filter results now opens a general overview of that system
 
-%h3 11.09.2014
+%h3#news-11092014 11.09.2014
 %ul
   %li Carebearium now remembers what you filtered by last time
   %li Re-designed filtering interface
@@ -55,6 +55,6 @@
   %li When filtering by specific agent, count of matching agents in system is shown in results
   %li A huge backend overhaul
 
-%h3 27.08.2014
+%h3#news-27082014 27.08.2014
 %ul
   %li Initial public release, everything's new!
