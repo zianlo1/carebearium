@@ -9,7 +9,7 @@ class KillStat
   field :pod_kills,       type: Integer
   field :npc_kills,       type: Integer
 
-  index({ created_at: 1 }, { expire_after_seconds: 1.day })
+  index({ created_at: 1 }, { expire_after_seconds: 1.week })
   index({ solar_system_id: 1 })
 
   def self.update
