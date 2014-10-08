@@ -7,8 +7,8 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
     @options.security ||= '0.5'
 
   securityOptions:
-    '0.5': 'by hisec'
-    '0.1': 'by hisec + lowsec'
+    '0.5': 'hisec'
+    '0.1': 'hisec & lowsec'
     # '-1':  'by any space'
 
   prepare: =>

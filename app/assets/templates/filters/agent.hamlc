@@ -19,6 +19,6 @@
   .col-sm-4.col-xs-6.col-sm-pull-1
     %ui-select{ ng-model: 'filter.corporation' }
       %ui-select-match{ placeholder: 'Corporation'  }
-        {{ settings.corporationName($select.selected) }}
+        {{ settings.corporationName(filter.corporation) }}
       %ui-select-choices{ repeat: "choice.id as choice in settings.corporations | filter: { text: $select.search } | limitTo: 50" }
         {{ choice.text }}

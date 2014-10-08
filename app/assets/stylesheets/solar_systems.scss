@@ -37,8 +37,8 @@
 filter {
   display: block;
   transition: 200ms ease-in-out all;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: $scale-unit * 2;
+  padding-bottom: $scale-unit * 2;
 
   &.ng-enter.ng-enter-active, &.ng-leave {
     opacity: 1;
@@ -57,5 +57,16 @@ filter {
   }
   .panel-heading {
     cursor: pointer;
+  }
+}
+@media (max-width: $screen-xs-max) {
+  .col-xs-12 {
+    slider {
+      margin-top: $scale-unit * 3;
+    }
+  }
+
+  label {
+    padding-top: $scale-unit;
   }
 }
