@@ -5,7 +5,8 @@
 %h3#news-08102014 08.10.2014
 %ul
   %li
-    Lowsec systems are now in!
+    %a{ ng-click: "filterWithPreset([{ kind: 'security', max: 4 }], ['name', 'asc'])" }
+      Lowsec systems are now in!
   %li
     With addition of lowsec systems, you can now select either hisec or hisec + lowsec routing when filtering by jump distance.
   %li
