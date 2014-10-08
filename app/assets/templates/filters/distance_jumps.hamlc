@@ -4,13 +4,13 @@
   .col-sm-1.col-xs-2.col-sm-push-8.text-right
     %button.btn.btn-default{ ng-click: 'removeFilter(filter)' }
       %span.glyphicon.glyphicon-remove
-  .col-sm-3.col-xs-4.col-sm-pull-1
+  .col-sm-2.col-xs-4.col-sm-pull-1
     %ui-select{ ng-model: 'filter.system' }
       %ui-select-match{ placeholder: 'Select a system'  }
         {{ settings.systemName(filter.system) }}
       %ui-select-choices{ repeat: "choice.id as choice in settings.systems | filter: { text: $select.search } | limitTo: 50" }
         {{ choice.text }}
-  .col-sm-3.col-xs-4.col-sm-pull-1
+  .col-sm-4.col-xs-4.col-sm-pull-1
     %slider{ floor: '{{ settings.min }}', ceiling: '{{ settings.max }}', ng-model: 'filter.distance' }
   .col-sm-2.col-xs-4.col-sm-pull-1
     %ui-select{ ng-model: 'filter.security' }
