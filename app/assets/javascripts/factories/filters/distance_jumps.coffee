@@ -30,7 +30,7 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
 
           Lazy(visitNow)
             .uniq()
-            .filter( (id) => angular.isUndefined(@reachableSystems[id]) )
+            .filter( (id) => angular.isUndefined(@reachableSystems[id]) and not angular.isUndefined(CB.StaticData.SolarSystems[id]) )
             .map( (id) -> CB.StaticData.SolarSystems[id] )
             .filter( (system) -> system.security >= minSecurity )
             .each (system) =>

@@ -103,9 +103,6 @@ if Rails.env.development?
         from mapJumps j
         join mapDenormalize src on src.itemId = j.stargateId
         join mapDenormalize dst on dst.itemId = j.destinationId
-        join mapSolarSystems srcSys on srcSys.solarSystemId = src.solarSystemId
-        join mapSolarSystems dstSys on dstSys.solarSystemId = dst.solarSystemId
-        where round(srcSys.security,1) > 0 and round(dstSys.security,1) > 0
         group by src.solarSystemId
         order by src.solarSystemId, dst.solarSystemId
       SQL

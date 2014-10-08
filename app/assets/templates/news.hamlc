@@ -2,6 +2,15 @@
   %h1
     What's new in Carebearium
 
+%h3 08.10.2014
+%ul
+  %li
+    Lowsec systems are now in!
+  %li
+    With addition of lowsec systems, you can now select either hisec or hisec + lowsec routing when filtering by jump distance.
+  %li
+    The 'System feature - dead end' has been expanded in a more general 'Adjacent system count' filter
+
 %h3 07.10.2014
 %ul
   %li
