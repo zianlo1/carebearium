@@ -40,7 +40,7 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
           depth += 1
 
     @fieldName = "distance_jumps_#{@options.system || '_'}_#{@options.security || '_'}"
-    @columName = "Jumps to #{CB.StaticData.SolarSystemNames[@options.system]} #{@securityOptions[@options.security]}"
+    @columName = "Jumps to #{CB.StaticData.SolarSystemNames[@options.system]} by #{@securityOptions[@options.security]}"
 
   filterFunction: (item) =>
     if @options.system
