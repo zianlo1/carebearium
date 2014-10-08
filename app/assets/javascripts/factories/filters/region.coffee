@@ -1,6 +1,8 @@
 #= require ./dropdown
 
 class CB.Filters.Region extends CB.Filters.Dropdown
+  multiple: false
+
   promptText: 'Select a region...'
 
   filterName: 'Region'
