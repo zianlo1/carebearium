@@ -8,7 +8,6 @@ module IsSystemStatistic
     field :solar_system_id, type: Integer
 
     index({ created_at: 1 }, { expire_after_seconds: 1.week })
-    index({ solar_system_id: 1 })
   end
 
   module ClassMethods
