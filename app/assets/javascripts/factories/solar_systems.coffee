@@ -20,11 +20,14 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
       for stationFields in fields[4]
         station = {}
         station.name      = stationFields[0]
-        station.refinery  = stationFields[1] is 1
-        station.repair    = stationFields[2] is 1
-        station.factory   = stationFields[3] is 1
-        station.lab       = stationFields[4] is 1
-        station.insurance = stationFields[5] is 1
+
+        services = CB.StaticData.StationOperations[stationFields[1]]
+
+        station.refinery  = 32 in services
+        station.repair    = 4096 in services
+        station.factory   = 8192 in services
+        station.lab       = 16384 in services
+        station.insurance = 1048576 in services
 
         system.stations.push station
 

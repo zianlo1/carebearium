@@ -41,7 +41,7 @@ if Rails.env.development?
 
       read_file('stations.json').each do |row|
         next unless data[row[:solarSystemID]]
-        data[row[:solarSystemID]][:stations] << row.slice(:name, :refinery, :repair, :factory, :lab, :insurance)
+        data[row[:solarSystemID]][:stations] << row.slice(:name, :operationID)
       end
 
       levels = Set.new
@@ -93,8 +93,8 @@ if Rails.env.development?
           system[:security],
           system[:beltCount],
           system[:ice] ? 1 : 0,
-          system[:stations].map { |st| [st[:name], st[:refinery], st[:repair], st[:factory], st[:lab], st[:insurance] ] },
-          system[:agents].map { |ag| [ag[:corporationID], ag[:level], ag[:division] ] },
+          system[:stations].map { |st| [ st[:name], st[:operationID] ] },
+          system[:agents].map { |ag| [ ag[:corporationID], ag[:level], ag[:division] ] },
           system[:jumps]
         ]
       end
@@ -126,8 +126,18 @@ if Rails.env.development?
 
       write_static_data 'Regions', output
     end
+
+    task :operations do
+      output = {}
+
+      read_file('operations.json').each do |row|
+        output[row[:id]] = row[:services].split(',').map(&:to_i).sort
+      end
+
+      write_static_data 'StationOperations', output
+    end
   end
 
   desc "Convert seed files to public"
-  task seed2public: %w(solar_systems corporations regions).map{ |t| "seed2public:#{t}" }
+  task seed2public: %w(solar_systems corporations regions operations).map{ |t| "seed2public:#{t}" }
 end

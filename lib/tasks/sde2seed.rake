@@ -37,21 +37,9 @@ if Rails.env.development?
 
     task :stations do
       dump_query 'stations.json', <<-SQL
-        select st.stationID as id,
-        	   st.solarSystemID,
-        	   st.stationName as name,
-        	   count(refine.operationID) as refinery,
-        	   count(rep.operationID) as 'repair',
-        	   count(factory.operationID) as factory,
-        	   count(lab.operationID) as lab,
-        	   count(insure.operationID) as insurance
+        select st.stationID as id, st.solarSystemID, st.stationName as name, st.operationID
         from staStations st
         join mapSolarSystems s on s.solarSystemID = st.solarSystemID
-        left join staOperationServices refine on refine.operationID = st.operationID and refine.serviceID = 32
-        left join staOperationServices rep on rep.operationID = st.operationID and rep.serviceID = 4096
-        left join staOperationServices factory on factory.operationID = st.operationID and factory.serviceID = 8192
-        left join staOperationServices lab on lab.operationID = st.operationID and lab.serviceID = 16384
-        left join staOperationServices insure on insure.operationID = st.operationID and insure.serviceID = 1048576
         where round(s.security,1) > 0
         group by st.stationID
         order by st.stationID
@@ -99,7 +87,7 @@ if Rails.env.development?
 
     task :jumps do
       dump_query 'jumps.json', <<-SQL
-        select src.solarSystemId as 'from', group_concat(dst.solarSystemId) as 'to'
+        select src.solarSystemId as 'from', group_concat(dst.solarSystemId order by dst.solarSystemId) as 'to'
         from mapJumps j
         join mapDenormalize src on src.itemId = j.stargateId
         join mapDenormalize dst on dst.itemId = j.destinationId
@@ -107,8 +95,17 @@ if Rails.env.development?
         order by src.solarSystemId, dst.solarSystemId
       SQL
     end
+
+    task :operations do
+      dump_query 'operations.json', <<-SQL
+        select operationID as id, group_concat(serviceID order by serviceID) as services
+        from staOperationServices
+        group by operationID
+        order by operationID
+      SQL
+    end
   end
 
   desc "Convert SDE data to db seeds"
-  task sde2seed: %w(solar_systems regions stations agents corporations jumps).map{ |t| "sde2seed:#{t}" }
+  task sde2seed: %w(solar_systems regions stations agents corporations jumps operations).map{ |t| "sde2seed:#{t}" }
 end
