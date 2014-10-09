@@ -19,30 +19,27 @@ if Rails.env.development?
         select s.solarSystemID as id, s.solarSystemName as name, s.regionID, round(s.security, 1) as security, IFNULL(belts.beltCount, 0) as beltCount
         from mapSolarSystems s
         left join (select solarSystemID, count(*) as beltCount from mapDenormalize where typeID = 15 group by solarSystemID) belts on s.solarSystemID = belts.solarSystemID
-        where round(s.security,1) > 0
+        where s.regionID < 11000000
+        and s.regionID not in (10000004, 10000017, 10000019)
         order by s.solarSystemID
       SQL
     end
 
     task :regions do
       dump_query 'regions.json', <<-SQL
-        select r.regionID, r.regionName
-        from mapRegions r
-        join mapSolarSystems s on r.regionID = s.regionID
-        where round(s.security,1) > 0
-        group by r.regionID
-        order by r.regionID
+        select regionID, regionName
+        from mapRegions
+        where regionID < 11000000
+        and regionID not in (10000004, 10000017, 10000019)
+        order by regionID
       SQL
     end
 
     task :stations do
       dump_query 'stations.json', <<-SQL
-        select st.stationID as id, st.solarSystemID, st.stationName as name, st.operationID
-        from staStations st
-        join mapSolarSystems s on s.solarSystemID = st.solarSystemID
-        where round(s.security,1) > 0
-        group by st.stationID
-        order by st.stationID
+        select stationID as id, solarSystemID, stationName as name, operationID
+        from staStations
+        order by stationID
       SQL
     end
 
@@ -52,10 +49,8 @@ if Rails.env.development?
         from agtAgents a
         join crpNPCDivisions d on d.divisionID = a.divisionID
         join staStations st on a.locationID = st.stationID
-        join mapSolarSystems s on s.solarSystemID = st.solarSystemID
         join crpNPCCorporations c on c.corporationID = a.corporationID
         join invNames n on n.itemID = c.corporationID
-        where round(s.security,1) > 0
         order by a.agentID
       SQL
     end
@@ -63,14 +58,8 @@ if Rails.env.development?
     task :corporations do
       dump_query 'corporations.json', <<-SQL
         select c.corporationID, n.itemName as corporationName
-        from agtAgents a
-        join crpNPCDivisions d on d.divisionID = a.divisionID
-        join staStations st on a.locationID = st.stationID
-        join mapSolarSystems s on s.solarSystemID = st.solarSystemID
-        join crpNPCCorporations c on c.corporationID = a.corporationID
+        from crpNPCCorporations c
         join invNames n on n.itemID = c.corporationID
-        where round(s.security,1) > 0
-        group by c.corporationID
         order by c.corporationID
       SQL
     end

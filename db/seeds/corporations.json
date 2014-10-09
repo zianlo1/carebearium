@@ -488,6 +488,10 @@
     "corporationName":"Ammatar Fleet"
   },
   {
+    "corporationID":1000124,
+    "corporationName":"Archangels"
+  },
+  {
     "corporationID":1000125,
     "corporationName":"CONCORD"
   },
@@ -496,20 +500,64 @@
     "corporationName":"Ammatar Consulate"
   },
   {
+    "corporationID":1000127,
+    "corporationName":"Guristas"
+  },
+  {
+    "corporationID":1000128,
+    "corporationName":"Mordu's Legion"
+  },
+  {
+    "corporationID":1000129,
+    "corporationName":"Outer Ring Excavations"
+  },
+  {
     "corporationID":1000130,
     "corporationName":"Sisters of EVE"
+  },
+  {
+    "corporationID":1000131,
+    "corporationName":"Society of Conscious Thought"
   },
   {
     "corporationID":1000132,
     "corporationName":"Secure Commerce Commission"
   },
   {
+    "corporationID":1000133,
+    "corporationName":"Salvation Angels"
+  },
+  {
+    "corporationID":1000134,
+    "corporationName":"Blood Raiders"
+  },
+  {
+    "corporationID":1000135,
+    "corporationName":"Serpentis Corporation"
+  },
+  {
+    "corporationID":1000136,
+    "corporationName":"Guardian Angels"
+  },
+  {
     "corporationID":1000137,
     "corporationName":"DED"
   },
   {
+    "corporationID":1000138,
+    "corporationName":"Dominations"
+  },
+  {
+    "corporationID":1000139,
+    "corporationName":"Food Relief"
+  },
+  {
     "corporationID":1000140,
     "corporationName":"Genolution"
+  },
+  {
+    "corporationID":1000141,
+    "corporationName":"Guristas Production"
   },
   {
     "corporationID":1000142,
@@ -520,8 +568,32 @@
     "corporationName":"Inner Circle"
   },
   {
+    "corporationID":1000144,
+    "corporationName":"Intaki Bank"
+  },
+  {
+    "corporationID":1000145,
+    "corporationName":"Intaki Commerce"
+  },
+  {
+    "corporationID":1000146,
+    "corporationName":"Intaki Space Police"
+  },
+  {
+    "corporationID":1000147,
+    "corporationName":"Intaki Syndicate"
+  },
+  {
     "corporationID":1000148,
     "corporationName":"InterBus"
+  },
+  {
+    "corporationID":1000149,
+    "corporationName":"Jove Navy"
+  },
+  {
+    "corporationID":1000150,
+    "corporationName":"Jovian Directorate"
   },
   {
     "corporationID":1000151,
@@ -540,12 +612,36 @@
     "corporationName":"Nefantar Miner Association"
   },
   {
+    "corporationID":1000155,
+    "corporationName":"Prosper"
+  },
+  {
     "corporationID":1000156,
     "corporationName":"Royal Khanid Navy"
   },
   {
+    "corporationID":1000157,
+    "corporationName":"Serpentis Inquest"
+  },
+  {
+    "corporationID":1000158,
+    "corporationName":"Shapeset"
+  },
+  {
+    "corporationID":1000159,
+    "corporationName":"The Sanctuary"
+  },
+  {
     "corporationID":1000160,
     "corporationName":"Thukker Mix"
+  },
+  {
+    "corporationID":1000161,
+    "corporationName":"True Creations"
+  },
+  {
+    "corporationID":1000162,
+    "corporationName":"True Power"
   },
   {
     "corporationID":1000163,
@@ -588,6 +684,14 @@
     "corporationName":"Pator Tech School"
   },
   {
+    "corporationID":1000177,
+    "corporationName":"Material Institute"
+  },
+  {
+    "corporationID":1000178,
+    "corporationName":"Academy of Aggressive Behaviour"
+  },
+  {
     "corporationID":1000179,
     "corporationName":"24th Imperial Crusade"
   },
@@ -602,5 +706,229 @@
   {
     "corporationID":1000182,
     "corporationName":"Tribal Liberation Force"
+  },
+  {
+    "corporationID":1000193,
+    "corporationName":"Arkombine"
+  },
+  {
+    "corporationID":1000197,
+    "corporationName":"Templis Dragonaurs"
+  },
+  {
+    "corporationID":1000198,
+    "corporationName":"Imperial Guard"
+  },
+  {
+    "corporationID":1000205,
+    "corporationName":"Amarr Templars"
+  },
+  {
+    "corporationID":1000206,
+    "corporationName":"Royal Uhlans"
+  },
+  {
+    "corporationID":1000207,
+    "corporationName":"Bragian Order"
+  },
+  {
+    "corporationID":1000208,
+    "corporationName":"Zumari Force Projection"
+  },
+  {
+    "corporationID":1000213,
+    "corporationName":"Osmon Surveillance"
+  },
+  {
+    "corporationID":1000214,
+    "corporationName":"Seituoda Taskforce Command"
+  },
+  {
+    "corporationID":1000215,
+    "corporationName":"Algintal Core"
+  },
+  {
+    "corporationID":1000216,
+    "corporationName":"Crux Special Tasks Group"
+  },
+  {
+    "corporationID":1000217,
+    "corporationName":"Villore Sec Ops"
+  },
+  {
+    "corporationID":1000218,
+    "corporationName":"Circle of Huskarl"
+  },
+  {
+    "corporationID":1000219,
+    "corporationName":"Tronhadar Free Guard"
+  },
+  {
+    "corporationID":1000220,
+    "corporationName":"Sanmatar Kelkoons"
+  },
+  {
+    "corporationID":1000222,
+    "corporationName":"Ostrakon Agency"
+  },
+  {
+    "corporationID":1000223,
+    "corporationName":"Fraternity of St. Venefice"
+  },
+  {
+    "corporationID":1000224,
+    "corporationName":"Shining Flame"
+  },
+  {
+    "corporationID":1000225,
+    "corporationName":"Paladin Survey Force"
+  },
+  {
+    "corporationID":1000226,
+    "corporationName":"Ametat Security"
+  },
+  {
+    "corporationID":1000227,
+    "corporationName":"Company of Marcher Lords"
+  },
+  {
+    "corporationID":1000228,
+    "corporationName":"Tal-Romon Legion"
+  },
+  {
+    "corporationID":1000229,
+    "corporationName":"Kameira Lodge"
+  },
+  {
+    "corporationID":1000230,
+    "corporationName":"Red and Silver Hand"
+  },
+  {
+    "corporationID":1000231,
+    "corporationName":"Holdfast Syndicate"
+  },
+  {
+    "corporationID":1000232,
+    "corporationName":"Kinsho Swords"
+  },
+  {
+    "corporationID":1000233,
+    "corporationName":"Expert Intervention"
+  },
+  {
+    "corporationID":1000234,
+    "corporationName":"Onikanabo Brigade"
+  },
+  {
+    "corporationID":1000235,
+    "corporationName":"Kirkinen Risk Control"
+  },
+  {
+    "corporationID":1000236,
+    "corporationName":"Storm Wind Strikeforce"
+  },
+  {
+    "corporationID":1000237,
+    "corporationName":"Commando Perkone"
+  },
+  {
+    "corporationID":1000238,
+    "corporationName":"Isuuaya Tactical"
+  },
+  {
+    "corporationID":1000239,
+    "corporationName":"Intara Direct Action"
+  },
+  {
+    "corporationID":1000240,
+    "corporationName":"Ikomari-Onu Enforcement"
+  },
+  {
+    "corporationID":1000243,
+    "corporationName":"Namtar Elite"
+  },
+  {
+    "corporationID":1000244,
+    "corporationName":"Mannar Focused Warfare"
+  },
+  {
+    "corporationID":1000245,
+    "corporationName":"Resheph Interstellar Strategy"
+  },
+  {
+    "corporationID":1000246,
+    "corporationName":"Sinq Laison Gendarmes"
+  },
+  {
+    "corporationID":1000247,
+    "corporationName":"Chatelain Rapid Response"
+  },
+  {
+    "corporationID":1000248,
+    "corporationName":"Edimmu Warfighters"
+  },
+  {
+    "corporationID":1000249,
+    "corporationName":"Kang Lo Directorate"
+  },
+  {
+    "corporationID":1000250,
+    "corporationName":"Condotta Rouvenor"
+  },
+  {
+    "corporationID":1000251,
+    "corporationName":"Brutor Vanguard"
+  },
+  {
+    "corporationID":1000252,
+    "corporationName":"Vherokior Combat Logistics"
+  },
+  {
+    "corporationID":1000253,
+    "corporationName":"Krullefor Organization"
+  },
+  {
+    "corporationID":1000254,
+    "corporationName":"Mikramurka Shock Troop"
+  },
+  {
+    "corporationID":1000255,
+    "corporationName":"Eyniletti Rangers"
+  },
+  {
+    "corporationID":1000256,
+    "corporationName":"Sebiestor Field Sappers"
+  },
+  {
+    "corporationID":1000257,
+    "corporationName":"Forty-Nine Fedayeen"
+  },
+  {
+    "corporationID":1000258,
+    "corporationName":"Seykal Expeditionary Group"
+  },
+  {
+    "corporationID":1000259,
+    "corporationName":"Krusual Covert Operators"
+  },
+  {
+    "corporationID":1000261,
+    "corporationName":"State Peacekeepers"
+  },
+  {
+    "corporationID":1000262,
+    "corporationName":"Federal Marines"
+  },
+  {
+    "corporationID":1000263,
+    "corporationName":"Republic Command"
+  },
+  {
+    "corporationID":1000270,
+    "corporationName":"Outer Ring Development"
+  },
+  {
+    "corporationID":1000271,
+    "corporationName":"Outer Ring Prospecting"
   }
 ]

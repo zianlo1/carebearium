@@ -162,6 +162,12 @@
     "operationID":26
   },
   {
+    "id":60000085,
+    "solarSystemID":30002420,
+    "name":"Egbinger XI - Moon 3 - CBD Corporation Storage",
+    "operationID":26
+  },
+  {
     "id":60000088,
     "solarSystemID":30002414,
     "name":"Klingt V - CBD Corporation Storage",
@@ -3756,6 +3762,30 @@
     "operationID":23
   },
   {
+    "id":60001885,
+    "solarSystemID":30003342,
+    "name":"Y-W6GF I - Nugoeihuvi Corporation Development Studio",
+    "operationID":22
+  },
+  {
+    "id":60001888,
+    "solarSystemID":30003343,
+    "name":"KFR-ZE V - Nugoeihuvi Corporation Publisher",
+    "operationID":23
+  },
+  {
+    "id":60001891,
+    "solarSystemID":30003342,
+    "name":"Y-W6GF X - Moon 1 - Nugoeihuvi Corporation Development Studio",
+    "operationID":22
+  },
+  {
+    "id":60001894,
+    "solarSystemID":30003342,
+    "name":"Y-W6GF X - Nugoeihuvi Corporation Development Studio",
+    "operationID":22
+  },
+  {
     "id":60001897,
     "solarSystemID":30001705,
     "name":"Azhgabid III - Moon 5 - Nugoeihuvi Corporation Development Studio",
@@ -4161,6 +4191,30 @@
     "id":60002098,
     "solarSystemID":30002672,
     "name":"Inghenges V - Moon 13 - Ishukone Corporation Factory",
+    "operationID":20
+  },
+  {
+    "id":60002101,
+    "solarSystemID":30003368,
+    "name":"S-U8A4 VI - Moon 1 - Ishukone Corporation Factory",
+    "operationID":20
+  },
+  {
+    "id":60002104,
+    "solarSystemID":30003368,
+    "name":"S-U8A4 V - Moon 1 - Ishukone Corporation Factory",
+    "operationID":20
+  },
+  {
+    "id":60002107,
+    "solarSystemID":30003371,
+    "name":"CY-ZLP IX - Moon 1 - Ishukone Corporation Factory",
+    "operationID":20
+  },
+  {
+    "id":60002110,
+    "solarSystemID":30003373,
+    "name":"98Q-8O V - Moon 4 - Ishukone Corporation Factory",
     "operationID":20
   },
   {
@@ -4972,6 +5026,42 @@
     "solarSystemID":30003000,
     "name":"Thakala IV - Moon 11 - Expert Distribution Warehouse",
     "operationID":27
+  },
+  {
+    "id":60002518,
+    "solarSystemID":30003368,
+    "name":"S-U8A4 IV - Moon 1 - Expert Distribution Warehouse",
+    "operationID":27
+  },
+  {
+    "id":60002521,
+    "solarSystemID":30003372,
+    "name":"U4-Q2V IV - Expert Distribution Warehouse",
+    "operationID":27
+  },
+  {
+    "id":60002524,
+    "solarSystemID":30003371,
+    "name":"CY-ZLP III - Moon 1 - Expert Distribution Warehouse",
+    "operationID":27
+  },
+  {
+    "id":60002527,
+    "solarSystemID":30003370,
+    "name":"2G38-I VIII - Moon 9 - Expert Distribution Warehouse",
+    "operationID":27
+  },
+  {
+    "id":60002530,
+    "solarSystemID":30003370,
+    "name":"2G38-I VI - Expert Distribution Warehouse",
+    "operationID":27
+  },
+  {
+    "id":60002533,
+    "solarSystemID":30003369,
+    "name":"ZV-72W VII - Moon 8 - Expert Distribution Retail Center",
+    "operationID":28
   },
   {
     "id":60002536,
@@ -6531,6 +6621,18 @@
     "id":60003313,
     "solarSystemID":30003468,
     "name":"Hroduko VII - Moon 14 - Modern Finances Depository",
+    "operationID":35
+  },
+  {
+    "id":60003316,
+    "solarSystemID":30003299,
+    "name":"T-LIWS IV - Moon 6 - Modern Finances Depository",
+    "operationID":35
+  },
+  {
+    "id":60003319,
+    "solarSystemID":30003298,
+    "name":"UM-Q7F X - Modern Finances Depository",
     "operationID":35
   },
   {
@@ -9012,6 +9114,12 @@
     "operationID":33
   },
   {
+    "id":60004561,
+    "solarSystemID":30002420,
+    "name":"Egbinger XII - Moon 2 - Vherokior Tribe Treasury",
+    "operationID":34
+  },
+  {
     "id":60004564,
     "solarSystemID":30002419,
     "name":"Aeditide IV - Moon 1 - Vherokior Tribe Bureau",
@@ -9183,6 +9291,12 @@
     "id":60004648,
     "solarSystemID":30002413,
     "name":"Unertek IX - Moon 16 - Republic Parliament Bureau",
+    "operationID":33
+  },
+  {
+    "id":60004651,
+    "solarSystemID":30002411,
+    "name":"Skarkon III - Moon 14 - Republic Parliament Bureau",
     "operationID":33
   },
   {
@@ -9616,6 +9730,12 @@
     "solarSystemID":30002065,
     "name":"Lasleinur II - Moon 3 - Republic Fleet Assembly Plant",
     "operationID":14
+  },
+  {
+    "id":60004870,
+    "solarSystemID":30002420,
+    "name":"Egbinger XI - Moon 3 - Republic Fleet Testing Facilities",
+    "operationID":13
   },
   {
     "id":60004873,
@@ -10596,10 +10716,22 @@
     "operationID":8
   },
   {
+    "id":60005362,
+    "solarSystemID":30002420,
+    "name":"Egbinger IX - Moon 8 - Minmatar Mining Corporation Mining Outpost",
+    "operationID":7
+  },
+  {
     "id":60005365,
     "solarSystemID":30002415,
     "name":"Weld III - Moon 5 - Minmatar Mining Corporation Mineral Reserve",
     "operationID":9
+  },
+  {
+    "id":60005368,
+    "solarSystemID":30002420,
+    "name":"Egbinger III - Moon 1 - Minmatar Mining Corporation Mining Outpost",
+    "operationID":7
   },
   {
     "id":60005371,
@@ -13206,6 +13338,12 @@
     "operationID":38
   },
   {
+    "id":60006673,
+    "solarSystemID":30004299,
+    "name":"Sakht VI - Moon 6 - Zoar and Sons Factory",
+    "operationID":38
+  },
+  {
     "id":60006676,
     "solarSystemID":30005032,
     "name":"Khabara VI - Moon 7 - Zoar and Sons Factory",
@@ -13845,6 +13983,18 @@
     "id":60006994,
     "solarSystemID":30003541,
     "name":"Faswiba IX - Moon 1 - Inherent Implants Biotech Production",
+    "operationID":17
+  },
+  {
+    "id":60006997,
+    "solarSystemID":30004261,
+    "name":"Balas I - Moon 2 - Inherent Implants Biotech Production",
+    "operationID":17
+  },
+  {
+    "id":60007000,
+    "solarSystemID":30004261,
+    "name":"Balas I - Moon 11 - Inherent Implants Biotech Production",
     "operationID":17
   },
   {
@@ -15258,6 +15408,12 @@
     "operationID":37
   },
   {
+    "id":60007708,
+    "solarSystemID":30004306,
+    "name":"Karan VIII - Royal Amarr Institute School",
+    "operationID":37
+  },
+  {
     "id":60007711,
     "solarSystemID":30003092,
     "name":"Komaa V - Royal Amarr Institute School",
@@ -15732,6 +15888,12 @@
     "operationID":44
   },
   {
+    "id":60007948,
+    "solarSystemID":30004309,
+    "name":"Hophib XII - Ministry of War Archives",
+    "operationID":43
+  },
+  {
     "id":60007951,
     "solarSystemID":30004308,
     "name":"Ned IV - Ministry of War Archives",
@@ -15741,6 +15903,12 @@
     "id":60007954,
     "solarSystemID":30004304,
     "name":"Huna VI - Moon 17 - Ministry of War Archives",
+    "operationID":43
+  },
+  {
+    "id":60007957,
+    "solarSystemID":30004309,
+    "name":"Hophib VI - Moon 3 - Ministry of War Archives",
     "operationID":43
   },
   {
@@ -17604,9 +17772,21 @@
     "operationID":41
   },
   {
+    "id":60008890,
+    "solarSystemID":30004309,
+    "name":"Hophib III - Civic Court Law School",
+    "operationID":42
+  },
+  {
     "id":60008893,
     "solarSystemID":30004304,
     "name":"Huna III - Civic Court Law School",
+    "operationID":42
+  },
+  {
+    "id":60008896,
+    "solarSystemID":30004309,
+    "name":"Hophib VI - Moon 2 - Civic Court Law School",
     "operationID":42
   },
   {
@@ -18309,6 +18489,42 @@
     "id":60009247,
     "solarSystemID":30003453,
     "name":"Orduin V - Moon 3 - TransStellar Shipping Storage",
+    "operationID":26
+  },
+  {
+    "id":60009250,
+    "solarSystemID":30003361,
+    "name":"VSIG-K VIII - Moon 3 - TransStellar Shipping Storage",
+    "operationID":26
+  },
+  {
+    "id":60009253,
+    "solarSystemID":30003362,
+    "name":"RSS-KA VIII - Moon 19 - TransStellar Shipping Storage",
+    "operationID":26
+  },
+  {
+    "id":60009256,
+    "solarSystemID":30003364,
+    "name":"DCHR-L VIII - Moon 10 - TransStellar Shipping Storage",
+    "operationID":26
+  },
+  {
+    "id":60009259,
+    "solarSystemID":30003361,
+    "name":"VSIG-K V - Moon 8 - TransStellar Shipping Storage",
+    "operationID":26
+  },
+  {
+    "id":60009262,
+    "solarSystemID":30003362,
+    "name":"RSS-KA VIII - Moon 15 - TransStellar Shipping Storage",
+    "operationID":26
+  },
+  {
+    "id":60009265,
+    "solarSystemID":30003361,
+    "name":"VSIG-K VIII - Moon 5 - TransStellar Shipping Storage",
     "operationID":26
   },
   {
@@ -19656,6 +19872,42 @@
     "operationID":27
   },
   {
+    "id":60009940,
+    "solarSystemID":30003334,
+    "name":"LSC4-P I - Quafe Company Warehouse",
+    "operationID":39
+  },
+  {
+    "id":60009943,
+    "solarSystemID":30003332,
+    "name":"2P-4LS VIII - Moon 10 - Quafe Company Factory",
+    "operationID":38
+  },
+  {
+    "id":60009946,
+    "solarSystemID":30003332,
+    "name":"2P-4LS VIII - Moon 7 - Quafe Company Warehouse",
+    "operationID":39
+  },
+  {
+    "id":60009949,
+    "solarSystemID":30003332,
+    "name":"2P-4LS VIII - Moon 11 - Quafe Company Warehouse",
+    "operationID":39
+  },
+  {
+    "id":60009952,
+    "solarSystemID":30003328,
+    "name":"BY-S36 II - Quafe Company Warehouse",
+    "operationID":27
+  },
+  {
+    "id":60009955,
+    "solarSystemID":30003328,
+    "name":"BY-S36 V - Moon 6 - Quafe Company Warehouse",
+    "operationID":27
+  },
+  {
     "id":60009958,
     "solarSystemID":30002562,
     "name":"Trer IV - Moon 1 - Quafe Company Warehouse",
@@ -19798,6 +20050,42 @@
     "solarSystemID":30004245,
     "name":"Udianoor VII - Moon 4 - Quafe Company Warehouse",
     "operationID":27
+  },
+  {
+    "id":60010030,
+    "solarSystemID":30003293,
+    "name":"AAS-8R IV - Moon 2 - Quafe Company Warehouse",
+    "operationID":39
+  },
+  {
+    "id":60010033,
+    "solarSystemID":30003294,
+    "name":"V4-L0X IV - Moon 7 - Quafe Company Factory",
+    "operationID":38
+  },
+  {
+    "id":60010036,
+    "solarSystemID":30003295,
+    "name":"PFP-GU II - Moon 10 - Quafe Company Factory",
+    "operationID":38
+  },
+  {
+    "id":60010039,
+    "solarSystemID":30003298,
+    "name":"UM-Q7F X - Quafe Company Factory",
+    "operationID":38
+  },
+  {
+    "id":60010042,
+    "solarSystemID":30003300,
+    "name":"KTHT-O VI - Moon 12 - Quafe Company Warehouse",
+    "operationID":27
+  },
+  {
+    "id":60010045,
+    "solarSystemID":30003293,
+    "name":"AAS-8R V - Quafe Company Retail Center",
+    "operationID":28
   },
   {
     "id":60010048,
@@ -20796,6 +21084,18 @@
     "operationID":22
   },
   {
+    "id":60010546,
+    "solarSystemID":30003309,
+    "name":"VV-VCR VII - Moon 2 - Impetus Development Studio",
+    "operationID":22
+  },
+  {
+    "id":60010549,
+    "solarSystemID":30003314,
+    "name":"DP34-U VII - Moon 1 - Impetus Development Studio",
+    "operationID":22
+  },
+  {
     "id":60010552,
     "solarSystemID":30003381,
     "name":"Eust I - Impetus Development Studio",
@@ -21078,6 +21378,12 @@
     "operationID":22
   },
   {
+    "id":60010693,
+    "solarSystemID":30004260,
+    "name":"Yiratal VIII - Moon 4 - The Scope Publisher",
+    "operationID":23
+  },
+  {
     "id":60010696,
     "solarSystemID":30003541,
     "name":"Faswiba VII - Moon 4 - The Scope Development Studio",
@@ -21333,6 +21639,24 @@
     "id":60010822,
     "solarSystemID":30000189,
     "name":"Kiainti VI - Moon 1 - Chemal Tech Factory",
+    "operationID":38
+  },
+  {
+    "id":60010825,
+    "solarSystemID":30004504,
+    "name":"4C-B7X V - Moon 7 - Chemal Tech Factory",
+    "operationID":20
+  },
+  {
+    "id":60010828,
+    "solarSystemID":30004502,
+    "name":"D5IW-F VIII - Moon 2 - Chemal Tech Factory",
+    "operationID":20
+  },
+  {
+    "id":60010831,
+    "solarSystemID":30004504,
+    "name":"4C-B7X VII - Moon 12 - Chemal Tech Factory",
     "operationID":38
   },
   {
@@ -22098,6 +22422,30 @@
     "operationID":27
   },
   {
+    "id":60011215,
+    "solarSystemID":30003349,
+    "name":"0T-AMZ VII - Moon 10 - Aliastra Warehouse",
+    "operationID":27
+  },
+  {
+    "id":60011218,
+    "solarSystemID":30003349,
+    "name":"0T-AMZ IX - Moon 6 - Aliastra Retail Center",
+    "operationID":28
+  },
+  {
+    "id":60011221,
+    "solarSystemID":30003351,
+    "name":"4L-E5P VI - Moon 6 - Aliastra Retail Center",
+    "operationID":28
+  },
+  {
+    "id":60011224,
+    "solarSystemID":30003351,
+    "name":"4L-E5P VII - Moon 1 - Aliastra Warehouse",
+    "operationID":27
+  },
+  {
     "id":60011227,
     "solarSystemID":30005255,
     "name":"Saphthar IX - Moon 16 - Aliastra Warehouse",
@@ -22122,9 +22470,21 @@
     "operationID":28
   },
   {
+    "id":60011239,
+    "solarSystemID":30003822,
+    "name":"Espigoure VIII - Moon 5 - Aliastra Warehouse",
+    "operationID":27
+  },
+  {
     "id":60011242,
     "solarSystemID":30003818,
     "name":"Aulbres X - Aliastra Warehouse",
+    "operationID":27
+  },
+  {
+    "id":60011245,
+    "solarSystemID":30003820,
+    "name":"Vestouve IX - Moon 11 - Aliastra Warehouse",
     "operationID":27
   },
   {
@@ -22179,6 +22539,30 @@
     "id":60011272,
     "solarSystemID":30002698,
     "name":"Aliette VII - Moon 25 - Aliastra Warehouse",
+    "operationID":27
+  },
+  {
+    "id":60011275,
+    "solarSystemID":30003322,
+    "name":"3KNK-A IX - Moon 4 - Aliastra Warehouse",
+    "operationID":27
+  },
+  {
+    "id":60011278,
+    "solarSystemID":30003323,
+    "name":"TXW-EI VIII - Moon 8 - Aliastra Retail Center",
+    "operationID":28
+  },
+  {
+    "id":60011281,
+    "solarSystemID":30003326,
+    "name":"XYY-IA IV - Moon 6 - Aliastra Warehouse",
+    "operationID":27
+  },
+  {
+    "id":60011284,
+    "solarSystemID":30003326,
+    "name":"XYY-IA III - Moon 10 - Aliastra Warehouse",
     "operationID":27
   },
   {
@@ -23154,6 +23538,18 @@
     "operationID":15
   },
   {
+    "id":60011773,
+    "solarSystemID":30003820,
+    "name":"Vestouve VIII - Moon 13 - Federation Navy Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60011776,
+    "solarSystemID":30003820,
+    "name":"Vestouve IX - Moon 14 - Federation Navy Logistic Support",
+    "operationID":15
+  },
+  {
     "id":60011779,
     "solarSystemID":30003819,
     "name":"Barleguet VII - Moon 9 - Federation Navy Assembly Plant",
@@ -23964,6 +24360,150 @@
     "operationID":13
   },
   {
+    "id":60012184,
+    "solarSystemID":30001006,
+    "name":"K-MGJ7 IV - Moon 11 - Archangels Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60012187,
+    "solarSystemID":30001001,
+    "name":"H-ADOC IV - Moon 12 - Archangels Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60012190,
+    "solarSystemID":30001006,
+    "name":"K-MGJ7 IV - Moon 4 - Archangels Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60012193,
+    "solarSystemID":30001012,
+    "name":"PO4F-3 VI - Moon 4 - Archangels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012196,
+    "solarSystemID":30001010,
+    "name":"D87E-A VII - Moon 16 - Archangels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012199,
+    "solarSystemID":30001015,
+    "name":"V7D-JD IX - Moon 17 - Archangels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012202,
+    "solarSystemID":30001016,
+    "name":"HLW-HP VI - Moon 1 - Archangels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012205,
+    "solarSystemID":30001016,
+    "name":"HLW-HP III - Moon 3 - Archangels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012208,
+    "solarSystemID":30001018,
+    "name":"RA-NXN I - Archangels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012211,
+    "solarSystemID":30001025,
+    "name":"CL-85V IX - Moon 2 - Archangels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012214,
+    "solarSystemID":30001026,
+    "name":"K-QWHE V - Moon 4 - Archangels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012217,
+    "solarSystemID":30001022,
+    "name":"AAM-1A II - Moon 11 - Archangels Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60012220,
+    "solarSystemID":30001029,
+    "name":"ES-UWY VI - Archangels Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60012223,
+    "solarSystemID":30001031,
+    "name":"Y-DW5K IV - Moon 5 - Archangels Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60012226,
+    "solarSystemID":30001030,
+    "name":"S1DP-Y IX - Moon 17 - Archangels Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60012229,
+    "solarSystemID":30001042,
+    "name":"CL-1JE III - Archangels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012232,
+    "solarSystemID":30001037,
+    "name":"BPK-XK V - Moon 20 - Archangels Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60012235,
+    "solarSystemID":30001041,
+    "name":"G-0Q86 V - Moon 5 - Archangels Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60012238,
+    "solarSystemID":30001047,
+    "name":"Doril I - Archangels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012241,
+    "solarSystemID":30001044,
+    "name":"Hemin VII - Moon 12 - Archangels Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60012244,
+    "solarSystemID":30001046,
+    "name":"Jorund VI - Archangels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012247,
+    "solarSystemID":30004623,
+    "name":"Serpentis Prime II - Archangels Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60012250,
+    "solarSystemID":30004618,
+    "name":"MN5N-X VII - Moon 5 - Archangels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012253,
+    "solarSystemID":30004618,
+    "name":"MN5N-X VIII - Moon 15 - Archangels Assembly Plant",
+    "operationID":14
+  },
+  {
     "id":60012256,
     "solarSystemID":30005204,
     "name":"Yulai IX - CONCORD Bureau",
@@ -24300,6 +24840,18 @@
     "operationID":33
   },
   {
+    "id":60012424,
+    "solarSystemID":30002420,
+    "name":"Egbinger XII - CONCORD Academy",
+    "operationID":32
+  },
+  {
+    "id":60012427,
+    "solarSystemID":30002420,
+    "name":"Egbinger V - CONCORD Treasury",
+    "operationID":34
+  },
+  {
     "id":60012430,
     "solarSystemID":30002414,
     "name":"Klingt VIII - CONCORD Logistic Support",
@@ -24549,6 +25101,102 @@
     "id":60012553,
     "solarSystemID":30000076,
     "name":"Tidacha VIII - Moon 13 - Ammatar Consulate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60012556,
+    "solarSystemID":30001290,
+    "name":"6NJ8-V VII - Moon 2 - Guristas Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60012559,
+    "solarSystemID":30001291,
+    "name":"Y-4CFK V - Moon 17 - Guristas Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60012562,
+    "solarSystemID":30001277,
+    "name":"N5Y-4N VII - Moon 20 - Guristas Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60012565,
+    "solarSystemID":30001274,
+    "name":"K3JR-J VIII - Guristas Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012568,
+    "solarSystemID":30001269,
+    "name":"H-PA29 V - Moon 1 - Guristas Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012571,
+    "solarSystemID":30001269,
+    "name":"H-PA29 IV - Moon 2 - Guristas Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012574,
+    "solarSystemID":30001329,
+    "name":"P-VYVL VII - Moon 1 - Guristas Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012577,
+    "solarSystemID":30001324,
+    "name":"PF-QHK VII - Moon 6 - Guristas Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60012580,
+    "solarSystemID":30002005,
+    "name":"5ZXX-K V - Moon 17 - Mordu's Legion Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60012583,
+    "solarSystemID":30004504,
+    "name":"4C-B7X VIII - Moon 1 - Outer Ring Excavations Mining Outpost",
+    "operationID":7
+  },
+  {
+    "id":60012586,
+    "solarSystemID":30004504,
+    "name":"4C-B7X VI - Moon 1 - Outer Ring Excavations Refinery",
+    "operationID":8
+  },
+  {
+    "id":60012589,
+    "solarSystemID":30004518,
+    "name":"NM-OEA V - Moon 4 - Outer Ring Excavations Mining Outpost",
+    "operationID":7
+  },
+  {
+    "id":60012592,
+    "solarSystemID":30004518,
+    "name":"NM-OEA VI - Moon 23 - Outer Ring Excavations Mining Outpost",
+    "operationID":7
+  },
+  {
+    "id":60012595,
+    "solarSystemID":30001978,
+    "name":"X-7OMU IV - Moon 3 - Sisters of EVE Academy",
+    "operationID":32
+  },
+  {
+    "id":60012598,
+    "solarSystemID":30001977,
+    "name":"J-CIJV VII - Moon 14 - Sisters of EVE Bureau",
+    "operationID":33
+  },
+  {
+    "id":60012601,
+    "solarSystemID":30001983,
+    "name":"ROIR-Y II - Sisters of EVE Bureau",
     "operationID":33
   },
   {
@@ -24804,6 +25452,18 @@
     "operationID":33
   },
   {
+    "id":60012730,
+    "solarSystemID":30002423,
+    "name":"FDZ4-A VIII - Moon 3 - Society of Conscious Thought School",
+    "operationID":37
+  },
+  {
+    "id":60012733,
+    "solarSystemID":30002423,
+    "name":"FDZ4-A IX - Moon 6 - Society of Conscious Thought School",
+    "operationID":37
+  },
+  {
     "id":60012736,
     "solarSystemID":30005204,
     "name":"Yulai III - Moon 1 - Secure Commerce Commission Depository",
@@ -24816,6 +25476,102 @@
     "operationID":35
   },
   {
+    "id":60012742,
+    "solarSystemID":30001001,
+    "name":"H-ADOC VII - Moon 12 - Salvation Angels Warehouse",
+    "operationID":29
+  },
+  {
+    "id":60012745,
+    "solarSystemID":30001002,
+    "name":"G-G78S VII - Salvation Angels Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012748,
+    "solarSystemID":30001008,
+    "name":"V-IUEL VII - Moon 15 - Salvation Angels Warehouse",
+    "operationID":29
+  },
+  {
+    "id":60012751,
+    "solarSystemID":30001014,
+    "name":"5E-VR8 I - Moon 10 - Salvation Angels Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012754,
+    "solarSystemID":30001021,
+    "name":"XX9-WV VII - Moon 3 - Salvation Angels Trading Post",
+    "operationID":30
+  },
+  {
+    "id":60012757,
+    "solarSystemID":30001016,
+    "name":"HLW-HP VI - Moon 10 - Salvation Angels Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012760,
+    "solarSystemID":30001027,
+    "name":"MDD-79 VIII - Moon 15 - Salvation Angels Warehouse",
+    "operationID":29
+  },
+  {
+    "id":60012763,
+    "solarSystemID":30001026,
+    "name":"K-QWHE VI - Moon 10 - Salvation Angels Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012766,
+    "solarSystemID":30001032,
+    "name":"M-N7WD VIII - Moon 18 - Salvation Angels Trading Post",
+    "operationID":30
+  },
+  {
+    "id":60012769,
+    "solarSystemID":30001033,
+    "name":"QFEW-K IV - Salvation Angels Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012772,
+    "solarSystemID":30001038,
+    "name":"LJ-YSW VI - Moon 14 - Salvation Angels Trading Post",
+    "operationID":30
+  },
+  {
+    "id":60012775,
+    "solarSystemID":30001042,
+    "name":"CL-1JE V - Moon 15 - Salvation Angels Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012778,
+    "solarSystemID":30001048,
+    "name":"Litom III - Salvation Angels Trading Post",
+    "operationID":30
+  },
+  {
+    "id":60012781,
+    "solarSystemID":30001047,
+    "name":"Doril V - Moon 1 - Salvation Angels Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012784,
+    "solarSystemID":30004619,
+    "name":"A-1CON X - Moon 2 - Salvation Angels Warehouse",
+    "operationID":29
+  },
+  {
+    "id":60012787,
+    "solarSystemID":30004621,
+    "name":"WY-9LL IX - Moon 1 - Salvation Angels Reprocessing Facility",
+    "operationID":10
+  },
+  {
     "id":60012790,
     "solarSystemID":30003088,
     "name":"Oyonata IV - Moon 1 - Amarr Navy Assembly Plant",
@@ -24826,6 +25582,246 @@
     "solarSystemID":30003086,
     "name":"Sahtogas IV - Moon 2 - Amarr Navy Logistic Support",
     "operationID":15
+  },
+  {
+    "id":60012796,
+    "solarSystemID":30001002,
+    "name":"G-G78S X - Moon 11 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012799,
+    "solarSystemID":30001005,
+    "name":"OSY-UD IX - Moon 16 - Serpentis Corporation Chemical Storage",
+    "operationID":12
+  },
+  {
+    "id":60012802,
+    "solarSystemID":30001002,
+    "name":"G-G78S XI - Moon 7 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012805,
+    "solarSystemID":30001012,
+    "name":"PO4F-3 VI - Moon 18 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012808,
+    "solarSystemID":30001012,
+    "name":"PO4F-3 VI - Moon 7 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012811,
+    "solarSystemID":30001012,
+    "name":"PO4F-3 V - Moon 10 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012814,
+    "solarSystemID":30001016,
+    "name":"HLW-HP VI - Moon 14 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012817,
+    "solarSystemID":30001016,
+    "name":"HLW-HP III - Moon 5 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012820,
+    "solarSystemID":30001016,
+    "name":"HLW-HP IV - Moon 1 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012823,
+    "solarSystemID":30001026,
+    "name":"K-QWHE VII - Moon 11 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012826,
+    "solarSystemID":30001026,
+    "name":"K-QWHE VI - Moon 15 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012829,
+    "solarSystemID":30001025,
+    "name":"CL-85V V - Serpentis Corporation Chemical Storage",
+    "operationID":12
+  },
+  {
+    "id":60012832,
+    "solarSystemID":30001033,
+    "name":"QFEW-K V - Moon 1 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012835,
+    "solarSystemID":30001030,
+    "name":"S1DP-Y VIII - Moon 15 - Serpentis Corporation Reprocessing Facility",
+    "operationID":10
+  },
+  {
+    "id":60012838,
+    "solarSystemID":30001034,
+    "name":"CVY-UC IX - Moon 17 - Serpentis Corporation Reprocessing Facility",
+    "operationID":10
+  },
+  {
+    "id":60012841,
+    "solarSystemID":30001038,
+    "name":"LJ-YSW IV - Moon 2 - Serpentis Corporation Reprocessing Facility",
+    "operationID":10
+  },
+  {
+    "id":60012844,
+    "solarSystemID":30001042,
+    "name":"CL-1JE V - Moon 1 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012847,
+    "solarSystemID":30001042,
+    "name":"CL-1JE V - Moon 3 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012850,
+    "solarSystemID":30001045,
+    "name":"Utopia VI - Moon 6 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012853,
+    "solarSystemID":30001045,
+    "name":"Utopia VI - Moon 12 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012856,
+    "solarSystemID":30001046,
+    "name":"Jorund VII - Moon 2 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012859,
+    "solarSystemID":30004623,
+    "name":"Serpentis Prime VIII - Moon 2 - Serpentis Corporation Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60012862,
+    "solarSystemID":30004619,
+    "name":"A-1CON X - Moon 10 - Serpentis Corporation Chemical Storage",
+    "operationID":12
+  },
+  {
+    "id":60012865,
+    "solarSystemID":30004621,
+    "name":"WY-9LL IX - Moon 1 - Serpentis Corporation Reprocessing Facility",
+    "operationID":10
+  },
+  {
+    "id":60012868,
+    "solarSystemID":30001001,
+    "name":"H-ADOC IV - Moon 1 - Guardian Angels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012871,
+    "solarSystemID":30001003,
+    "name":"UW9B-F X - Guardian Angels Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60012874,
+    "solarSystemID":30001010,
+    "name":"D87E-A VII - Moon 6 - Guardian Angels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012877,
+    "solarSystemID":30001012,
+    "name":"PO4F-3 V - Moon 6 - Guardian Angels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012880,
+    "solarSystemID":30001016,
+    "name":"HLW-HP VI - Moon 7 - Guardian Angels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012883,
+    "solarSystemID":30001018,
+    "name":"RA-NXN VII - Moon 18 - Guardian Angels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012886,
+    "solarSystemID":30001024,
+    "name":"YKE4-3 III - Moon 1 - Guardian Angels Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60012889,
+    "solarSystemID":30001025,
+    "name":"CL-85V VI - Moon 8 - Guardian Angels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012892,
+    "solarSystemID":30001033,
+    "name":"QFEW-K VI - Moon 1 - Guardian Angels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012895,
+    "solarSystemID":30001033,
+    "name":"QFEW-K IV - Guardian Angels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012898,
+    "solarSystemID":30001041,
+    "name":"G-0Q86 VII - Moon 1 - Guardian Angels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012901,
+    "solarSystemID":30001043,
+    "name":"J4UD-J VI - Moon 3 - Guardian Angels Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60012904,
+    "solarSystemID":30001048,
+    "name":"Litom XI - Moon 2 - Guardian Angels Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60012907,
+    "solarSystemID":30001044,
+    "name":"Hemin VII - Moon 15 - Guardian Angels Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60012910,
+    "solarSystemID":30004617,
+    "name":"YZ-LQL VI - Moon 19 - Guardian Angels Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60012913,
+    "solarSystemID":30004617,
+    "name":"YZ-LQL VII - Moon 1 - Guardian Angels Assembly Plant",
+    "operationID":14
   },
   {
     "id":60012916,
@@ -25098,6 +26094,90 @@
     "operationID":14
   },
   {
+    "id":60013051,
+    "solarSystemID":30001002,
+    "name":"G-G78S XI - Moon 3 - Dominations Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013054,
+    "solarSystemID":30001013,
+    "name":"J7A-UR VI - Dominations Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60013057,
+    "solarSystemID":30001021,
+    "name":"XX9-WV VII - Moon 1 - Dominations Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60013060,
+    "solarSystemID":30001026,
+    "name":"K-QWHE VII - Moon 8 - Dominations Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013063,
+    "solarSystemID":30001032,
+    "name":"M-N7WD VIII - Moon 12 - Dominations Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013066,
+    "solarSystemID":30001038,
+    "name":"LJ-YSW VII - Moon 11 - Dominations Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60013069,
+    "solarSystemID":30001045,
+    "name":"Utopia VI - Moon 22 - Dominations Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013072,
+    "solarSystemID":30004621,
+    "name":"WY-9LL VIII - Moon 3 - Dominations Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60013075,
+    "solarSystemID":30001978,
+    "name":"X-7OMU IV - Moon 16 - Food Relief Plantation",
+    "operationID":1
+  },
+  {
+    "id":60013078,
+    "solarSystemID":30001983,
+    "name":"ROIR-Y II - Moon 2 - Food Relief Food Packaging",
+    "operationID":2
+  },
+  {
+    "id":60013081,
+    "solarSystemID":30001484,
+    "name":"9-ERCP VIII - Genolution Biotech Production",
+    "operationID":17
+  },
+  {
+    "id":60013084,
+    "solarSystemID":30001484,
+    "name":"9-ERCP V - Genolution Biotech Production",
+    "operationID":17
+  },
+  {
+    "id":60013087,
+    "solarSystemID":30001485,
+    "name":"KN7M-N VI - Moon 3 - Genolution Biotech Research Center",
+    "operationID":16
+  },
+  {
+    "id":60013090,
+    "solarSystemID":30001485,
+    "name":"KN7M-N IV - Moon 4 - Genolution Biotech Research Center",
+    "operationID":16
+  },
+  {
     "id":60013093,
     "solarSystemID":30003078,
     "name":"Erkinen XII - Moon 8 - Genolution Biotech Production",
@@ -25221,6 +26301,18 @@
     "id":60013153,
     "solarSystemID":30004298,
     "name":"Tisot V - Moon 1 - Genolution Biotech Production",
+    "operationID":17
+  },
+  {
+    "id":60013156,
+    "solarSystemID":30004300,
+    "name":"Naga X - Moon 16 - Genolution Biotech Production",
+    "operationID":17
+  },
+  {
+    "id":60013159,
+    "solarSystemID":30004299,
+    "name":"Sakht VI - Moon 7 - Genolution Biotech Production",
     "operationID":17
   },
   {
@@ -25422,6 +26514,24 @@
     "operationID":17
   },
   {
+    "id":60013261,
+    "solarSystemID":30001290,
+    "name":"6NJ8-V VI - Moon 6 - Guristas Production Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60013264,
+    "solarSystemID":30001481,
+    "name":"IAMZ-5 VIII - Moon 9 - Impro Factory",
+    "operationID":20
+  },
+  {
+    "id":60013267,
+    "solarSystemID":30001485,
+    "name":"KN7M-N IV - Moon 7 - Impro Research Center",
+    "operationID":19
+  },
+  {
     "id":60013270,
     "solarSystemID":30003427,
     "name":"Osvestmunnur VIII - Moon 10 - Impro Factory",
@@ -25596,6 +26706,942 @@
     "operationID":40
   },
   {
+    "id":60013357,
+    "solarSystemID":30003274,
+    "name":"X-BV98 VIII - Moon 5 - Intaki Bank Depository",
+    "operationID":35
+  },
+  {
+    "id":60013360,
+    "solarSystemID":30003276,
+    "name":"FD-MLJ VII - Moon 2 - Intaki Bank Depository",
+    "operationID":35
+  },
+  {
+    "id":60013363,
+    "solarSystemID":30003289,
+    "name":"ZN0-SR V - Moon 7 - Intaki Bank Depository",
+    "operationID":35
+  },
+  {
+    "id":60013366,
+    "solarSystemID":30003289,
+    "name":"ZN0-SR III - Intaki Bank Depository",
+    "operationID":35
+  },
+  {
+    "id":60013369,
+    "solarSystemID":30003323,
+    "name":"TXW-EI I - Intaki Bank Depository",
+    "operationID":35
+  },
+  {
+    "id":60013372,
+    "solarSystemID":30003323,
+    "name":"TXW-EI IX - Moon 2 - Intaki Bank Depository",
+    "operationID":35
+  },
+  {
+    "id":60013375,
+    "solarSystemID":30003344,
+    "name":"KLYN-8 II - Moon 14 - Intaki Bank Depository",
+    "operationID":35
+  },
+  {
+    "id":60013378,
+    "solarSystemID":30003345,
+    "name":"D85-VD VII - Intaki Bank Vault",
+    "operationID":36
+  },
+  {
+    "id":60013381,
+    "solarSystemID":30003269,
+    "name":"F67E-Q VIII - Moon 2 - Intaki Commerce Trading Post",
+    "operationID":30
+  },
+  {
+    "id":60013384,
+    "solarSystemID":30003278,
+    "name":"X-M2LR VI - Moon 8 - Intaki Commerce Warehouse",
+    "operationID":29
+  },
+  {
+    "id":60013387,
+    "solarSystemID":30003286,
+    "name":"PC9-AY III - Intaki Commerce Trading Post",
+    "operationID":30
+  },
+  {
+    "id":60013390,
+    "solarSystemID":30003286,
+    "name":"PC9-AY VIII - Moon 7 - Intaki Commerce Warehouse",
+    "operationID":29
+  },
+  {
+    "id":60013393,
+    "solarSystemID":30003314,
+    "name":"DP34-U V - Moon 1 - Intaki Commerce Trading Post",
+    "operationID":30
+  },
+  {
+    "id":60013396,
+    "solarSystemID":30003318,
+    "name":"MXYS-8 II - Intaki Commerce Warehouse",
+    "operationID":29
+  },
+  {
+    "id":60013399,
+    "solarSystemID":30003369,
+    "name":"ZV-72W IX - Moon 1 - Intaki Commerce Trading Post",
+    "operationID":30
+  },
+  {
+    "id":60013402,
+    "solarSystemID":30003373,
+    "name":"98Q-8O VII - Moon 16 - Intaki Commerce Trading Post",
+    "operationID":30
+  },
+  {
+    "id":60013405,
+    "solarSystemID":30003271,
+    "name":"Poitot VI - Moon 17 - Intaki Space Police Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013408,
+    "solarSystemID":30003276,
+    "name":"FD-MLJ VII - Moon 4 - Intaki Space Police Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013411,
+    "solarSystemID":30003311,
+    "name":"IIRH-G VIII - Intaki Space Police Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60013414,
+    "solarSystemID":30003317,
+    "name":"I0AB-R VI - Intaki Space Police Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013417,
+    "solarSystemID":30003287,
+    "name":"T22-QI VI - Moon 9 - Intaki Space Police Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60013420,
+    "solarSystemID":30003289,
+    "name":"ZN0-SR VI - Moon 4 - Intaki Space Police Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013423,
+    "solarSystemID":30003353,
+    "name":"RLL-9R IX - Intaki Space Police Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013426,
+    "solarSystemID":30003350,
+    "name":"57-YRU IV - Moon 9 - Intaki Space Police Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60013429,
+    "solarSystemID":30003355,
+    "name":"EF-F36 III - Moon 1 - Intaki Space Police Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60013432,
+    "solarSystemID":30003360,
+    "name":"GRNJ-3 III - Intaki Space Police Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60013435,
+    "solarSystemID":30003338,
+    "name":"9GYL-O V - Moon 13 - Intaki Space Police Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013438,
+    "solarSystemID":30003339,
+    "name":"VLGD-R V - Moon 3 - Intaki Space Police Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60013441,
+    "solarSystemID":30003294,
+    "name":"V4-L0X IV - Moon 1 - Intaki Space Police Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013444,
+    "solarSystemID":30003297,
+    "name":"1-NKVT X - Intaki Space Police Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60013447,
+    "solarSystemID":30003368,
+    "name":"S-U8A4 V - Intaki Space Police Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60013450,
+    "solarSystemID":30003373,
+    "name":"98Q-8O V - Moon 8 - Intaki Space Police Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013453,
+    "solarSystemID":30003342,
+    "name":"Y-W6GF VIII - Moon 17 - Intaki Space Police Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60013456,
+    "solarSystemID":30003343,
+    "name":"KFR-ZE VII - Moon 6 - Intaki Space Police Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013459,
+    "solarSystemID":30003330,
+    "name":"0LTQ-C V - Moon 18 - Intaki Space Police Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013462,
+    "solarSystemID":30003327,
+    "name":"BMNV-P XI - Moon 11 - Intaki Space Police Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013465,
+    "solarSystemID":30003271,
+    "name":"Poitot V - Moon 14 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013468,
+    "solarSystemID":30003275,
+    "name":"2X-PQG III - Moon 17 - Intaki Syndicate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013471,
+    "solarSystemID":30003279,
+    "name":"K5-JRD VIII - Moon 2 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013474,
+    "solarSystemID":30003338,
+    "name":"9GYL-O VI - Moon 16 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013477,
+    "solarSystemID":30003339,
+    "name":"VLGD-R III - Moon 2 - Intaki Syndicate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013480,
+    "solarSystemID":30003338,
+    "name":"9GYL-O V - Moon 9 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013483,
+    "solarSystemID":30003333,
+    "name":"RF-GGF V - Intaki Syndicate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013486,
+    "solarSystemID":30003335,
+    "name":"A-SJ8X VII - Moon 1 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013489,
+    "solarSystemID":30003329,
+    "name":"31-MLU X - Moon 8 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013492,
+    "solarSystemID":30003305,
+    "name":"A-ZLHX VII - Moon 2 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013495,
+    "solarSystemID":30003305,
+    "name":"A-ZLHX XI - Moon 1 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013498,
+    "solarSystemID":30003307,
+    "name":"Y9G-KS VI - Moon 14 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013501,
+    "solarSystemID":30003363,
+    "name":"CIS-7X VII - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013504,
+    "solarSystemID":30003361,
+    "name":"VSIG-K VIII - Moon 1 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013507,
+    "solarSystemID":30003363,
+    "name":"CIS-7X IX - Moon 6 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013510,
+    "solarSystemID":30003342,
+    "name":"Y-W6GF IX - Moon 3 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013513,
+    "solarSystemID":30003344,
+    "name":"KLYN-8 IV - Moon 21 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013516,
+    "solarSystemID":30003344,
+    "name":"KLYN-8 IV - Moon 14 - Intaki Syndicate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013519,
+    "solarSystemID":30003287,
+    "name":"T22-QI VI - Moon 12 - Intaki Syndicate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013522,
+    "solarSystemID":30003287,
+    "name":"T22-QI VI - Moon 6 - Intaki Syndicate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013525,
+    "solarSystemID":30003287,
+    "name":"T22-QI V - Moon 14 - Intaki Syndicate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013528,
+    "solarSystemID":30003324,
+    "name":"3MOG-V X - Moon 2 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013531,
+    "solarSystemID":30003322,
+    "name":"3KNK-A IX - Moon 12 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013534,
+    "solarSystemID":30003321,
+    "name":"5-FGQI V - Moon 13 - Intaki Syndicate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013537,
+    "solarSystemID":30003317,
+    "name":"I0AB-R VI - Moon 2 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013540,
+    "solarSystemID":30003312,
+    "name":"35-RK9 IX - Moon 4 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013543,
+    "solarSystemID":30003318,
+    "name":"MXYS-8 IV - Moon 1 - Intaki Syndicate Treasury",
+    "operationID":34
+  },
+  {
+    "id":60013546,
+    "solarSystemID":30003284,
+    "name":"M2-CF1 X - Moon 3 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013549,
+    "solarSystemID":30003280,
+    "name":"6-CZ49 VI - Moon 6 - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013552,
+    "solarSystemID":30003281,
+    "name":"EZA-FM IV - Intaki Syndicate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013555,
+    "solarSystemID":30001480,
+    "name":"54-VNO XI - Moon 2 - Jove Navy Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60013558,
+    "solarSystemID":30001480,
+    "name":"54-VNO V - Moon 2 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013561,
+    "solarSystemID":30001480,
+    "name":"54-VNO X - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013564,
+    "solarSystemID":30001631,
+    "name":"T-YWDD VII - Moon 13 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013567,
+    "solarSystemID":30001633,
+    "name":"T-C5A0 X - Moon 9 - Jove Navy Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60013570,
+    "solarSystemID":30001632,
+    "name":"DLY-RG VIII - Moon 3 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013573,
+    "solarSystemID":30001492,
+    "name":"6-NCE7 IV - Jove Navy Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60013576,
+    "solarSystemID":30001496,
+    "name":"CZ-CED IV - Moon 18 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013579,
+    "solarSystemID":30001499,
+    "name":"L-TPN0 II - Moon 2 - Jove Navy Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60013582,
+    "solarSystemID":30001624,
+    "name":"69A-54 VIII - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013585,
+    "solarSystemID":30001629,
+    "name":"BWO-UU VIII - Jove Navy Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60013588,
+    "solarSystemID":30001628,
+    "name":"PQWA-L VII - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013591,
+    "solarSystemID":30001524,
+    "name":"1C-TD6 X - Moon 4 - Jove Navy Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60013594,
+    "solarSystemID":30001519,
+    "name":"TO21-U VIII - Moon 1 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013597,
+    "solarSystemID":30001518,
+    "name":"H7OL-I IV - Moon 6 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013600,
+    "solarSystemID":30001453,
+    "name":"SQ-2XA II - Jove Navy Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60013603,
+    "solarSystemID":30001453,
+    "name":"SQ-2XA IV - Jove Navy Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60013606,
+    "solarSystemID":30001449,
+    "name":"PZP1-D IX - Moon 5 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013609,
+    "solarSystemID":30001603,
+    "name":"6-HFD6 V - Moon 14 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013612,
+    "solarSystemID":30001603,
+    "name":"6-HFD6 V - Moon 19 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013615,
+    "solarSystemID":30001600,
+    "name":"9-BUSQ VII - Moon 4 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013618,
+    "solarSystemID":30001514,
+    "name":"8-ULAA VI - Moon 13 - Jove Navy Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60013621,
+    "solarSystemID":30001513,
+    "name":"H-EDXD VIII - Moon 3 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013624,
+    "solarSystemID":30001515,
+    "name":"KF1-DU VII - Moon 3 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013627,
+    "solarSystemID":30001508,
+    "name":"I9D-0D VI - Moon 3 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013630,
+    "solarSystemID":30001507,
+    "name":"LH-J8H X - Moon 1 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013633,
+    "solarSystemID":30001508,
+    "name":"I9D-0D II - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013636,
+    "solarSystemID":30001643,
+    "name":"0IRK-R IX - Jove Navy Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60013639,
+    "solarSystemID":30001637,
+    "name":"FR-RCH IV - Moon 2 - Jove Navy Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60013642,
+    "solarSystemID":30001638,
+    "name":"FNS3-F VII - Moon 7 - Jove Navy Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60013645,
+    "solarSystemID":30001480,
+    "name":"54-VNO X - Moon 3 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013648,
+    "solarSystemID":30001483,
+    "name":"PBXG-A IV - Moon 3 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013651,
+    "solarSystemID":30001483,
+    "name":"PBXG-A IV - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013654,
+    "solarSystemID":30001480,
+    "name":"54-VNO VI - Moon 1 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013657,
+    "solarSystemID":30001481,
+    "name":"IAMZ-5 XII - Moon 2 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013660,
+    "solarSystemID":30001480,
+    "name":"54-VNO VIII - Moon 3 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013663,
+    "solarSystemID":30001639,
+    "name":"7BA-TK VI - Moon 4 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013666,
+    "solarSystemID":30001637,
+    "name":"FR-RCH I - Moon 11 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013669,
+    "solarSystemID":30001643,
+    "name":"0IRK-R VIII - Moon 3 - Jovian Directorate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013672,
+    "solarSystemID":30001637,
+    "name":"FR-RCH I - Moon 10 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013675,
+    "solarSystemID":30001639,
+    "name":"7BA-TK III - Moon 2 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013678,
+    "solarSystemID":30001638,
+    "name":"FNS3-F VII - Moon 3 - Jovian Directorate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013681,
+    "solarSystemID":30001631,
+    "name":"T-YWDD VII - Moon 18 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013684,
+    "solarSystemID":30001632,
+    "name":"DLY-RG X - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013687,
+    "solarSystemID":30001631,
+    "name":"T-YWDD VII - Moon 1 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013690,
+    "solarSystemID":30001633,
+    "name":"T-C5A0 XII - Moon 17 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013693,
+    "solarSystemID":30001631,
+    "name":"T-YWDD V - Moon 5 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013696,
+    "solarSystemID":30001631,
+    "name":"T-YWDD VI - Moon 21 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013699,
+    "solarSystemID":30001487,
+    "name":"FO-3PJ III - Moon 2 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013702,
+    "solarSystemID":30001487,
+    "name":"FO-3PJ VI - Moon 11 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013705,
+    "solarSystemID":30001490,
+    "name":"X7-8IG VIII - Moon 9 - Jovian Directorate Treasury",
+    "operationID":34
+  },
+  {
+    "id":60013708,
+    "solarSystemID":30001487,
+    "name":"FO-3PJ III - Moon 10 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013711,
+    "solarSystemID":30001488,
+    "name":"6-QXE6 VI - Moon 22 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013714,
+    "solarSystemID":30001489,
+    "name":"N-FKXV V - Moon 12 - Jovian Directorate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013717,
+    "solarSystemID":30001518,
+    "name":"H7OL-I III - Moon 3 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013720,
+    "solarSystemID":30001524,
+    "name":"1C-TD6 VIII - Moon 2 - Jovian Directorate Treasury",
+    "operationID":34
+  },
+  {
+    "id":60013723,
+    "solarSystemID":30001518,
+    "name":"H7OL-I IV - Moon 10 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013726,
+    "solarSystemID":30001524,
+    "name":"1C-TD6 X - Moon 16 - Jovian Directorate Treasury",
+    "operationID":34
+  },
+  {
+    "id":60013729,
+    "solarSystemID":30001521,
+    "name":"0M-M64 VII - Moon 5 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013732,
+    "solarSystemID":30001525,
+    "name":"YBYX-1 I - Jovian Directorate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013735,
+    "solarSystemID":30001613,
+    "name":"Z-KPAR VIII - Moon 21 - Jovian Directorate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013738,
+    "solarSystemID":30001611,
+    "name":"B-Y06L VII - Moon 4 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013741,
+    "solarSystemID":30001616,
+    "name":"CLDT-L III - Moon 5 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013744,
+    "solarSystemID":30001616,
+    "name":"CLDT-L IV - Moon 7 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013747,
+    "solarSystemID":30001615,
+    "name":"2RV-06 VIII - Moon 11 - Jovian Directorate Treasury",
+    "operationID":34
+  },
+  {
+    "id":60013750,
+    "solarSystemID":30001611,
+    "name":"B-Y06L VII - Moon 1 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013753,
+    "solarSystemID":30001629,
+    "name":"BWO-UU VII - Moon 4 - Jovian Directorate Treasury",
+    "operationID":34
+  },
+  {
+    "id":60013756,
+    "solarSystemID":30001627,
+    "name":"8-UWFS II - Jovian Directorate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013759,
+    "solarSystemID":30001624,
+    "name":"69A-54 X - Moon 8 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013762,
+    "solarSystemID":30001624,
+    "name":"69A-54 X - Moon 12 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013765,
+    "solarSystemID":30001626,
+    "name":"5V-YL6 VII - Moon 11 - Jovian Directorate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013768,
+    "solarSystemID":30001630,
+    "name":"SQVI-U V - Moon 1 - Jovian Directorate Treasury",
+    "operationID":34
+  },
+  {
+    "id":60013771,
+    "solarSystemID":30001608,
+    "name":"7-8XK0 VII - Moon 8 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013774,
+    "solarSystemID":30001607,
+    "name":"G-N6MC VI - Moon 5 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013777,
+    "solarSystemID":30001608,
+    "name":"7-8XK0 VI - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013780,
+    "solarSystemID":30001604,
+    "name":"P3UD-M VII - Moon 7 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013783,
+    "solarSystemID":30001607,
+    "name":"G-N6MC VI - Moon 9 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013786,
+    "solarSystemID":30001609,
+    "name":"90G-OA XII - Moon 19 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013789,
+    "solarSystemID":30001496,
+    "name":"CZ-CED VI - Moon 2 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013792,
+    "solarSystemID":30001499,
+    "name":"L-TPN0 I - Jovian Directorate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013795,
+    "solarSystemID":30001497,
+    "name":"BKK4-H IX - Moon 11 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013798,
+    "solarSystemID":30001499,
+    "name":"L-TPN0 IV - Moon 13 - Jovian Directorate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013801,
+    "solarSystemID":30001496,
+    "name":"CZ-CED VI - Moon 3 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013804,
+    "solarSystemID":30001499,
+    "name":"L-TPN0 IV - Moon 6 - Jovian Directorate Treasury",
+    "operationID":34
+  },
+  {
+    "id":60013807,
+    "solarSystemID":30001500,
+    "name":"3-XORH VI - Moon 1 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013810,
+    "solarSystemID":30001503,
+    "name":"6-23NU II - Moon 1 - Jovian Directorate Academy",
+    "operationID":32
+  },
+  {
+    "id":60013813,
+    "solarSystemID":30001501,
+    "name":"G1VU-H IX - Moon 18 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013816,
+    "solarSystemID":30001502,
+    "name":"W6H6-K II - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013819,
+    "solarSystemID":30001502,
+    "name":"W6H6-K IV - Moon 15 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
+    "id":60013822,
+    "solarSystemID":30001503,
+    "name":"6-23NU V - Moon 13 - Jovian Directorate Bureau",
+    "operationID":33
+  },
+  {
     "id":60013825,
     "solarSystemID":30003863,
     "name":"Khanid Prime V - Moon 1 - Khanid Innovation Factory",
@@ -25690,6 +27736,126 @@
     "solarSystemID":30000037,
     "name":"Uplingur II - Moon 1 - Nefantar Miner Association Mining Outpost",
     "operationID":7
+  },
+  {
+    "id":60013873,
+    "solarSystemID":30001480,
+    "name":"54-VNO VIII - Moon 3 - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013876,
+    "solarSystemID":30001480,
+    "name":"54-VNO XII - Moon 2 - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013879,
+    "solarSystemID":30001607,
+    "name":"G-N6MC VIII - Moon 9 - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013882,
+    "solarSystemID":30001608,
+    "name":"7-8XK0 VIII - Moon 5 - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013885,
+    "solarSystemID":30001521,
+    "name":"0M-M64 VI - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013888,
+    "solarSystemID":30001519,
+    "name":"TO21-U VII - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013891,
+    "solarSystemID":30001462,
+    "name":"E2AX-5 VIII - Moon 1 - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013894,
+    "solarSystemID":30001463,
+    "name":"HPE-KP VI - Moon 7 - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013897,
+    "solarSystemID":30001599,
+    "name":"0Z-VHC VI - Moon 12 - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013900,
+    "solarSystemID":30001603,
+    "name":"6-HFD6 V - Moon 1 - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013903,
+    "solarSystemID":30001642,
+    "name":"3-CE1R VIII - Moon 5 - Prosper Vault",
+    "operationID":36
+  },
+  {
+    "id":60013906,
+    "solarSystemID":30001640,
+    "name":"IAWJ-X VI - Moon 16 - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013909,
+    "solarSystemID":30001505,
+    "name":"J-JS0D VIII - Moon 15 - Prosper Vault",
+    "operationID":36
+  },
+  {
+    "id":60013912,
+    "solarSystemID":30001505,
+    "name":"J-JS0D IX - Moon 8 - Prosper Vault",
+    "operationID":36
+  },
+  {
+    "id":60013915,
+    "solarSystemID":30001628,
+    "name":"PQWA-L XI - Moon 6 - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013918,
+    "solarSystemID":30001625,
+    "name":"M9-OS2 I - Moon 1 - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013921,
+    "solarSystemID":30001473,
+    "name":"QO-3LC IV - Moon 2 - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013924,
+    "solarSystemID":30001478,
+    "name":"5-P3CQ VIII - Moon 5 - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013927,
+    "solarSystemID":30001611,
+    "name":"B-Y06L VII - Moon 2 - Prosper Depository",
+    "operationID":35
+  },
+  {
+    "id":60013930,
+    "solarSystemID":30001617,
+    "name":"QU7-EE V - Moon 7 - Prosper Vault",
+    "operationID":36
   },
   {
     "id":60013933,
@@ -25812,6 +27978,150 @@
     "operationID":14
   },
   {
+    "id":60013993,
+    "solarSystemID":30004623,
+    "name":"Serpentis Prime VI - Moon 1 - Serpentis Inquest Biotech Research Center",
+    "operationID":16
+  },
+  {
+    "id":60013996,
+    "solarSystemID":30001481,
+    "name":"IAMZ-5 X - Moon 14 - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60013999,
+    "solarSystemID":30001480,
+    "name":"54-VNO VIII - Moon 3 - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014002,
+    "solarSystemID":30001513,
+    "name":"H-EDXD VIII - Moon 1 - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014005,
+    "solarSystemID":30001515,
+    "name":"KF1-DU VII - Moon 15 - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014008,
+    "solarSystemID":30001628,
+    "name":"PQWA-L IX - Moon 1 - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014011,
+    "solarSystemID":30001628,
+    "name":"PQWA-L I - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014014,
+    "solarSystemID":30001500,
+    "name":"3-XORH IV - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014017,
+    "solarSystemID":30001501,
+    "name":"G1VU-H IX - Moon 18 - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014020,
+    "solarSystemID":30001452,
+    "name":"1SR-HT I - Shapeset Storage Bay",
+    "operationID":25
+  },
+  {
+    "id":60014023,
+    "solarSystemID":30001449,
+    "name":"PZP1-D IX - Moon 1 - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014026,
+    "solarSystemID":30001470,
+    "name":"PQA-9K IV - Shapeset Storage Bay",
+    "operationID":25
+  },
+  {
+    "id":60014029,
+    "solarSystemID":30001469,
+    "name":"BJC4-8 XI - Moon 2 - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014032,
+    "solarSystemID":30001599,
+    "name":"0Z-VHC VI - Moon 12 - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014035,
+    "solarSystemID":30001602,
+    "name":"II-1B3 IX - Moon 9 - Shapeset Storage Bay",
+    "operationID":25
+  },
+  {
+    "id":60014038,
+    "solarSystemID":30001507,
+    "name":"LH-J8H VI - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014041,
+    "solarSystemID":30001507,
+    "name":"LH-J8H V - Moon 13 - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014044,
+    "solarSystemID":30001611,
+    "name":"B-Y06L II - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014047,
+    "solarSystemID":30001611,
+    "name":"B-Y06L IV - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014050,
+    "solarSystemID":30001640,
+    "name":"IAWJ-X VI - Moon 10 - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014053,
+    "solarSystemID":30001641,
+    "name":"50-TJY VII - Moon 8 - Shapeset Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014056,
+    "solarSystemID":30001978,
+    "name":"X-7OMU II - Moon 7 - The Sanctuary School",
+    "operationID":37
+  },
+  {
+    "id":60014059,
+    "solarSystemID":30000905,
+    "name":"M-MD3B X - Moon 3 - Thukker Mix Factory",
+    "operationID":20
+  },
+  {
+    "id":60014062,
+    "solarSystemID":30000903,
+    "name":"E02-IK VIII - Moon 1 - Thukker Mix Factory",
+    "operationID":20
+  },
+  {
     "id":60014065,
     "solarSystemID":30000074,
     "name":"Hasateem VI - Moon 12 - Thukker Mix Factory",
@@ -25857,6 +28167,18 @@
     "id":60014086,
     "solarSystemID":30003404,
     "name":"Agtver VI - Thukker Mix Factory",
+    "operationID":20
+  },
+  {
+    "id":60014089,
+    "solarSystemID":30003283,
+    "name":"PVH8-0 VI - Moon 8 - Thukker Mix Factory",
+    "operationID":20
+  },
+  {
+    "id":60014092,
+    "solarSystemID":30003281,
+    "name":"EZA-FM IV - Moon 16 - Thukker Mix Factory",
     "operationID":20
   },
   {
@@ -25908,6 +28230,18 @@
     "operationID":20
   },
   {
+    "id":60014119,
+    "solarSystemID":30003333,
+    "name":"RF-GGF VI - Moon 4 - Thukker Mix Factory",
+    "operationID":20
+  },
+  {
+    "id":60014122,
+    "solarSystemID":30003329,
+    "name":"31-MLU IX - Moon 1 - Thukker Mix Factory",
+    "operationID":20
+  },
+  {
     "id":60014125,
     "solarSystemID":30003394,
     "name":"Freatlidur V - Moon 4 - Thukker Mix Factory",
@@ -25954,6 +28288,468 @@
     "solarSystemID":30002067,
     "name":"Brin V - Moon 7 - Thukker Mix Factory",
     "operationID":20
+  },
+  {
+    "id":60014149,
+    "solarSystemID":30001868,
+    "name":"37S-KO III - Moon 1 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014152,
+    "solarSystemID":30001868,
+    "name":"37S-KO V - Moon 2 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014155,
+    "solarSystemID":30001868,
+    "name":"37S-KO VI - Moon 14 - True Creations Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014158,
+    "solarSystemID":30001874,
+    "name":"NZG-LF III - Moon 5 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014161,
+    "solarSystemID":30001874,
+    "name":"NZG-LF III - Moon 11 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014164,
+    "solarSystemID":30001873,
+    "name":"GDO-7H VI - Moon 1 - True Creations Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014167,
+    "solarSystemID":30001907,
+    "name":"6Y-0TW II - Moon 12 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014170,
+    "solarSystemID":30001907,
+    "name":"6Y-0TW II - Moon 5 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014173,
+    "solarSystemID":30001907,
+    "name":"6Y-0TW II - Moon 16 - True Creations Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014176,
+    "solarSystemID":30001854,
+    "name":"UF-KKH III - Moon 4 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014179,
+    "solarSystemID":30001855,
+    "name":"O5Y3-W VII - Moon 3 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014182,
+    "solarSystemID":30001852,
+    "name":"FV-SE8 VIII - Moon 1 - True Creations Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014185,
+    "solarSystemID":30001894,
+    "name":"42-UOW V - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014188,
+    "solarSystemID":30001896,
+    "name":"A4UG-O VII - Moon 16 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014191,
+    "solarSystemID":30001897,
+    "name":"W-VXL9 IV - Moon 21 - True Creations Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014194,
+    "solarSystemID":30001958,
+    "name":"XFBE-T I - Moon 5 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014197,
+    "solarSystemID":30001959,
+    "name":"T-NNJZ V - Moon 2 - True Creations Storage Bay",
+    "operationID":25
+  },
+  {
+    "id":60014200,
+    "solarSystemID":30001961,
+    "name":"0T-LIB V - Moon 6 - True Creations Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60014203,
+    "solarSystemID":30001883,
+    "name":"GU-54G VIII - Moon 1 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014206,
+    "solarSystemID":30001881,
+    "name":"D9D-GD V - Moon 2 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014209,
+    "solarSystemID":30001883,
+    "name":"GU-54G VIII - Moon 5 - True Creations Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014212,
+    "solarSystemID":30001932,
+    "name":"Y-4U62 VIII - Moon 2 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014215,
+    "solarSystemID":30001932,
+    "name":"Y-4U62 V - Moon 1 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014218,
+    "solarSystemID":30001931,
+    "name":"RRWI-5 III - True Creations Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014221,
+    "solarSystemID":30001840,
+    "name":"9RQ-L8 VII - Moon 11 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014224,
+    "solarSystemID":30001842,
+    "name":"TG-Z23 V - Moon 7 - True Creations Storage Bay",
+    "operationID":25
+  },
+  {
+    "id":60014227,
+    "solarSystemID":30001842,
+    "name":"TG-Z23 II - Moon 4 - True Creations Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014230,
+    "solarSystemID":30001847,
+    "name":"HM-UVD VI - Moon 4 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014233,
+    "solarSystemID":30001847,
+    "name":"HM-UVD VII - Moon 5 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014236,
+    "solarSystemID":30001848,
+    "name":"G-ME2K VIII - Moon 14 - True Creations Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60014239,
+    "solarSystemID":30001922,
+    "name":"ZH-KEV VI - Moon 6 - True Creations Storage Bay",
+    "operationID":25
+  },
+  {
+    "id":60014242,
+    "solarSystemID":30001918,
+    "name":"S-BWWQ III - Moon 4 - True Creations Storage Bay",
+    "operationID":25
+  },
+  {
+    "id":60014245,
+    "solarSystemID":30001914,
+    "name":"I-ME3L V - Moon 1 - True Creations Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60014248,
+    "solarSystemID":30001951,
+    "name":"5J-UEX IV - Moon 7 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014251,
+    "solarSystemID":30001952,
+    "name":"1H4V-O II - Moon 1 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014254,
+    "solarSystemID":30001951,
+    "name":"5J-UEX IV - Moon 1 - True Creations Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014257,
+    "solarSystemID":30001901,
+    "name":"KP-FQ1 III - Moon 9 - True Creations Storage Bay",
+    "operationID":25
+  },
+  {
+    "id":60014260,
+    "solarSystemID":30001902,
+    "name":"RLDS-R I - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014263,
+    "solarSystemID":30001901,
+    "name":"KP-FQ1 III - True Creations Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014266,
+    "solarSystemID":30001858,
+    "name":"4GQ-XQ XIV - Moon 10 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014269,
+    "solarSystemID":30001858,
+    "name":"4GQ-XQ IX - Moon 1 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014272,
+    "solarSystemID":30001866,
+    "name":"ZG8Q-N VII - Moon 6 - True Creations Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60014275,
+    "solarSystemID":30001939,
+    "name":"W-Q233 VI - Moon 1 - True Creations Shipyard",
+    "operationID":24
+  },
+  {
+    "id":60014278,
+    "solarSystemID":30001938,
+    "name":"O-FTHE V - True Creations Storage Bay",
+    "operationID":25
+  },
+  {
+    "id":60014281,
+    "solarSystemID":30001946,
+    "name":"OOO-FS IV - Moon 10 - True Creations Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014284,
+    "solarSystemID":30001868,
+    "name":"37S-KO VII - True Power Mining Outpost",
+    "operationID":7
+  },
+  {
+    "id":60014287,
+    "solarSystemID":30001868,
+    "name":"37S-KO VI - Moon 9 - True Power Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014290,
+    "solarSystemID":30001878,
+    "name":"WEQT-K I - Moon 12 - True Power Mineral Reserve",
+    "operationID":9
+  },
+  {
+    "id":60014293,
+    "solarSystemID":30001874,
+    "name":"NZG-LF VI - True Power Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014296,
+    "solarSystemID":30001884,
+    "name":"7-X3RN VII - Moon 12 - True Power Mining Outpost",
+    "operationID":7
+  },
+  {
+    "id":60014299,
+    "solarSystemID":30001886,
+    "name":"9O-ZTS II - Moon 1 - True Power Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60014302,
+    "solarSystemID":30001848,
+    "name":"G-ME2K VIII - Moon 3 - True Power Mining Outpost",
+    "operationID":7
+  },
+  {
+    "id":60014305,
+    "solarSystemID":30001847,
+    "name":"HM-UVD VIII - Moon 2 - True Power Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014308,
+    "solarSystemID":30001920,
+    "name":"J-AYLV III - Moon 14 - True Power Mining Outpost",
+    "operationID":7
+  },
+  {
+    "id":60014311,
+    "solarSystemID":30001911,
+    "name":"T-8UOF VII - Moon 2 - True Power Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014314,
+    "solarSystemID":30001901,
+    "name":"KP-FQ1 III - Moon 12 - True Power Mineral Reserve",
+    "operationID":9
+  },
+  {
+    "id":60014317,
+    "solarSystemID":30001900,
+    "name":"RV5-DW VII - Moon 2 - True Power Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014320,
+    "solarSystemID":30001961,
+    "name":"0T-LIB V - Moon 5 - True Power Mining Outpost",
+    "operationID":7
+  },
+  {
+    "id":60014323,
+    "solarSystemID":30001962,
+    "name":"NRT4-U II - True Power Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014326,
+    "solarSystemID":30001831,
+    "name":"DSS-EZ IV - Moon 1 - True Power Refinery",
+    "operationID":8
+  },
+  {
+    "id":60014329,
+    "solarSystemID":30001833,
+    "name":"LGK-VP V - Moon 3 - True Power Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014332,
+    "solarSystemID":30001930,
+    "name":"6QBH-S IV - Moon 13 - True Power Mining Outpost",
+    "operationID":7
+  },
+  {
+    "id":60014335,
+    "solarSystemID":30001924,
+    "name":"RPS-0K VIII - Moon 1 - True Power Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014338,
+    "solarSystemID":30001889,
+    "name":"0G-A25 VI - Moon 20 - True Power Mining Outpost",
+    "operationID":7
+  },
+  {
+    "id":60014341,
+    "solarSystemID":30001888,
+    "name":"F9SX-1 V - Moon 1 - True Power Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014344,
+    "solarSystemID":30001939,
+    "name":"W-Q233 V - Moon 10 - True Power Refinery",
+    "operationID":8
+  },
+  {
+    "id":60014347,
+    "solarSystemID":30001945,
+    "name":"L-A9FS V - Moon 2 - True Power Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014350,
+    "solarSystemID":30001842,
+    "name":"TG-Z23 II - Moon 7 - True Power Refinery",
+    "operationID":8
+  },
+  {
+    "id":60014353,
+    "solarSystemID":30001842,
+    "name":"TG-Z23 III - Moon 8 - True Power Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014356,
+    "solarSystemID":30001854,
+    "name":"UF-KKH III - Moon 2 - True Power Mineral Reserve",
+    "operationID":9
+  },
+  {
+    "id":60014359,
+    "solarSystemID":30001855,
+    "name":"O5Y3-W VI - Moon 1 - True Power Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014362,
+    "solarSystemID":30001950,
+    "name":"A-XASO IV - Moon 4 - True Power Mining Outpost",
+    "operationID":7
+  },
+  {
+    "id":60014365,
+    "solarSystemID":30001952,
+    "name":"1H4V-O V - Moon 2 - True Power Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014368,
+    "solarSystemID":30001910,
+    "name":"B-G1LG VI - Moon 3 - True Power Mining Outpost",
+    "operationID":7
+  },
+  {
+    "id":60014371,
+    "solarSystemID":30001907,
+    "name":"6Y-0TW III - True Power Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014374,
+    "solarSystemID":30000905,
+    "name":"M-MD3B IV - Trust Partners Warehouse",
+    "operationID":29
+  },
+  {
+    "id":60014377,
+    "solarSystemID":30000904,
+    "name":"N-DQ0D IV - Trust Partners Trading Post",
+    "operationID":30
   },
   {
     "id":60014380,
@@ -26016,6 +28812,30 @@
     "operationID":30
   },
   {
+    "id":60014410,
+    "solarSystemID":30003322,
+    "name":"3KNK-A IX - Moon 2 - Trust Partners Trading Post",
+    "operationID":30
+  },
+  {
+    "id":60014413,
+    "solarSystemID":30003323,
+    "name":"TXW-EI VI - Trust Partners Trading Post",
+    "operationID":30
+  },
+  {
+    "id":60014416,
+    "solarSystemID":30003317,
+    "name":"I0AB-R II - Trust Partners Trading Post",
+    "operationID":30
+  },
+  {
+    "id":60014419,
+    "solarSystemID":30003317,
+    "name":"I0AB-R V - Moon 1 - Trust Partners Trading Post",
+    "operationID":30
+  },
+  {
     "id":60014422,
     "solarSystemID":30000075,
     "name":"Assah V - Moon 14 - Trust Partners Warehouse",
@@ -26064,6 +28884,18 @@
     "operationID":29
   },
   {
+    "id":60014446,
+    "solarSystemID":30003287,
+    "name":"T22-QI IV - Moon 8 - Trust Partners Warehouse",
+    "operationID":29
+  },
+  {
+    "id":60014449,
+    "solarSystemID":30003287,
+    "name":"T22-QI VI - Moon 13 - Trust Partners Warehouse",
+    "operationID":29
+  },
+  {
     "id":60014452,
     "solarSystemID":30000112,
     "name":"Arnola VII - Moon 1 - Trust Partners Trading Post",
@@ -26086,6 +28918,24 @@
     "solarSystemID":30000023,
     "name":"Fovihi V - Moon 6 - Trust Partners Warehouse",
     "operationID":29
+  },
+  {
+    "id":60014464,
+    "solarSystemID":30001484,
+    "name":"9-ERCP VII - Moon 9 - X-Sense Chemical Refinery",
+    "operationID":11
+  },
+  {
+    "id":60014467,
+    "solarSystemID":30001485,
+    "name":"KN7M-N V - Moon 17 - X-Sense Reprocessing Facility",
+    "operationID":10
+  },
+  {
+    "id":60014470,
+    "solarSystemID":30001480,
+    "name":"54-VNO IX - Moon 1 - X-Sense Chemical Refinery",
+    "operationID":11
   },
   {
     "id":60014473,
@@ -26820,6 +29670,18 @@
     "operationID":37
   },
   {
+    "id":60014851,
+    "solarSystemID":30001479,
+    "name":"M-FDTD I - Material Institute School",
+    "operationID":37
+  },
+  {
+    "id":60014854,
+    "solarSystemID":30001482,
+    "name":"HD3-JK I - Academy of Aggressive Behaviour",
+    "operationID":37
+  },
+  {
     "id":60014857,
     "solarSystemID":30002691,
     "name":"Crielere I - Ishukone Corporation Research Center",
@@ -26832,10 +29694,514 @@
     "operationID":19
   },
   {
+    "id":60014861,
+    "solarSystemID":30000325,
+    "name":"JZV-F4 V - Moon 1 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014862,
+    "solarSystemID":30000480,
+    "name":"0-G8NO VIII - Moon 1 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014863,
+    "solarSystemID":30000576,
+    "name":"4-EFLU VII - Moon 3 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014864,
+    "solarSystemID":30000638,
+    "name":"P7-45V IV - Moon 3 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014865,
+    "solarSystemID":30000714,
+    "name":"28Y9-P V - Moon 1 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014866,
+    "solarSystemID":30000811,
+    "name":"N7-BIY IV - Moon 1 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014867,
+    "solarSystemID":30000895,
+    "name":"IMK-K1 IX - Moon 1 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014868,
+    "solarSystemID":30001256,
+    "name":"FAT-6P VIII - Moon 1 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014869,
+    "solarSystemID":30002141,
+    "name":"Z-H2MA IV - Moon 1 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014870,
+    "solarSystemID":30002617,
+    "name":"Z-N9IP VII - Moon 2 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014871,
+    "solarSystemID":30002953,
+    "name":"CZDJ-1 X - Moon 4 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014872,
+    "solarSystemID":30003121,
+    "name":"BZ-0GW V - Moon 1 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014873,
+    "solarSystemID":30003666,
+    "name":"V7-MID IX - Moon 1 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014874,
+    "solarSystemID":30003701,
+    "name":"I-UUI5 IV - Moon 1 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014875,
+    "solarSystemID":30004034,
+    "name":"H74-B0 III - Moon 4 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014876,
+    "solarSystemID":30004062,
+    "name":"XZH-4X VI - Moon 3 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014877,
+    "solarSystemID":30004386,
+    "name":"D4R-H7 VII - Moon 2 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014878,
+    "solarSystemID":30004492,
+    "name":"2-RSC7 VI - Moon 2 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014879,
+    "solarSystemID":30004702,
+    "name":"MP5-KR VI - Moon 1 - Republic Military School Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014880,
+    "solarSystemID":30004765,
+    "name":"MO-GZ5 VIII - Moon 2 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014881,
+    "solarSystemID":30004883,
+    "name":"JV1V-O IV - Moon 1 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014882,
+    "solarSystemID":30004921,
+    "name":"Z-7OK1 III - Moon 2 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014883,
+    "solarSystemID":30004962,
+    "name":"G-Q5JU VII - Moon 1 - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014884,
+    "solarSystemID":30000319,
+    "name":"LS-JEP IX - Moon 1 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014885,
+    "solarSystemID":30000440,
+    "name":"0-W778 VII - Moon 2 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014886,
+    "solarSystemID":30000578,
+    "name":"F-EM4Q V - Moon 5 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014887,
+    "solarSystemID":30000633,
+    "name":"M53-1V VI - Moon 4 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014888,
+    "solarSystemID":30000708,
+    "name":"JLO-Z3 IX - Moon 4 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014889,
+    "solarSystemID":30000804,
+    "name":"F2A-GX IV - Moon 4 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014890,
+    "solarSystemID":30000867,
+    "name":"D7-ZAC VIII - Moon 1 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014891,
+    "solarSystemID":30001241,
+    "name":"5-N2EY VIII - Moon 5 - Republic Military School Refining",
+    "operationID":46
+  },
+  {
+    "id":60014892,
+    "solarSystemID":30002163,
+    "name":"E8-YS9 VI - Moon 4 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014893,
+    "solarSystemID":30002630,
+    "name":"FR-B1H VII - Moon 1 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014894,
+    "solarSystemID":30002937,
+    "name":"3JN9-Q XII - Moon 3 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014895,
+    "solarSystemID":30003147,
+    "name":"111-F1 VIII - Moon 3 - Republic Military School Refining",
+    "operationID":46
+  },
+  {
+    "id":60014896,
+    "solarSystemID":30003648,
+    "name":"6OYQ-Z II - Moon 1 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014897,
+    "solarSystemID":30003697,
+    "name":"C4C-Z4 VIII - Moon 3 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014898,
+    "solarSystemID":30004000,
+    "name":"3BK-O7 VIII - Moon 1 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014899,
+    "solarSystemID":30004061,
+    "name":"G8AD-C XI - Moon 2 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014900,
+    "solarSystemID":30004333,
+    "name":"BKG-Q2 VIII - Moon 1 - Secure Commerce Commission Refining",
+    "operationID":46
+  },
+  {
+    "id":60014901,
+    "solarSystemID":30004463,
+    "name":"UB5Z-3 II - Moon 1 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014902,
+    "solarSystemID":30004694,
+    "name":"GQ2S-8 III - Moon 3 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014903,
+    "solarSystemID":30004789,
+    "name":"5-6QW7 VII - Moon 3 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014904,
+    "solarSystemID":30004863,
+    "name":"NZW-ZO VII - Moon 1 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014905,
+    "solarSystemID":30004902,
+    "name":"D2EZ-X VI - Moon 3 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014906,
+    "solarSystemID":30004935,
+    "name":"TPAR-G IX - Moon 3 - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014907,
+    "solarSystemID":30000296,
+    "name":"ZLZ-1Z IV - Moon 3 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014908,
+    "solarSystemID":30000441,
+    "name":"DG-8VJ IV - Moon 3 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014909,
+    "solarSystemID":30000586,
+    "name":"Q-GQHN VIII - Moon 3 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014910,
+    "solarSystemID":30000616,
+    "name":"995-3G V - Moon 5 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014911,
+    "solarSystemID":30000680,
+    "name":"1V-LI2 III - Moon 2 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014912,
+    "solarSystemID":30000772,
+    "name":"C-J6MT IV - Moon 1 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014913,
+    "solarSystemID":30000865,
+    "name":"H-W9TY XII - Moon 2 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014914,
+    "solarSystemID":30001222,
+    "name":"V2-VC2 II - Moon 5 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014915,
+    "solarSystemID":30002175,
+    "name":"2O-EEW IV - Moon 3 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014916,
+    "solarSystemID":30002593,
+    "name":"68FT-6 VI - Moon 1 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014917,
+    "solarSystemID":30002904,
+    "name":"VFK-IV VI - Moon 1 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014918,
+    "solarSystemID":30003109,
+    "name":"C9N-CC I - Moon 2 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014919,
+    "solarSystemID":30003611,
+    "name":"S-EVIQ III - Moon 1 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014920,
+    "solarSystemID":30003689,
+    "name":"L-C3O7 VII - Moon 5 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014921,
+    "solarSystemID":30003979,
+    "name":"9CG6-H VIII - Moon 4 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014922,
+    "solarSystemID":30004059,
+    "name":"9-4RP2 IV - Moon 2 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014923,
+    "solarSystemID":30004379,
+    "name":"K-8SQS VI - Moon 2 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014924,
+    "solarSystemID":30004453,
+    "name":"VNGJ-U V - Moon 1 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014925,
+    "solarSystemID":30004678,
+    "name":"H8-ZTO VI - Moon 5 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014926,
+    "solarSystemID":30004712,
+    "name":"NOL-M9 VI - Moon 2 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014927,
+    "solarSystemID":30004852,
+    "name":"DZ6-I5 IV - Moon 1 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014928,
+    "solarSystemID":30004908,
+    "name":"6T3I-L VII - Moon 5 - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
+    "id":60014929,
+    "solarSystemID":30000380,
+    "name":"Polaris VI - Serpentis Corporation Manufacturing",
+    "operationID":45
+  },
+  {
+    "id":60014930,
+    "solarSystemID":30000380,
+    "name":"Polaris VII - Serpentis Corporation Refining",
+    "operationID":46
+  },
+  {
+    "id":60014931,
+    "solarSystemID":30000380,
+    "name":"Polaris VIII - Serpentis Corporation Cloning",
+    "operationID":47
+  },
+  {
     "id":60014935,
     "solarSystemID":30000145,
     "name":"New Caldari II (Matias) - Kaalakiota Corporation Factory",
     "operationID":38
+  },
+  {
+    "id":60014940,
+    "solarSystemID":30004706,
+    "name":"UHKL-N V - Moon 1 - Blood Raiders Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60014941,
+    "solarSystemID":30004707,
+    "name":"Z3V-1W VII - Blood Raiders Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014942,
+    "solarSystemID":30004709,
+    "name":"KFIE-Z III - Moon 7 - Blood Raiders Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014943,
+    "solarSystemID":30004709,
+    "name":"KFIE-Z VIII - Moon 18 - Blood Raiders Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014944,
+    "solarSystemID":30004708,
+    "name":"A-ELE2 VI - Blood Raiders Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014945,
+    "solarSystemID":30004710,
+    "name":"1DH-SX III - Moon 1 - Blood Raiders Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014946,
+    "solarSystemID":30004711,
+    "name":"PR-8CA III - Blood Raiders Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014947,
+    "solarSystemID":30004718,
+    "name":"FWST-8 II - Blood Raiders Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014948,
+    "solarSystemID":30004721,
+    "name":"G-TT5V VII - Moon 11 - Blood Raiders Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60014949,
+    "solarSystemID":30004719,
+    "name":"YZ9-F6 V - Blood Raiders Assembly Plant",
+    "operationID":14
+  },
+  {
+    "id":60014950,
+    "solarSystemID":30004720,
+    "name":"0N-3RO VII - Moon 14 - Blood Raiders Testing Facilities",
+    "operationID":13
+  },
+  {
+    "id":60014951,
+    "solarSystemID":30004722,
+    "name":"319-3D IX - Moon 22 - Blood Raiders Logistic Support",
+    "operationID":15
+  },
+  {
+    "id":60014952,
+    "solarSystemID":30004723,
+    "name":"I3Q-II VII - Moon 2 - Blood Raiders Assembly Plant",
+    "operationID":14
   },
   {
     "id":60015001,

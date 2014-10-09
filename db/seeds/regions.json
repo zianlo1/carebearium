@@ -8,20 +8,100 @@
     "regionName":"The Forge"
   },
   {
+    "regionID":10000003,
+    "regionName":"Vale of the Silent"
+  },
+  {
+    "regionID":10000005,
+    "regionName":"Detorid"
+  },
+  {
+    "regionID":10000006,
+    "regionName":"Wicked Creek"
+  },
+  {
+    "regionID":10000007,
+    "regionName":"Cache"
+  },
+  {
+    "regionID":10000008,
+    "regionName":"Scalding Pass"
+  },
+  {
+    "regionID":10000009,
+    "regionName":"Insmother"
+  },
+  {
+    "regionID":10000010,
+    "regionName":"Tribute"
+  },
+  {
+    "regionID":10000011,
+    "regionName":"Great Wildlands"
+  },
+  {
+    "regionID":10000012,
+    "regionName":"Curse"
+  },
+  {
+    "regionID":10000013,
+    "regionName":"Malpais"
+  },
+  {
+    "regionID":10000014,
+    "regionName":"Catch"
+  },
+  {
+    "regionID":10000015,
+    "regionName":"Venal"
+  },
+  {
     "regionID":10000016,
     "regionName":"Lonetrek"
+  },
+  {
+    "regionID":10000018,
+    "regionName":"The Spire"
   },
   {
     "regionID":10000020,
     "regionName":"Tash-Murkon"
   },
   {
+    "regionID":10000021,
+    "regionName":"Outer Passage"
+  },
+  {
+    "regionID":10000022,
+    "regionName":"Stain"
+  },
+  {
+    "regionID":10000023,
+    "regionName":"Pure Blind"
+  },
+  {
+    "regionID":10000025,
+    "regionName":"Immensea"
+  },
+  {
+    "regionID":10000027,
+    "regionName":"Etherium Reach"
+  },
+  {
     "regionID":10000028,
     "regionName":"Molden Heath"
   },
   {
+    "regionID":10000029,
+    "regionName":"Geminate"
+  },
+  {
     "regionID":10000030,
     "regionName":"Heimatar"
+  },
+  {
+    "regionID":10000031,
+    "regionName":"Impass"
   },
   {
     "regionID":10000032,
@@ -30,6 +110,14 @@
   {
     "regionID":10000033,
     "regionName":"The Citadel"
+  },
+  {
+    "regionID":10000034,
+    "regionName":"The Kalevala Expanse"
+  },
+  {
+    "regionID":10000035,
+    "regionName":"Deklein"
   },
   {
     "regionID":10000036,
@@ -44,6 +132,18 @@
     "regionName":"The Bleak Lands"
   },
   {
+    "regionID":10000039,
+    "regionName":"Esoteria"
+  },
+  {
+    "regionID":10000040,
+    "regionName":"Oasa"
+  },
+  {
+    "regionID":10000041,
+    "regionName":"Syndicate"
+  },
+  {
     "regionID":10000042,
     "regionName":"Metropolis"
   },
@@ -56,6 +156,18 @@
     "regionName":"Solitude"
   },
   {
+    "regionID":10000045,
+    "regionName":"Tenal"
+  },
+  {
+    "regionID":10000046,
+    "regionName":"Fade"
+  },
+  {
+    "regionID":10000047,
+    "regionName":"Providence"
+  },
+  {
     "regionID":10000048,
     "regionName":"Placid"
   },
@@ -64,12 +176,60 @@
     "regionName":"Khanid"
   },
   {
+    "regionID":10000050,
+    "regionName":"Querious"
+  },
+  {
+    "regionID":10000051,
+    "regionName":"Cloud Ring"
+  },
+  {
     "regionID":10000052,
     "regionName":"Kador"
   },
   {
+    "regionID":10000053,
+    "regionName":"Cobalt Edge"
+  },
+  {
     "regionID":10000054,
     "regionName":"Aridia"
+  },
+  {
+    "regionID":10000055,
+    "regionName":"Branch"
+  },
+  {
+    "regionID":10000056,
+    "regionName":"Feythabolis"
+  },
+  {
+    "regionID":10000057,
+    "regionName":"Outer Ring"
+  },
+  {
+    "regionID":10000058,
+    "regionName":"Fountain"
+  },
+  {
+    "regionID":10000059,
+    "regionName":"Paragon Soul"
+  },
+  {
+    "regionID":10000060,
+    "regionName":"Delve"
+  },
+  {
+    "regionID":10000061,
+    "regionName":"Tenerifis"
+  },
+  {
+    "regionID":10000062,
+    "regionName":"Omist"
+  },
+  {
+    "regionID":10000063,
+    "regionName":"Period Basis"
   },
   {
     "regionID":10000064,
@@ -78,6 +238,10 @@
   {
     "regionID":10000065,
     "regionName":"Kor-Azor"
+  },
+  {
+    "regionID":10000066,
+    "regionName":"Perrigen Falls"
   },
   {
     "regionID":10000067,
