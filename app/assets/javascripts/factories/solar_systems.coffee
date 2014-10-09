@@ -13,6 +13,8 @@ fieldsToStation = (fields) ->
 
   station
 
+nullsecRegex = /^[A-Z0-9]{1,5}-[A-Z0-9]{1,5}$/
+
 CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
   dataLoaded = $q.defer()
 
@@ -84,7 +86,11 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
       unless Lazy(visibleFields).findWhere { field: options.sort[0] }
         options.sort = ['name', 'asc']
 
-      data = data.sortBy (item) -> item[options.sort[0]]
+      data = data.sortBy (item) ->
+        if options.sort[0] is 'name'
+          [ item.name.match(nullsecRegex), item.name ]
+        else
+          item[options.sort[0]]
       data = data.reverse() unless options.sort[1] is 'asc'
 
       sortedField = Lazy(visibleFields).findWhere { field: options.sort[0] }
