@@ -15263,7 +15263,7 @@
     "id":30002411,
     "name":"Skarkon",
     "regionID":10000028,
-    "security":0.0,
+    "security":0.1,
     "beltCount":1
   },
   {
@@ -15326,7 +15326,7 @@
     "id":30002420,
     "name":"Egbinger",
     "regionID":10000028,
-    "security":0.0,
+    "security":0.1,
     "beltCount":7
   },
   {
@@ -25126,7 +25126,7 @@
     "id":30003820,
     "name":"Vestouve",
     "regionID":10000048,
-    "security":0.0,
+    "security":0.1,
     "beltCount":9
   },
   {
@@ -25140,7 +25140,7 @@
     "id":30003822,
     "name":"Espigoure",
     "regionID":10000048,
-    "security":0.0,
+    "security":0.1,
     "beltCount":6
   },
   {
@@ -28206,28 +28206,28 @@
     "id":30004260,
     "name":"Yiratal",
     "regionID":10000054,
-    "security":0.0,
+    "security":0.1,
     "beltCount":2
   },
   {
     "id":30004261,
     "name":"Balas",
     "regionID":10000054,
-    "security":0.0,
+    "security":0.1,
     "beltCount":2
   },
   {
     "id":30004262,
     "name":"Pemsah",
     "regionID":10000054,
-    "security":0.0,
+    "security":0.1,
     "beltCount":8
   },
   {
     "id":30004263,
     "name":"Feshur",
     "regionID":10000054,
-    "security":0.0,
+    "security":0.1,
     "beltCount":11
   },
   {
@@ -28241,7 +28241,7 @@
     "id":30004265,
     "name":"Yekh",
     "regionID":10000054,
-    "security":0.0,
+    "security":0.1,
     "beltCount":10
   },
   {
@@ -28479,21 +28479,21 @@
     "id":30004299,
     "name":"Sakht",
     "regionID":10000054,
-    "security":0.0,
+    "security":0.1,
     "beltCount":2
   },
   {
     "id":30004300,
     "name":"Naga",
     "regionID":10000054,
-    "security":0.0,
+    "security":0.1,
     "beltCount":18
   },
   {
     "id":30004301,
     "name":"Anath",
     "regionID":10000054,
-    "security":0.0,
+    "security":0.1,
     "beltCount":18
   },
   {
@@ -28528,7 +28528,7 @@
     "id":30004306,
     "name":"Karan",
     "regionID":10000054,
-    "security":0.0,
+    "security":0.1,
     "beltCount":12
   },
   {
@@ -28549,7 +28549,7 @@
     "id":30004309,
     "name":"Hophib",
     "regionID":10000054,
-    "security":0.0,
+    "security":0.1,
     "beltCount":15
   },
   {
