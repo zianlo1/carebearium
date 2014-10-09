@@ -15,11 +15,13 @@
 
       %dl.dl-horizontal
         %dt Ship kills / h
-        %dd {{ solarSystem.hourly_ships }}
+        %dd {{ solarSystem.hourly_ships | number: 1 }}
         %dt Pod kills / h
-        %dd {{ solarSystem.hourly_pods }}
+        %dd {{ solarSystem.hourly_pods | number: 1 }}
         %dt NPC kills / h
-        %dd {{ solarSystem.hourly_npcs }}
+        %dd {{ solarSystem.hourly_npcs | number: 1 }}
+        %dt Jumps / h
+        %dd {{ solarSystem.hourly_jumps | number: 1 }}
 
     .col-xs-6
       %dl.dl-horizontal
