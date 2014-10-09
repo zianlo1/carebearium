@@ -4,10 +4,24 @@ class EveApi
   format :xml
 
   def self.kills
-    Array(get("/map/Kills.xml.aspx").parsed_response['eveapi']['result']['rowset']['row'])
+    formatted_response("/map/Kills.xml.aspx")
   end
 
   def self.jumps
-    Array(get("/map/Jumps.xml.aspx").parsed_response['eveapi']['result']['rowset']['row'])
+    formatted_response("/map/Jumps.xml.aspx")
+  end
+
+  private
+
+  def self.formatted_response(endpoint)
+    response = get(endpoint).parsed_response['eveapi']
+
+    utc = ActiveSupport::TimeZone.new('UTC')
+
+    expires_at = utc.parse response['cachedUntil']
+
+    rows = Array(response['result']['rowset']['row'])
+
+    { rows: rows, expires_at: expires_at }
   end
 end

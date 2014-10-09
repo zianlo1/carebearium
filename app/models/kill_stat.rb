@@ -25,8 +25,14 @@ class KillStat
 
   DEFAULT_SUMMARY = { ship_kills: 0, pod_kills: 0, npc_kills: 0 }.freeze
 
+  API_NAME = 'kills'
+
   def self.update
-    EveApi.kills.each do |row|
+    return unless ApiLog.expired? API_NAME
+
+    api_response = EveApi.kills
+
+    api_response[:rows].each do |row|
       begin
         create(
           solar_system_id: row['solarSystemID'],
@@ -38,5 +44,7 @@ class KillStat
         Rails.logger.warn "#{e} updating kills: #{row}"
       end
     end
+
+    ApiLog.log API_NAME, api_response[:expires_at]
   end
 end
