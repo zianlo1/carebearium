@@ -2,7 +2,14 @@ class SolarSystem
   include Mongoid::Document
   include Mongoid::Timestamps::Updated
 
-  DATA_FIELDS = %w(
+  STATION_TYPE_OPERATIONS = {
+    21642 => 48,
+    21644 => 49,
+    21645 => 50,
+    21646 => 51
+  }
+
+  NUMERIC_FIELDS = %w(
     manufacturing
     research_te
     research_me
@@ -15,9 +22,15 @@ class SolarSystem
     hourly_jumps
   )
 
-  DATA_FIELDS.each do |f|
+  DATA_FIELDS = NUMERIC_FIELDS + %w(
+    stations
+  )
+
+  NUMERIC_FIELDS.each do |f|
     field f, type: Float, default: 0.0
   end
+
+  field :stations, type: Array, default: []
 
   def self.dynamic_data
     Rails.cache.fetch "SolarSystem#dynamic_data/#{max(:updated_at).to_i}" do
@@ -31,7 +44,7 @@ class SolarSystem
     Rails.cache.fetch "SolarSystem#limits/#{max(:updated_at).to_i}" do
       static_limits = MultiJson.load File.read(Rails.root.join 'public', 'api', 'limits_static.json')
 
-      DATA_FIELDS.each_with_object(static_limits) do |field, map|
+      NUMERIC_FIELDS.each_with_object(static_limits) do |field, map|
         map[field] = { min: 0, max: max(field) }
       end.to_json
     end
@@ -69,6 +82,30 @@ class SolarSystem
     end
 
     ApiLog.log 'industry_indices', api_response[:expires_at]
+  end
+
+  # {"stationID"=>"61000854", "stationName"=>"4-EP12 VIII - 4-EP12 Inches for Mittens", "stationTypeID"=>"21645", "solarSystemID"=>"30004553", "corporationID"=>"667531913", "corporationName"=>"GoonWaffe"}
+  def self.update_conquerable_stations
+    return unless ApiLog.expired? 'conquerable_stations'
+
+    mapping = {}
+
+    api_response = CREST.industry_indices
+
+    api_response[:rows].each do |row|
+      mapping[:solarSystemID] ||= []
+      mapping[:solarSystemID] << [row[:stationName], STATION_TYPE_OPERATIONS[row[:stationTypeID].to_i]]
+    end
+
+    mapping.each do |id, stations|
+      begin
+        find(id).update_attributes(stations: stations)
+      rescue Mongoid::Errors::DocumentNotFound
+        nil
+      end
+    end
+
+    ApiLog.log 'conquerable_stations', api_response[:expires_at] + 24.hours
   end
 
   def self.update_aggregate_stats

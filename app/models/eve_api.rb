@@ -11,6 +11,10 @@ class EveApi
     formatted_response("/map/Jumps.xml.aspx")
   end
 
+  def self.conquerable_stations
+    formatted_response("/Eve/ConquerableStationList.xml.aspx")
+  end
+
   private
 
   def self.formatted_response(endpoint)

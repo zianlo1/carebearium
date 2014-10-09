@@ -8,8 +8,5 @@ read_file('solar_systems.json').each do |row|
   SolarSystem.find_or_create_by(id: row[:id])
 end
 
-p 'Updating industry stats'
-SolarSystem.update_industry_indices
-
-p 'Updating kill stats'
-SolarSystem.update_kill_stats
+p 'Updating aggregate stats'
+SolarSystem.update_aggregate_stats

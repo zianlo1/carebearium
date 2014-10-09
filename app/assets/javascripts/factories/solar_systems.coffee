@@ -1,3 +1,18 @@
+fieldsToAgent = (fields) ->
+  { corporationID: fields[0], level: fields[1], division: fields[2] }
+
+fieldsToStation = (fields) ->
+  station  = { name: fields[0] }
+  services = CB.StaticData.StationOperations[fields[1]]
+
+  station.refinery  = 32 in services
+  station.repair    = 4096 in services
+  station.factory   = 8192 in services
+  station.lab       = 16384 in services
+  station.insurance = 1048576 in services
+
+  station
+
 CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
   dataLoaded = $q.defer()
 
@@ -18,27 +33,11 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
 
       system.stations = []
       for stationFields in fields[4]
-        station = {}
-        station.name      = stationFields[0]
-
-        services = CB.StaticData.StationOperations[stationFields[1]]
-
-        station.refinery  = 32 in services
-        station.repair    = 4096 in services
-        station.factory   = 8192 in services
-        station.lab       = 16384 in services
-        station.insurance = 1048576 in services
-
-        system.stations.push station
+        system.stations.push fieldsToStation stationFields
 
       system.agents = []
       for agentFields in fields[5]
-        agent = {}
-        agent.corporationID = agentFields[0]
-        agent.level         = agentFields[1]
-        agent.division      = agentFields[2]
-
-        system.agents.push agent
+        system.agents.push fieldsToAgent agentFields
 
       system.jumps = fields[6]
 
@@ -56,6 +55,9 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
       CB.StaticData.SolarSystems[id].hourly_pods         = fields[7]
       CB.StaticData.SolarSystems[id].hourly_npcs         = fields[8]
       CB.StaticData.SolarSystems[id].hourly_jumps        = fields[9]
+
+      for stationFields in fields[10]
+        CB.StaticData.SolarSystems[id].stations.push fieldsToStation stationFields
 
     dataLoaded.resolve()
 
