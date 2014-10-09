@@ -5,8 +5,6 @@ module IsSystemStatistic
     include Mongoid::Document
     include Mongoid::Timestamps::Created
 
-    belongs_to :solar_system
-
     field :solar_system_id, type: Integer
 
     index({ created_at: 1 }, { expire_after_seconds: 1.week })
@@ -14,10 +12,6 @@ module IsSystemStatistic
   end
 
   module ClassMethods
-    def hours_of_data
-      ((max(:created_at) - min(:created_at)) / 60 / 60).to_i + 1
-    end
-
     def summary
       results = Hash.new { |hash, key| hash[key] = self::DEFAULT_SUMMARY.dup }
 
@@ -26,6 +20,25 @@ module IsSystemStatistic
       end
 
       results
+    end
+
+    def hourly_summary
+      results = summary
+      scale   = hours_of_data
+
+      results.each do |system_id, values|
+        results[system_id].each do |field, value|
+          results[system_id][field] = value.to_f / scale
+        end
+      end
+
+      results
+    end
+
+    private
+
+    def hours_of_data
+      ((max(:created_at) - min(:created_at)) / 1.hour).to_i + 1
     end
   end
 end
