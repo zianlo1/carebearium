@@ -25,10 +25,8 @@ class KillStat
 
   DEFAULT_SUMMARY = { ship_kills: 0, pod_kills: 0, npc_kills: 0 }.freeze
 
-  API_NAME = 'kills'
-
   def self.update
-    return unless ApiLog.expired? API_NAME
+    return unless ApiLog.expired? 'kills'
 
     api_response = EveApi.kills
 
@@ -45,6 +43,7 @@ class KillStat
       end
     end
 
-    ApiLog.log API_NAME, api_response[:expires_at]
+    ApiLog.log 'kills', api_response[:expires_at]
+    ApiLog.log 'aggregates', 1.minute.ago
   end
 end

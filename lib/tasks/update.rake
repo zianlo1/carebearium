@@ -20,4 +20,4 @@ namespace :update do
   end
 end
 
-task update: [ 'update:industry_indices', 'update:kill_stats', 'update:jump_stats', 'update:aggregate_stats' ]
+task update: %w(industry_indices kill_stats jump_stats aggregate_stats).map{ |t| "update:#{t}" }

@@ -38,6 +38,8 @@ class SolarSystem
   end
 
   def self.update_industry_indices
+    return unless ApiLog.expired? 'industry_indices'
+
     CREST.industry_indices.each do |row|
       begin
         system = find row['solarSystem']['id']
@@ -63,9 +65,13 @@ class SolarSystem
         Rails.logger.warn "#{e} updating indices: #{row}"
       end
     end
+
+    ApiLog.log 'industry_indices', (4.hours - 10.minutes).from_now
   end
 
   def self.update_aggregate_stats
+    return unless ApiLog.expired? 'aggregates'
+
     kill_summary = KillStat.hourly_summary
     jump_summary = JumpStat.hourly_summary
 
@@ -80,5 +86,7 @@ class SolarSystem
         hourly_jumps: jump_stats[:jumps].round(1)
       )
     end
+
+    ApiLog.log 'aggregates', (24.hours - 10.minutes).from_now
   end
 end

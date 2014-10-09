@@ -21,10 +21,8 @@ class JumpStat
 
   DEFAULT_SUMMARY = { jumps: 0 }.freeze
 
-  API_NAME = 'jumps'
-
   def self.update
-    return unless ApiLog.expired? API_NAME
+    return unless ApiLog.expired? 'jumps'
 
     api_response = EveApi.jumps
 
@@ -39,6 +37,7 @@ class JumpStat
       end
     end
 
-    ApiLog.log API_NAME, api_response[:expires_at]
+    ApiLog.log 'jumps', api_response[:expires_at]
+    ApiLog.log 'aggregates', 1.minute.ago
   end
 end
