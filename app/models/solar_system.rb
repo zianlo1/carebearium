@@ -40,7 +40,9 @@ class SolarSystem
   def self.update_industry_indices
     return unless ApiLog.expired? 'industry_indices'
 
-    CREST.industry_indices.each do |row|
+    api_response = CREST.industry_indices
+
+    api_response[:rows].each do |row|
       begin
         system = find row['solarSystem']['id']
         attrs  = {}
@@ -66,7 +68,7 @@ class SolarSystem
       end
     end
 
-    ApiLog.log 'industry_indices', (4.hours - 10.minutes).from_now
+    ApiLog.log 'industry_indices', api_response[:expires_at]
   end
 
   def self.update_aggregate_stats

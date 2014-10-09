@@ -4,6 +4,6 @@ class CREST
   format :json
 
   def self.industry_indices
-    Array(get("/industry/systems/").parsed_response['items'])
+    { rows: Array(get("/industry/systems/").parsed_response['items']), expires_at: (4.hours - 10.minutes).from_now }
   end
 end
