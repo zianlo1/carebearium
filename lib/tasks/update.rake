@@ -5,7 +5,14 @@ namespace :update do
 
   task kill_stats: :environment do
     KillStat.update
-    SolarSystem.update_kill_stats
+  end
+
+  task jump_stats: :environment do
+    JumpStat.update
+  end
+
+  task aggregate_stats: :environment do
+    SolarSystem.update_aggregate_stats
   end
 
   if Rails.env.development?
@@ -13,4 +20,4 @@ namespace :update do
   end
 end
 
-task update: [ 'update:industry_indices', 'update:kill_stats' ]
+task update: [ 'update:industry_indices', 'update:kill_stats', 'update:jump_stats', 'update:aggregate_stats' ]

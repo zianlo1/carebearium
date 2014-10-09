@@ -52,6 +52,7 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
       CB.StaticData.SolarSystems[id].hourly_ships        = fields[6]
       CB.StaticData.SolarSystems[id].hourly_pods         = fields[7]
       CB.StaticData.SolarSystems[id].hourly_npcs         = fields[8]
+      CB.StaticData.SolarSystems[id].hourly_jumps        = fields[9]
 
     dataLoaded.resolve()
 

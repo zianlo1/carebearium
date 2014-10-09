@@ -6,4 +6,8 @@ class EveApi
   def self.kills
     Array(get("/map/Kills.xml.aspx").parsed_response['eveapi']['result']['rowset']['row'])
   end
+
+  def self.jumps
+    Array(get("/map/Jumps.xml.aspx").parsed_response['eveapi']['result']['rowset']['row'])
+  end
 end

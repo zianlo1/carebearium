@@ -2,8 +2,6 @@ class SolarSystem
   include Mongoid::Document
   include Mongoid::Timestamps::Updated
 
-  has_many :kill_stats
-
   DATA_FIELDS = %w(
     manufacturing
     research_te
@@ -14,6 +12,7 @@ class SolarSystem
     hourly_ships
     hourly_pods
     hourly_npcs
+    hourly_jumps
   )
 
   DATA_FIELDS.each do |f|
@@ -66,17 +65,22 @@ class SolarSystem
     end
   end
 
-  def self.update_kill_stats
-    summary = KillStat.summary
-    hours   = KillStat.hours_of_data
+  def self.update_aggregate_stats
+    kill_summary = KillStat.summary
+    kill_hours   = KillStat.hours_of_data
+
+    jump_summary = JumpStat.summary
+    jump_hours   = JumpStat.hours_of_data
 
     each do |solar_sytem|
-      system_stats = summary[solar_sytem.id.to_i]
+      kill_stats = kill_summary[solar_sytem.id.to_i]
+      jump_stats = jump_summary[solar_sytem.id.to_i]
 
       solar_sytem.update_attributes(
-        hourly_ships: (system_stats[:ship_kills].to_f / hours).round(1),
-        hourly_pods:  (system_stats[:pod_kills].to_f  / hours).round(1),
-        hourly_npcs:  (system_stats[:npc_kills].to_f  / hours).round(1)
+        hourly_ships: (kill_stats[:ship_kills].to_f / kill_hours).round(1),
+        hourly_pods:  (kill_stats[:pod_kills].to_f  / kill_hours).round(1),
+        hourly_npcs:  (kill_stats[:npc_kills].to_f  / kill_hours).round(1),
+        hourly_jumps: (jump_stats[:jumps].to_f      / jump_hours).round(1)
       )
     end
   end
