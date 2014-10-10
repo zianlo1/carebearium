@@ -3,8 +3,9 @@
 class CB.Filters.DistanceJumps extends CB.Filters.Base
   constructor: (@options) ->
     super(@options)
-    @options.distance ||= 0
-    @options.security ||= '0.5'
+
+    @options.distance = 0 if angular.isUndefined @options.distance
+    @options.security = '0.5' if angular.isUndefined @options.security
 
   securityOptions:
     '0.5': 'hisec'
