@@ -12,12 +12,16 @@ class EveApi
   end
 
   def self.conquerable_stations
-    formatted_response("/Eve/ConquerableStationList.xml.aspx")
+    formatted_response("/Eve/ConquerableStationList.xml.aspx", throttle_update: 24.hours)
+  end
+
+  def self.sovereignty
+    formatted_response("/Map/Sovereignty.xml.aspx", throttle_update: 24.hours)
   end
 
   private
 
-  def self.formatted_response(endpoint)
+  def self.formatted_response(endpoint, throttle_update: 0)
     response = get(endpoint).parsed_response['eveapi']
 
     utc = ActiveSupport::TimeZone.new('UTC')
@@ -26,6 +30,6 @@ class EveApi
 
     rows = Array(response['result']['rowset']['row'])
 
-    { rows: rows, expires_at: expires_at }
+    { rows: rows, expires_at: expires_at + throttle_update }
   end
 end

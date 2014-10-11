@@ -6,6 +6,7 @@ class SolarSystem
   field :security,    type: Float
   field :belt_count,  type: Integer
   field :ice,         type: Boolean
+  field :owner_id,    type: Integer
 
   field :stations, type: Hash, default: {}
   field :agents,   type: Hash, default: {}
@@ -92,7 +93,8 @@ class SolarSystem
           system.hourly_ships,
           system.hourly_pods,
           system.hourly_npcs,
-          system.hourly_jumps
+          system.hourly_jumps,
+          system.owner_id
         ]
       end.to_json
     end
@@ -125,7 +127,7 @@ class SolarSystem
         end
         system.update_attributes attrs
       rescue Mongoid::Errors::DocumentNotFound
-        nil
+        next
       rescue => e
         Rails.logger.warn "#{e} updating indices: #{row}"
       end
@@ -137,24 +139,19 @@ class SolarSystem
   def self.update_conquerable_stations
     return unless ApiLog.expired? 'conquerable_stations'
 
-    mapping = {}
-
-    api_response = CREST.industry_indices
+    api_response = EveApi.conquerable_stations
 
     api_response[:rows].each do |row|
-      mapping[:solarSystemID] ||= []
-      mapping[:solarSystemID] << [row[:stationName], STATION_TYPE_OPERATIONS[row[:stationTypeID].to_i]]
-    end
-
-    mapping.each do |id, stations|
       begin
-        find(id).update_attributes(stations: stations)
+        system = find row['solarSystemID'].to_i
+        system.stations[row['stationID'].to_i] = { name: row['stationName'], operation_id: STATION_TYPE_OPERATIONS[row[:stationTypeID].to_i] }
+        system.save
       rescue Mongoid::Errors::DocumentNotFound
-        nil
+        next
       end
     end
 
-    ApiLog.log 'conquerable_stations', api_response[:expires_at] + 24.hours
+    ApiLog.log 'conquerable_stations', api_response[:expires_at]
   end
 
   def self.update_aggregate_stats
@@ -176,5 +173,27 @@ class SolarSystem
     end
 
     ApiLog.log 'aggregates', (24.hours - 10.minutes).from_now
+  end
+
+  def self.update_sovereignty
+    return unless ApiLog.expired? 'sovereignty'
+
+    api_response = EveApi.sovereignty
+
+    api_response[:rows].each do |row|
+      begin
+        system = find row['solarSystemID'].to_i
+
+        owner_id = nil
+        owner_id = row['allianceID'] unless row['allianceID'] == '0'
+        owner_id ||= row['factionID'] unless row['factionID'] == '0'
+
+        system.update_attributes(owner_id: owner_id)
+      rescue Mongoid::Errors::DocumentNotFound
+        next
+      end
+    end
+
+    ApiLog.log 'sovereignty', api_response[:expires_at]
   end
 end
