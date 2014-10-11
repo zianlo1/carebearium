@@ -18,20 +18,14 @@ nullsecRegex = /^[A-Z0-9]{1,5}-[A-Z0-9]{1,5}$/
 CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
   dataLoaded = $q.defer()
 
-  $q.all([
-    $http(url: '/api/solar_systems.json')
-    $http(url: '/api/solar_systems_static.json')
-  ]).then (results) ->
-    dynamicData = results[0].data
-    staticData  = results[1].data
-
-    for id, fields of staticData
+  $http(url: '/api/solar_systems.json').success (data) ->
+    for id, fields of data
       system = { id: id, name: CB.StaticData.SolarSystemNames[id] }
       system.regionID  = fields[0]
       system.region    = CB.StaticData.Regions[system.regionID]
       system.security  = fields[1]
       system.beltCount = fields[2]
-      system.ice       = fields[3] is 1
+      system.ice       = fields[3]
 
       system.stations = []
       for stationFields in fields[4]
@@ -43,23 +37,19 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
 
       system.jumps = fields[6]
 
+      system.manufacturing       = fields[7]
+      system.research_te         = fields[8]
+      system.research_me         = fields[9]
+      system.copying             = fields[10]
+      system.reverse_engineering = fields[11]
+      system.invention           = fields[12]
+
+      system.hourly_ships = fields[13]
+      system.hourly_pods  = fields[14]
+      system.hourly_npcs  = fields[15]
+      system.hourly_jumps = fields[16]
+
       CB.StaticData.SolarSystems[id] = system
-
-    for id, fields of dynamicData
-      CB.StaticData.SolarSystems[id] ||= { id: id, name: CB.StaticData.SolarSystemNames[id] }
-      CB.StaticData.SolarSystems[id].manufacturing       = fields[0]
-      CB.StaticData.SolarSystems[id].research_te         = fields[1]
-      CB.StaticData.SolarSystems[id].research_me         = fields[2]
-      CB.StaticData.SolarSystems[id].copying             = fields[3]
-      CB.StaticData.SolarSystems[id].reverse_engineering = fields[4]
-      CB.StaticData.SolarSystems[id].invention           = fields[5]
-      CB.StaticData.SolarSystems[id].hourly_ships        = fields[6]
-      CB.StaticData.SolarSystems[id].hourly_pods         = fields[7]
-      CB.StaticData.SolarSystems[id].hourly_npcs         = fields[8]
-      CB.StaticData.SolarSystems[id].hourly_jumps        = fields[9]
-
-      for stationFields in fields[10]
-        CB.StaticData.SolarSystems[id].stations.push fieldsToStation stationFields
 
     dataLoaded.resolve()
 

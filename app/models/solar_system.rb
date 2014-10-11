@@ -2,6 +2,28 @@ class SolarSystem
   include Mongoid::Document
   include Mongoid::Timestamps::Updated
 
+  field :region_id,   type: Integer
+  field :security,    type: Float
+  field :belt_count,  type: Integer
+  field :ice,         type: Boolean
+
+  field :stations, type: Hash, default: {}
+  field :agents,   type: Hash, default: {}
+
+  field :jumps, type: Array, default: []
+
+  field :manufacturing,       type: Float, default: 0.0
+  field :research_te,         type: Float, default: 0.0
+  field :research_me,         type: Float, default: 0.0
+  field :copying,             type: Float, default: 0.0
+  field :reverse_engineering, type: Float, default: 0.0
+  field :invention,           type: Float, default: 0.0
+
+  field :hourly_ships, type: Float, default: 0.0
+  field :hourly_pods,  type: Float, default: 0.0
+  field :hourly_npcs,  type: Float, default: 0.0
+  field :hourly_jumps, type: Float, default: 0.0
+
   STATION_TYPE_OPERATIONS = {
     21642 => 48,
     21644 => 49,
@@ -9,44 +31,88 @@ class SolarSystem
     21646 => 51
   }
 
-  NUMERIC_FIELDS = %w(
-    manufacturing
-    research_te
-    research_me
-    copying
-    reverse_engineering
-    invention
-    hourly_ships
-    hourly_pods
-    hourly_npcs
-    hourly_jumps
-  )
+  INDUSTRY_ACTIVITY_IDS = {
+    1 => :manufacturing,
+    3 => :research_te,
+    4 => :research_me,
+    5 => :copying,
+    7 => :reverse_engineering,
+    8 => :invention
+  }
 
-  DATA_FIELDS = NUMERIC_FIELDS + %w(
-    stations
-  )
+  NUMERIC_FIELDS = [
+    :security, :belt_count, :manufacturing, :research_te, :research_me, :copying, :reverse_engineering, :invention,
+    :hourly_ships, :hourly_pods, :hourly_npcs, :hourly_jumps
+  ]
 
-  NUMERIC_FIELDS.each do |f|
-    field f, type: Float, default: 0.0
-  end
+  LIMITS_FIELDS = NUMERIC_FIELDS + [
+    :stations, :agents, :jumps
+  ]
 
-  field :stations, type: Array, default: []
 
-  def self.dynamic_data
-    Rails.cache.fetch "SolarSystem#dynamic_data/#{max(:updated_at).to_i}" do
-      all.each_with_object({}) do |solar_sytem, map|
-        map[solar_sytem.id] = DATA_FIELDS.map { |field| solar_sytem.send(field) }
-      end
+
+  LIMITS_MAP_FUNCTION = <<-JS.freeze
+    function() {
+      #{NUMERIC_FIELDS.map { |f| "emit('#{f}', { min: this.#{f}, max: this.#{f} })" }.join('; ')};
+
+      var agentCount   = Object.keys(this.agents).length;
+      emit('agent_count', { min: agentCount, max: agentCount });
+
+      var stationCount = Object.keys(this.stations).length;
+      emit('station_count', { min: stationCount, max: stationCount });
+
+      emit('jump_count', { min: this.jumps.length, max: this.jumps.length });
+    }
+  JS
+
+  LIMITS_REDUCE_FUNCTION = <<-JS.freeze
+    function(key, values) {
+      var result = { min: 0, max: 0 }
+
+      for(var i in values){
+        if(values[i].min < result.min){ result.min = values[i].min }
+        if(values[i].max > result.max){ result.max = values[i].max }
+      }
+
+      return result;
+    }
+  JS
+
+  def self.data_json
+    Rails.cache.fetch "SolarSystem#data_json/#{max(:updated_at).to_i}" do
+      all.each_with_object({}) do |system, map|
+        map[system.id] = [
+          system.region_id,
+          system.security,
+          system.belt_count,
+          system.ice,
+          system.stations,
+          system.agents,
+          system.jumps,
+          system.manufacturing,
+          system.research_te,
+          system.research_me,
+          system.copying,
+          system.reverse_engineering,
+          system.invention,
+          system.hourly_ships,
+          system.hourly_pods,
+          system.hourly_npcs,
+          system.hourly_jumps
+        ]
+      end.to_json
     end
   end
 
   def self.limits_json
-    Rails.cache.fetch "SolarSystem#limits/#{max(:updated_at).to_i}" do
-      static_limits = MultiJson.load File.read(Rails.root.join 'public', 'api', 'limits_static.json')
+    Rails.cache.fetch "SolarSystem#limits_json/#{max(:updated_at).to_i}" do
+      limits = {}
 
-      NUMERIC_FIELDS.each_with_object(static_limits) do |field, map|
-        map[field] = { min: 0, max: max(field) }
-      end.to_json
+      map_reduce(LIMITS_MAP_FUNCTION, LIMITS_REDUCE_FUNCTION).out(inline: true).js_mode.each do |row|
+        limits[row['_id']] = row['value']
+      end
+
+      limits.to_json
     end
   end
 
@@ -60,18 +126,8 @@ class SolarSystem
         system = find row['solarSystem']['id']
         attrs  = {}
         row['systemCostIndices'].each do |item|
-          key = case item['activityID']
-                when 1 then :manufacturing
-                when 3 then :research_te
-                when 4 then :research_me
-                when 5 then :copying
-                when 7 then :reverse_engineering
-                when 8 then :invention
-                else
-                  next
-                end
-
-          attrs[key] = item['costIndex'].to_f.round(5)
+          key = INDUSTRY_ACTIVITY_IDS[item['activityID']]
+          attrs[key] = item['costIndex'].to_f.round(5) unless key.nil?
         end
         system.update_attributes attrs
       rescue Mongoid::Errors::DocumentNotFound
@@ -84,7 +140,6 @@ class SolarSystem
     ApiLog.log 'industry_indices', api_response[:expires_at]
   end
 
-  # {"stationID"=>"61000854", "stationName"=>"4-EP12 VIII - 4-EP12 Inches for Mittens", "stationTypeID"=>"21645", "solarSystemID"=>"30004553", "corporationID"=>"667531913", "corporationName"=>"GoonWaffe"}
   def self.update_conquerable_stations
     return unless ApiLog.expired? 'conquerable_stations'
 

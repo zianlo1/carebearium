@@ -6,7 +6,7 @@ class SolarSystemsController < ApplicationController
     cache_key   = "solar_systems#index/#{last_update.to_i}"
 
     if stale?(last_modified: last_update, etag: cache_key, public: true)
-      render json: SolarSystem.dynamic_data.to_json
+      render json: SolarSystem.data_json
     end
   end
 end
