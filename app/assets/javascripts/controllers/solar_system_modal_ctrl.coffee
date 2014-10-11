@@ -6,4 +6,4 @@ CB.controller 'SolarSystemModalCtrl', ($scope, $http, solarSystem) ->
 
   for agent in $scope.solarSystem.agents
     agent.divisionName    = CB.StaticData.AgentDivisions[agent.division]
-    agent.corporationName = CB.StaticData.Corporations[agent.corporationID]
+    agent.corporationName = CB.StaticData.Corporations[agent.corporation_id]

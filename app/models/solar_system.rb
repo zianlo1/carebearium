@@ -144,7 +144,7 @@ class SolarSystem
     api_response[:rows].each do |row|
       begin
         system = find row['solarSystemID'].to_i
-        system.stations[row['stationID'].to_i] = { name: row['stationName'], operation_id: STATION_TYPE_OPERATIONS[row[:stationTypeID].to_i] }
+        system.stations[row['stationID'].to_i] = { name: row['stationName'], operation_id: STATION_TYPE_OPERATIONS[row['stationTypeID'].to_i] }
         system.save
       rescue Mongoid::Errors::DocumentNotFound
         next
@@ -193,6 +193,8 @@ class SolarSystem
         next
       end
     end
+
+    SolarSystemOwner.update_names
 
     ApiLog.log 'sovereignty', api_response[:expires_at]
   end

@@ -12,17 +12,21 @@ class EveApi
   end
 
   def self.conquerable_stations
-    formatted_response("/Eve/ConquerableStationList.xml.aspx", throttle_update: 24.hours)
+    formatted_response "/Eve/ConquerableStationList.xml.aspx", throttle_update: 24.hours
   end
 
   def self.sovereignty
-    formatted_response("/Map/Sovereignty.xml.aspx", throttle_update: 24.hours)
+    formatted_response "/Map/Sovereignty.xml.aspx", throttle_update: 24.hours
+  end
+
+  def self.names(ids)
+    formatted_response "/Eve/CharacterName.xml.aspx", query: { ids: Array(ids).join(',') }
   end
 
   private
 
-  def self.formatted_response(endpoint, throttle_update: 0)
-    response = get(endpoint).parsed_response['eveapi']
+  def self.formatted_response(endpoint, throttle_update: 0, query: {})
+    response = get(endpoint, query: query).parsed_response['eveapi']
 
     utc = ActiveSupport::TimeZone.new('UTC')
 

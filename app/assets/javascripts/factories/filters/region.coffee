@@ -19,6 +19,6 @@ class CB.Filters.Region extends CB.Filters.Dropdown
 
   filterFunction: (item) =>
     if @options.choice
-      item.regionID is @options.choice
+      item.region_id is @options.choice
     else
       true

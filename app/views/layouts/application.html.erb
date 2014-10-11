@@ -3,11 +3,14 @@
   <head>
     <title>Carebearium</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <script>
+      CBStaticPreload = {}
+      CBStaticPreload.SolarSystems = {};
+      CBStaticPreload.SolarSystemOwnerNames = <%= raw SolarSystemOwner.names_json %>;
+      CBStaticPreload.Limits = <%= raw SolarSystem.limits_json %>;
+    </script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <script>
-      CB.StaticData.Limits = <%= raw SolarSystem.limits_json %>
-    </script>
     <base href="/">
   </head>
   <body>

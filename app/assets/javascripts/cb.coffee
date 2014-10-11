@@ -9,8 +9,7 @@ window.CB = angular.module 'CB', [
   'ngAnimate'
 ]
 
-CB.StaticData =
-  SolarSystems: {}
+CB.StaticData = CBStaticPreload
 CB.Filters = {}
 CB.Helpers = {}
 

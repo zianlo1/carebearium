@@ -1,5 +1,5 @@
 fieldsToAgent = (fields) ->
-  { corporationID: fields[0], level: fields[1], division: fields[2] }
+  { corporation_id: fields[0], level: fields[1], division: fields[2] }
 
 fieldsToStation = (fields) ->
   station  = { name: fields[0] }
@@ -21,11 +21,11 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
   $http(url: '/api/solar_systems.json').success (data) ->
     for id, fields of data
       system = { id: id, name: CB.StaticData.SolarSystemNames[id] }
-      system.regionID  = fields[0]
-      system.region    = CB.StaticData.Regions[system.regionID]
-      system.security  = fields[1]
-      system.beltCount = fields[2]
-      system.ice       = fields[3]
+      system.region_id  = fields[0]
+      system.region     = CB.StaticData.Regions[system.region_id]
+      system.security   = fields[1]
+      system.belt_count = fields[2]
+      system.ice        = fields[3]
 
       system.stations = []
       for stationFields in fields[4]
@@ -48,6 +48,9 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
       system.hourly_pods  = fields[14]
       system.hourly_npcs  = fields[15]
       system.hourly_jumps = fields[16]
+
+      system.owner_id = fields[17]
+      system.owner    = CB.StaticData.SolarSystemOwnerNames[system.owner_id]
 
       CB.StaticData.SolarSystems[id] = system
 

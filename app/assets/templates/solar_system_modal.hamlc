@@ -11,7 +11,9 @@
         %dt Secuirty status
         %dd {{ solarSystem.security | number: 1 }}
         %dt Asteroid belts
-        %dd {{ solarSystem.beltCount }}
+        %dd {{ solarSystem.belt_count }}
+        %dt Owner
+        %dd {{ solarSystem.owner }}
 
       %dl.dl-horizontal
         %dt Ship kills / h

@@ -29,7 +29,7 @@ class CB.Filters.Agent extends CB.Filters.Base
       matches = matches and agent.division is @options.division
 
     if matches and @options.corporation
-      matches = matches and agent.corporationID is @options.corporation
+      matches = matches and agent.corporation_id is @options.corporation
 
     matches
 
