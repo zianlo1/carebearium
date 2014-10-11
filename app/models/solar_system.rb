@@ -45,12 +45,6 @@ class SolarSystem
     :hourly_ships, :hourly_pods, :hourly_npcs, :hourly_jumps
   ]
 
-  LIMITS_FIELDS = NUMERIC_FIELDS + [
-    :stations, :agents, :jumps
-  ]
-
-
-
   LIMITS_MAP_FUNCTION = <<-JS.freeze
     function() {
       #{NUMERIC_FIELDS.map { |f| "emit('#{f}', { min: this.#{f}, max: this.#{f} })" }.join('; ')};
