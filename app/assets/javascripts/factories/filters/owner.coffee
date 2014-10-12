@@ -5,7 +5,7 @@ class CB.Filters.Owner extends CB.Filters.Dropdown
 
   promptText: 'Select owner...'
 
-  filterName: 'Owner'
+  filterName: 'Owned by'
 
   dropdownChoices: CB.StaticData.SolarSystemOwnerNames
 
