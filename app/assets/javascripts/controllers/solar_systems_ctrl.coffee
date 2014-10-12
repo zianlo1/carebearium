@@ -6,6 +6,7 @@ CB.controller 'SolarSystemsCtrl', ($scope, $timeout, $modal, Storage, SolarSyste
   $scope.fields = {}
   $scope.loading = true
   $scope.availableFilters = {}
+  $scope.linkHash = ''
 
   find = ->
     $scope.loading = true
@@ -17,6 +18,8 @@ CB.controller 'SolarSystemsCtrl', ($scope, $timeout, $modal, Storage, SolarSyste
         $scope.fields = results.fields
         $scope.sort = results.sort
         $scope.solarSystems = results.data
+
+        $scope.linkHash = CB.Helpers.objectToString { f: $scope.filters, s: $scope.sort }
 
         Storage.set 'filters', $scope.filters
         Storage.set 'sort', $scope.sort

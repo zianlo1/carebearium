@@ -27,6 +27,10 @@ CB.config ($routeProvider) ->
       template: JST['news']
       controller: 'NewsCtrl'
     ).
+    when('/link/:hash',
+      template: JST['link']
+      controller: 'LinkCtrl'
+    ).
     otherwise({
       redirectTo: '/solar_systems'
     })
@@ -40,5 +44,5 @@ CB.config ($analyticsProvider) ->
 
 CB.run ($rootScope, $location, Storage, $window) ->
   $rootScope.$on "$routeChangeStart", (event, next, current) ->
-    unless Storage.get('seenAbout') or next.$$route.controller is 'AboutCtrl'
+    unless Storage.get('seenAbout') or next.$$route.controller in ['AboutCtrl', 'LinkCtrl']
       $location.path "/about/"

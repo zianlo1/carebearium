@@ -23,3 +23,11 @@
     %tr{ ng-repeat: "solarSystem in solarSystems track by $index", ng-click: 'showInModal(solarSystem)' }
       %td{ ng-repeat: "field in fields track by $index" }
         {{ field.display(solarSystem)  }}
+
+.text-center
+  %a{ ng-href: '/link/{{ linkHash }}', target: '_blank' }
+    %span.glyphicon.glyphicon-share
+    %strong
+      Copy this link to share current filter
+    %span{ ng-if: 'linkHash.length > 2000' }
+      (will not work in IE)

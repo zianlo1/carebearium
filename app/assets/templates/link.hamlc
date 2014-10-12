@@ -1,0 +1,11 @@
+.jumbotron
+  %h1
+    Link HP: -14%
+  %p.alert.alert-danger
+    %strong
+      This link is broken.
+    Probably because we changed something. Sorry about that.
+
+  .text-center
+    %a.btn.btn-primary.btn-lg{ href: '#/solar_systems/'}
+      Back to start
