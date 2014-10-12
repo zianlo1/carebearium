@@ -3,7 +3,7 @@ fieldsToAgent = (fields) ->
 
 fieldsToStation = (fields) ->
   station  = { name: fields[0] }
-  services = CB.StaticData.StationOperations[fields[1]]
+  services = CB.StaticData.StationOperations[fields[1]] || []
 
   station.refinery  = 32 in services
   station.repair    = 4096 in services
