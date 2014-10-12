@@ -50,7 +50,8 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
       true
 
   mapFunction: (item) =>
-    item[@fieldName] = @reachableSystems[item.id]
+    if @options.system
+      item[@fieldName] = @reachableSystems[item.id]
     item
 
   visibleField: =>

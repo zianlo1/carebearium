@@ -25,7 +25,8 @@ class CB.Filters.DistanceLightyears extends CB.Filters.Base
       true
 
   mapFunction: (item) =>
-    item[@fieldName] = Math.sqrt(@distanceBetweenSquared @systemCoordinates, item).toFixed(2)
+    if @options.system
+      item[@fieldName] = Math.sqrt(@distanceBetweenSquared @systemCoordinates, item).toFixed(2)
     item
 
   translateFunction: (i) => i / @scale
