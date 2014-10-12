@@ -17,11 +17,9 @@ class SolarSystemOwner
     end
   end
 
-  def self.names_json
-    Rails.cache.fetch "SolarSystemOwner#names_json/#{max(:updated_at).to_i}" do
-      all.each_with_object({}) do |owner, map|
-        map[owner.id] = owner.name
-      end.to_json
+  def self.names
+    all.each_with_object({}) do |owner, map|
+      map[owner.id] = owner.name
     end
   end
 end

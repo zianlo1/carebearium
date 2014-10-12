@@ -77,45 +77,37 @@ class SolarSystem
     }
   JS
 
-  def self.data_json
-    Rails.cache.fetch "SolarSystem#data_json/#{max(:updated_at).to_i}" do
-      all.each_with_object({}) do |system, map|
-        map[system.id] = [
-          system.region_id,
-          system.security,
-          system.belt_count,
-          system.ice,
-          system.stations.map{ |id, s| [s[:name], s[:operation_id]] },
-          system.agents.map{ |id, a| [a[:corporation_id], a[:level], a[:division]] },
-          system.jumps,
-          system.manufacturing,
-          system.research_te,
-          system.research_me,
-          system.copying,
-          system.reverse_engineering,
-          system.invention,
-          system.hourly_ships,
-          system.hourly_pods,
-          system.hourly_npcs,
-          system.hourly_jumps,
-          system.owner_id,
-          system.x,
-          system.y,
-          system.z
-        ]
-      end.to_json
+  def self.data
+    all.each_with_object({}) do |system, map|
+      map[system.id] = [
+        system.region_id,
+        system.security,
+        system.belt_count,
+        system.ice,
+        system.stations.map{ |id, s| [s[:name], s[:operation_id]] },
+        system.agents.map{ |id, a| [a[:corporation_id], a[:level], a[:division]] },
+        system.jumps,
+        system.manufacturing,
+        system.research_te,
+        system.research_me,
+        system.copying,
+        system.reverse_engineering,
+        system.invention,
+        system.hourly_ships,
+        system.hourly_pods,
+        system.hourly_npcs,
+        system.hourly_jumps,
+        system.owner_id,
+        system.x,
+        system.y,
+        system.z
+      ]
     end
   end
 
-  def self.limits_json
-    Rails.cache.fetch "SolarSystem#limits_json/#{max(:updated_at).to_i}" do
-      limits = {}
-
-      map_reduce(LIMITS_MAP_FUNCTION, LIMITS_REDUCE_FUNCTION).out(inline: true).js_mode.each do |row|
-        limits[row['_id']] = row['value']
-      end
-
-      limits.to_json
+  def self.limits
+    map_reduce(LIMITS_MAP_FUNCTION, LIMITS_REDUCE_FUNCTION).out(inline: true).js_mode.each_with_object({}) do |row,limits|
+      limits[row['_id']] = row['value']
     end
   end
 

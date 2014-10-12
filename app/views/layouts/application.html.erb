@@ -6,8 +6,8 @@
     <script>
       CBStaticPreload = {}
       CBStaticPreload.SolarSystems = {};
-      CBStaticPreload.SolarSystemOwnerNames = <%= raw SolarSystemOwner.names_json %>;
-      CBStaticPreload.Limits = <%= raw SolarSystem.limits_json %>;
+      CBStaticPreload.SolarSystemOwnerNames = <%= raw @solar_system_owner_names %>;
+      CBStaticPreload.Limits = <%= raw @solar_system_limits %>;
     </script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>

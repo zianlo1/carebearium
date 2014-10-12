@@ -6,7 +6,10 @@ class SolarSystemsController < ApplicationController
     cache_key   = "solar_systems#index/#{last_update.to_i}"
 
     if stale?(last_modified: last_update, etag: cache_key, public: true)
-      render json: SolarSystem.data_json
+      json = Rails.cache.fetch cache_key do
+        SolarSystem.data.to_json
+      end
+      render json: json
     end
   end
 end
