@@ -22,6 +22,7 @@ CB.factory 'FilterManager', ->
     region:               CB.Filters.Region
     agent:                CB.Filters.Agent
     distance_jumps:       CB.Filters.DistanceJumps
+    distance_lightyears:  CB.Filters.DistanceLightyears
     owner:                CB.Filters.Owner
 
   for key, value of CB.StaticData.Limits

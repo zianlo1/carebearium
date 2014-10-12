@@ -10,7 +10,7 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
   securityOptions:
     '0.5': 'hisec'
     '0.1': 'hisec & lowsec'
-    # '-1':  'by any space'
+    '-1':  'by any space'
 
   prepare: =>
     @reachableSystems = {}
