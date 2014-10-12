@@ -14,7 +14,7 @@
       %span.glyphicon.glyphicon-user
       %h3 Mission agents!
 
-    %a.col-xs-6.col-md-3{ ng-click: "filterWithPreset([{ kind: 'security', max: 7 }, { kind: 'belt_count', min: 10 }, { kind: 'station_service', choice: 'refinery' }], ['beltCount', 'desc'])" }
+    %a.col-xs-6.col-md-3{ ng-click: "filterWithPreset([{ kind: 'security', min: 5, max: 7 }, { kind: 'belt_count', min: 10 }, { kind: 'station_service', choice: 'refinery' }], ['beltCount', 'desc'])" }
       %span.glyphicon.glyphicon-film
       %h3 Mining options!
 

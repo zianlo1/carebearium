@@ -2,10 +2,24 @@
   %h1
     What's new in Carebearium
 
+%h3#news-12102014 12.10.2014
+%ul
+  %li
+    %a{ ng-click: "filterWithPreset([{ kind: 'security', max: 0 }], ['name', 'asc'])" }
+      Nullsec systems are now in!
+  %li
+    You can now filter by distance to another system in lightyears
+    %a{ ng-click: "filterWithPreset([{ kind: 'distance_lightyears', system: 30002537, distance: 500 }], ['distance_lightyears_30002537', 'desc'])" }
+      Example
+  %li
+    You can now filter by system owners - both NPC factions and player alliances
+    %a{ ng-click: "filterWithPreset([{ kind: 'owner', choice: 500001 }], ['name', 'asc'])" }
+      Example
+
 %h3#news-08102014 08.10.2014
 %ul
   %li
-    %a{ ng-click: "filterWithPreset([{ kind: 'security', max: 4 }], ['name', 'asc'])" }
+    %a{ ng-click: "filterWithPreset([{ kind: 'security', min: 1, max: 4 }], ['name', 'asc'])" }
       Lowsec systems are now in!
   %li
     With addition of lowsec systems, you can now select either hisec or hisec + lowsec routing when filtering by jump distance.
