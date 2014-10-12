@@ -20,10 +20,8 @@ module Carebearium
     config.hamlcoffee.uglify = true
 
     config.generators do |g|
-      g.assets              false
-      g.helper              false
+      g.assets false
+      g.helper false
     end
-
-    config.cache_store = :dalli_store
   end
 end
