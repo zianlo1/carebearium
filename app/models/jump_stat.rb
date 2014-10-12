@@ -22,22 +22,8 @@ class JumpStat
   DEFAULT_SUMMARY = { jumps: 0 }.freeze
 
   def self.update
-    return unless ApiLog.expired? 'jumps'
-
-    api_response = EveApi.jumps
-
-    api_response[:rows].each do |row|
-      begin
-        create(
-          solar_system_id: row['solarSystemID'],
-          jumps:           row['shipJumps']
-        )
-      rescue => e
-        Rails.logger.warn "#{e} updating jumps: #{row}"
-      end
+    ApiLog.call 'jumps', ->{ EveApi.jumps }, finally: -> { ApiLog.expire! 'aggregates' } do |row|
+      create(solar_system_id: row['solarSystemID'], jumps: row['shipJumps'])
     end
-
-    ApiLog.log 'jumps', api_response[:expires_at]
-    ApiLog.log 'aggregates', 1.minute.ago
   end
 end

@@ -13,4 +13,28 @@ class ApiLog
     record = where(name: name).first
     record.nil? || record.expires_at <= Time.current
   end
+
+  def self.expire!(name)
+    log name, 1.minute.ago
+  end
+
+  def self.call(name, lambda, finally: ->{})
+    return unless expired? name
+
+    api_response = lambda.call
+
+    api_response[:rows].each do |row|
+      begin
+        yield row
+      rescue Mongoid::Errors::DocumentNotFound
+        next
+      rescue => e
+        Rails.logger.warn "#{e}, #{name} row: #{row}"
+      end
+    end
+
+    finally.call
+
+    ApiLog.log name, api_response[:expires_at]
+  end
 end
