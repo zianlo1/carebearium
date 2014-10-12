@@ -25,6 +25,10 @@ class SolarSystem
   field :hourly_npcs,  type: Float, default: 0.0
   field :hourly_jumps, type: Float, default: 0.0
 
+  field :x, type: Float
+  field :y, type: Float
+  field :z, type: Float
+
   STATION_TYPE_OPERATIONS = {
     21642 => 48,
     21644 => 49,
@@ -94,7 +98,10 @@ class SolarSystem
           system.hourly_pods,
           system.hourly_npcs,
           system.hourly_jumps,
-          system.owner_id
+          system.owner_id,
+          system.x,
+          system.y,
+          system.z
         ]
       end.to_json
     end

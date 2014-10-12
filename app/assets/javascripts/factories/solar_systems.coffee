@@ -52,6 +52,10 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
       system.owner_id = fields[17]
       system.owner    = CB.StaticData.SolarSystemOwnerNames[system.owner_id]
 
+      system.x = fields[18]
+      system.y = fields[19]
+      system.z = fields[20]
+
       CB.StaticData.SolarSystems[id] = system
 
     dataLoaded.resolve()

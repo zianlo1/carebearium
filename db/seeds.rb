@@ -7,7 +7,7 @@ p 'Preparing data'
 systems  = {}
 
 read_file('solar_systems.json').each do |row|
-  system = row.slice(:regionID, :security, :beltCount)
+  system = row.slice(:regionID, :security, :beltCount, :x, :y, :z)
 
   system[:stations] = []
   system[:agents]   = []
@@ -53,7 +53,10 @@ systems.each do |id, system|
     security:   system[:security],
     belt_count: system[:beltCount],
     ice:        !!system[:ice],
-    jumps:      system[:jumps]
+    jumps:      system[:jumps],
+    x:          system[:x],
+    y:          system[:y],
+    z:          system[:z]
   }
 
   attrs[:stations] = system[:stations].each_with_object({}) do |station, stations|
