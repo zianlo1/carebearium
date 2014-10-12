@@ -6,25 +6,30 @@
   %p
     Carebearium will enable you to search EvE solar systems by:
   .row#features
-    %a.col-xs-6.col-md-3{ ng-click: "filterWithPreset([{ kind: 'manufacturing' }, { kind: 'copying' }, { kind: 'station_service', choice: 'lab' }, { kind: 'station_service', choice: 'factory' }], ['manufacturing', 'asc'])" }
+    %a.col-xs-6.col-md-4{ ng-click: "filterWithPreset([{ kind: 'manufacturing' }, { kind: 'copying' }, { kind: 'station_service', choice: 'lab' }, { kind: 'station_service', choice: 'factory' }], ['manufacturing', 'asc'])" }
       %span.glyphicon.glyphicon-cog
       %h3 Industry indices!
 
-    %a.col-xs-6.col-md-3{ ng-click: "filterWithPreset([{ kind: 'agent_count', min: 1 }, { kind: 'agent' }], ['agentCount', 'desc'])" }
+    %a.col-xs-6.col-md-4{ ng-click: "filterWithPreset([{ kind: 'agent_count', min: 1 }, { kind: 'agent' }], ['agentCount', 'desc'])" }
       %span.glyphicon.glyphicon-user
       %h3 Mission agents!
 
-    %a.col-xs-6.col-md-3{ ng-click: "filterWithPreset([{ kind: 'security', min: 5, max: 7 }, { kind: 'belt_count', min: 10 }, { kind: 'station_service', choice: 'refinery' }], ['beltCount', 'desc'])" }
+    %a.col-xs-6.col-md-4{ ng-click: "filterWithPreset([{ kind: 'security', min: 5, max: 7 }, { kind: 'belt_count', min: 10 }, { kind: 'station_service', choice: 'refinery' }, { kind: 'system_feature', choice: 'ice' }], ['belt_count', 'desc'])" }
       %span.glyphicon.glyphicon-film
       %h3 Mining options!
 
-    %a.col-xs-6.col-md-3{ ng-click: "filterWithPreset([{ kind: 'hourly_ships' }, { kind: 'hourly_pods' }], ['hourly_ships', 'asc'])" }
+    %a.col-xs-6.col-md-4{ ng-click: "filterWithPreset([{ kind: 'hourly_ships' }, { kind: 'hourly_pods' }, { kind: 'hourly_npcs' }], ['hourly_ships', 'asc'])" }
       %span.glyphicon.glyphicon-fire
-      %h3 Lack of PvP!
-  %p
-    More features added
-    %strike daily
-    regularly!
+      %h3 Player activity!
+
+    %a.col-xs-6.col-md-4{ ng-click: "filterWithPreset([{ kind: 'distance_jumps', system: 30000142, distance: 15, security: -1 }, { kind: 'distance_lightyears', system: 30000142, distance: 500 }, { kind: 'security', max: 4 }], ['distance_jumps_30000142_-1', 'asc'])" }
+      %span.glyphicon.glyphicon-globe
+      %h3 Travel distance!
+
+    %a.col-xs-6.col-md-4{ ng-click: "filterWithPreset([{ kind: 'hourly_jumps' }, { kind: 'jump_count', max: 1 }], ['hourly_jumps', 'asc'])" }
+      %span.glyphicon.glyphicon-eye-close
+      %h3 Seclusion!
+
 
   .text-center
     %a.btn.btn-primary.btn-lg{ href: '#/solar_systems/'}

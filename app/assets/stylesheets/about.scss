@@ -1,9 +1,12 @@
 #features {
-  padding-top: $scale-unit * 5;
   padding-bottom: $scale-unit * 5;
   text-align: center;
 
   .glyphicon {
     font-size: 72pt;
+  }
+
+  a {
+    padding-top: $scale-unit * 5;
   }
 }
