@@ -11,6 +11,7 @@
   .col-sm-1.col-xs-2.text-right
     %button.btn.btn-default{ ng-click: 'removeAllFilters()' }
       %span.glyphicon.glyphicon-remove
+
 %hr
 
 %table#solar-systems.table.table-condensed.table-hover{ ng-class: "{ 'loading': loading}" }
@@ -24,7 +25,12 @@
       %td{ ng-repeat: "field in fields track by $index" }
         {{ field.display(solarSystem)  }}
 
-.text-center
+.text-center{ ng-if: 'loading'}
+  %h1
+    %span.glyphicon.glyphicon-cloud-download
+    Loading...
+
+.text-center{ ng-if: '!loading'}
   %a{ ng-href: '/link/{{ linkHash }}', target: '_blank' }
     %span.glyphicon.glyphicon-share
     %strong
