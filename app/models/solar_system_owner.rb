@@ -5,7 +5,7 @@ class SolarSystemOwner
   field :name, type: String
 
   def self.update_names
-    current_owner_ids = SolarSystem.distinct(:owner_id)
+    current_owner_ids = SolarSystem.distinct(:owner_id).compact
 
     nin(id: current_owner_ids).delete_all
 
