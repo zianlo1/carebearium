@@ -2,7 +2,7 @@ class SolarSystemsController < ApplicationController
   respond_to :json
 
   def index
-    last_update = ApiLog.max(:called_at)
+    last_update = ApiLog.last_significant_update
     cache_key   = "solar_systems#index/#{last_update.to_i}"
 
     if stale?(last_modified: last_update, etag: cache_key, public: true)

@@ -1,6 +1,6 @@
 class LandingController < ApplicationController
   def show
-    last_update = ApiLog.max(:called_at)
+    last_update = ApiLog.last_significant_update
 
     @solar_system_owner_names = Rails.cache.fetch "solar_system_owner_names/#{last_update.to_i}" do
       SolarSystemOwner.names.to_json

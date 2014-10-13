@@ -26,7 +26,7 @@ class KillStat
   DEFAULT_SUMMARY = { ship_kills: 0, pod_kills: 0, npc_kills: 0 }.freeze
 
   def self.update
-    ApiLog.call 'kills', ->{ EveApi.kills }, finally: -> { ApiLog.expire! 'aggregates' } do |row|
+    ApiLog.call 'kills', ->{ EveApi.kills } do |row|
       create(
         solar_system_id: row['solarSystemID'],
         ship_kills:      row['shipKills'],

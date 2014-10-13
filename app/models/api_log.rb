@@ -5,6 +5,14 @@ class ApiLog
   field :called_at,  type: ActiveSupport::TimeWithZone
   field :expires_at, type: ActiveSupport::TimeWithZone
 
+  def self.without_hourly_updates
+    nin(name: ['kills', 'jumps'])
+  end
+
+  def self.last_significant_update
+    without_hourly_updates.max(:called_at)
+  end
+
   def self.log(name, expires)
     find_or_create_by(name: name).update_attributes(called_at: Time.current, expires_at: expires)
   end
@@ -12,10 +20,6 @@ class ApiLog
   def self.expired?(name)
     record = where(name: name).first
     record.nil? || record.expires_at <= Time.current
-  end
-
-  def self.expire!(name)
-    log name, 1.minute.ago
   end
 
   def self.call(name, lambda, finally: ->{})

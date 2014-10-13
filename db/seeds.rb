@@ -71,5 +71,5 @@ systems.each do |id, system|
 end
 
 p 'Forcing refresh'
-ApiLog.nin(name: ['kills', 'jumps']).delete_all
+ApiLog.without_hourly_updates.delete_all
 Rake::Task['update'].invoke

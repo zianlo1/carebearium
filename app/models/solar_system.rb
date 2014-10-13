@@ -161,6 +161,6 @@ class SolarSystem
       )
     end
 
-    ApiLog.log 'aggregates', (24.hours - 10.minutes).from_now
+    ApiLog.log 'aggregates', (4.hours - 10.minutes).from_now
   end
 end

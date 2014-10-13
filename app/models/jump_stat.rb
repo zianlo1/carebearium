@@ -22,7 +22,7 @@ class JumpStat
   DEFAULT_SUMMARY = { jumps: 0 }.freeze
 
   def self.update
-    ApiLog.call 'jumps', ->{ EveApi.jumps }, finally: -> { ApiLog.expire! 'aggregates' } do |row|
+    ApiLog.call 'jumps', ->{ EveApi.jumps } do |row|
       create(solar_system_id: row['solarSystemID'], jumps: row['shipJumps'])
     end
   end
