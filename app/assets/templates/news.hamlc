@@ -8,6 +8,21 @@
     You can now filter by
     %a{ ng-click: "filterWithPreset([{ kind: 'station_service', choice: 'cloning' }], ['name', 'asc'])" }
       station service - cloning
+  %li
+    You can now filter by
+    %a{ ng-click: "filterWithPreset([{ kind: 'moon_count', min: 100 }], ['moon_count', 'desc'])" }
+      moon count in system
+  %li
+    You can now filter by
+    %a{ ng-click: "filterWithPreset([{ kind: 'planet_count', min: 10 }, { kind: 'planet', choice: '11' }], ['planet_count', 'desc'])" }
+      planet count and presence of specific planets
+  %li
+    %a{ ng-click: "filterWithPreset([{ kind: 'region', choice: ['10000002', '10000033'] }], ['name', 'asc'])" }
+      Region
+    and
+    %a{ ng-click: "filterWithPreset([{ kind: 'owner', choice: ['500001', '500002'] }], ['name', 'asc'])" }
+      solar system owner
+    filters now take multiple values
 
 %h3#news-12102014 12.10.2014
 %ul
