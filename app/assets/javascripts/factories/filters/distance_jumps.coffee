@@ -5,7 +5,7 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
     super(@options)
 
     @options.min = 0 if angular.isUndefined @options.min
-    @options.max = 1 if angular.isUndefined @options.max
+    @options.max = 10 if angular.isUndefined @options.max
     @options.security = '0.5' if angular.isUndefined @options.security
 
   securityOptions:
