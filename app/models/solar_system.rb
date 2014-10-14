@@ -11,6 +11,7 @@ class SolarSystem
 
   field :stations, type: Hash, default: {}
   field :agents,   type: Hash, default: {}
+  field :planets,  type: Hash, default: {}
 
   field :jumps, type: Array, default: []
 
@@ -61,6 +62,12 @@ class SolarSystem
       var stationCount = Object.keys(this.stations).length;
       emit('station_count', { min: stationCount, max: stationCount });
 
+      var planetCount = 0;
+      for (var type in this.planets) {
+        planetCount += this.planets[type];
+      }
+      emit('planet_count', { min: planetCount, max: planetCount });
+
       emit('jump_count', { min: this.jumps.length, max: this.jumps.length });
     }
   JS
@@ -102,7 +109,8 @@ class SolarSystem
         system.x,
         system.y,
         system.z,
-        system.moon_count
+        system.moon_count,
+        system.planets
       ]
     end
   end

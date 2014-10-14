@@ -11,6 +11,7 @@ read_file('solar_systems.json').each do |row|
 
   system[:stations] = []
   system[:agents]   = []
+  system[:planets]  = []
 
   systems[row[:id]] = system
 end
@@ -42,6 +43,11 @@ read_file('jumps.json').each do |row|
   systems[row[:from]][:jumps] = row[:to].split(',').map(&:to_i).sort
 end
 
+read_file('planets.json').each do |row|
+  next unless systems[row[:solarSystemID]]
+  systems[row[:solarSystemID]][:planets] << row.slice(:typeID, :count)
+end
+
 p 'Deleting old data'
 SolarSystem.delete_all
 
@@ -66,6 +72,10 @@ systems.each do |id, system|
 
   attrs[:agents] = system[:agents].each_with_object({}) do |agent, agents|
     agents[agent[:id]] = { level: agent[:level], division: divisionMap[agent[:division]], corporation_id: agent[:corporationID] }
+  end
+
+  attrs[:planets] = system[:planets].each_with_object({}) do |planet, planets|
+    planets[planet[:typeID]] = planet[:count]
   end
 
   SolarSystem.create(attrs)

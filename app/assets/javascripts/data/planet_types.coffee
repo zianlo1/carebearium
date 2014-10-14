@@ -1,0 +1,1 @@
+CB.StaticData.PlanetTypes = {"11":"Temperate","13":"Gas","2014":"Oceanic","2016":"Barren","2015":"Lava","12":"Ice","2017":"Storm","2063":"Plasma","30889":"Shattered"}

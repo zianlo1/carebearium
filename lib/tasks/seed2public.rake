@@ -77,8 +77,18 @@ if Rails.env.development?
 
       write_static_data 'StationOperations', output
     end
+
+    task :planet_types do
+      output = {}
+
+      read_file('planets.json').each do |row|
+        output[row[:typeID]] = row[:typeName].match(/Planet \((.*)\)/).captures[0]
+      end
+
+      write_static_data 'PlanetTypes', output
+    end
   end
 
   desc "Convert seed files to public"
-  task seed2public: %w(solar_systems agents corporations regions operations).map{ |t| "seed2public:#{t}" }
+  task seed2public: %w(solar_systems agents corporations regions operations planet_types).map{ |t| "seed2public:#{t}" }
 end

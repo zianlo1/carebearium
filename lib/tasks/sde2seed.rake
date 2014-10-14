@@ -102,8 +102,21 @@ if Rails.env.development?
         order by operationID
       SQL
     end
+
+    task :planets do
+      dump_query 'planets.json', <<-SQL
+        select m.solarSystemID, m.typeID, t.typeName, count(*) as count
+        from mapDenormalize m
+        join invTypes t on t.typeId = m.typeId
+        where t.groupID = 7
+        and m.regionID < 11000000
+        and m.regionID not in (10000004, 10000017, 10000019)
+        group by m.solarSystemID, m.typeID
+        order by m.solarSystemID, m.typeID
+      SQL
+    end
   end
 
   desc "Convert SDE data to db seeds"
-  task sde2seed: %w(solar_systems regions stations agents corporations jumps operations).map{ |t| "sde2seed:#{t}" }
+  task sde2seed: %w(solar_systems regions stations agents corporations jumps operations planets).map{ |t| "sde2seed:#{t}" }
 end
