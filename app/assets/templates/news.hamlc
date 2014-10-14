@@ -2,19 +2,26 @@
   %h1
     What's new in Carebearium
 
+%h3#news-14102014 14.10.2014
+%ul
+  %li
+    You can now filter by
+    %a{ ng-click: "filterWithPreset([{ kind: 'station_service', choice: 'cloning' }], ['name', 'asc'])" }
+      station service - cloning
+
 %h3#news-12102014 12.10.2014
 %ul
   %li
     %a{ ng-click: "filterWithPreset([{ kind: 'security', max: 0 }], ['name', 'asc'])" }
       Nullsec systems are now in!
   %li
-    You can now filter by distance to another system in lightyears
+    You can now filter by
     %a{ ng-click: "filterWithPreset([{ kind: 'distance_lightyears', system: 30002537, distance: 500 }], ['distance_lightyears_30002537', 'desc'])" }
-      Example
+      distance to another system in lightyears
   %li
-    You can now filter by system owners - both NPC factions and player alliances
+    You can now filter by
     %a{ ng-click: "filterWithPreset([{ kind: 'owner', choice: 500001 }], ['name', 'asc'])" }
-      Example
+      system owners - both NPC factions and player alliances
   %li
     Share your findings! There's now a link below results table that will allow you to share the active filter with others
 
@@ -36,13 +43,13 @@
 %h3#news-30092014 30.09.2014
 %ul
   %li
-    You can now filter for systems that can spawn ice belts
+    You can now filter for
     %a{ ng-click: "filterWithPreset([{ kind: 'system_feature', choice: 'ice'}], ['name', 'asc'])" }
-      Example
+      systems that can spawn ice belts
   %li
-    You can now filter for dead-end systems (only one stargate)
+    You can now filter for
     %a{ ng-click: "filterWithPreset([{ kind: 'jump_count', max: 1}], ['name', 'asc'])" }
-      Example
+      dead-end systems (only one stargate)
 
 %h3#news-17092014 17.09.2014
 %ul
@@ -58,17 +65,17 @@
   %li Carebearium now remembers what you filtered by last time
   %li Re-designed filtering interface
   %li
-    You can now filter and sort by distance to other solar systems
+    You can now filter and sort by
     %a{ ng-click: "filterWithPreset([{ kind: 'distance_jumps', system: '30000142', distance: 10 }], ['distance_jumps_30000142', 'asc'])" }
-      Example
+      distance to other solar systems
   %li
-    You can now filter by station services present in system
+    You can now filter by
     %a{ ng-click: "filterWithPreset([{ kind: 'station_service', choice: 'refinery' }], ['name', 'asc'])" }
-      Example
+      station services present in system
   %li
-    You can now filter and sort by ship / pod / NPC kills in last 24 hours
+    You can now filter and sort by
     %a{ ng-click: "filterWithPreset([{ kind: 'hourly_pods', min: 1 }], ['hourly_pods', 'desc'])" }
-      Example
+      ship / pod / NPC kills in last 24 hours
   %li When filtering by specific agent, count of matching agents in system is shown in results
   %li A huge backend overhaul
 
