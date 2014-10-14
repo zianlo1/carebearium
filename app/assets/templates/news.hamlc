@@ -20,7 +20,7 @@
       distance to another system in lightyears
   %li
     You can now filter by
-    %a{ ng-click: "filterWithPreset([{ kind: 'owner', choice: 500001 }], ['name', 'asc'])" }
+    %a{ ng-click: "filterWithPreset([{ kind: 'owner', choice: ['500001'] }], ['name', 'asc'])" }
       system owners - both NPC factions and player alliances
   %li
     Share your findings! There's now a link below results table that will allow you to share the active filter with others
