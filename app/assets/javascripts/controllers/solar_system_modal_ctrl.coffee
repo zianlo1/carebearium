@@ -3,6 +3,7 @@ CB.controller 'SolarSystemModalCtrl', ($scope, $http, solarSystem) ->
 
   $scope.stationsCollapsed = true
   $scope.agentsCollapsed   = true
+  $scope.planetsCollapsed  = true
 
   for agent in $scope.solarSystem.agents
     agent.divisionName    = CB.StaticData.AgentDivisions[agent.division]

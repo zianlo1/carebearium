@@ -61,6 +61,12 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
 
       system.moon_count = fields[21]
 
+      system.planets = []
+      system.planet_count = 0
+      for type_id, count of fields[22]
+        system.planets.push { type_id: type_id, type: CB.StaticData.PlanetTypes[type_id], count: count }
+        system.planet_count += count
+
       CB.StaticData.SolarSystems[id] = system
 
     dataLoaded.resolve()

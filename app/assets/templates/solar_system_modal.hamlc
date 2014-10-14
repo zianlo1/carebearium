@@ -89,6 +89,22 @@
             %td {{ agent.level }}
             %td {{ agent.divisionName }}
             %td {{ agent.corporationName }}
+
+  .panel.panel-default{ ng-if: 'solarSystem.planet_count > 0'}
+    .panel-heading{ ng-click: "planetsCollapsed = !planetsCollapsed" }
+      Planets ({{ solarSystem.planet_count }})
+      %span.glyphicon.pull-right{ ng-class: "{ 'glyphicon-chevron-up': planetsCollapsed, 'glyphicon-chevron-down': !planetsCollapsed }" }
+    .panel-body{ collapse: 'planetsCollapsed' }
+      %table.table
+        %thead
+          %tr
+            %th Type
+            %th Count
+        %tbody
+          %tr{ ng-repeat: "planet in solarSystem.planets | orderBy: 'type'" }
+            %td {{ planet.type }}
+            %td {{ planet.count }}
+
   .row
     .col-xs-12
       %dl.dl-horizontal
