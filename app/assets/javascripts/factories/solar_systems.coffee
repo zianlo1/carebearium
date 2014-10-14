@@ -6,6 +6,7 @@ fieldsToStation = (fields) ->
   services = CB.StaticData.StationOperations[fields[1]] || []
 
   station.refinery  = 32 in services
+  station.cloning   = 512 in services
   station.repair    = 4096 in services
   station.factory   = 8192 in services
   station.lab       = 16384 in services

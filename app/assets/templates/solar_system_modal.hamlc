@@ -51,9 +51,10 @@
             %th Name
             %th Refinery
             %th Repair
-            %th Manufacturing
+            %th Manufact.
             %th Research
             %th Insurance
+            %th Cloning
         %tbody
           %tr{ ng-repeat: "station in solarSystem.stations | orderBy: 'name'" }
             %td {{ station.name }}
@@ -67,6 +68,8 @@
               %span.glyphicon{ ng-class: "{'glyphicon-ok': station.lab}" }
             %td.text-center
               %span.glyphicon{ ng-class: "{'glyphicon-ok': station.insurance}" }
+            %td.text-center
+              %span.glyphicon{ ng-class: "{'glyphicon-ok': station.cloning}" }
 
   .panel.panel-default{ ng-if: 'solarSystem.agents.length > 0'}
     .panel-heading{ ng-click: "agentsCollapsed = !agentsCollapsed" }

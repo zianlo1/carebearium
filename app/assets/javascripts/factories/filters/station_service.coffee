@@ -11,6 +11,7 @@ class CB.Filters.StationService extends CB.Filters.Dropdown
     lab: 'Research'
     refinery: 'Refinery'
     repair: 'Repair'
+    cloning: 'Cloning'
 
   filterFunction: (item) =>
     if @options.choice
