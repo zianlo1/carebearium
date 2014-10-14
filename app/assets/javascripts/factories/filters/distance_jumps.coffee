@@ -4,7 +4,8 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
   constructor: (@options) ->
     super(@options)
 
-    @options.distance = 0 if angular.isUndefined @options.distance
+    @options.min = 0 if angular.isUndefined @options.min
+    @options.max = 1 if angular.isUndefined @options.max
     @options.security = '0.5' if angular.isUndefined @options.security
 
   securityOptions:
@@ -20,12 +21,12 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
 
       @reachableSystems[@options.system] = 0
 
-      if @options.distance > 0
+      if @options.max > 0
         visitNow  = []
         visitNext = angular.copy CB.StaticData.SolarSystems[@options.system].jumps
         depth     = 1
 
-        while visitNext.length > 0 and depth <= @options.distance
+        while visitNext.length > 0 and depth <= @options.max
           visitNow  = angular.copy visitNext
           visitNext = []
 
@@ -45,7 +46,7 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
 
   filterFunction: (item) =>
     if @options.system
-      !angular.isUndefined(@reachableSystems[item.id])
+      @reachableSystems[item.id] >= @options.min
     else
       true
 

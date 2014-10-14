@@ -6,10 +6,12 @@ class CB.Filters.DistanceLightyears extends CB.Filters.Base
   constructor: (@options) ->
     super(@options)
 
-    @options.distance = 0 if angular.isUndefined @options.distance
+    @options.min = 0 if angular.isUndefined @options.min
+    @options.max = 100 if angular.isUndefined @options.max
 
   prepare: =>
-    @distanceSquared = Math.pow(@options.distance / @scale, 2)
+    @minSquared = Math.pow(@options.min / @scale, 2)
+    @maxSquared = Math.pow(@options.max / @scale, 2)
     @systemCoordinates = CB.StaticData.SolarSystems[@options.system]
 
     @fieldName = "distance_lightyears_#{@options.system || '_'}"
@@ -20,7 +22,8 @@ class CB.Filters.DistanceLightyears extends CB.Filters.Base
 
   filterFunction: (item) =>
     if @options.system
-      @distanceSquared >= @distanceBetweenSquared @systemCoordinates, item
+      distanceSquared = @distanceBetweenSquared @systemCoordinates, item
+      distanceSquared >= @minSquared and distanceSquared <= @maxSquared
     else
       true
 

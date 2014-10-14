@@ -16,7 +16,7 @@
       Nullsec systems are now in!
   %li
     You can now filter by
-    %a{ ng-click: "filterWithPreset([{ kind: 'distance_lightyears', system: 30002537, distance: 500 }], ['distance_lightyears_30002537', 'desc'])" }
+    %a{ ng-click: "filterWithPreset([{ kind: 'distance_lightyears', system: 30002537, max: 500 }], ['distance_lightyears_30002537', 'desc'])" }
       distance to another system in lightyears
   %li
     You can now filter by
@@ -66,7 +66,7 @@
   %li Re-designed filtering interface
   %li
     You can now filter and sort by
-    %a{ ng-click: "filterWithPreset([{ kind: 'distance_jumps', system: '30000142', distance: 10 }], ['distance_jumps_30000142', 'asc'])" }
+    %a{ ng-click: "filterWithPreset([{ kind: 'distance_jumps', system: '30000142', max: 10 }], ['distance_jumps_30000142', 'asc'])" }
       distance to other solar systems
   %li
     You can now filter by
