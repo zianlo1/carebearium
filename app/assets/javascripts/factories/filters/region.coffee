@@ -7,6 +7,8 @@ class CB.Filters.Region extends CB.Filters.Dropdown
 
   filterName: 'Region'
 
+  templateName: 'dropdown_multiple'
+
   dropdownChoices: CB.StaticData.Regions
 
   visibleField: ->
@@ -14,11 +16,8 @@ class CB.Filters.Region extends CB.Filters.Dropdown
     text: 'Region'
     display: (item) -> item.region
 
-  prepare: =>
-    @options.choice = parseInt(@options.choice, 10) if @options.choice
-
   filterFunction: (item) =>
-    if @options.choice
-      item.region_id is @options.choice
+    if @options.choice.length > 0
+      item.region_id.toString() in @options.choice
     else
       true
