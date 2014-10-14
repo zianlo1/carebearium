@@ -6,7 +6,7 @@
   %p
     Carebearium will enable you to search EvE solar systems by:
   .row#features
-    %a.col-xs-6.col-md-4{ ng-click: "filterWithPreset([{ kind: 'manufacturing' }, { kind: 'copying' }, { kind: 'station_service', choice: 'lab' }, { kind: 'station_service', choice: 'factory' }], ['manufacturing', 'asc'])" }
+    %a.col-xs-6.col-md-4{ ng-click: "filterWithPreset([{ kind: 'manufacturing' }, { kind: 'copying' }, { kind: 'station_service', choice: 'lab' }, { kind: 'station_service', choice: 'factory' }, { kind: 'security', min: 1 }], ['manufacturing', 'asc'])" }
       %span.glyphicon.glyphicon-cog
       %h3 Industry indices!
 
