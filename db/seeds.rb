@@ -7,7 +7,7 @@ p 'Preparing data'
 systems  = {}
 
 read_file('solar_systems.json').each do |row|
-  system = row.slice(:regionID, :security, :beltCount, :x, :y, :z)
+  system = row.slice(:regionID, :security, :belt_count, :moon_count, :x, :y, :z)
 
   system[:stations] = []
   system[:agents]   = []
@@ -51,7 +51,8 @@ systems.each do |id, system|
     id:         id,
     region_id:  system[:regionID],
     security:   system[:security],
-    belt_count: system[:beltCount],
+    belt_count: system[:belt_count],
+    moon_count: system[:moon_count],
     ice:        !!system[:ice],
     jumps:      system[:jumps],
     x:          system[:x],

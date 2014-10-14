@@ -5,6 +5,7 @@ class SolarSystem
   field :region_id,   type: Integer
   field :security,    type: Float
   field :belt_count,  type: Integer
+  field :moon_count,  type: Integer
   field :ice,         type: Boolean
   field :owner_id,    type: Integer
 
@@ -47,7 +48,7 @@ class SolarSystem
 
   NUMERIC_FIELDS = [
     :security, :belt_count, :manufacturing, :research_te, :research_me, :copying, :reverse_engineering, :invention,
-    :hourly_ships, :hourly_pods, :hourly_npcs, :hourly_jumps
+    :hourly_ships, :hourly_pods, :hourly_npcs, :hourly_jumps, :moon_count
   ]
 
   LIMITS_MAP_FUNCTION = <<-JS.freeze
@@ -100,7 +101,8 @@ class SolarSystem
         system.owner_id,
         system.x,
         system.y,
-        system.z
+        system.z,
+        system.moon_count
       ]
     end
   end

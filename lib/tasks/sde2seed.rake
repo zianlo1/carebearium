@@ -20,12 +20,14 @@ if Rails.env.development?
                s.solarSystemName as name,
                s.regionID,
                case when s.security between 0.0 and 0.05 then 0.1 else round(s.security, 1) end as security,
-               IFNULL(belts.beltCount, 0) as beltCount,
+               IFNULL(belts.c, 0) as belt_count,
+               IFNULL(moons.c, 0) as moon_count,
                round(x / 10000000000000000, 5) as x,
                round(y / 10000000000000000, 5) as y,
                round(z / 10000000000000000, 5) as z
         from mapSolarSystems s
-        left join (select solarSystemID, count(*) as beltCount from mapDenormalize where typeID = 15 group by solarSystemID) belts on s.solarSystemID = belts.solarSystemID
+        left join (select solarSystemID, count(*) as c from mapDenormalize where typeID = 15 group by solarSystemID) belts on s.solarSystemID = belts.solarSystemID
+        left join (select solarSystemID, count(*) as c from mapDenormalize where typeID = 14 group by solarSystemID) moons on s.solarSystemID = moons.solarSystemID
         where s.regionID < 11000000
         and s.regionID not in (10000004, 10000017, 10000019)
         order by s.solarSystemID

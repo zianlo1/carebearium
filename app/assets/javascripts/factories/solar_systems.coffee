@@ -59,6 +59,8 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
       system.y = fields[19]
       system.z = fields[20]
 
+      system.moon_count = fields[21]
+
       CB.StaticData.SolarSystems[id] = system
 
     dataLoaded.resolve()

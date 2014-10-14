@@ -12,6 +12,8 @@
         %dd {{ solarSystem.security | number: 1 }}
         %dt Asteroid belts
         %dd {{ solarSystem.belt_count }}
+        %dt Moons
+        %dd {{ solarSystem.moon_count }}
         %dt Owner
         %dd {{ solarSystem.owner }}
 

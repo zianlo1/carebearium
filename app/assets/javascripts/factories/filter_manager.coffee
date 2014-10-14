@@ -24,6 +24,7 @@ CB.factory 'FilterManager', ->
     distance_jumps:       CB.Filters.DistanceJumps
     distance_lightyears:  CB.Filters.DistanceLightyears
     owner:                CB.Filters.Owner
+    moon_count:           CB.Filters.MoonCount
 
   for key, value of CB.StaticData.Limits
     filters[key]?.prototype.limits = value
