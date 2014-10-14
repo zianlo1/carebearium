@@ -1,4 +1,6 @@
 class LandingController < ApplicationController
+  respond_to :html
+
   def show
     last_update = ApiLog.last_significant_update
 
