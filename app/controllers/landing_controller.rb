@@ -10,6 +10,6 @@ class LandingController < ApplicationController
       SolarSystem.limits.to_json
     end
 
-    render text: '', layout: true
+    render text: '', layout: 'application'
   end
 end
