@@ -22,6 +22,7 @@ gem 'rails-assets-angular-ui-select'
 gem 'rails-assets-angular-animate'
 gem 'rails-assets-lazy.js'
 gem 'newrelic_rpm'
+gem 'rack-cache'
 
 group :development do
   gem 'spring'
