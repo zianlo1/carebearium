@@ -5,6 +5,8 @@ class LandingController < ApplicationController
     last_update = ApiLog.last_significant_update
     cache_key   = "landing#show/#{last_update.to_i}"
 
+    expires_in 10.minutes, public: true
+
     if stale?(last_modified: last_update, etag: cache_key, public: true)
       @solar_system_owner_names = Rails.cache.fetch "solar_system_owner_names/#{last_update.to_i}" do
         SolarSystemOwner.names.to_json
