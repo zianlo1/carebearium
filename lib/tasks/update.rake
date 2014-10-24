@@ -9,7 +9,7 @@ namespace :update do
   end
 
   if Rails.env.development?
-    task static_data: [ 'sde2seed', 'seed2public' ]
+    task static_data: [ 'sde2seed', 'seed2static' ]
   end
 end
 

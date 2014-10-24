@@ -6,19 +6,13 @@ if Rails.env.development?
     MultiJson.load File.read(Rails.root.join 'db', 'seeds', filename), symbolize_keys: true
   end
 
-  def write_file(filename, data)
-    File.open(Rails.root.join('public', 'api', filename), 'w') do |f|
-      f.write(MultiJson.dump data)
-    end
-  end
-
   def write_static_data(header, data)
     File.open(Rails.root.join('app', 'assets', 'javascripts', 'data', "#{header.underscore}.coffee"), 'w') do |f|
       f.write("CB.StaticData.#{header} = #{MultiJson.dump data}")
     end
   end
 
-  namespace :seed2public do
+  namespace :seed2static do
     task :solar_systems do
       names = {}
 
@@ -90,5 +84,5 @@ if Rails.env.development?
   end
 
   desc "Convert seed files to public"
-  task seed2public: %w(solar_systems agents corporations regions operations planet_types).map{ |t| "seed2public:#{t}" }
+  task seed2static: %w(solar_systems agents corporations regions operations planet_types).map{ |t| "seed2static:#{t}" }
 end
