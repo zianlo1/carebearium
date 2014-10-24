@@ -11,6 +11,10 @@
     %a{ ng-click: "filterWithPreset([{ kind: 'station_count', min: 1 }, { kind: 'station_service', choice: 'cloning', reversed: true }], ['name', 'asc'])" }
       system with a station, but without a cloning service.
   %li
+    'Owned by NPCs' system feature filter has been removed in favor of
+    %a{ ng-click: "filterWithPreset([{ kind: 'system_feature', choice: 'player_owned', reversed: true }], ['name', 'asc'])" }
+      reversed version of 'Owned by player alliance'
+  %li
     You can now filter by
     %a{ ng-click: "filterWithPreset([{ kind: 'jumps_to_continous_hisec', max: 1 }, { kind: 'jumps_to_lowsec' }, { kind: 'jumps_to_nullsec' }, { kind: 'security', max: 4 }], ['name', 'asc'])" }
       distance to closest highsec / lowsec / nullsec system
