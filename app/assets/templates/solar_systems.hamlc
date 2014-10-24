@@ -2,13 +2,13 @@
   %filter{ ng-repeat: 'filter in filters', filter: 'filter' }
 
 .row
-  .col-sm-11.col-xs-10
+  .col-xs-10
     %ui-select{ ng-model: '$parent.filterToAdd' }
       %ui-select-match{ placeholder: 'Filter by...'  }
         {{ $select.selected.text }}
       %ui-select-choices{ repeat: "choice.id as choice in availableFilters | filter: { text: $select.search }" }
         {{ choice.text }}
-  .col-sm-1.col-xs-2.text-right
+  .col-xs-2.text-right
     %button.btn.btn-default{ ng-click: 'removeAllFilters()' }
       %span.glyphicon.glyphicon-remove
 
