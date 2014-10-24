@@ -5,8 +5,14 @@
 %h3#news-24102014 24.10.2014
 %ul
   %li
+    Get ready for the opposite day! Every filter can now be reversed by pushing the
+    %span.glyphicon.glyphicon-random
+    button, and it will select only the solar systems that DON'T match the specified criteria. For example, you can now find
+    %a{ ng-click: "filterWithPreset([{ kind: 'station_count', min: 1 }, { kind: 'station_service', choice: 'cloning', reversed: true }], ['name', 'asc'])" }
+      system with a station, but without a cloning service.
+  %li
     You can now filter by
-    %a{ ng-click: "filterWithPreset([{ kind: 'jumps_to_continous_hisec', max: 1 }, { kind: 'security', max: 4 }], ['name', 'asc'])" }
+    %a{ ng-click: "filterWithPreset([{ kind: 'jumps_to_continous_hisec', max: 1 }, { kind: 'jumps_to_lowsec' }, { kind: 'jumps_to_nullsec' }, { kind: 'security', max: 4 }], ['name', 'asc'])" }
       distance to closest highsec / lowsec / nullsec system
   %li
     You can now filter by
