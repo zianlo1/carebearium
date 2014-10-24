@@ -84,7 +84,7 @@ if Rails.env.development?
     end
 
     task :jumps do
-      dump_query 'jumps.json', <<-SQL
+      dump_query 'jumps_raw.json', <<-SQL
         select src.solarSystemId as 'from', group_concat(dst.solarSystemId order by dst.solarSystemId) as 'to'
         from mapJumps j
         join mapDenormalize src on src.itemId = j.stargateId

@@ -40,7 +40,7 @@ end
 
 read_file('jumps.json').each do |row|
   next unless systems[row[:from]]
-  systems[row[:from]][:jumps] = row[:to].split(',').map(&:to_i).sort
+  systems[row[:from]].merge! row.slice(:jumps, :continous_hisec, :nearest_hisec, :lowsec, :nullsec)
 end
 
 read_file('planets.json').each do |row|
@@ -54,16 +54,20 @@ SolarSystem.delete_all
 p 'Writing new data'
 systems.each do |id, system|
   attrs = {
-    id:         id,
-    region_id:  system[:regionID],
-    security:   system[:security],
-    belt_count: system[:belt_count],
-    moon_count: system[:moon_count],
-    ice:        !!system[:ice],
-    jumps:      system[:jumps],
-    x:          system[:x],
-    y:          system[:y],
-    z:          system[:z]
+    id:                       id,
+    region_id:                system[:regionID],
+    security:                 system[:security],
+    belt_count:               system[:belt_count],
+    moon_count:               system[:moon_count],
+    ice:                      !!system[:ice],
+    jumps:                    system[:jumps],
+    x:                        system[:x],
+    y:                        system[:y],
+    z:                        system[:z],
+    jumps_to_continous_hisec: system[:continous_hisec],
+    jumps_to_nearest_hisec:   system[:nearest_hisec],
+    jumps_to_lowsec:          system[:lowsec],
+    jumps_to_nullsec:         system[:nullsec]
   }
 
   attrs[:stations] = system[:stations].each_with_object({}) do |station, stations|

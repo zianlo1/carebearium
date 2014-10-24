@@ -31,6 +31,11 @@ class SolarSystem
   field :y, type: Float
   field :z, type: Float
 
+  field :jumps_to_continous_hisec, type: Integer
+  field :jumps_to_nearest_hisec,   type: Integer
+  field :jumps_to_lowsec,          type: Integer
+  field :jumps_to_nullsec,         type: Integer
+
   STATION_TYPE_OPERATIONS = {
     21642 => 48,
     21644 => 49,

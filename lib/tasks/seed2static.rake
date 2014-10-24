@@ -83,6 +83,6 @@ if Rails.env.development?
     end
   end
 
-  desc "Convert seed files to public"
+  desc "Convert seed files to static components"
   task seed2static: %w(solar_systems agents corporations regions operations planet_types).map{ |t| "seed2static:#{t}" }
 end
