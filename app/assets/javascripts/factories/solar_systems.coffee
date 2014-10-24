@@ -53,7 +53,6 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
       system.owner_id     = fields[17]
       system.owner        = CB.StaticData.SolarSystemOwnerNames[system.owner_id]
       system.player_owned = system.owner_id > 1000000
-      system.npc_owned    = !system.player_owned
 
       system.x = fields[18]
       system.y = fields[19]
