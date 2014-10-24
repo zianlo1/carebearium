@@ -2,8 +2,8 @@
   %label.col-md-2.col-sm-3.col-xs-8.control-label
     {{ settings.name }}
   .col-sm-2.col-xs-4.col-md-push-8.col-sm-push-7.text-right
-    %button.btn{ ng-click: 'filter.reversed = !filter.reversed', ng-class: "{ 'btn-primary': filter.reversed, 'btn-default': !filter.reversed }" }
+    %button.btn{ ng-click: 'filter.reversed = !filter.reversed', ng-class: "{ 'btn-primary': filter.reversed, 'btn-default': !filter.reversed }", tooltip: 'Reverse this filter' }
       %span.glyphicon.glyphicon-random{ }
-    %button.btn.btn-default{ ng-click: 'settings.remove(filter)' }
+    %button.btn.btn-default{ ng-click: 'settings.remove(filter)', tooltip: 'Remove this filter' }
       %span.glyphicon.glyphicon-remove
   .col-md-8.col-sm-7.col-xs-12.col-sm-pull-2{ ng-transclude: true, ng-class: "{ 'row': multicolumn }" }

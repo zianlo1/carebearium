@@ -9,7 +9,7 @@
       %ui-select-choices{ repeat: "choice.id as choice in availableFilters | filter: { text: $select.search }" }
         {{ choice.text }}
   .col-xs-2.text-right
-    %button.btn.btn-default{ ng-click: 'removeAllFilters()' }
+    %button.btn.btn-default{ ng-click: 'removeAllFilters()', tooltip: 'Remove all filters' }
       %span.glyphicon.glyphicon-remove
 
 %hr
