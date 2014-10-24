@@ -89,7 +89,7 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
 
         filter.prepare()
 
-        data = data.filter filter.filterFunction
+        data = data.filter filter.reversibleFilterFunction
 
         if filter.mapFunction
           data = data.map filter.mapFunction

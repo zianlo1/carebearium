@@ -52,7 +52,7 @@ class CB.Filters.DistanceJumps extends CB.Filters.Base
 
   mapFunction: (item) =>
     if @options.system
-      item[@fieldName] = @reachableSystems[item.id]
+      item[@fieldName] = @reachableSystems[item.id] || "> #{@options.max}"
     item
 
   visibleField: =>

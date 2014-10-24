@@ -36,7 +36,7 @@ class CB.Filters.Agent extends CB.Filters.Base
   filterFunction: (item) => Lazy(item.agents).some @matcherFunction
 
   mapFunction: (item) =>
-    item[@fieldName] = Lazy(item.agents).countBy(@matcherFunction).get 'true'
+    item[@fieldName] = Lazy(item.agents).countBy(@matcherFunction).get('true') || 0
     item
 
   visibleField: =>

@@ -1,22 +1,17 @@
-.row
-  %label.col-sm-3.col-xs-10.control-label
-    {{ settings.name }}
-  .col-sm-1.col-xs-2.col-sm-push-8.text-right
-    %button.btn.btn-default{ ng-click: 'removeFilter(filter)' }
-      %span.glyphicon.glyphicon-remove
-  .col-sm-2.col-xs-3.col-sm-pull-1
+%filter-wrapper{ filter: 'filter', settings: 'settings', multicolumn: 'true' }
+  .col-xs-3
     %ui-select{ ng-model: 'filter.level' }
       %ui-select-match{ placeholder: 'Level'  }
         {{ $select.selected }}
       %ui-select-choices{ repeat: "level in settings.levels | filter: $select.search" }
         {{ level }}
-  .col-sm-2.col-xs-3.col-sm-pull-1
+  .col-xs-3
     %ui-select{ ng-model: 'filter.division' }
       %ui-select-match{ placeholder: 'Division'  }
         {{ $select.selected.text }}
       %ui-select-choices{ repeat: "choice.id as choice in settings.divisions | filter: { text: $select.search }" }
         {{ choice.text }}
-  .col-sm-4.col-xs-6.col-sm-pull-1
+  .col-xs-6
     %ui-select{ ng-model: 'filter.corporation' }
       %ui-select-match{ placeholder: 'Corporation'  }
         {{ settings.corporationName(filter.corporation) }}

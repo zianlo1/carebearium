@@ -1,14 +1,9 @@
-.row
-  %label.col-sm-3.col-xs-10.control-label
-    {{ settings.name }}
-  .col-sm-1.col-xs-2.col-sm-push-8.text-right
-    %button.btn.btn-default{ ng-click: 'removeFilter(filter)' }
-      %span.glyphicon.glyphicon-remove
-  .col-sm-2.col-xs-4.col-sm-pull-1
+%filter-wrapper{ filter: 'filter', settings: 'settings', multicolumn: 'true' }
+  .col-xs-4
     %ui-select{ ng-model: 'filter.system' }
       %ui-select-match{ placeholder: 'Select a system'  }
         {{ settings.systemName(filter.system) }}
       %ui-select-choices{ repeat: "choice.id as choice in settings.systems | filter: { text: $select.search } | limitTo: 50" }
         {{ choice.text }}
-  .col-sm-6.col-xs-8.col-sm-pull-1
+  .col-xs-8
     %slider{ floor: '{{ settings.min }}', ceiling: '{{ settings.max }}', translate-fn: 'settings.translateFunction', ng-model: 'filter.min', ng-model-range:'filter.max' }

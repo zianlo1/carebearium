@@ -4,6 +4,12 @@ class CB.Filters.Base
 
   filterFunction: (item) -> true
 
+  reversibleFilterFunction: (item) =>
+    if @options.reversed
+      not @filterFunction item
+    else
+      @filterFunction item
+
   visibleField: -> false
 
   multiple: false

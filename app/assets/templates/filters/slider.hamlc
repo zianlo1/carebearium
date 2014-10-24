@@ -1,8 +1,2 @@
-.row
-  %label.col-sm-3.col-xs-10.control-label
-    {{ settings.name }}
-  .col-sm-1.col-xs-2.col-sm-push-8.text-right
-    %button.btn.btn-default{ ng-click: 'removeFilter(filter)' }
-      %span.glyphicon.glyphicon-remove
-  .col-sm-8.col-xs-12.col-sm-pull-1
-    %slider{ floor: '{{settings.min}}', ceiling: '{{settings.max}}', translate-fn: 'settings.translateFunction', ng-model: 'filter.min', ng-model-range:'filter.max' }
+%filter-wrapper{ filter: 'filter', settings: 'settings' }
+  %slider{ floor: '{{settings.min}}', ceiling: '{{settings.max}}', translate-fn: 'settings.translateFunction', ng-model: 'filter.min', ng-model-range:'filter.max' }
