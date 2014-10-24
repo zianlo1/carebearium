@@ -54,7 +54,8 @@ class SolarSystem
 
   NUMERIC_FIELDS = [
     :security, :belt_count, :manufacturing, :research_te, :research_me, :copying, :reverse_engineering, :invention,
-    :hourly_ships, :hourly_pods, :hourly_npcs, :hourly_jumps, :moon_count
+    :hourly_ships, :hourly_pods, :hourly_npcs, :hourly_jumps, :moon_count, :jumps_to_continous_hisec, :jumps_to_nearest_hisec,
+    :jumps_to_lowsec, :jumps_to_nullsec
   ]
 
   LIMITS_MAP_FUNCTION = <<-JS.freeze
@@ -115,7 +116,11 @@ class SolarSystem
         system.y,
         system.z,
         system.moon_count,
-        system.planets
+        system.planets,
+        system.jumps_to_continous_hisec,
+        system.jumps_to_nearest_hisec,
+        system.jumps_to_lowsec,
+        system.jumps_to_nullsec
       ]
     end
   end

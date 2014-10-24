@@ -67,6 +67,11 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
         system.planets.push { type_id: type_id, type: CB.StaticData.PlanetTypes[type_id], count: count }
         system.planet_count += count
 
+      system.jumps_to_continous_hisec = fields[23]
+      system.jumps_to_nearest_hisec   = fields[24]
+      system.jumps_to_lowsec          = fields[25]
+      system.jumps_to_nullsec         = fields[26]
+
       CB.StaticData.SolarSystems[id] = system
 
     dataLoaded.resolve()
