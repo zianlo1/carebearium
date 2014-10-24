@@ -72,6 +72,8 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
       system.jumps_to_lowsec          = fields[25]
       system.jumps_to_nullsec         = fields[26]
 
+      system.hisec_island = (system.jumps_to_nearest_hisec is 0) and (system.jumps_to_continous_hisec > 0)
+
       CB.StaticData.SolarSystems[id] = system
 
     dataLoaded.resolve()
