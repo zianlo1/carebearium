@@ -2,6 +2,17 @@
   %h1
     What's new in Carebearium
 
+%h3#news-24102014 24.10.2014
+%ul
+  %li
+    You can now filter by
+    %a{ ng-click: "filterWithPreset([{ kind: 'jumps_to_continous_hisec', max: 1 }, { kind: 'security', max: 4 }], ['name', 'asc'])" }
+      distance to closest highsec / lowsec / nullsec system
+  %li
+    You can now filter by
+    %a{ ng-click: "filterWithPreset([{ kind: 'system_feature', choice: 'hisec_island' }], ['name', 'asc'])" }
+      system feature - hisec islands
+
 %h3#news-14102014 14.10.2014
 %ul
   %li
