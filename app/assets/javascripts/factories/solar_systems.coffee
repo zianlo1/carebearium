@@ -73,6 +73,9 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
 
       system.hisec_island = (system.jumps_to_nearest_hisec is 0) and (system.jumps_to_continous_hisec > 0)
 
+      system.pirate_id   = CB.StaticData.RegionPirates[system.region_id]
+      system.pirate_name = CB.StaticData.PirateNames[system.pirate_id]
+
       CB.StaticData.SolarSystems[id] = system
 
     dataLoaded.resolve()

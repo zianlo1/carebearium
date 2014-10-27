@@ -31,6 +31,7 @@ CB.factory 'FilterManager', ->
     jumps_to_nullsec:         CB.Filters.JumpsToNullsec
     jumps_to_continous_hisec: CB.Filters.JumpsToContinousHisec
     jumps_to_nearest_hisec:   CB.Filters.JumpsToNearestHisec
+    local_pirates:            CB.Filters.LocalPirates
 
   for key, value of CB.StaticData.Limits
     filters[key]?.prototype.limits = value
