@@ -1,16 +1,13 @@
 if Rails.env.development?
+  require_relative 'task_helpers'
   require 'mysql2'
-  require 'multi_json'
-  require 'oj'
 
   def exec(query)
     Mysql2::Client.new(host: 'localhost', username: 'root', database: 'eve').query(query).to_a
   end
 
   def dump_query(filename, query)
-    File.open(Rails.root.join('db', 'seeds', filename), 'w') do |f|
-      f.write(MultiJson.dump exec(query), pretty: true)
-    end
+    write_seed_file filename, exec(query)
   end
 
   namespace :sde2seed do

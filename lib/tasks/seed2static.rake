@@ -1,22 +1,11 @@
 if Rails.env.development?
-  require 'multi_json'
-  require 'oj'
-
-  def read_file(filename)
-    MultiJson.load File.read(Rails.root.join 'db', 'seeds', filename), symbolize_keys: true
-  end
-
-  def write_static_data(header, data)
-    File.open(Rails.root.join('app', 'assets', 'javascripts', 'data', "#{header.underscore}.coffee"), 'w') do |f|
-      f.write("CB.StaticData.#{header} = #{MultiJson.dump data}")
-    end
-  end
+  require_relative 'task_helpers'
 
   namespace :seed2static do
     task :solar_systems do
       names = {}
 
-      read_file('solar_systems.json').each do |row|
+      read_seed_file('solar_systems.json').each do |row|
         names[row[:id]] = row[:name]
       end
 
@@ -27,7 +16,7 @@ if Rails.env.development?
       levels = Set.new
       divisions = Set.new
 
-      read_file('agents.json').each do |row|
+      read_seed_file('agents.json').each do |row|
         levels.add row[:level]
         divisions.add row[:division]
       end
@@ -45,7 +34,7 @@ if Rails.env.development?
     task :corporations do
       output = {}
 
-      read_file('corporations.json').each do |row|
+      read_seed_file('corporations.json').each do |row|
         output[row[:corporationID]] = row[:corporationName]
       end
 
@@ -55,7 +44,7 @@ if Rails.env.development?
     task :regions do
       output = {}
 
-      read_file('regions.json').each do |row|
+      read_seed_file('regions.json').each do |row|
         output[row[:regionID]] = row[:regionName]
       end
 
@@ -65,7 +54,7 @@ if Rails.env.development?
     task :operations do
       output = {}
 
-      read_file('operations.json').each do |row|
+      read_seed_file('operations.json').each do |row|
         output[row[:id]] = row[:services].split(',').map(&:to_i).sort
       end
 
@@ -75,7 +64,7 @@ if Rails.env.development?
     task :planet_types do
       output = {}
 
-      read_file('planets.json').each do |row|
+      read_seed_file('planets.json').each do |row|
         output[row[:typeID]] = row[:typeName].match(/Planet \((.*)\)/).captures[0]
       end
 

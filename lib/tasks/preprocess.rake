@@ -1,20 +1,15 @@
 if Rails.env.development?
-  require 'multi_json'
-  require 'oj'
-
-  def read_file(filename)
-    MultiJson.load File.read(Rails.root.join 'db', 'seeds', filename), symbolize_keys: true
-  end
+  require_relative 'task_helpers'
 
   namespace :preprocess do
     task :jumps do
       jump_map = {}
 
-      read_file('solar_systems.json').each do |row|
+      read_seed_file('solar_systems.json').each do |row|
         jump_map[row[:id]] = { from: row[:id], security: row[:security] }
       end
 
-      read_file('jumps_raw.json').each do |row|
+      read_seed_file('jumps_raw.json').each do |row|
         next unless jump_map[row[:from]]
 
         jump_map[row[:from]][:jumps] = row[:to].split(',').map(&:to_i).sort
@@ -104,9 +99,7 @@ if Rails.env.development?
         jump_map[id].delete(:hisec_island)
       end
 
-      File.open(Rails.root.join('db', 'seeds', 'jumps.json'), 'w') do |f|
-        f.write(MultiJson.dump jump_map.values, pretty: true)
-      end
+      write_seed_file 'jumps.json', jump_map.values
     end
   end
 
