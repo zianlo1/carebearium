@@ -1,0 +1,1 @@
+CB.StaticData.PirateNames = {"0":"Angels","1":"Blood Raiders","2":"Drones","3":"Guristas","4":"Sanshas","5":"Serpentis"}

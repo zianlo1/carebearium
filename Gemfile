@@ -29,4 +29,5 @@ group :development do
   gem 'spring'
   gem 'mysql2', require: false
   gem 'quiet_assets'
+  gem 'mechanize'
 end
