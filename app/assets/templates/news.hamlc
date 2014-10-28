@@ -2,6 +2,13 @@
   %h1
     What's new in Carebearium
 
+%h3#news-28102014 28.10.2014
+%ul
+  %li
+    You can now filter by
+    %a{ ng-click: "filterWithPreset([{ kind: 'local_pirates', choice: ['0', '1'] }], ['name', 'asc'])" }
+      local pirate factions
+
 %h3#news-24102014 24.10.2014
 %ul
   %li
