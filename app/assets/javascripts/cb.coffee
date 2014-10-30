@@ -19,6 +19,12 @@ CB.config ($routeProvider) ->
       template: JST['solar_systems']
       controller: 'SolarSystemsCtrl'
     ).
+    when('/solar_systems/:id',
+      template: JST['solar_system']
+      controller: 'SolarSystemCtrl'
+      resolve:
+        solarSystem: (SolarSystems, $route) -> SolarSystems.findOne $route.current.params.id
+    ).
     when('/about/',
       template: JST['about']
       controller: 'AboutCtrl'

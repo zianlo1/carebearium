@@ -1,4 +1,4 @@
-CB.controller 'SolarSystemsCtrl', ($scope, $timeout, $modal, Storage, SolarSystems, FilterManager) ->
+CB.controller 'SolarSystemsCtrl', ($scope, $timeout, Storage, SolarSystems, FilterManager, $location) ->
   $scope.filters = Storage.get 'filters', []
   $scope.sort    = Storage.get 'sort', ['name', 'asc']
 
@@ -10,19 +10,16 @@ CB.controller 'SolarSystemsCtrl', ($scope, $timeout, $modal, Storage, SolarSyste
 
   find = ->
     $scope.loading = true
-    SolarSystems.find
-      filters: $scope.filters
-      sort: $scope.sort
-      callback: (results) ->
-        $scope.loading = false
-        $scope.fields = results.fields
-        $scope.sort = results.sort
-        $scope.solarSystems = results.data
+    SolarSystems.find(filters: $scope.filters, sort: $scope.sort).then (results) ->
+      $scope.loading = false
+      $scope.fields = results.fields
+      $scope.sort = results.sort
+      $scope.solarSystems = results.data
 
-        $scope.linkHash = CB.Helpers.objectToString { f: $scope.filters, s: $scope.sort }
+      $scope.linkHash = CB.Helpers.objectToString { f: $scope.filters, s: $scope.sort }
 
-        Storage.set 'filters', $scope.filters
-        Storage.set 'sort', $scope.sort
+      Storage.set 'filters', $scope.filters
+      Storage.set 'sort', $scope.sort
 
   findTimeout = null
   findWithTimeout = ->
@@ -55,13 +52,8 @@ CB.controller 'SolarSystemsCtrl', ($scope, $timeout, $modal, Storage, SolarSyste
     $scope.filters = []
     $scope.sort    = ['name', 'asc']
 
-  $scope.showInModal = (solarSystem) ->
-    modalInstance = $modal.open
-      template: JST['solar_system_modal']()
-      controller: 'SolarSystemModalCtrl'
-      size: 'lg'
-      resolve:
-        solarSystem: -> solarSystem
-
   $scope.$watch 'filters', setAvailableFilters, true
   $scope.$watch 'filters', findWithTimeout, true
+
+  $scope.open = (solarSystem) ->
+    $location.path "/solar_systems/#{solarSystem.id}"

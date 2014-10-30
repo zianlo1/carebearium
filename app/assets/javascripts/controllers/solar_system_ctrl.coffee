@@ -1,4 +1,4 @@
-CB.controller 'SolarSystemModalCtrl', ($scope, $http, solarSystem) ->
+CB.controller 'SolarSystemCtrl', ($scope, $http, solarSystem) ->
   $scope.solarSystem = solarSystem
 
   $scope.stationsCollapsed = true

@@ -81,6 +81,8 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
     dataLoaded.resolve()
 
   find = (options) ->
+    result = $q.defer()
+
     dataLoaded.promise.then ->
       data = Lazy(CB.StaticData.SolarSystems).filter -> true
 
@@ -116,9 +118,20 @@ CB.factory 'SolarSystems', ($q, $http, FilterManager) ->
 
       data = data.first(50)
 
-      options.callback
+      result.resolve
         fields: visibleFields
         sort: options.sort
         data: data.toArray()
 
-  { find: find }
+    result.promise
+
+  findOne = (id) ->
+    result = $q.defer()
+    dataLoaded.promise.then ->
+      result.resolve CB.StaticData.SolarSystems[id]
+    result.promise
+
+  {
+    find: find
+    findOne: findOne
+  }
