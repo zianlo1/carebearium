@@ -1,6 +1,6 @@
 #= require hamlcoffee
 #= require angular
-#= require vendor/lazy
+#= require lazy
 #= require angular-route
 #= require angular-touch
 #= require venturocket-angular-slider
