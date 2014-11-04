@@ -38,7 +38,7 @@ CB.config ($routeProvider) ->
       controller: 'LinkCtrl'
     ).
     otherwise({
-      redirectTo: '/solar_systems'
+      redirectTo: '/about'
     })
 
 CB.config ($locationProvider) ->
@@ -47,8 +47,3 @@ CB.config ($locationProvider) ->
 CB.config ($analyticsProvider) ->
   $analyticsProvider.firstPageview(true)
   $analyticsProvider.withAutoBase(true)
-
-CB.run ($rootScope, $location, Storage, $window) ->
-  $rootScope.$on "$routeChangeStart", (event, next, current) ->
-    unless Storage.get('seenAbout') or next.$$route.controller in ['AboutCtrl', 'LinkCtrl']
-      $location.path "/about/"
