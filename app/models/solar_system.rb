@@ -19,7 +19,6 @@ class SolarSystem
   field :research_te,         type: Float, default: 0.0
   field :research_me,         type: Float, default: 0.0
   field :copying,             type: Float, default: 0.0
-  field :reverse_engineering, type: Float, default: 0.0
   field :invention,           type: Float, default: 0.0
 
   field :hourly_ships, type: Float, default: 0.0
@@ -48,12 +47,11 @@ class SolarSystem
     3 => :research_te,
     4 => :research_me,
     5 => :copying,
-    7 => :reverse_engineering,
     8 => :invention
   }
 
   NUMERIC_FIELDS = [
-    :security, :belt_count, :manufacturing, :research_te, :research_me, :copying, :reverse_engineering, :invention,
+    :security, :belt_count, :manufacturing, :research_te, :research_me, :copying, :invention,
     :hourly_ships, :hourly_pods, :hourly_npcs, :hourly_jumps, :moon_count, :jumps_to_continous_hisec, :jumps_to_nearest_hisec,
     :jumps_to_lowsec, :jumps_to_nullsec
   ]
@@ -105,7 +103,6 @@ class SolarSystem
         system.research_te,
         system.research_me,
         system.copying,
-        system.reverse_engineering,
         system.invention,
         system.hourly_ships,
         system.hourly_pods,

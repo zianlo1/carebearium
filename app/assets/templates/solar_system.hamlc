@@ -35,8 +35,6 @@
       %dd {{ solarSystem.research_me | number: 5 }}
       %dt Copying
       %dd {{ solarSystem.copying | number: 5 }}
-      %dt Reverse engineering
-      %dd {{ solarSystem.reverse_engineering | number: 5 }}
       %dt Invention
       %dd {{ solarSystem.invention | number: 5 }}
 

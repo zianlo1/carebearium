@@ -11,7 +11,6 @@ CB.factory 'FilterManager', ->
     manufacturing:            CB.Filters.Manufacturing
     research_me:              CB.Filters.ResearchME
     research_te:              CB.Filters.ResearchTE
-    reverse_engineering:      CB.Filters.ReverseEngineering
     jump_count:               CB.Filters.JumpCount
     hourly_npcs:              CB.Filters.HourlyNpcs
     hourly_pods:              CB.Filters.HourlyPods

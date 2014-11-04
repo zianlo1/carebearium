@@ -2,6 +2,11 @@
   %h1
     What's new in Carebearium
 
+%h3#news-04112014 04.11.2014
+%ul
+  %li
+    Phoebe removes reverse engineering industry activity, so it's gone from Carebearium as well
+
 %h3#news-28102014 28.10.2014
 %ul
   %li
