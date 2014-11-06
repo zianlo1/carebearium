@@ -3,10 +3,11 @@
   text-align: center;
 
   .glyphicon {
-    font-size: 72pt;
+    font-size: $scale-unit * 15;
   }
 
   a {
     padding-top: $scale-unit * 5;
+    height: $scale-unit * 40;
   }
 }
