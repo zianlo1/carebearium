@@ -33,3 +33,7 @@ group :development do
   gem 'quiet_assets'
   gem 'mechanize'
 end
+
+group :production do
+  gem 'heroku_rails_deflate'
+end

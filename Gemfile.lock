@@ -55,6 +55,10 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.2.2)
+    heroku_rails_deflate (1.0.3)
+      actionpack (>= 3.2.13)
+      activesupport (>= 3.2.13)
+      rack (>= 1.4.5)
     hike (1.2.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
@@ -200,6 +204,7 @@ DEPENDENCIES
   bson_ext
   coffee-rails
   haml_coffee_assets!
+  heroku_rails_deflate
   httparty
   mechanize
   mongoid
