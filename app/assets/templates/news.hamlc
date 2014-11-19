@@ -2,6 +2,29 @@
   %h1
     What's new in Carebearium
 
+
+%h3#news-19112014 19.11.2014
+%p
+  There has not been a meaningful Carebearium update for nearly a month now, so here's the lowdown of what's happening:
+%ul
+  %li
+    In broad strokes, the next planned features: solar system detailed view, neighbouring system details and (limited) historical view.
+  %li
+    I'm preparing to move the site from Heroku to a dedicated server - the current plus planned features have outgrown what Heroku supports at reasonable price point.
+  %li
+    Some university projects are due early december, so I'm prioritising that. Oh, and work.
+  %li
+    The above means the next meaningful new features will coincide with my next batch of free-ish time: christmas.
+%p
+  %strong
+    The takeaway:
+%ol
+  %li
+    development has slowed down, but by no means dead;
+  %li
+    you have couple weeks to vote on the new features that interest you, click that 'Suggestions' button below.
+
+
 %h3#news-04112014 04.11.2014
 %ul
   %li
