@@ -2,6 +2,11 @@
   %h1
     What's new in Carebearium
 
+%h3#news-13082015 13.08.2015 - (My interest in) EvE is dead, the same as the current status of this project.
+%p
+  If I come back to the game, some development might happen. No promises. The servers will stay on as long as Heroku doesn't start sending bigger bills. Source code is available at
+  %a{ href: 'https://bitbucket.org/tmikoss/carebearium', target: '_blank' }
+    https://bitbucket.org/tmikoss/carebearium
 
 %h3#news-19112014 19.11.2014
 %p
